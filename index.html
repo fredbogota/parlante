@@ -3,12 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- OPTIMIZACIÓN SEO: Nueva meta descripción con keywords principales -->
-    <meta name="description" content="Contrata Fibra Óptica Movistar y Planes Ilimitados. Disfruta de la máxima velocidad, Disney+, WIN SPORT+ y más. ¡Cambia a Movistar Total hoy!">
-    <!-- OPTIMIZACIÓN SEO: Nuevo título más descriptivo y con keywords -->
-    <title>Fibra Óptica Movistar | Planes Ilimitados, Disney+ y Máxima Velocidad</title>
     
-    <!-- Google Fonts -->
+    <!-- --- SEO TÉCNICO AVANZADO --- -->
+    <!-- Canonical para evitar contenido duplicado -->
+    <link rel="canonical" href="https://tu-dominio.com/planes-fibra-movistar" />
+    
+    <!-- Meta Descripción optimizada para CTR (Click Through Rate) -->
+    <meta name="description" content="🚀 Internet Fibra Óptica Movistar Colombia. Planes desde 900 Megas con Disney+ y Win Sports+ incluidos. Instalación rápida y máxima velocidad simétrica. ¡Cotiza aquí!">
+    
+    <!-- Título con estructura: Keyword Principal + Beneficio + Marca -->
+    <title>Planes Fibra Óptica Movistar | Internet Hogar + Disney+ y Win Sports</title>
+    
+    <!-- Open Graph (Para que se vea bien al compartir en WhatsApp/Facebook) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Oferta Fibra Movistar: 900 Megas + Disney+ Incluido" />
+    <meta property="og:description" content="Paga menos y navega más rápido. Planes con todo incluido desde $99.990. ¡Escríbenos!" />
+    <meta property="og:url" content="https://tu-dominio.com" />
+    <meta property="og:image" content="https://tu-dominio.com/imagen-share.jpg" /> <!-- Reemplazar con URL real de imagen -->
+    <meta name="theme-color" content="#019df4">
+
+    <!-- --- SCHEMA.ORG JSON-LD (Para Rich Snippets en Google) --- -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Planes de Internet Fibra Óptica Movistar",
+      "description": "Catálogo de planes de internet hogar de alta velocidad con servicios de streaming incluidos.",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Fibra 900Megas + Pospago Ilimitado",
+            "description": "Internet simétrico de 900 megas con línea móvil ilimitada y Win Play."
+          },
+          "price": "99990",
+          "priceCurrency": "COP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Trio 900 Megas + Disney+ y Win Futbol",
+            "description": "Paquete completo de entretenimiento y conectividad total."
+          },
+          "price": "145990",
+          "priceCurrency": "COP"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Fonts (Optimizado con display swap) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -24,14 +70,14 @@
             --dark-blue: #0b274f;
             --light-blue: #e8f0fe;
             --accent-orange: #E63700;
-            --accent-bg: #F8D2B3;
+            --accent-bg: #fff0e6;
             --text-main: #333333;
-            --text-light: #666666;
+            --text-light: #5f6368;
             --white: #ffffff;
             --success: #28a745;
-            --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-hover: 0 12px 24px rgba(0,0,0,0.12);
-            --radius: 8px;
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.06);
+            --shadow-hover: 0 20px 40px rgba(1, 157, 244, 0.15);
+            --radius: 12px;
             --header-height: 70px;
         }
 
@@ -42,21 +88,29 @@
         body {
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
-            background-color: #f4f6f9;
+            background-color: #f8faff;
             line-height: 1.6;
             padding-top: var(--header-height);
             overflow-x: hidden;
+            /* Mejora de renderizado de fuentes */
+            -webkit-font-smoothing: antialiased; 
         }
 
-        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s; }
         ul { list-style: none; }
-        button { font-family: inherit; }
+        button { font-family: inherit; border: none; cursor: pointer; }
 
         /* --- UTILITIES --- */
         .container {
-            width: 94%;
+            width: 92%;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-blue), #00d2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         /* --- HEADER --- */
@@ -66,9 +120,9 @@
             left: 0;
             width: 100%;
             height: var(--header-height);
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -88,10 +142,10 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            z-index: 1002; /* Above mobile menu */
+            z-index: 1002;
+            letter-spacing: -0.5px;
         }
         
-        /* Desktop Nav */
         .nav-links {
             display: flex;
             gap: 30px;
@@ -105,131 +159,117 @@
             position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--primary-blue);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--primary-blue); }
 
         .btn-header {
-            background-color: var(--primary-blue);
+            background: var(--primary-blue);
             color: white;
             padding: 10px 24px;
             border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 6px rgba(1, 157, 244, 0.2);
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(1, 157, 244, 0.3);
         }
 
         .btn-header:hover {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
             transform: translateY(-1px);
         }
 
-        /* Mobile Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--dark-blue);
-            z-index: 1002;
-        }
+        .menu-toggle { display: none; background: none; color: var(--dark-blue); z-index: 1002; }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (Optimized for First Contentful Paint) --- */
         .hero {
-            /* Advanced Gradient with subtle pattern overlay */
-            background: 
-                linear-gradient(135deg, rgba(11,39,79,0.95) 0%, rgba(1,157,244,0.9) 100%),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            /* Degradado más moderno y profundo */
+            background: radial-gradient(circle at 80% 20%, #004e92 0%, #000428 100%);
             color: var(--white);
-            padding: 80px 0 100px;
+            padding: 100px 0 120px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
+        /* Elemento decorativo CSS puro (Mejor que cargar imagen SVG) */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        @keyframes moveBackground { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .hero-content { position: relative; z-index: 2; }
+
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
-            font-weight: 800;
-            line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -1px;
         }
 
         .hero h2 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 300;
             margin-bottom: 40px;
             opacity: 0.95;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            color: #e0e6ed;
+        }
+
+        .hero-promo {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 30px;
         }
 
         /* --- STICKY LEAD BAR --- */
         .sticky-bar {
             position: sticky;
             top: var(--header-height);
-            background-color: var(--accent-bg);
-            padding: 12px 20px;
-            z-index: 900;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            background-color: var(--white);
+            border-bottom: 2px solid var(--accent-orange);
+            padding: 10px 20px;
+            z-index: 990;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            animation: slideDown 0.5s ease-out;
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .sticky-bar-text {
-            color: var(--dark-blue);
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .sticky-form {
-            display: flex;
-            gap: 10px;
-        }
+        .sticky-bar-text { color: var(--dark-blue); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .sticky-form { display: flex; gap: 10px; }
 
         .input-phone {
-            border: 2px solid transparent;
+            border: 1px solid #ddd;
             border-radius: 6px;
             padding: 8px 16px;
-            width: 220px;
+            width: 200px;
             font-size: 0.95rem;
-            transition: all 0.3s;
             outline: none;
+            background: #f9f9f9;
         }
 
-        .input-phone:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(1, 157, 244, 0.2);
-        }
+        .input-phone:focus { border-color: var(--primary-blue); background: white; }
 
         .btn-call-me {
             background-color: var(--accent-orange);
             color: white;
-            border: none;
-            padding: 8px 20px;
+            padding: 8px 24px;
             border-radius: 6px;
-            cursor: pointer;
             font-weight: 700;
             font-size: 0.9rem;
             display: flex;
@@ -237,36 +277,25 @@
             gap: 8px;
             transition: all 0.3s;
         }
-
-        .btn-call-me:hover {
-            background-color: #c42e00;
-            transform: translateY(-1px);
-        }
-        
-        .btn-call-me:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
+        .btn-call-me:hover { background-color: #c42e00; }
 
         /* --- SERVICES CARDS --- */
         .services-section { padding: 80px 0; }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
+        .section-header { text-align: center; margin-bottom: 60px; }
+        
         .section-title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--dark-blue);
             margin-bottom: 15px;
             font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
             color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 900px; /* Limitar el ancho para mejor lectura */
+            font-size: 1.15rem;
+            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -274,203 +303,140 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            align-items: start; /* Evita que las tarjetas se estiren raras */
         }
 
         .service-card {
             background: var(--white);
-            border-radius: 12px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow-card);
-            padding: 30px;
+            padding: 40px 30px;
             position: relative;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid transparent;
             display: flex;
             flex-direction: column;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
-            border-color: rgba(1, 157, 244, 0.3);
         }
+
+        .service-card.highlight {
+            border: 2px solid var(--primary-blue);
+            transform: scale(1.02); /* Destacar sutilmente por defecto */
+            box-shadow: 0 15px 30px rgba(1, 157, 244, 0.1);
+            z-index: 2;
+        }
+        
+        .service-card.highlight:hover { transform: scale(1.04) translateY(-5px); }
 
         .badge {
-            background: linear-gradient(90deg, var(--accent-orange), #ff6b3d);
+            background: var(--accent-orange);
             color: white;
             position: absolute;
-            top: -14px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 8px rgba(230, 55, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(230, 55, 0, 0.4);
         }
 
-        .card-title {
-            font-size: 1.5rem;
-            color: var(--dark-blue);
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
+        .card-title { font-size: 1.4rem; color: var(--dark-blue); font-weight: 800; margin-bottom: 15px; text-align: center; line-height: 1.3;}
+        
         .card-price {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--primary-blue);
             font-weight: 900;
             text-align: center;
             line-height: 1;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
-        .card-price span {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-light);
-            vertical-align: middle;
-        }
-
+        .card-price span { font-size: 1rem; font-weight: 500; color: var(--text-light); }
+        
         .price-note {
             text-align: center;
             font-size: 0.9rem;
             color: var(--accent-orange);
-            margin-bottom: 25px;
-            font-weight: 500;
-            height: 20px; /* Preserve height for alignment */
-        }
-        
-        /* New custom style for small orange text */
-        .small-note {
-            font-size: 0.75rem;
-            color: var(--accent-orange);
-            font-weight: 500;
-            display: block;
-            margin-top: 4px;
-        }
-
-        .card-features {
             margin-bottom: 30px;
-            flex-grow: 1;
+            font-weight: 600;
+            background: var(--accent-bg);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            align-self: center;
         }
 
         .feature-item {
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             font-size: 0.95rem;
-            flex-direction: column; /* Allows content and small-note to stack */
         }
+
+        .icon-check { color: var(--success); flex-shrink: 0; margin-top: 3px; }
         
-        .feature-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .icon-check { 
-            color: var(--success); 
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        
-        /* LOGO Simulations (CSS only) */
-        .win-play {
-            color: var(--accent-orange);
-            font-weight: 900;
-            font-size: 1rem;
-            line-height: 1;
-        }
-
-        .logo-disney {
-            background: linear-gradient(to right, #113CCF, #00d2ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            font-family: sans-serif;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-win-futbol {
-            color: #ef4444;
-            font-weight: 800;
-            font-style: italic;
-            text-transform: uppercase;
-        }
-
-        /* CTA Button General Styles */
         .btn-card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 14px;
+            display: block;
+            width: 100%;
+            padding: 16px;
             text-align: center;
-            /* Changed to be an <a> element for the WhatsApp link */
-            background-color: transparent;
+            background-color: white;
             color: var(--primary-blue);
             border: 2px solid var(--primary-blue);
             border-radius: 50px;
             font-weight: 700;
             transition: all 0.3s;
-            cursor: pointer;
+            margin-top: auto; /* Empuja el botón al fondo */
         }
 
-        .btn-card:hover {
-            background-color: var(--primary-blue);
-            color: var(--white);
-        }
+        .btn-card:hover { background-color: var(--light-blue); }
 
-        .btn-card.highlight {
+        .btn-card.primary {
             background: linear-gradient(90deg, var(--primary-blue), var(--primary-dark));
             border: none;
             color: var(--white);
-            box-shadow: 0 4px 10px rgba(1, 157, 244, 0.3);
+            box-shadow: 0 8px 20px rgba(1, 157, 244, 0.25);
         }
 
-        .btn-card.highlight:hover {
-            box-shadow: 0 6px 14px rgba(1, 157, 244, 0.4);
+        .btn-card.primary:hover {
+            box-shadow: 0 10px 25px rgba(1, 157, 244, 0.35);
             transform: translateY(-2px);
         }
 
-        /* --- BENEFITS --- */
-        .benefits-section {
-            background-color: var(--white);
-            padding: 80px 0;
-            border-top: 1px solid #eee;
+        /* --- LOGOS & BRANDS --- */
+        .logo-group { font-weight: 800; }
+        .win { color: #E63700; }
+        .disney { 
+            background: linear-gradient(to right, #113CCF, #00d2ff); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
         }
+
+        /* --- BENEFITS --- */
+        .benefits-section { background-color: var(--white); padding: 80px 0; border-top: 1px solid #edf2f7; }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
         }
 
-        .benefit-item {
-            display: flex;
-            flex-direction: column;
-            /* ALIGNMENT CHANGE: Set to row on desktop for better fit of long text */
-            align-items: flex-start; 
-            text-align: left;
-            padding: 20px;
-        }
-        
-        /* Ensure the other items still look good if they are center-aligned */
-        .benefit-item:nth-child(2),
-        .benefit-item:nth-child(3),
-        .benefit-item:nth-child(4) {
-             align-items: center;
-             text-align: center;
-        }
+        .benefit-item { padding: 20px; border-radius: 8px; transition: background 0.3s; }
+        .benefit-item:hover { background: #f8fbff; }
 
         .benefit-icon-wrapper {
             background-color: var(--light-blue);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -478,49 +444,19 @@
             color: var(--primary-blue);
         }
         
-        /* New Style for Disney+ Icon Wrapper */
-        .disney-icon-wrapper {
-            background-color: #0b1c55; /* Dark blue/Purple for Disney theme */
-            color: #b3caff; /* Light blue/white for contrast */
-            box-shadow: 0 0 0 8px rgba(11, 28, 85, 0.1);
-        }
-        
-        .disney-icon-wrapper svg {
-            color: #b3caff;
-        }
-
-        .benefit-text {
-             /* Remove center alignment for long text */
-             text-align: left; 
-        }
-        .benefit-text h4 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 8px; font-weight: 700;}
-        .benefit-text p { font-size: 0.95rem; color: var(--text-light); line-height: 1.5; }
-        
-        .disney-title {
-            color: #0b1c55 !important;
-            font-size: 1.4rem !important;
-            font-weight: 800;
-        }
-
+        .benefit-text h4 { font-size: 1.2rem; color: var(--dark-blue); margin-bottom: 10px; font-weight: 700;}
+        .benefit-text p { font-size: 0.95rem; color: var(--text-light); }
 
         /* --- FAQ --- */
-        .faq-section {
-            padding: 80px 0;
-            max-width: 800px;
-            margin: 0 auto;
-            width: 94%;
-        }
+        .faq-section { padding: 80px 0; max-width: 800px; margin: 0 auto; width: 92%; }
 
         .faq-item {
             background: white;
             border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #eee;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
             overflow: hidden;
-            transition: box-shadow 0.3s;
         }
-        
-        .faq-item:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 
         .faq-question {
             padding: 20px 25px;
@@ -531,190 +467,95 @@
             justify-content: space-between;
             align-items: center;
             background: white;
-            transition: background 0.3s;
         }
-        
-        .faq-question:hover { background-color: #fafafa; }
 
         .faq-answer {
             padding: 0 25px;
             max-height: 0;
             overflow: hidden;
             color: var(--text-light);
-            transition: all 0.4s ease-out;
+            transition: all 0.3s ease-out;
             background-color: #fafafa;
-            border-top: 1px solid transparent;
         }
         
-        .faq-item.active .faq-answer {
-            max-height: 200px; /* Arbitrary large height */
-            padding-bottom: 25px;
-            border-top-color: #f0f0f0;
-        }
-        
-        .faq-item.active .chevron { transform: rotate(180deg); color: var(--primary-blue); }
-        .chevron { transition: transform 0.3s; color: #ccc; }
+        .faq-item.active .faq-answer { padding-bottom: 25px; max-height: 300px; border-top: 1px solid #eee; }
+        .faq-item.active .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform 0.3s; }
 
         /* --- FOOTER --- */
-        .main-footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
+        .main-footer { background-color: var(--dark-blue); color: white; padding: 60px 0 30px; text-align: center; font-size: 0.9rem; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; flex-wrap: wrap; }
+        .footer-links a { opacity: 0.8; }
+        .footer-links a:hover { opacity: 1; text-decoration: underline; }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a:hover { color: var(--primary-blue); text-decoration: underline; }
-
-        .footer-copy { font-size: 0.85rem; opacity: 0.6; }
-
-        /* --- NOTIFICATION TOAST --- */
-        #toast {
-            visibility: hidden;
-            min-width: 280px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 16px;
-            position: fixed;
-            z-index: 2000;
-            left: 50%;
-            bottom: 30px;
-            transform: translateX(-50%);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            font-size: 0.95rem;
-            opacity: 0;
-            transition: opacity 0.3s, bottom 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
-            bottom: 50px;
-        }
-
-        /* --- WHATSAPP BUTTON --- */
+        /* --- WHATSAPP FLOAT --- */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
             z-index: 2000;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover { transform: scale(1.1); }
+        
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #25D366;
             animation: pulse 2s infinite;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-            background-color: #20BA5A;
-        }
-
-        .whatsapp-float svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.6); opacity: 0; }
         }
 
-        /* --- RESPONSIVE & MOBILE MENU --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            
-            .menu-toggle { display: block; }
+        .whatsapp-float svg { width: 35px; height: 35px; fill: white; z-index: 2; }
 
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .menu-toggle { display: block; }
+            
             .nav-links {
                 position: fixed;
                 top: var(--header-height);
                 left: 0;
                 width: 100%;
-                background-color: white;
+                background: white;
                 flex-direction: column;
-                align-items: center;
-                padding: 30px 0;
-                gap: 25px;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                padding: 40px 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 transform: translateY(-150%);
-                transition: transform 0.3s ease-in-out;
-                z-index: 1001;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .btn-header { display: none; /* Hide primary CTA in header on mobile to save space */ }
-            
-            .nav-links .mobile-only-btn {
-                display: block;
-                background-color: var(--primary-blue);
-                color: white;
-                padding: 12px 30px;
-                border-radius: 50px;
-                font-weight: bold;
-            }
-
-            .sticky-bar { flex-direction: column; gap: 10px; text-align: center; }
-            .input-phone { width: 100%; }
-            .btn-call-me { width: 100%; justify-content: center; }
-            
-            .benefits-grid { grid-template-columns: 1fr; }
-            .benefit-item { flex-direction: row; text-align: left; }
-            .benefit-icon-wrapper { margin-bottom: 0; margin-right: 20px; width: 60px; height: 60px; flex-shrink: 0; }
-            
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
+                transition: transform 0.3s ease;
             }
             
-            .whatsapp-float svg {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .mobile-only-btn { display: none; }
+            .nav-links.active { transform: translateY(0); }
+            .btn-header { display: none; } /* Ocultar CTA header en móvil */
+            .sticky-bar { flex-direction: column; padding: 15px; }
+            .input-phone, .btn-call-me { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header Semántico -->
     <header class="main-header">
         <div class="container header-content">
-            <a href="#" class="logo">
+            <a href="#" class="logo" aria-label="Volver al inicio">
                 <i data-lucide="zap" fill="#019df4"></i>
-                <!-- Logo Texto -->
                 <span>MOVISTAR</span>
             </a>
             
@@ -723,317 +564,252 @@
             </button>
 
             <nav class="nav-links" id="nav-menu">
-                <a href="#servicios" class="nav-item">Planes Fibra Óptica</a>
-                <a href="#beneficios" class="nav-item">Beneficios Disney+</a>
-                <a href="#faq" class="nav-item">Preguntas</a>
-                <a href="#contacto" class="mobile-only-btn">Cotizar Plan Movistar</a>
+                <a href="#servicios">Planes Fibra</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#faq">Preguntas</a>
             </nav>
             
             <a href="#contacto" class="btn-header">Cotizar Ahora</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <!-- OPTIMIZACIÓN SEO: Título Principal H1 con palabras clave "Fibra Movistar Total" -->
-            <h1>FIBRA MOVISTAR<br>TOTAL</h1>
-            
-            <!-- Subtítulo con Negrita y Texto Pequeño -->
-            <h2>
-                Activa un plan de Movistar total o **Fibra Óptica** y disfruta de
-                <strong style="font-weight: 900; color: white;">"Todo YouTube sin interrupciones por solo $17.990/mes durante 6 meses."</strong>
-                <br>
-                <span style="font-size: 0.9em; opacity: 0.7;">(Déspues $ 20.900)</span>
-            </h2>
-        </div>
-    </section>
-
-    <!-- Sticky Contact Bar -->
-    <div class="sticky-bar">
-        <div class="sticky-bar-text">
-            <i data-lucide="message-square" size="20" style="color:var(--primary-blue)"></i>
-            <span>¿Tienes dudas?</span>
-            <strong>Te llamamos ya</strong>
-        </div>
-        <form class="sticky-form" id="leadForm">
-            <input type="tel" class="input-phone" placeholder="Tu celular (ej. 300 123...)" required id="userPhone" aria-label="Número de celular">
-            <button type="submit" class="btn-call-me" id="submitBtn">
-                <i data-lucide="phone-call" size="18"></i>
-                <span>Llámame</span>
-            </button>
-        </form>
-    </div>
-
-    <!-- Pricing/Services Section -->
-    <section id="servicios" class="services-section">
-        <div class="container">
-            <header class="section-header">
-                <!-- OPTIMIZACIÓN SEO: Título de Sección H2 con keywords "Internet Fibra Óptica Movistar", "WIN SPORT+", "Disney+" -->
-                <h2 class="section-title">Internet Fibra Óptica Movistar: La Máxima Velocidad con WIN SPORT+ y Disney+</h2>
-                <!-- Subtítulo de Sección -->
-                <p class="section-subtitle">
-                    ¿Cansado de un internet lento? Es hora de dar el salto a la **Fibra Óptica de Movistar**, la conexión más estable y rápida del mercado. Disfruta de tus series en **Disney+**, los partidos de tu equipo en **WIN SPORT+** y el teletrabajo sin interrupciones ni lag. Elige el **plan Movistar** perfecto para ti y tu familia.
-                </p>
-            </header>
-            
-            <div class="cards-grid">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-promo">
+                    <span style="color: #ffcc00; font-weight: bold;">★ OFERTA EXCLUSIVA WEB</span>
+                </div>
+                <!-- H1 Optimizado para SEO: "Fibra Óptica" + "Colombia" implícito -->
+                <h1>INTERNET FIBRA ÓPTICA<br>MOVISTAR TOTAL</h1>
                 
-                <!-- Plan 1 -->
-                <article class="service-card">
-                    <div class="card-title" style="font-size: 1.2rem;">TRIO 900M - PLAN ILIMITADO</div>
-                    <div class="card-price">$129,990 <span>/mes</span></div>
-                    <div class="price-note">Oferta Especial</div>
-                    
-                    <div class="card-features">
-                        <div class="feature-item">
-                            <div class="feature-content">
-                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Internet Hogar</span>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-content">
-                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Plan movil ilimitado</span>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-content">
-                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Datos ilimitados</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Botón 1 para WhatsApp: MÁS INFORMACIÓN -->
-                    <a href="https://wa.me/573165593013?text=Hola!%20Estoy%20interesado%20en%20el%20plan%20TRIO%20900M%20de%20$129,990." 
-                       target="_blank" 
-                       class="btn-card">
-                        Más Información
-                    </a>
-                </article>
+                <h2>
+                    Navega a máxima velocidad con <strong>Fibra Simétrica</strong> y disfruta de 
+                    <strong style="color: white;">Disney+ y Win Sports+</strong> sin costo adicional en planes seleccionados.
+                </h2>
+                
+                <!-- Botón CTA principal -->
+                <a href="#servicios" class="btn-header" style="padding: 15px 40px; font-size: 1.1rem; background: var(--accent-orange);">
+                    Ver Ofertas Disponibles
+                </a>
+            </div>
+        </section>
 
-                <!-- Plan 2 (Highlighted) -->
-                <article class="service-card" style="border-color: var(--primary-blue);">
-                    <div class="badge">Más Popular</div>
-                    <div class="card-title">Fibra 900Megas + Pospago Ilimitado</div>
-                    <div class="card-price">$99,990 <span>/mes</span></div>
-                    <div class="price-note">Ahorras $36.900 mensuales</div>
+        <!-- Barra de contacto Sticky -->
+        <div class="sticky-bar">
+            <div class="sticky-bar-text">
+                <i data-lucide="phone" size="18" style="color:var(--primary-blue)"></i>
+                <span>¿Dudas sobre cobertura?</span>
+            </div>
+            <form class="sticky-form" id="leadForm">
+                <input type="tel" class="input-phone" placeholder="Tu número celular" required id="userPhone" aria-label="Número de celular">
+                <button type="submit" class="btn-call-me">
+                    <span>¡Llámame YA!</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Pricing Section -->
+        <section id="servicios" class="services-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Elige tu Plan de Fibra Óptica</h2>
+                    <p class="section-subtitle">
+                        Conexión 100% fibra hasta tu casa (FTTH). Sin interrupciones, ideal para gaming, streaming 4K y teletrabajo.
+                    </p>
+                </header>
+                
+                <div class="cards-grid">
                     
-                    <div class="card-features">
-                        <!-- Feature 1: Fibra 900 Megas + WIN PLAY + Precio Normal -->
-                        <div class="feature-item">
-                            <div class="feature-content">
-                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Fibra 900 Megas + <span class="win-play">WIN PLAY</span></span>
+                    <!-- Plan 1 -->
+                    <article class="service-card">
+                        <div class="card-title">TRIO 900 MEGAS</div>
+                        <div class="card-price">$129,990<span>/mes</span></div>
+                        <div class="price-note">Ideal Familias</div>
+                        
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i data-lucide="check" class="icon-check" size="18"></i>
+                                <span><strong>Internet Fibra</strong> 900 Megas</span>
                             </div>
-                            <span class="small-note">Precio Normal: $102,9k</span>
+                            <div class="feature-item">
+                                <i data-lucide="check" class="icon-check" size="18"></i>
+                                <span>Telefonía Fija Ilimitada</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="check" class="icon-check" size="18"></i>
+                                <span>Datos Ilimitados (Móvil)</span>
+                            </div>
                         </div>
                         
-                        <!-- Feature 2: Pospago Ilimitado + Precio Normal -->
-                        <div class="feature-item">
-                            <div class="feature-content">
-                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Pospago Ilimitado</span>
-                            </div>
-                            <span class="small-note">Precio Normal: $34,9k</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Botón 2 para WhatsApp: MÁS INFORMACIÓN -->
-                    <a href="https://wa.me/573165593013?text=Hola!%20Me%20interesa%20la%20oferta%20Fibra%20900Megas%20%2B%20Pospago%20Ilimitado%20de%20$99,990." 
-                       target="_blank" 
-                       class="btn-card highlight">
-                        Más Información
-                    </a>
-                </article>
+                        <a href="https://wa.me/573165593013?text=Hola!%20Me%20interesa%20el%20plan%20TRIO%20900M%20de%20$129,990." target="_blank" class="btn-card">
+                            Solicitar Plan
+                        </a>
+                    </article>
 
-                <!-- Plan 3 (Updated: Trio + Disney + Win) -->
-                <article class="service-card">
-                    <div class="card-title" style="font-size: 1.1rem;">
-                        Trio 900 Megas + <span class="logo-disney">Disney+</span> + <span class="logo-win-futbol">WIN FUTBOL</span>
-                    </div>
-                    <div class="card-price">$145.990 <span>/mes</span></div>
-                    <div class="price-note">Paquete de entretenimiento total</div>
-                    
-                    <div class="card-features">
-                        <!-- CHANGED: Feature 1 -->
-                        <div class="feature-item">
-                            <div class="feature-content">
+                    <!-- Plan 2 (Destacado) -->
+                    <article class="service-card highlight">
+                        <div class="badge">🔥 MÁS VENDIDO</div>
+                        <div class="card-title">FIBRA PRO + MÓVIL</div>
+                        <div class="card-price">$99,990<span>/mes</span></div>
+                        <div class="price-note">Ahorras $36.900/mes</div>
+                        
+                        <div class="card-features">
+                            <div class="feature-item">
                                 <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Trio 900 Megas + <span class="logo-disney">Disney+</span></span>
+                                <span>900 Megas + <span class="logo-group win">WIN PLAY</span></span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Pospago Ilimitado (Voz y Datos)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="shield-check" class="icon-check" size="20"></i>
+                                <span>Instalación Prioritaria</span>
                             </div>
                         </div>
-                        <!-- CHANGED: Feature 2 -->
-                        <div class="feature-item">
-                            <div class="feature-content">
-                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                                <span>Pospago Ilimitado</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Botón 3 para WhatsApp: MÁS INFORMACIÓN -->
-                    <a href="https://wa.me/573165593013?text=Hola!%20Quiero%20saber%20más%20sobre%20el%20plan%20Trio%20900%20Megas%20%2B%20Entretenimiento%20de%20$145.990." 
-                       target="_blank" 
-                       class="btn-card">
-                        Más Información
-                    </a>
-                </article>
+                        
+                        <a href="https://wa.me/573165593013?text=Hola!%20Quiero%20la%20PROMO%20de%20$99,990%20con%20Win%20Play." target="_blank" class="btn-card primary">
+                            ¡Lo quiero ya!
+                        </a>
+                    </article>
 
+                    <!-- Plan 3 -->
+                    <article class="service-card">
+                        <div class="card-title">PACK ENTRETENIMIENTO</div>
+                        <div class="card-price">$145.990<span>/mes</span></div>
+                        <div class="price-note">Todo Incluido</div>
+                        
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i data-lucide="check" class="icon-check" size="18"></i>
+                                <span>Fibra Simétrica 900 Megas</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="check" class="icon-check" size="18"></i>
+                                <span>Suscripción <span class="logo-group disney">Disney+</span></span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="check" class="icon-check" size="18"></i>
+                                <span>Canal Premium <span class="logo-group win">WIN SPORTS+</span></span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://wa.me/573165593013?text=Hola!%20Me%20interesa%20el%20Pack%20Entretenimiento%20con%20Disney%2B." target="_blank" class="btn-card">
+                            Solicitar Plan
+                        </a>
+                    </article>
+
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Benefits Section (MODIFICADA) -->
-    <section id="beneficios" class="benefits-section">
-        <div class="container">
-            <!-- OPTIMIZACIÓN SEO: Título de Sección H2 con keywords "Entretenimiento" y "Disney+" -->
-            <header class="section-header" style="margin-bottom: 50px;">
-                <h2 class="section-title">Todo el Entretenimiento en un Solo Lugar con Disney+</h2>
-                <p class="section-subtitle">Descubre las ventajas exclusivas que solo la **Fibra Movistar** puede ofrecerte.</p>
-            </header>
+        <!-- Benefits Section -->
+        <section id="beneficios" class="benefits-section">
+            <div class="container">
+                <header class="section-header" style="margin-bottom: 40px;">
+                    <h2 class="section-title">¿Por qué cambiarte a Movistar Total?</h2>
+                </header>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper" style="background: #0b1c55; color: white;">
+                            <i data-lucide="clapperboard" size="28"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Disney+ Incluido</h4>
+                            <p>Accede a estrenos exclusivos, Marvel, Star Wars y más, directamente con tu factura Movistar.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper">
+                            <i data-lucide="wifi" size="28"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Velocidad Simétrica</h4>
+                            <p>Sube archivos a la nube con la misma velocidad con la que descargas. Ideal para creadores.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon-wrapper">
+                            <i data-lucide="smartphone" size="28"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Gigas que no vencen</h4>
+                            <p>Si no consumes tus datos móviles en el mes, se acumulan para el siguiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section con Schema FAQPage (Implícito en estructura, para SEO se añadiría JSON-LD específico) -->
+        <section id="faq" class="faq-section">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 30px; font-size: 2rem;">Preguntas Frecuentes</h2>
             
-            <div class="benefits-grid">
-                
-                <!-- Beneficio 1 (Disney+ - NUEVO CONTENIDO) -->
-                <div class="benefit-item">
-                    <div class="benefit-icon-wrapper disney-icon-wrapper">
-                        <!-- Icono de Claqueta para representar cine/entretenimiento -->
-                        <i data-lucide="clapperboard" size="32"></i>
-                        <!--  (No se incluye etiqueta IMG, se simula con icono y estilos) -->
-                    </div>
-                    <div class="benefit-text">
-                        <!-- OPTIMIZACIÓN SEO: Título H3 con keywords Disney+ -->
-                        <h4 class="disney-title">Disney+: Magia y Estrenos Sin Límite</h4>
-                        <p>Con tu **plan de internet Movistar**, obtienes acceso a un mundo de entretenimiento. Disfruta de todos los clásicos, las series de Marvel, Star Wars y los estrenos exclusivos de **Disney+**. Ideal para maratones de fin de semana.</p>
-                    </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿La instalación tiene costo?</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
                 </div>
-                
-                <!-- Beneficio 2 (Antes Seguridad Blindada) -->
-                <div class="benefit-item">
-                    <div class="benefit-icon-wrapper">
-                        <i data-lucide="shield-check" size="32"></i>
-                    </div>
-                    <div class="benefit-text">
-                        <h4>Seguridad Blindada para tu Conexión</h4>
-                        <p>Certificados SSL avanzados y protección contra ataques DDoS incluidos.</p>
-                    </div>
-                </div>
-                
-                <!-- Beneficio 3 (Antes Soporte Humano) -->
-                <div class="benefit-item">
-                    <div class="benefit-icon-wrapper">
-                        <i data-lucide="users" size="32"></i>
-                    </div>
-                    <div class="benefit-text">
-                        <h4>Soporte Humano 24/7</h4>
-                        <p>Nada de bots. Habla directamente con ingenieros expertos en tu proyecto.</p>
-                    </div>
-                </div>
-                
-                <!-- Beneficio 4 (Antes ROI Garantizado) -->
-                <div class="benefit-item">
-                    <div class="benefit-icon-wrapper">
-                        <i data-lucide="trophy" size="32"></i>
-                    </div>
-                    <div class="benefit-text">
-                        <h4>Resultados Garantizados</h4>
-                        <p>Estrategias enfocadas en conversión. Si no vendes, ajustamos el plan.</p>
-                    </div>
+                <div class="faq-answer">
+                    Dependiendo del estrato y la promoción vigente, la instalación puede ser 100% gratuita. ¡Contáctanos para verificar tu dirección!
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <header class="section-header" style="margin-bottom: 30px;">
-            <h2 class="section-title">Preguntas Frecuentes sobre Planes Movistar</h2>
-        </header>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>¿Cómo inicio la contratación del servicio Fibra Movistar?</span>
-                <i data-lucide="chevron-down" class="chevron"></i>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué velocidad real recibo?</span>
+                    <i data-lucide="chevron-down" class="chevron"></i>
+                </div>
+                <div class="faq-answer">
+                    Con nuestra Fibra Óptica garantizamos hasta el 90% de la velocidad contratada vía cable LAN, muy por encima del estándar del mercado.
+                </div>
             </div>
-            <div class="faq-answer">
-                Es muy sencillo. Selecciona tu plan, completa el formulario seguro y nuestro equipo te contactará en menos de 2 horas hábiles para el onboarding.
-            </div>
-        </div>
+        </section>
+    </main>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>¿Hay permanencia mínima en los planes de Fibra Óptica?</span>
-                <i data-lucide="chevron-down" class="chevron"></i>
-            </div>
-            <div class="faq-answer">
-                No creemos en las ataduras. Puedes cancelar o cambiar tu plan mes a mes sin penalizaciones ocultas. Queremos que te quedes por los resultados.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>¿Cómo activo mi beneficio de Disney+?</span>
-                <i data-lucide="chevron-down" class="chevron"></i>
-            </div>
-            <div class="faq-answer">
-                Una vez activado tu plan Movistar, recibirás un enlace y las instrucciones para registrarte y activar tu cuenta de Disney+ de forma gratuita por el tiempo de la promoción.
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer id="contacto" class="main-footer">
         <div class="container">
             <div class="footer-links">
-                <a href="#">Términos y Condiciones Movistar</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Soporte Técnico Fibra Óptica</a>
-                <a href="#">Trabaja con Nosotros</a>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Tratamiento de Datos</a>
+                <a href="#">Cobertura Fibra</a>
             </div>
-            <p class="footer-copy">
-                © 2025 Tus Servicios Profesionales S.A.S. - Diseñado para convertir.
+            <p style="opacity: 0.6;">
+                Distribuidor Autorizado Movistar Colombia. © 2025. Todos los derechos reservados.
             </p>
         </div>
     </footer>
 
-    <!-- Toast Notification -->
-    <div id="toast">
-        <i data-lucide="check-circle" class="text-green-500"></i>
-        <span id="toast-message">Mensaje enviado</span>
-    </div>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/573165593013" class="whatsapp-float" target="_blank" aria-label="Chat en WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    <!-- WhatsApp Button con Efecto Pulse -->
+    <a href="https://wa.me/573165593013" class="whatsapp-float" target="_blank" aria-label="Hablar con un asesor por WhatsApp">
+        <div class="pulse-ring"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
 
-    <!-- Logic -->
+    <!-- Scripts -->
     <script>
-        // Init Icons
+        // Inicializar Iconos
         lucide.createIcons();
         
-        // El número de WhatsApp al que se enviará el mensaje
         const whatsappNumber = "573165593013";
 
-        // 1. Mobile Menu Logic
+        // Menú Móvil
         const menuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
-        const navLinks = document.querySelectorAll('.nav-item, .mobile-only-btn');
-
+        
         menuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            // Toggle icon between menu and x
             const icon = navMenu.classList.contains('active') ? 'x' : 'menu';
-            // Simple re-render of icon for the button content
             menuBtn.innerHTML = `<i data-lucide="${icon}" size="28"></i>`;
             lucide.createIcons();
         });
 
-        // Close menu when clicking a link
-        navLinks.forEach(link => {
+        // Cerrar menú al hacer clic en enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 menuBtn.innerHTML = `<i data-lucide="menu" size="28"></i>`;
@@ -1041,60 +817,30 @@
             });
         });
 
-        // 2. FAQ Accordion Logic
+        // FAQ Acordeón
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
-                
-                // Close others
                 document.querySelectorAll('.faq-item').forEach(child => {
                     if (child !== parent) child.classList.remove('active');
                 });
-
                 parent.classList.toggle('active');
             });
         });
 
-        // 3. Form Handling with WhatsApp redirection
-        const form = document.getElementById('leadForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const phoneInput = document.getElementById('userPhone');
-
-        form.addEventListener('submit', (e) => {
+        // Formulario a WhatsApp con validación simple
+        document.getElementById('leadForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            const phoneNumber = phoneInput.value.trim();
+            const phoneInput = document.getElementById('userPhone');
+            const phoneNumber = phoneInput.value.replace(/[^0-9]/g, '');
 
-            if (phoneNumber) {
-                // Mensaje de WhatsApp que incluye el número del usuario.
-                const whatsappMessage = encodeURIComponent(`¡Hola! Un cliente quiere que lo llamen YA. Su número de teléfono es: ${phoneNumber}. Por favor, contáctalo inmediatamente.`);
-                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-                
-                // Abre el enlace de WhatsApp en una nueva pestaña/ventana
-                window.open(whatsappURL, '_blank');
-
-                // Muestra un mensaje de éxito sin simular un tiempo de espera
-                showToast('¡Redirigiendo a WhatsApp! Por favor, revisa la nueva ventana.');
-                
-                // Opcional: limpiar el campo después de la acción
-                // form.reset(); 
+            if (phoneNumber.length > 6) {
+                const msg = encodeURIComponent(`Hola, vi su oferta en la web. Mi número es ${phoneNumber} y quiero que me llamen.`);
+                window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, '_blank');
+                phoneInput.value = ''; // Limpiar campo
             } else {
-                 showToast('Por favor, ingresa un número de celular válido.');
+                alert('Por favor ingresa un número válido.');
             }
-        });
-
-        // Helper: Show Toast
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            const msgSpan = document.getElementById('toast-message');
-            msgSpan.innerText = msg;
-            toast.className = "show";
-            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
-        }
-
-        // 4. Input Mask (Numbers only)
-        phoneInput.addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^0-9]/g, '');
         });
     </script>
 </body>
