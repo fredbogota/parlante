@@ -120,6 +120,7 @@
             color: var(--primary-blue); 
             display: flex; 
             gap: 8px; 
+            align-items: center;
         }
 
         .nav-links { display: none; }
@@ -214,89 +215,3 @@
        class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
         <i data-lucide="message-circle"></i>
     </a>
-
-    <!-- BOTÓN LLAMAR -->
-    <a href="tel:+573165593013" class="btn-call">
-        <i data-lucide="phone"></i> Llame ahora
-    </a>
-
-    <!-- Header -->
-    <header class="main-header">
-        <div class="header-container">
-            <a href="index.html" target="_blank" class="logo">
-                <i data-lucide="zap"></i> MOVISTAR
-            </a>
-
-            <nav class="nav-links">
-                <a href="index.html" target="_blank">Servicios</a>
-                <a href="index.html" target="_blank">Por qué nosotros</a>
-                <a href="index.html" target="_blank">Contacto</a>
-            </nav>
-
-            <a href="index.html" target="_blank" class="btn-header">Cotizar Ahora</a>
-        </div>
-    </header>
-
-    <!-- Hero -->
-    <section class="hero">
-        <h1>Impulsa tu Negocio al Siguiente Nivel</h1>
-        <h2>Servicios profesionales de consultoría y estrategia digital diseñados para resultados reales.</h2>
-    </section>
-
-    <!-- Sticky Bar -->
-    <div class="sticky-bar">
-        <div><strong>Déjanos tu número y te llamamos.</strong></div>
-        <form onsubmit="event.preventDefault(); alert('Gracias. Te llamaremos pronto.');">
-            <input type="tel" class="input-phone" placeholder="Tu número de celular" required>
-            <button class="btn-call-me"><i data-lucide="phone"></i> Llámame ahora</button>
-        </form>
-    </div>
-
-    <!-- Servicios -->
-    <section id="servicios" class="services-section">
-        <h2>Planes y Servicios a tu Medida</h2>
-        <p>Elige el paquete que mejor se adapte a tus necesidades actuales.</p>
-
-        <div class="cards-grid">
-
-            <article class="service-card">
-                <h3>Básico</h3>
-                <p>$450.000 / mes</p>
-                <a href="#" class="btn-card">Comprar Online</a>
-            </article>
-
-            <article class="service-card">
-                <h3>Profesional</h3>
-                <p>$890.000 / mes</p>
-                <a href="#" class="btn-card">Comprar Ahora</a>
-            </article>
-
-            <article class="service-card">
-                <h3>Empresarial</h3>
-                <p>Plan personalizado</p>
-                <a href="#" class="btn-card">Contactar Ventas</a>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contacto" class="main-footer">
-        <div class="footer-copy">
-            © 2025 Tus Servicios Profesionales. Todos los derechos reservados.
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            lucide.createIcons();
-
-            const phoneInput = document.querySelector('.input-phone');
-            phoneInput.addEventListener('input', function() {
-                this.value = this.value.replace(/[^0-9]/g,'');
-            });
-        });
-    </script>
-
-</body>
-</html>
