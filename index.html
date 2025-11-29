@@ -15,34 +15,41 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+        /* --- CORE VARIABLES (Based on the Movistar-style palette) --- */
         :root {
-            --primary-blue: #019df4;
-            --dark-blue: #0b274f;
-            --light-blue: #e8f0fe;
-            --accent-orange: #E63700;
-            --accent-bg: #F8D2B3;
+            --primary-blue: #019df4;      /* Vibrant Blue */
+            --dark-blue: #0b274f;         /* Corporate Dark Blue */
+            --light-blue: #e8f0fe;        /* Background highlights */
+            --accent-orange: #E63700;     /* Call to Action (CTA) */
+            --accent-bg: #F8D2B3;         /* The sticky bar background color */
             --text-main: #333333;
             --text-light: #666666;
             --white: #ffffff;
-            --success: #5bc500;
+            --success: #5bc500;           /* Green for checks/success */
             --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
             --radius: 8px;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* --- RESET & BASE STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
             background-color: #f9f9f9;
             line-height: 1.5;
-            padding-top: 70px;
+            padding-top: 70px; /* Space for fixed header */
         }
 
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
 
+        /* --- HEADER --- */
         .main-header {
             position: fixed;
             top: 0;
@@ -74,13 +81,17 @@
             gap: 8px;
         }
 
-        .nav-links { display: none; }
+        .nav-links {
+            display: none; /* Hidden on mobile by default */
+        }
+
         .nav-links a {
             margin-left: 20px;
             font-weight: 500;
             color: var(--dark-blue);
             transition: color 0.3s;
         }
+
         .nav-links a:hover { color: var(--primary-blue); }
 
         .btn-header {
@@ -91,6 +102,7 @@
             font-weight: 500;
         }
 
+        /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(135deg, var(--dark-blue) 0%, #004b99 100%);
             color: var(--white);
@@ -104,12 +116,23 @@
             margin: 0 auto;
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; font-weight: 700; }
-        .hero h2 { font-size: 1.2rem; font-weight: 300; margin-bottom: 30px; opacity: 0.9; }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
 
+        .hero h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* --- STICKY LEAD BAR (The "Spirit" of the source page) --- */
         .sticky-bar {
             position: sticky;
-            top: 70px;
+            top: 70px; /* Below header */
             background-color: var(--accent-bg);
             padding: 10px;
             z-index: 99;
@@ -128,7 +151,10 @@
             text-align: center;
         }
 
-        .sticky-form { display: flex; gap: 10px; }
+        .sticky-form {
+            display: flex;
+            gap: 10px;
+        }
 
         .input-phone {
             border: 1px solid var(--accent-orange);
@@ -152,8 +178,10 @@
             gap: 5px;
             transition: background 0.3s;
         }
+
         .btn-call-me:hover { background-color: #c42e00; }
 
+        /* --- PRICING/SERVICES CARDS --- */
         .services-section {
             padding: 50px 0;
             width: 94%;
@@ -220,11 +248,21 @@
             text-align: center;
         }
 
-        .card-price { font-size: 2rem; color: var(--dark-blue); font-weight: 900; text-align: center; margin-bottom: 5px; }
+        .card-price {
+            font-size: 2rem;
+            color: var(--dark-blue);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
         .card-price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
         .price-note { text-align: center; font-size: 0.85rem; color: var(--accent-orange); margin-bottom: 20px; font-weight: 500;}
 
-        .card-features { margin-bottom: 25px; flex-grow: 1; }
+        .card-features {
+            margin-bottom: 25px;
+            flex-grow: 1; /* Pushes button to bottom */
+        }
 
         .feature-item {
             display: flex;
@@ -245,7 +283,7 @@
             background-color: var(--white);
             color: var(--primary-blue);
             border: 2px solid var(--primary-blue);
-            border-radius: 50px;
+            border-radius: 50px; /* Rounded pill style */
             font-weight: 700;
             transition: all 0.3s;
         }
@@ -261,8 +299,11 @@
             color: var(--white);
         }
 
-        .btn-card.highlight:hover { background-color: #c42e00; }
+        .btn-card.highlight:hover {
+            background-color: #c42e00;
+        }
 
+        /* --- BENEFITS (The "Icons" Section) --- */
         .benefits-section {
             background-color: var(--white);
             padding: 60px 0;
@@ -278,12 +319,21 @@
             gap: 30px;
         }
 
-        .benefit-item { display: flex; align-items: center; gap: 15px; }
-        .benefit-icon { font-size: 2rem; color: var(--primary-blue); }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
 
         .benefit-text h4 { font-size: 1rem; color: var(--dark-blue); margin-bottom: 2px;}
         .benefit-text p { font-size: 0.85rem; color: var(--text-light); }
 
+        /* --- FAQ SECTION --- */
         .faq-section {
             padding: 60px 0;
             width: 94%;
@@ -312,13 +362,14 @@
         .faq-answer {
             padding: 0 20px 20px 20px;
             color: var(--text-light);
-            display: none;
+            display: none; /* Hidden by default */
         }
         
         .faq-item.active .faq-answer { display: block; }
         .faq-item.active .chevron { transform: rotate(180deg); }
         .chevron { transition: transform 0.3s; }
 
+        /* --- FOOTER --- */
         .main-footer {
             background-color: var(--dark-blue);
             color: white;
@@ -339,117 +390,257 @@
             opacity: 0.7;
         }
 
-        /* RESPONSIVE */
+        /* --- RESPONSIVE --- */
         @media (min-width: 768px) {
             .nav-links { display: flex; }
             .hero h1 { font-size: 3.5rem; }
             .services-section { padding: 80px 0; }
         }
+
         @media (max-width: 767px) {
             .sticky-bar { flex-direction: column; gap: 10px; }
             .input-phone { width: 100%; }
             .btn-call-me { width: 100%; justify-content: center; }
         }
-
-
-        /* ------------------------------------ */
-        /*        WHATSAPP BUTTON STYLES        */
-        /* ------------------------------------ */
-        #whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 2000;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        #whatsapp-btn:hover {
-            transform: scale(1.08);
-        }
-
-        #whatsapp-btn img {
-            width: 42px;
-        }
-
-        /* Mensaje flotante */
-        #whatsapp-msg {
-            position: fixed;
-            bottom: 105px;
-            right: 20px;
-            background: #ffffff;
-            padding: 10px 15px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-            font-size: 0.9rem;
-            color: #333;
-            display: none;
-            animation: fadeIn 0.6s forwards;
-            z-index: 2000;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
-
 <body>
 
-    <!-- (El resto del HTML queda igual hasta el final) -->
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i data-lucide="zap" fill="#019df4"></i>
+                <span>TUS SERVICIOS</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#beneficios">Por qué nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <a href="#contacto" class="btn-header">Cotizar Ahora</a>
+        </div>
+    </header>
 
-    <!-- ------------------------------------ -->
-    <!--           BOTÓN WHATSAPP             -->
-    <!-- ------------------------------------ -->
-    <div id="whatsapp-msg">Nueva oferta, escríbeme</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>TRIO 900MB + PLAN MOVIL ILIMITADO $129.000</h1>
+            <h2>¡GRAN OFERTA! POR TIEMPO LIMITADO.</h2>
+            <!-- Video background placeholder logic could go here, keeping it simple for now -->
+        </div>
+    </section>
 
-    <a id="whatsapp-btn" 
-       href="https://wa.me/573165593013?text=Hola%20vi%20tu%20oferta%20y%20quiero%20más%20información" 
-       target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
+    <!-- Sticky Contact Bar (Inspired by the source's "Barra Fija") -->
+    <div class="sticky-bar">
+        <div class="sticky-bar-text">
+            <span>¡Hablemos de tu proyecto!</span>
+            <strong>Déjanos tu número y te llamamos.</strong>
+        </div>
+        <form class="sticky-form" onsubmit="event.preventDefault(); alert('Gracias. Te llamaremos pronto.');">
+            <input type="tel" class="input-phone" placeholder="Tu número de celular" required>
+            <button type="submit" class="btn-call-me">
+                <i data-lucide="phone"></i> Llámame ahora
+            </button>
+        </form>
+    </div>
 
+    <!-- Pricing/Services Section -->
+    <section id="servicios" class="services-section">
+        <h2 class="section-title">Planes y Servicios a tu Medida</h2>
+        <p class="section-subtitle">Elige el paquete que mejor se adapte a tus necesidades actuales.</p>
+        
+        <div class="cards-grid">
+            
+            <!-- Plan 1 -->
+            <article class="service-card">
+                <div class="card-title">Básico</div>
+                <div class="card-price">$450.000 <span>/mes</span></div>
+                <div class="price-note">Ideal para emprendedores</div>
+                
+                <div class="card-features">
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Consultoría inicial (2 horas)</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Auditoría de procesos básicos</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Soporte por email</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn-card">Comprar Online</a>
+            </article>
 
+            <!-- Plan 2 (Highlighted) -->
+            <article class="service-card">
+                <div class="badge">Más Vendido</div>
+                <div class="card-title">Profesional</div>
+                <div class="card-price">$890.000 <span>/mes</span></div>
+                <div class="price-note">Dto. exclusivo online (antes $1.2M)</div>
+                
+                <div class="card-features">
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Todo lo del plan Básico</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Estrategia mensual personalizada</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Reuniones semanales de seguimiento</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Acceso a dashboard de métricas</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn-card highlight">Comprar Ahora</a>
+            </article>
+
+            <!-- Plan 3 -->
+            <article class="service-card">
+                <div class="card-title">Empresarial</div>
+                <div class="card-price">Personalizado</div>
+                <div class="price-note">Soluciones de alto impacto</div>
+                
+                <div class="card-features">
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Consultoría integral 24/7</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Equipo dedicado (3 personas)</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Implementación técnica completa</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
+                        <span>Garantía de resultados</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn-card">Contactar Ventas</a>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Benefits Section (Like the "Benefits Escalator" in source) -->
+    <section id="beneficios" class="benefits-section">
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i data-lucide="rocket" class="benefit-icon"></i>
+                <div class="benefit-text">
+                    <h4>Velocidad de Ejecución</h4>
+                    <p>Entregamos resultados en tiempo récord.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i data-lucide="shield-check" class="benefit-icon"></i>
+                <div class="benefit-text">
+                    <h4>Seguridad Total</h4>
+                    <p>Tus datos y estrategias están protegidos.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i data-lucide="headphones" class="benefit-icon"></i>
+                <div class="benefit-text">
+                    <h4>Soporte Experto</h4>
+                    <p>Acompañamiento continuo por especialistas.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i data-lucide="award" class="benefit-icon"></i>
+                <div class="benefit-text">
+                    <h4>Calidad Garantizada</h4>
+                    <p>Si no estás satisfecho, revisamos el plan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Similar to source's Accordion) -->
+    <section class="faq-section">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Cómo funciona el proceso de contratación?
+                <i data-lucide="chevron-down" class="chevron"></i>
+            </div>
+            <div class="faq-answer">
+                Es muy sencillo. Eliges el plan que te interesa, haces clic en "Comprar" o dejas tus datos en la barra superior, y nos pondremos en contacto contigo en menos de 24 horas para iniciar.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Puedo cambiar de plan más adelante?
+                <i data-lucide="chevron-down" class="chevron"></i>
+            </div>
+            <div class="faq-answer">
+                Sí, nuestros servicios son escalables. Puedes empezar con el plan Básico y actualizar al Profesional cuando tu negocio crezca.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                ¿Ofrecen garantía de devolución?
+                <i data-lucide="chevron-down" class="chevron"></i>
+            </div>
+            <div class="faq-answer">
+                Ofrecemos una garantía de satisfacción de 30 días. Si los resultados iniciales no cumplen lo pactado, revisamos la estrategia sin costo adicional.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="main-footer">
+        <div class="footer-links">
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Accesibilidad</a>
+        </div>
+        <p class="footer-copy">
+            © 2025 Tus Servicios Profesionales. Todos los derechos reservados.
+        </p>
+    </footer>
+
+    <!-- Simple JS for Interactions -->
     <script>
+        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // FAQ
+        // FAQ Accordion Logic
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
+                
+                // Close others (optional, mimicking the source behavior often seen)
                 document.querySelectorAll('.faq-item').forEach(child => {
                     if (child !== parent) child.classList.remove('active');
                 });
+
                 parent.classList.toggle('active');
             });
         });
 
-        // Input mask
+        // Input Mask for Phone (Simple Version)
         const phoneInput = document.querySelector('.input-phone');
-        phoneInput.addEventListener('input', function () {
+        phoneInput.addEventListener('input', function (e) {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
-
-        /* ------------------------------ */
-        /*  WHATSAPP MENSAJE AUTOMÁTICO  */
-        /* ------------------------------ */
-        window.onload = function () {
-            const msg = document.getElementById("whatsapp-msg");
-            msg.style.display = "block";
-
-            setTimeout(() => {
-                msg.style.display = "none";
-            }, 5000);
-        };
     </script>
-
 </body>
 </html>
