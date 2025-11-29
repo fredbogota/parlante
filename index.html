@@ -679,7 +679,7 @@
         <div class="container header-content">
             <a href="#" class="logo">
                 <i data-lucide="zap" fill="#019df4"></i>
-                <!-- MODIFICACIÓN 1: Logo Texto -->
+                <!-- Logo Texto -->
                 <span>MOVISTAR</span>
             </a>
             
@@ -701,10 +701,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <!-- MODIFICACIÓN 2: Título Principal -->
+            <!-- Título Principal -->
             <h1>FIBRA MOVISTAR<br>TOTAL</h1>
             
-            <!-- MODIFICACIÓN 3: Subtítulo con Negrita y Texto Pequeño -->
+            <!-- Subtítulo con Negrita y Texto Pequeño -->
             <h2>
                 Activa un plan de Movistar total o Fibra y disfruta de
                 <strong style="font-weight: 900; color: white;">"Todo YouTube sin interrupciones por solo $17.990/mes durante 6 meses."</strong>
@@ -719,13 +719,16 @@
         <div class="sticky-bar-text">
             <i data-lucide="message-square" size="20" style="color:var(--primary-blue)"></i>
             <span>¿Tienes dudas?</span>
-            <strong>Te llamamos gratis en 5 min.</strong>
+            <!-- MODIFICACIÓN 1: Cambiar texto "Te llamamos gratis en 5 min." por "Te llamamos ya" -->
+            <strong>Te llamamos ya</strong>
         </div>
+        <!-- El formulario sigue siendo de tipo 'submit' para capturar el evento, pero la acción es JavaScript/WhatsApp -->
         <form class="sticky-form" id="leadForm">
-            <input type="tel" class="input-phone" placeholder="Tu celular (ej. 300 123...)" required aria-label="Número de celular">
+            <input type="tel" class="input-phone" placeholder="Tu celular (ej. 300 123...)" required id="userPhone" aria-label="Número de celular">
+            <!-- MODIFICACIÓN 2: Cambiar texto del botón de "Llamadme" a "Llámame" -->
             <button type="submit" class="btn-call-me" id="submitBtn">
                 <i data-lucide="phone-call" size="18"></i>
-                <span>Llamadme</span>
+                <span>Llámame</span>
             </button>
         </form>
     </div>
@@ -958,6 +961,9 @@
     <script>
         // Init Icons
         lucide.createIcons();
+        
+        // El número de WhatsApp al que se enviará el mensaje
+        const whatsappNumber = "573165593013";
 
         // 1. Mobile Menu Logic
         const menuBtn = document.getElementById('mobile-menu-btn');
@@ -996,26 +1002,32 @@
             });
         });
 
-        // 3. Form Handling with Toast (No alerts!)
+        // 3. Form Handling with WhatsApp redirection (MODIFICADO)
         const form = document.getElementById('leadForm');
         const submitBtn = document.getElementById('submitBtn');
+        const phoneInput = document.getElementById('userPhone');
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Loading State
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<span>Enviando...</span>';
-            submitBtn.disabled = true;
+            const phoneNumber = phoneInput.value.trim();
 
-            // Simulate API call
-            setTimeout(() => {
-                showToast('¡Recibido! Te llamaremos en breve.');
-                form.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                lucide.createIcons(); // Re-init icon in button
-            }, 1500);
+            if (phoneNumber) {
+                // Mensaje de WhatsApp que incluye el número del usuario.
+                const whatsappMessage = encodeURIComponent(`¡Hola! Un cliente quiere que lo llamen YA. Su número de teléfono es: ${phoneNumber}. Por favor, contáctalo inmediatamente.`);
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+                
+                // Abre el enlace de WhatsApp en una nueva pestaña/ventana
+                window.open(whatsappURL, '_blank');
+
+                // Muestra un mensaje de éxito sin simular un tiempo de espera
+                showToast('¡Redirigiendo a WhatsApp! Por favor, revisa la nueva ventana.');
+                
+                // Opcional: limpiar el campo después de la acción
+                // form.reset(); 
+            } else {
+                 showToast('Por favor, ingresa un número de celular válido.');
+            }
         });
 
         // Helper: Show Toast
@@ -1028,7 +1040,6 @@
         }
 
         // 4. Input Mask (Numbers only)
-        const phoneInput = document.querySelector('.input-phone');
         phoneInput.addEventListener('input', function (e) {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
