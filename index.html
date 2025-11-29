@@ -264,6 +264,8 @@
         .section-subtitle {
             color: var(--text-light);
             font-size: 1.1rem;
+            max-width: 900px; /* Limitar el ancho para mejor lectura */
+            margin: 0 auto;
         }
 
         .cards-grid {
@@ -722,7 +724,6 @@
             <!-- MODIFICACIÓN 1: Cambiar texto "Te llamamos gratis en 5 min." por "Te llamamos ya" -->
             <strong>Te llamamos ya</strong>
         </div>
-        <!-- El formulario sigue siendo de tipo 'submit' para capturar el evento, pero la acción es JavaScript/WhatsApp -->
         <form class="sticky-form" id="leadForm">
             <input type="tel" class="input-phone" placeholder="Tu celular (ej. 300 123...)" required id="userPhone" aria-label="Número de celular">
             <!-- MODIFICACIÓN 2: Cambiar texto del botón de "Llamadme" a "Llámame" -->
@@ -737,8 +738,12 @@
     <section id="servicios" class="services-section">
         <div class="container">
             <header class="section-header">
-                <h2 class="section-title">Planes Flexibles</h2>
-                <p class="section-subtitle">Soluciones escalables que crecen al ritmo de tu empresa.</p>
+                <!-- MODIFICACIÓN 3: Nuevo Título de Sección -->
+                <h2 class="section-title">Internet Fibra Óptica Movistar: La Máxima Velocidad con WIN SPORT+ y Disney+</h2>
+                <!-- MODIFICACIÓN 4: Nuevo Subtítulo de Sección -->
+                <p class="section-subtitle">
+                    ¿Cansado de un internet lento? Es hora de dar el salto a la fibra óptica de Movistar, la conexión más estable y rápida del mercado. Disfruta de tus series en Disney+, los partidos de tu equipo en WIN SPORT+ y el teletrabajo sin interrupciones ni lag. Elige el plan perfecto para ti y tu familia.
+                </p>
             </header>
             
             <div class="cards-grid">
@@ -1002,7 +1007,7 @@
             });
         });
 
-        // 3. Form Handling with WhatsApp redirection (MODIFICADO)
+        // 3. Form Handling with WhatsApp redirection
         const form = document.getElementById('leadForm');
         const submitBtn = document.getElementById('submitBtn');
         const phoneInput = document.getElementById('userPhone');
