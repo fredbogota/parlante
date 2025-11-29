@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Servicios Profesionales - Planes a medida y Soluciones Corporativas. Optimiza tu negocio hoy.">
-    <title>Mis Servicios Profesionales | Soluciones a tu medida</title>
+    <!-- OPTIMIZACIÓN SEO: Nueva meta descripción con keywords principales -->
+    <meta name="description" content="Contrata Fibra Óptica Movistar y Planes Ilimitados. Disfruta de la máxima velocidad, Disney+, WIN SPORT+ y más. ¡Cambia a Movistar Total hoy!">
+    <!-- OPTIMIZACIÓN SEO: Nuevo título más descriptivo y con keywords -->
+    <title>Fibra Óptica Movistar | Planes Ilimitados, Disney+ y Máxima Velocidad</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -450,9 +452,18 @@
         .benefit-item {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            /* ALIGNMENT CHANGE: Set to row on desktop for better fit of long text */
+            align-items: flex-start; 
+            text-align: left;
             padding: 20px;
+        }
+        
+        /* Ensure the other items still look good if they are center-aligned */
+        .benefit-item:nth-child(2),
+        .benefit-item:nth-child(3),
+        .benefit-item:nth-child(4) {
+             align-items: center;
+             text-align: center;
         }
 
         .benefit-icon-wrapper {
@@ -466,9 +477,31 @@
             margin-bottom: 20px;
             color: var(--primary-blue);
         }
+        
+        /* New Style for Disney+ Icon Wrapper */
+        .disney-icon-wrapper {
+            background-color: #0b1c55; /* Dark blue/Purple for Disney theme */
+            color: #b3caff; /* Light blue/white for contrast */
+            box-shadow: 0 0 0 8px rgba(11, 28, 85, 0.1);
+        }
+        
+        .disney-icon-wrapper svg {
+            color: #b3caff;
+        }
 
+        .benefit-text {
+             /* Remove center alignment for long text */
+             text-align: left; 
+        }
         .benefit-text h4 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 8px; font-weight: 700;}
         .benefit-text p { font-size: 0.95rem; color: var(--text-light); line-height: 1.5; }
+        
+        .disney-title {
+            color: #0b1c55 !important;
+            font-size: 1.4rem !important;
+            font-weight: 800;
+        }
+
 
         /* --- FAQ --- */
         .faq-section {
@@ -690,10 +723,10 @@
             </button>
 
             <nav class="nav-links" id="nav-menu">
-                <a href="#servicios" class="nav-item">Servicios</a>
-                <a href="#beneficios" class="nav-item">Beneficios</a>
+                <a href="#servicios" class="nav-item">Planes Fibra Óptica</a>
+                <a href="#beneficios" class="nav-item">Beneficios Disney+</a>
                 <a href="#faq" class="nav-item">Preguntas</a>
-                <a href="#contacto" class="mobile-only-btn">Cotizar Ahora</a>
+                <a href="#contacto" class="mobile-only-btn">Cotizar Plan Movistar</a>
             </nav>
             
             <a href="#contacto" class="btn-header">Cotizar Ahora</a>
@@ -703,12 +736,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <!-- Título Principal -->
+            <!-- OPTIMIZACIÓN SEO: Título Principal H1 con palabras clave "Fibra Movistar Total" -->
             <h1>FIBRA MOVISTAR<br>TOTAL</h1>
             
             <!-- Subtítulo con Negrita y Texto Pequeño -->
             <h2>
-                Activa un plan de Movistar total o Fibra y disfruta de
+                Activa un plan de Movistar total o **Fibra Óptica** y disfruta de
                 <strong style="font-weight: 900; color: white;">"Todo YouTube sin interrupciones por solo $17.990/mes durante 6 meses."</strong>
                 <br>
                 <span style="font-size: 0.9em; opacity: 0.7;">(Déspues $ 20.900)</span>
@@ -721,12 +754,10 @@
         <div class="sticky-bar-text">
             <i data-lucide="message-square" size="20" style="color:var(--primary-blue)"></i>
             <span>¿Tienes dudas?</span>
-            <!-- MODIFICACIÓN 1: Cambiar texto "Te llamamos gratis en 5 min." por "Te llamamos ya" -->
             <strong>Te llamamos ya</strong>
         </div>
         <form class="sticky-form" id="leadForm">
             <input type="tel" class="input-phone" placeholder="Tu celular (ej. 300 123...)" required id="userPhone" aria-label="Número de celular">
-            <!-- MODIFICACIÓN 2: Cambiar texto del botón de "Llamadme" a "Llámame" -->
             <button type="submit" class="btn-call-me" id="submitBtn">
                 <i data-lucide="phone-call" size="18"></i>
                 <span>Llámame</span>
@@ -738,11 +769,11 @@
     <section id="servicios" class="services-section">
         <div class="container">
             <header class="section-header">
-                <!-- MODIFICACIÓN 3: Nuevo Título de Sección -->
+                <!-- OPTIMIZACIÓN SEO: Título de Sección H2 con keywords "Internet Fibra Óptica Movistar", "WIN SPORT+", "Disney+" -->
                 <h2 class="section-title">Internet Fibra Óptica Movistar: La Máxima Velocidad con WIN SPORT+ y Disney+</h2>
-                <!-- MODIFICACIÓN 4: Nuevo Subtítulo de Sección -->
+                <!-- Subtítulo de Sección -->
                 <p class="section-subtitle">
-                    ¿Cansado de un internet lento? Es hora de dar el salto a la fibra óptica de Movistar, la conexión más estable y rápida del mercado. Disfruta de tus series en Disney+, los partidos de tu equipo en WIN SPORT+ y el teletrabajo sin interrupciones ni lag. Elige el plan perfecto para ti y tu familia.
+                    ¿Cansado de un internet lento? Es hora de dar el salto a la **Fibra Óptica de Movistar**, la conexión más estable y rápida del mercado. Disfruta de tus series en **Disney+**, los partidos de tu equipo en **WIN SPORT+** y el teletrabajo sin interrupciones ni lag. Elige el **plan Movistar** perfecto para ti y tu familia.
                 </p>
             </header>
             
@@ -855,43 +886,60 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
+    <!-- Benefits Section (MODIFICADA) -->
     <section id="beneficios" class="benefits-section">
         <div class="container">
+            <!-- OPTIMIZACIÓN SEO: Título de Sección H2 con keywords "Entretenimiento" y "Disney+" -->
+            <header class="section-header" style="margin-bottom: 50px;">
+                <h2 class="section-title">Todo el Entretenimiento en un Solo Lugar con Disney+</h2>
+                <p class="section-subtitle">Descubre las ventajas exclusivas que solo la **Fibra Movistar** puede ofrecerte.</p>
+            </header>
+            
             <div class="benefits-grid">
+                
+                <!-- Beneficio 1 (Disney+ - NUEVO CONTENIDO) -->
                 <div class="benefit-item">
-                    <div class="benefit-icon-wrapper">
-                        <i data-lucide="zap" size="32"></i>
+                    <div class="benefit-icon-wrapper disney-icon-wrapper">
+                        <!-- Icono de Claqueta para representar cine/entretenimiento -->
+                        <i data-lucide="clapperboard" size="32"></i>
+                        <!--  (No se incluye etiqueta IMG, se simula con icono y estilos) -->
                     </div>
                     <div class="benefit-text">
-                        <h4>Velocidad Extrema</h4>
-                        <p>Implementaciones técnicas optimizadas para cargar en menos de 1 segundo.</p>
+                        <!-- OPTIMIZACIÓN SEO: Título H3 con keywords Disney+ -->
+                        <h4 class="disney-title">Disney+: Magia y Estrenos Sin Límite</h4>
+                        <p>Con tu **plan de internet Movistar**, obtienes acceso a un mundo de entretenimiento. Disfruta de todos los clásicos, las series de Marvel, Star Wars y los estrenos exclusivos de **Disney+**. Ideal para maratones de fin de semana.</p>
                     </div>
                 </div>
+                
+                <!-- Beneficio 2 (Antes Seguridad Blindada) -->
                 <div class="benefit-item">
                     <div class="benefit-icon-wrapper">
                         <i data-lucide="shield-check" size="32"></i>
                     </div>
                     <div class="benefit-text">
-                        <h4>Seguridad Blindada</h4>
+                        <h4>Seguridad Blindada para tu Conexión</h4>
                         <p>Certificados SSL avanzados y protección contra ataques DDoS incluidos.</p>
                     </div>
                 </div>
+                
+                <!-- Beneficio 3 (Antes Soporte Humano) -->
                 <div class="benefit-item">
                     <div class="benefit-icon-wrapper">
                         <i data-lucide="users" size="32"></i>
                     </div>
                     <div class="benefit-text">
-                        <h4>Soporte Humano</h4>
+                        <h4>Soporte Humano 24/7</h4>
                         <p>Nada de bots. Habla directamente con ingenieros expertos en tu proyecto.</p>
                     </div>
                 </div>
+                
+                <!-- Beneficio 4 (Antes ROI Garantizado) -->
                 <div class="benefit-item">
                     <div class="benefit-icon-wrapper">
                         <i data-lucide="trophy" size="32"></i>
                     </div>
                     <div class="benefit-text">
-                        <h4>ROI Garantizado</h4>
+                        <h4>Resultados Garantizados</h4>
                         <p>Estrategias enfocadas en conversión. Si no vendes, ajustamos el plan.</p>
                     </div>
                 </div>
@@ -902,12 +950,12 @@
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
         <header class="section-header" style="margin-bottom: 30px;">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <h2 class="section-title">Preguntas Frecuentes sobre Planes Movistar</h2>
         </header>
         
         <div class="faq-item">
             <div class="faq-question">
-                <span>¿Cómo inicio la contratación?</span>
+                <span>¿Cómo inicio la contratación del servicio Fibra Movistar?</span>
                 <i data-lucide="chevron-down" class="chevron"></i>
             </div>
             <div class="faq-answer">
@@ -917,7 +965,7 @@
 
         <div class="faq-item">
             <div class="faq-question">
-                <span>¿Hay permanencia mínima?</span>
+                <span>¿Hay permanencia mínima en los planes de Fibra Óptica?</span>
                 <i data-lucide="chevron-down" class="chevron"></i>
             </div>
             <div class="faq-answer">
@@ -927,11 +975,11 @@
 
         <div class="faq-item">
             <div class="faq-question">
-                <span>¿Incluye dominio y hosting?</span>
+                <span>¿Cómo activo mi beneficio de Disney+?</span>
                 <i data-lucide="chevron-down" class="chevron"></i>
             </div>
             <div class="faq-answer">
-                El plan "Crecimiento" y superiores incluyen hosting AWS de alta velocidad y dominio .com gratis por el primer año.
+                Una vez activado tu plan Movistar, recibirás un enlace y las instrucciones para registrarte y activar tu cuenta de Disney+ de forma gratuita por el tiempo de la promoción.
             </div>
         </div>
     </section>
@@ -940,9 +988,9 @@
     <footer id="contacto" class="main-footer">
         <div class="container">
             <div class="footer-links">
-                <a href="#">Términos y Condiciones</a>
+                <a href="#">Términos y Condiciones Movistar</a>
                 <a href="#">Política de Privacidad</a>
-                <a href="#">Soporte</a>
+                <a href="#">Soporte Técnico Fibra Óptica</a>
                 <a href="#">Trabaja con Nosotros</a>
             </div>
             <p class="footer-copy">
