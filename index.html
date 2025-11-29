@@ -338,6 +338,15 @@
             font-weight: 500;
             height: 20px; /* Preserve height for alignment */
         }
+        
+        /* New custom style for small orange text */
+        .small-note {
+            font-size: 0.75rem;
+            color: var(--accent-orange);
+            font-weight: 500;
+            display: block;
+            margin-top: 4px;
+        }
 
         .card-features {
             margin-bottom: 30px;
@@ -350,12 +359,27 @@
             gap: 12px;
             margin-bottom: 15px;
             font-size: 0.95rem;
+            flex-direction: column; /* Allows content and small-note to stack */
+        }
+        
+        .feature-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
         }
 
         .icon-check { 
             color: var(--success); 
             flex-shrink: 0;
             margin-top: 2px;
+        }
+        
+        /* WIN PLAY Logo Simulation (simple colored text) */
+        .win-play {
+            color: var(--accent-orange);
+            font-weight: 900;
+            font-size: 1rem;
+            line-height: 1;
         }
 
         .btn-card {
@@ -697,16 +721,22 @@
                     
                     <div class="card-features">
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Internet Hogar</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Internet Hogar</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Plan movil ilimitado</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Plan movil ilimitado</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Datos ilimitados</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Datos ilimitados</span>
+                            </div>
                         </div>
                     </div>
                     
@@ -716,30 +746,46 @@
                 <!-- Plan 2 (Highlighted) -->
                 <article class="service-card" style="border-color: var(--primary-blue);">
                     <div class="badge">Más Popular</div>
-                    <div class="card-title">Crecimiento</div>
-                    <div class="card-price">$890k <span>/mes</span></div>
-                    <div class="price-note">Ahorras $300k anuales</div>
+                    <div class="card-title">Fibra 900Megas + Pospago Ilimitado</div>
+                    <div class="card-price">$99,990 <span>/mes</span></div>
+                    <div class="price-note">Ahorras $37,880 anuales</div>
                     
                     <div class="card-features">
+                        <!-- Feature 1: Fibra 900 Megas + WIN PLAY + Precio Normal -->
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span><b>Todo del plan Emprendedor</b></span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Fibra 900 Megas + <span class="win-play">WIN PLAY</span></span>
+                            </div>
+                            <span class="small-note">Precio Normal: $102,9k</span>
+                        </div>
+                        
+                        <!-- Feature 2: Pospago Ilimitado + Precio Normal -->
+                        <div class="feature-item">
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Pospago Ilimitado</span>
+                            </div>
+                            <span class="small-note">Precio Normal: $34,9k</span>
+                        </div>
+                        
+                        <!-- The following features were removed as requested:
+                        <div class="feature-item">
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Reportes quincenales</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Estrategia mensual de Ads</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Dashboard en tiempo real</span>
+                            </div>
                         </div>
-                        <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Reportes quincenales</span>
-                        </div>
-                        <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Dashboard en tiempo real</span>
-                        </div>
+                        -->
                     </div>
                     
-                    <button class="btn-card highlight" onclick="selectPlan('Crecimiento')">Comprar Ahora</button>
+                    <button class="btn-card highlight" onclick="selectPlan('Fibra 900M + Pospago')">Comprar Ahora</button>
                 </article>
 
                 <!-- Plan 3 -->
@@ -750,20 +796,28 @@
                     
                     <div class="card-features">
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Consultoría 24/7 VIP</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Consultoría 24/7 VIP</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Equipo dedicado (Dev + Mkt)</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Equipo dedicado (Dev + Mkt)</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Implementación Full Stack</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Implementación Full Stack</span>
+                            </div>
                         </div>
                         <div class="feature-item">
-                            <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
-                            <span>Garantía de KPIs</span>
+                            <div class="feature-content">
+                                <i data-lucide="check-circle-2" class="icon-check" size="20"></i>
+                                <span>Garantía de KPIs</span>
+                            </div>
                         </div>
                     </div>
                     
