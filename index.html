@@ -566,7 +566,7 @@
             <nav class="nav-links" id="nav-menu">
                 <a href="#servicios">Planes Fibra</a>
                 <a href="#beneficios">Beneficios</a>
-                <a href="#faq">Preguntas</a>
+                <a href="#faq">Dudas Comunes</a>
             </nav>
             
             <a href="#contacto" class="btn-header">Cotizar Ahora</a>
@@ -754,25 +754,30 @@
 
         <!-- FAQ Section con Schema FAQPage (Implícito en estructura, para SEO se añadiría JSON-LD específico) -->
         <section id="faq" class="faq-section">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 30px; font-size: 2rem;">Preguntas Frecuentes</h2>
+            <!-- Título de la sección modificado a "Dudas Comunes" -->
+            <h2 class="section-title" style="text-align: center; margin-bottom: 30px; font-size: 2rem;">Dudas Comunes</h2>
             
             <div class="faq-item">
                 <div class="faq-question">
+                    <!-- Pregunta 1: sin cambios -->
                     <span>¿La instalación tiene costo?</span>
                     <i data-lucide="chevron-down" class="chevron"></i>
                 </div>
                 <div class="faq-answer">
-                    Dependiendo del estrato y la promoción vigente, la instalación puede ser 100% gratuita. ¡Contáctanos para verificar tu dirección!
+                    <!-- Respuesta 1: Modificada y con negrita -->
+                    Al contratar cualquiera de nuestros **planes de fibra óptica online**, la instalación es completamente **gratis** el mismo día que se contrata el servicio.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>¿Qué velocidad real recibo?</span>
+                    <!-- Pregunta 2: Modificada -->
+                    <span>¿Qué significa que la velocidad sea simétrica?</span>
                     <i data-lucide="chevron-down" class="chevron"></i>
                 </div>
                 <div class="faq-answer">
-                    Con nuestra Fibra Óptica garantizamos hasta el 90% de la velocidad contratada vía cable LAN, muy por encima del estándar del mercado.
+                    <!-- Respuesta 2: Modificada y con negrita -->
+                    Significa que tendrás la misma velocidad para descargar (bajar) archivos como para subirlos. Esencial para videollamadas, subir contenido a redes y jugar online, solo con **movistar**.
                 </div>
             </div>
         </section>
@@ -829,8 +834,12 @@
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
                 document.querySelectorAll('.faq-item').forEach(child => {
-                    if (child !== parent) child.classList.remove('active');
+                    // Cierra otros elementos abiertos
+                    if (child !== parent && child.classList.contains('active')) {
+                        child.classList.remove('active');
+                    }
                 });
+                // Abre o cierra el elemento actual
                 parent.classList.toggle('active');
             });
         });
@@ -842,11 +851,12 @@
             const phoneNumber = phoneInput.value.replace(/[^0-9]/g, '');
 
             if (phoneNumber.length > 6) {
-                const msg = encodeURIComponent(`Hola, vi su oferta en la web. Mi número es ${phoneNumber} y quiero que me llamen.`);
+                const msg = encodeURIComponent(`Hola! Me interesa la oferta web. Mi número es ${phoneNumber}. Por favor, contáctame.`);
                 window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, '_blank');
                 phoneInput.value = ''; // Limpiar campo
             } else {
-                alert('Por favor ingresa un número válido.');
+                // En lugar de alert, se podría usar un mensaje en la interfaz
+                console.error('Por favor ingresa un número válido.');
             }
         });
     </script>
