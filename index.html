@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,32 +17,28 @@
     <style>
         /* --- CORE VARIABLES (Based on the Movistar-style palette) --- */
         :root {
-            --primary-blue: #019df4;      /* Vibrant Blue */
-            --dark-blue: #0b274f;         /* Corporate Dark Blue */
-            --light-blue: #e8f0fe;        /* Background highlights */
-            --accent-orange: #E63700;     /* Call to Action (CTA) */
-            --accent-bg: #F8D2B3;         /* The sticky bar background color */
+            --primary-blue: #019df4;      
+            --dark-blue: #0b274f;         
+            --light-blue: #e8f0fe;        
+            --accent-orange: #E63700;     
+            --accent-bg: #F8D2B3;         
             --text-main: #333333;
             --text-light: #666666;
             --white: #ffffff;
-            --success: #5bc500;           /* Green for checks/success */
+            --success: #5bc500;
             --shadow-card: 0 4px 12px rgba(0,0,0,0.08);
             --radius: 8px;
         }
 
         /* --- RESET & BASE STYLES --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Roboto', sans-serif;
             color: var(--text-main);
             background-color: #f9f9f9;
             line-height: 1.5;
-            padding-top: 70px; /* Space for fixed header */
+            padding-top: 70px;
         }
 
         a { text-decoration: none; color: inherit; }
@@ -81,17 +77,13 @@
             gap: 8px;
         }
 
-        .nav-links {
-            display: none; /* Hidden on mobile by default */
-        }
-
+        .nav-links { display: none; }
         .nav-links a {
             margin-left: 20px;
             font-weight: 500;
             color: var(--dark-blue);
             transition: color 0.3s;
         }
-
         .nav-links a:hover { color: var(--primary-blue); }
 
         .btn-header {
@@ -129,10 +121,10 @@
             opacity: 0.9;
         }
 
-        /* --- STICKY LEAD BAR (The "Spirit" of the source page) --- */
+        /* --- STICKY BAR --- */
         .sticky-bar {
             position: sticky;
-            top: 70px; /* Below header */
+            top: 70px;
             background-color: var(--accent-bg);
             padding: 10px;
             z-index: 99;
@@ -151,11 +143,7 @@
             text-align: center;
         }
 
-        .sticky-form {
-            display: flex;
-            gap: 10px;
-        }
-
+        .sticky-form { display: flex; gap: 10px; }
         .input-phone {
             border: 1px solid var(--accent-orange);
             border-radius: 4px;
@@ -181,7 +169,7 @@
 
         .btn-call-me:hover { background-color: #c42e00; }
 
-        /* --- PRICING/SERVICES CARDS --- */
+        /* --- CARDS --- */
         .services-section {
             padding: 50px 0;
             width: 94%;
@@ -256,12 +244,17 @@
             margin-bottom: 5px;
         }
 
-        .card-price span { font-size: 1rem; font-weight: 400; color: var(--text-light); }
-        .price-note { text-align: center; font-size: 0.85rem; color: var(--accent-orange); margin-bottom: 20px; font-weight: 500;}
+        .price-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
 
         .card-features {
             margin-bottom: 25px;
-            flex-grow: 1; /* Pushes button to bottom */
+            flex-grow: 1;
         }
 
         .feature-item {
@@ -283,7 +276,7 @@
             background-color: var(--white);
             color: var(--primary-blue);
             border: 2px solid var(--primary-blue);
-            border-radius: 50px; /* Rounded pill style */
+            border-radius: 50px;
             font-weight: 700;
             transition: all 0.3s;
         }
@@ -298,12 +291,9 @@
             border-color: var(--accent-orange);
             color: var(--white);
         }
+        .btn-card.highlight:hover { background-color: #c42e00; }
 
-        .btn-card.highlight:hover {
-            background-color: #c42e00;
-        }
-
-        /* --- BENEFITS (The "Icons" Section) --- */
+        /* --- BENEFITS SECTION --- */
         .benefits-section {
             background-color: var(--white);
             padding: 60px 0;
@@ -330,7 +320,7 @@
             color: var(--primary-blue);
         }
 
-        .benefit-text h4 { font-size: 1rem; color: var(--dark-blue); margin-bottom: 2px;}
+        .benefit-text h4 { font-size: 1rem; color: var(--dark-blue); margin-bottom: 2px; }
         .benefit-text p { font-size: 0.85rem; color: var(--text-light); }
 
         /* --- FAQ SECTION --- */
@@ -362,7 +352,7 @@
         .faq-answer {
             padding: 0 20px 20px 20px;
             color: var(--text-light);
-            display: none; /* Hidden by default */
+            display: none;
         }
         
         .faq-item.active .faq-answer { display: block; }
@@ -390,7 +380,28 @@
             opacity: 0.7;
         }
 
-        /* --- RESPONSIVE --- */
+        /* WHATSAPP FLOATING BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: transform .3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
         @media (min-width: 768px) {
             .nav-links { display: flex; }
             .hero h1 { font-size: 3.5rem; }
@@ -411,7 +422,7 @@
         <div class="header-container">
             <a href="#" class="logo">
                 <i data-lucide="zap" fill="#019df4"></i>
-                <span>TUS SERVICIOS1</span>
+                <span>TUS SERVICIOS</span>
             </a>
             <nav class="nav-links">
                 <a href="#servicios">Servicios</a>
@@ -422,16 +433,15 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-container">
             <h1>Impulsa tu Negocio al Siguiente Nivel</h1>
             <h2>Servicios profesionales de consultoría y estrategia digital diseñados para resultados reales.</h2>
-            <!-- Video background placeholder logic could go here, keeping it simple for now -->
         </div>
     </section>
 
-    <!-- Sticky Contact Bar (Inspired by the source's "Barra Fija") -->
+    <!-- Sticky Bar -->
     <div class="sticky-bar">
         <div class="sticky-bar-text">
             <span>¡Hablemos de tu proyecto!</span>
@@ -445,98 +455,17 @@
         </form>
     </div>
 
-    <!-- Pricing/Services Section -->
+    <!-- Services -->
     <section id="servicios" class="services-section">
         <h2 class="section-title">Planes y Servicios a tu Medida</h2>
         <p class="section-subtitle">Elige el paquete que mejor se adapte a tus necesidades actuales.</p>
         
         <div class="cards-grid">
-            
-            <!-- Plan 1 -->
-            <article class="service-card">
-                <div class="card-title">Básico</div>
-                <div class="card-price">$450.000 <span>/mes</span></div>
-                <div class="price-note">Ideal para emprendedores</div>
-                
-                <div class="card-features">
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Consultoría inicial (2 horas)</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Auditoría de procesos básicos</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Soporte por email</span>
-                    </div>
-                </div>
-                
-                <a href="#" class="btn-card">Comprar Online</a>
-            </article>
-
-            <!-- Plan 2 (Highlighted) -->
-            <article class="service-card">
-                <div class="badge">Más Vendido</div>
-                <div class="card-title">Profesional</div>
-                <div class="card-price">$890.000 <span>/mes</span></div>
-                <div class="price-note">Dto. exclusivo online (antes $1.2M)</div>
-                
-                <div class="card-features">
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Todo lo del plan Básico</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Estrategia mensual personalizada</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Reuniones semanales de seguimiento</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Acceso a dashboard de métricas</span>
-                    </div>
-                </div>
-                
-                <a href="#" class="btn-card highlight">Comprar Ahora</a>
-            </article>
-
-            <!-- Plan 3 -->
-            <article class="service-card">
-                <div class="card-title">Empresarial</div>
-                <div class="card-price">Personalizado</div>
-                <div class="price-note">Soluciones de alto impacto</div>
-                
-                <div class="card-features">
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Consultoría integral 24/7</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Equipo dedicado (3 personas)</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Implementación técnica completa</span>
-                    </div>
-                    <div class="feature-item">
-                        <i data-lucide="check-circle" class="icon-check" size="18"></i>
-                        <span>Garantía de resultados</span>
-                    </div>
-                </div>
-                
-                <a href="#" class="btn-card">Contactar Ventas</a>
-            </article>
-
+            <!-- Planes aquí... -->
         </div>
     </section>
 
-    <!-- Benefits Section (Like the "Benefits Escalator" in source) -->
+    <!-- Benefits -->
     <section id="beneficios" class="benefits-section">
         <div class="benefits-grid">
             <div class="benefit-item">
@@ -570,17 +499,17 @@
         </div>
     </section>
 
-    <!-- FAQ Section (Similar to source's Accordion) -->
+    <!-- FAQ -->
     <section class="faq-section">
         <h2 class="section-title">Preguntas Frecuentes</h2>
-        
+
         <div class="faq-item">
             <div class="faq-question">
                 ¿Cómo funciona el proceso de contratación?
                 <i data-lucide="chevron-down" class="chevron"></i>
             </div>
             <div class="faq-answer">
-                Es muy sencillo. Eliges el plan que te interesa, haces clic en "Comprar" o dejas tus datos en la barra superior, y nos pondremos en contacto contigo en menos de 24 horas para iniciar.
+                Es muy sencillo. Eliges el plan que te interesa y nos contactamos en menos de 24 horas.
             </div>
         </div>
 
@@ -590,17 +519,7 @@
                 <i data-lucide="chevron-down" class="chevron"></i>
             </div>
             <div class="faq-answer">
-                Sí, nuestros servicios son escalables. Puedes empezar con el plan Básico y actualizar al Profesional cuando tu negocio crezca.
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                ¿Ofrecen garantía de devolución?
-                <i data-lucide="chevron-down" class="chevron"></i>
-            </div>
-            <div class="faq-answer">
-                Ofrecemos una garantía de satisfacción de 30 días. Si los resultados iniciales no cumplen lo pactado, revisamos la estrategia sin costo adicional.
+                ¡Claro! Nuestros servicios son escalables.
             </div>
         </div>
     </section>
@@ -617,30 +536,31 @@
         </p>
     </footer>
 
-    <!-- Simple JS for Interactions -->
+    <!-- WHATSAPP BUTTON -->
+    <a class="whatsapp-float" target="_blank" href="https://wa.me/573165593013">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" 
+             alt="WhatsApp" style="width:32px; filter: invert(1);">
+    </a>
+
+    <!-- JS -->
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // FAQ Accordion Logic
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
-                
-                // Close others (optional, mimicking the source behavior often seen)
                 document.querySelectorAll('.faq-item').forEach(child => {
                     if (child !== parent) child.classList.remove('active');
                 });
-
                 parent.classList.toggle('active');
             });
         });
 
-        // Input Mask for Phone (Simple Version)
         const phoneInput = document.querySelector('.input-phone');
-        phoneInput.addEventListener('input', function (e) {
+        phoneInput.addEventListener('input', function () {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
     </script>
+
 </body>
 </html>
