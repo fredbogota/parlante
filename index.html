@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Services - Plans and Custom Solutions">
     <title>Mis Servicios Profesionales | Soluciones a tu medida</title>
-    
+
+    <!-- FAVICONS OPTIMIZADOS -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <link rel="apple-touch-icon" href="favicon-192.png">
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Iconos -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <style>
         :root {
@@ -40,7 +50,7 @@
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; }
 
-        /* -------- BOTÓN FLOTANTE WHATSAPP -------- */
+        /* BOTÓN WHATSAPP */
         .btn-whatsapp {
             position: fixed;
             bottom: 20px;
@@ -58,11 +68,9 @@
             z-index: 9999;
             transition: transform 0.3s ease;
         }
-        .btn-whatsapp:hover {
-            transform: scale(1.1);
-        }
+        .btn-whatsapp:hover { transform: scale(1.1); }
 
-        /* -------- BOTÓN FLOTANTE LLAMAR -------- */
+        /* BOTÓN LLAMAR */
         .btn-call {
             position: fixed;
             bottom: 20px;
@@ -86,7 +94,7 @@
             transform: translateY(-3px);
         }
 
-        /* ------------ HEADER ------------ */
+        /* HEADER */
         .main-header {
             position: fixed;
             top: 0;
@@ -106,7 +114,14 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary-blue); display: flex; gap: 8px; }
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            color: var(--primary-blue); 
+            display: flex; 
+            gap: 8px; 
+        }
+
         .nav-links { display: none; }
 
         .btn-header {
@@ -156,7 +171,12 @@
             cursor: pointer;
         }
 
-        .services-section { padding: 50px 0; width: 94%; max-width: 1200px; margin: auto; }
+        .services-section { 
+            padding: 50px 0; 
+            width: 94%; 
+            max-width: 1200px; 
+            margin: auto; 
+        }
 
         .cards-grid {
             display: grid;
@@ -173,7 +193,13 @@
             flex-direction: column;
         }
 
-        .footer-copy { opacity: 0.7; font-size: .8rem; margin-top: 10px; }
+        .footer-copy { 
+            opacity: 0.7; 
+            font-size: .8rem; 
+            margin-top: 10px; 
+            text-align: center;
+            padding: 20px 0;
+        }
 
         @media(min-width:768px){
             .nav-links { display:flex; gap:20px; }
@@ -183,13 +209,13 @@
 
 <body>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <!-- BOTÓN WHATSAPP -->
     <a href="https://wa.me/573165593013?text=Hola%2C%20quiero%20más%20información" 
        class="btn-whatsapp" target="_blank" aria-label="WhatsApp">
         <i data-lucide="message-circle"></i>
     </a>
 
-    <!-- BOTÓN FLOTANTE LLAMAR -->
+    <!-- BOTÓN LLAMAR -->
     <a href="tel:+573165593013" class="btn-call">
         <i data-lucide="phone"></i> Llame ahora
     </a>
@@ -197,7 +223,9 @@
     <!-- Header -->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" target="_blank" class="logo"><i data-lucide="zap"></i> MOVISTAR</a>
+            <a href="index.html" target="_blank" class="logo">
+                <i data-lucide="zap"></i> MOVISTAR
+            </a>
 
             <nav class="nav-links">
                 <a href="index.html" target="_blank">Servicios</a>
@@ -260,11 +288,13 @@
     </footer>
 
     <script>
-        lucide.createIcons();
+        document.addEventListener("DOMContentLoaded", () => {
+            lucide.createIcons();
 
-        const phoneInput = document.querySelector('.input-phone');
-        phoneInput.addEventListener('input', function(){
-            this.value = this.value.replace(/[^0-9]/g,'');
+            const phoneInput = document.querySelector('.input-phone');
+            phoneInput.addEventListener('input', function() {
+                this.value = this.value.replace(/[^0-9]/g,'');
+            });
         });
     </script>
 
