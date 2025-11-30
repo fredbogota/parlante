@@ -84,17 +84,114 @@
         .btn-header:hover { background: var(--primary-dark); transform: translateY(-1px); }
         .menu-toggle { display: none; background: none; color: var(--dark-blue); }
 
-        /* BLOG HERO */
+        /* BLOG HERO DINÁMICO */
         .blog-hero {
-            background: radial-gradient(circle at 80% 20%, #004e92 0%, #000428 100%);
+            position: relative;
             color: white;
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
             margin-bottom: 60px;
+            overflow: hidden; /* Necesario para que la imagen no se salga al hacer zoom */
+            background: #000; /* Fallback */
         }
-        .blog-hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
-        .blog-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-        .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 20px; display: block; }
+
+        /* Slider de Fondo */
+        .hero-bg-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slideShow 15s infinite;
+        }
+
+        /* Imágenes del slider (Streaming, Deportes, Disney/Cine) */
+        .hero-slide:nth-child(1) { 
+            background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1600'); /* Netflix Vibe */
+            animation-delay: 0s; 
+        }
+        .hero-slide:nth-child(2) { 
+            background-image: url('https://images.unsplash.com/photo-1624880357913-a8539238245b?q=80&w=1600'); /* Win Sports Vibe */
+            animation-delay: 5s; 
+        }
+        .hero-slide:nth-child(3) { 
+            background-image: url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1600'); /* Disney/Movies Vibe */
+            animation-delay: 10s; 
+        }
+
+        @keyframes slideShow {
+            0% { opacity: 0; transform: scale(1); }
+            5% { opacity: 1; }
+            33% { opacity: 1; transform: scale(1.1); } /* Zoom suave */
+            38% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Overlay Gradiente (Para que el texto se lea bien sobre las fotos) */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(1, 157, 244, 0.85) 0%, rgba(11, 39, 79, 0.9) 100%);
+            z-index: 2;
+        }
+
+        /* Contenido encima del slider */
+        .blog-hero .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        .blog-hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .blog-hero p { font-size: 1.3rem; opacity: 1; max-width: 700px; margin: 0 auto; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
+        .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 20px; display: block; font-weight: 500; }
+
+        /* Badges Flotantes de Marcas */
+        .brand-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .brand-badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: floatBadge 3s ease-in-out infinite;
+            font-size: 1rem;
+        }
+        
+        .brand-badge:nth-child(1) { border-color: #E50914; /* Netflix Red */ }
+        .brand-badge:nth-child(2) { border-color: #E63700; /* Win Orange */ animation-delay: 1s; }
+        .brand-badge:nth-child(3) { border-color: #113CCF; /* Disney Blue */ animation-delay: 2s; }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
 
         /* LAYOUT BLOG */
         .blog-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 80px; }
@@ -109,14 +206,26 @@
         }
         .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         
-        .article-img { height: 250px; background: #ddd; position: relative; overflow: hidden; }
-        .img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 2rem; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+        /* MEJORA SEO: Estilos para <img> en lugar de background */
+        .article-img { 
+            height: 250px; 
+            width: 100%;
+            background: #f0f0f0; 
+            position: relative; 
+            overflow: hidden; 
+        }
         
-        /* Colores para placeholders (reemplazar con <img> reales) */
-        .bg-tech { background: linear-gradient(45deg, #0b274f, #019df4); }
-        .bg-streaming { background: linear-gradient(45deg, #E50914, #000); }
-        .bg-sports { background: linear-gradient(45deg, #E63700, #ff8c00); }
+        .article-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
         
+        .article-card:hover .article-img img {
+            transform: scale(1.05);
+        }
+
         .article-body { padding: 30px; }
         .article-tag { background: var(--light-blue); color: var(--primary-blue); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: inline-block; }
         .article-title { font-size: 1.6rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 15px; line-height: 1.3; }
@@ -181,13 +290,35 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section Dinámico -->
         <section class="blog-hero">
+            <!-- Slider Background -->
+            <div class="hero-bg-slider">
+                <div class="hero-slide"></div> <!-- Slide 1 -->
+                <div class="hero-slide"></div> <!-- Slide 2 -->
+                <div class="hero-slide"></div> <!-- Slide 3 -->
+            </div>
+            <!-- Overlay Azul -->
+            <div class="hero-overlay"></div>
+            
             <div class="container">
                 <span class="breadcrumb">Inicio > Blog > Internet y Entretenimiento</span>
                 <!-- H1 Optimizado con Palabras Clave Principales -->
                 <h1>Blog de Internet Movistar y Fibra Óptica</h1>
-                <p>Tu guía definitiva sobre <strong>planes de internet fibra óptica</strong>, trucos para mejorar tu WiFi, estrenos de entretenimiento y noticias de <strong>Movistar Colombia</strong>.</p>
+                <p>Tu guía definitiva sobre <strong>planes de internet fibra óptica</strong>, trucos para mejorar tu WiFi, y los mejores estrenos.</p>
+                
+                <!-- Badges Animados de Contenido -->
+                <div class="brand-badges">
+                    <div class="brand-badge">
+                        <i data-lucide="play-circle" color="#E50914"></i> Netflix
+                    </div>
+                    <div class="brand-badge">
+                        <i data-lucide="trophy" color="#E63700"></i> Win Sports+
+                    </div>
+                    <div class="brand-badge">
+                        <i data-lucide="sparkles" color="#00d2ff"></i> Disney+
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -198,8 +329,13 @@
                 
                 <!-- Artículo Destacado 1: Streaming / Netflix -->
                 <article class="article-card">
-                    <div class="article-img bg-streaming">
-                        <div class="img-placeholder">NETFLIX 4K</div>
+                    <div class="article-img">
+                        <!-- USO DE IMG PARA MEJORAR SEO EN GOOGLE IMAGES -->
+                        <!-- Placeholder técnico para streaming -->
+                        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&auto=format&fit=crop" 
+                             alt="Mejor velocidad de internet para ver Netflix 4K sin cortes" 
+                             width="800" height="500"
+                             loading="eager">
                     </div>
                     <div class="article-body">
                         <span class="article-tag">Velocidad Internet</span>
@@ -214,8 +350,12 @@
 
                 <!-- Artículo 2: Fibra vs Tradicional -->
                 <article class="article-card">
-                    <div class="article-img bg-tech">
-                        <div class="img-placeholder">FIBRA vs COBRE</div>
+                    <div class="article-img">
+                        <!-- Placeholder técnico para fibra óptica -->
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" 
+                             alt="Diferencia entre fibra óptica Movistar y cable de cobre tradicional" 
+                             width="800" height="500"
+                             loading="lazy">
                     </div>
                     <div class="article-body">
                         <span class="article-tag">Tecnología</span>
@@ -230,8 +370,12 @@
 
                 <!-- Artículo 3: Win Sports & Disney+ -->
                 <article class="article-card">
-                    <div class="article-img bg-sports">
-                        <div class="img-placeholder">FÚTBOL & CINE</div>
+                    <div class="article-img">
+                        <!-- Placeholder técnico para entretenimiento/fútbol (URL Actualizada) -->
+                        <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?q=80&w=800&auto=format&fit=crop" 
+                             alt="Ver Win Sports Online y Disney Plus con Movistar Colombia" 
+                             width="800" height="500"
+                             loading="lazy">
                     </div>
                     <div class="article-body">
                         <span class="article-tag">Entretenimiento</span>
