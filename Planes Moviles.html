@@ -4,55 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- --- SEO & METADATA --- -->
-    <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
-    <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
-    <link rel="canonical" href="https://tu-dominio.com/" />
+    <!-- --- SEO & METADATA CRÍTICA PARA POSICIONAMIENTO --- -->
+    <title>Planes Movistar Ilimitados y Prepago con Más Gigas | Colombia 2025-2026</title>
+    <meta name="description" content="Descubre el mejor plan de datos para redes sociales y planes Movistar ilimitados para celular precio 2025-2026. Te enseñamos cómo activar SIM Card Movistar Colombia y cómo cambiar de operador a Movistar con el mismo número. ¡Planes prepago con más gigas!">
+    <link rel="canonical" href="https://tu-dominio.com/Planes Moviles.html" />
     <meta name="theme-color" content="#019df4">
+
+    <!-- PALABRAS CLAVE: CRUCIALES PARA INDEXACIÓN -->
+    <meta name="keywords" content="mejor plan de datos para redes sociales, cómo activar sim card movistar Colombia, planes movistar ilimitados para celular precio 2025-2026, como cambiar de operador a movistar con el mismo número, planes movistar prepago con más gigas en Colombia, planes moviles movistar, portabilidad movistar">
     
-    <!-- FAVICON (Usamos un SVG de la M de Movistar para asegurar visibilidad) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Internet Fibra Óptica - 900 Megas Simétricas" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200" />
-
-    <!-- --- PERFORMANCE RESOURCES --- -->
+    <meta property="og:title" content="Planes Móviles Ilimitados y Prepago - Movistar Colombia" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1510531707963-fc2909f1969a?q=80&w=1200" />
+    
+    <!-- --- RECURSOS Y ESTILOS --- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         /* * ==========================================
-         * DESIGN TOKENS & VARIABLES
+         * DESIGN TOKENS & VARIABLES (Movistar Mobile Theme)
          * ==========================================
          */
         :root {
-            /* Colores de Marca */
-            --primary: #019df4;
-            --primary-dark: #007bbd;
-            --secondary: #0b274f;     /* Dark Blue */
-            --accent: #E63700;        /* Movistar Orange/Win */
-            --success: #28a745;
-            
-            /* UI Colors */
+            /* Colores de Marca Móvil */
+            --movistar-blue: #019df4;
+            --movistar-dark: #0b274f;
+            --movistar-accent: #ff9100; /* Naranja para destacar ofertas */
             --bg-body: #f4f7fa;
             --bg-card: #ffffff;
             --text-main: #2c3e50;
-            --text-light: #636e72;
             --white: #ffffff;
             
-            /* Spacing & Layout */
+            /* Layout */
             --header-h: 80px;
             --radius-lg: 16px;
-            --container-w: 1200px;
-            
-            /* Animations */
-            --trans-fast: 0.2s ease;
+            --container-w: 1000px;
+            --trans-fast: 0.3s ease;
         }
 
         /* * ==========================================
@@ -74,632 +68,322 @@
 
         a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
         ul { list-style: none; }
-        button, input { font-family: inherit; border: none; outline: none; }
         button { cursor: pointer; }
 
-        /* Utility Classes */
         .container { width: 92%; max-width: var(--container-w); margin: 0 auto; }
         .text-center { text-align: center; }
-        .hidden { display: none !important; }
 
         /* * ==========================================
-         * COMPONENT: HEADER
+         * COMPONENT: HEADER (Minimalist for Child Page)
          * ==========================================
          */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: var(--movistar-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             z-index: 1000;
-            transition: box-shadow 0.3s;
         }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; color: var(--white); }
+        .logo { color: var(--white); font-weight: 900; font-size: 1.5rem; }
         
-        .main-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
-        
-        /* LOGO INTERACTIVO Y VIBRANTE (IA Generada) */
-        .logo { 
-            display: flex; align-items: center; text-decoration: none; 
-            gap: 5px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            padding: 5px; /* Área de click aumentada */
-            border-radius: 8px;
+        /* Botón de regreso / Home */
+        .btn-home {
+            background: var(--movistar-blue); color: white; padding: 8px 15px;
+            border-radius: 50px; font-weight: 500; display: flex; align-items: center; gap: 8px;
         }
+        .btn-home:hover { background: var(--movistar-accent); }
 
-        /* CONTENEDOR DE ICONO PARA EFECTOS VISUALES */
-        .logo-icon-wrapper {
+        /* * ==========================================
+         * COMPONENT: HERO MOBILE
+         * ==========================================
+         */
+        .hero-mobile {
+            background: linear-gradient(135deg, var(--movistar-blue) 0%, #00d2ff 100%);
+            color: white; padding: 80px 0 60px 0; 
+            min-height: 450px; /* Altura mínima para asegurar visibilidad */
+            display: flex; align-items: center; justify-content: center;
             position: relative;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-
-        /* Efecto de GLOW detrás del ícono */
-        .logo-icon-wrapper::before {
+        
+        .hero-mobile::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: 0.5;
-            filter: blur(10px);
-            transition: opacity 0.3s ease;
-        }
-        
-        .logo-icon {
-            transform: scale(1.1);
-            color: var(--white); /* El ícono es blanco dentro del gradiente */
-            z-index: 1;
-            /* Aplicamos gradiente al fondo del ícono para el efecto Movistar */
-            background: linear-gradient(135deg, var(--primary) 0%, #00d2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px rgba(1, 157, 244, 0.5));
-            transition: transform 0.3s ease;
-        }
-        
-        .logo:hover .logo-icon {
-            transform: scale(1.3) rotate(-10deg);
+            height: 15%;
+            background: var(--bg-body); /* Transición suave al fondo */
+            border-top-left-radius: 50% 10%;
+            border-top-right-radius: 50% 10%;
         }
 
-        .logo-text {
-            color: var(--secondary);
-            font-weight: 900;
-            font-size: 1.3rem; /* Tamaño más grande para resaltar */
-            letter-spacing: -0.5px;
-            transition: color 0.3s ease;
+        .hero-content-mobile {
+            position: relative; z-index: 10; text-align: center;
+            max-width: 800px;
+        }
+        .hero-title-mobile {
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            font-weight: 900; 
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .hero-subtitle-mobile {
+            font-size: clamp(1rem, 2vw, 1.3rem); 
+            opacity: 0.9; 
+            margin-bottom: 30px;
         }
         
-        .logo:hover .logo-text {
-            color: var(--primary); /* El texto cambia a azul primario al interactuar */
-        }
-        
-        /* Animación continua sutil del glow */
-        .logo-icon-wrapper::before {
-             animation: pulse-glow 3s infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            from { opacity: 0.5; transform: scale(0.9); }
-            to { opacity: 0.8; transform: scale(1.1); }
-        }
-        
-        /* FIN LOGO INTERACTIVO */
-
-        .nav-menu { display: flex; gap: 30px; align-items: center; }
-        .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; }
-        .nav-link:hover { color: var(--primary); }
-        
-        /* Estilo especial para el Blog */
-        .nav-link-blog {
-            color: var(--accent);
-            font-weight: 700;
-            display: flex; align-items: center; gap: 5px;
-        }
-        .nav-link-blog:hover { opacity: 0.8; }
-
-        .btn-cta {
-            background: var(--primary); color: white; padding: 10px 24px;
-            border-radius: 50px; font-weight: 700; box-shadow: 0 4px 15px rgba(1, 157, 244, 0.4);
+        .hero-cta-mobile {
+            background: var(--movistar-accent); color: var(--movistar-dark);
+            padding: 15px 30px; border-radius: 50px; font-weight: 800;
+            font-size: 1.1rem; box-shadow: 0 6px 20px rgba(255, 145, 0, 0.5);
             transition: var(--trans-fast);
         }
-        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(1, 157, 244, 0.6); background: var(--primary-dark); }
+        .hero-cta-mobile:hover { transform: translateY(-3px); background: #ff7f00; }
         
-        .mobile-toggle { display: none; color: var(--secondary); background: none; }
-
         /* * ==========================================
-         * COMPONENT: HERO SLIDER
+         * COMPONENT: PLAN CARDS (POSTPAGO)
          * ==========================================
          */
-        .hero {
-            position: relative; height: 680px; width: 100%;
-            background: #000; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .plans-section { padding: 40px 0 80px 0; }
+        .section-title-mobile { font-size: 2.2rem; color: var(--movistar-dark); font-weight: 900; margin-bottom: 15px; }
         
-        .slide {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1.1);
-            transition: opacity 1s ease-in-out, transform 8s linear;
-        }
-        
-        .slide.active { opacity: 1; transform: scale(1); }
-
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
-            background: linear-gradient(180deg, rgba(11,39,79,0.3) 0%, rgba(11,39,79,0.7) 60%, rgba(11,39,79,0.95) 100%);
+        .plan-cards-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; 
+            margin-top: 50px;
         }
 
-        .hero-content {
-            position: relative; z-index: 3; text-align: center; color: white;
-            max-width: 900px; padding: 0 20px;
-            display: flex; flex-direction: column; align-items: center;
-        }
-
-        .dynamic-text-group { display: none; animation: fadeInUp 0.8s ease forwards; }
-        .dynamic-text-group.active { display: block; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-badge {
-            display: inline-block; padding: 6px 16px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;
-            background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
-            margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto;
-        }
-
-        .partners-row { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
-        .partner-pill {
-            background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem;
-        }
-
-        /* * ==========================================
-         * COMPONENT: STICKY LEAD BAR
-         * ==========================================
-         */
-        .sticky-bar {
-            position: sticky; top: var(--header-h); z-index: 900;
-            background: white; border-bottom: 2px solid var(--accent);
-            padding: 12px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .bar-content { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        
-        .bar-input-group { display: flex; gap: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
-        .bar-input {
-            padding: 10px 15px; border: 1px solid #ddd; width: 220px; font-size: 1rem;
-            border-right: none;
-        }
-        .bar-btn {
-            background: var(--accent); color: white; padding: 0 20px; font-weight: 700;
-            transition: background 0.2s;
-        }
-        .bar-btn:hover { background: #c42e00; }
-
-        /* * ==========================================
-         * COMPONENT: CARDS & GRID
-         * ==========================================
-         */
-        .section-padded { padding: 80px 0; }
-        .section-title { font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
-        
-        .cards-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; margin-top: 50px;
-        }
-
-        .plan-card {
-            background: white; border-radius: var(--radius-lg); padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05);
-            position: relative; display: flex; flex-direction: column;
+        .mobile-card {
+            background: var(--bg-card); border-radius: var(--radius-lg); 
+            padding: 30px 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            position: relative; 
+            display: flex; flex-direction: column;
             transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--movistar-blue);
+            overflow: hidden;
         }
-        .plan-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(1, 157, 244, 0.15); }
-        
-        .plan-card.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05); z-index: 2;
-        }
-        .plan-card.featured:hover { transform: scale(1.08); }
+        .mobile-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(1, 157, 244, 0.2); }
 
-        .badge-pop {
-            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: white; padding: 5px 15px;
-            border-radius: 20px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(230, 55, 0, 0.3);
+        .card-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .plan-name { font-size: 1.5rem; font-weight: 800; color: var(--movistar-dark); }
+        
+        .data-badge {
+            background: var(--movistar-blue); color: white; padding: 5px 12px;
+            border-radius: 20px; font-weight: 700; font-size: 0.9rem;
+        }
+        .data-badge.unlimited { background: var(--movistar-accent); }
+
+        .price-display { margin: 20px 0 10px 0; }
+        .price-number { font-size: 2.5rem; font-weight: 900; color: var(--movistar-blue); line-height: 1; }
+        .price-number small { font-size: 1rem; font-weight: 400; color: var(--text-main); }
+
+        .feature-list-mobile { margin-bottom: 25px; flex-grow: 1; }
+        .feature-list-mobile li { 
+            display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.95rem;
+            align-items: center; 
         }
 
-        .price-tag { font-size: 3rem; font-weight: 900; color: var(--primary); line-height: 1; margin: 10px 0; }
-        .price-tag span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-        
-        .features-list { margin: 30px 0; flex-grow: 1; }
-        .feature-li { display: flex; gap: 12px; margin-bottom: 15px; font-size: 0.95rem; align-items: start; }
-        
-        .btn-card {
-            width: 100%; padding: 14px; border-radius: 50px; font-weight: 700; text-align: center;
-            border: 2px solid var(--primary); color: var(--primary); background: transparent;
-            transition: all 0.2s;
+        .card-cta {
+            background: var(--movistar-dark); color: white; padding: 12px;
+            border-radius: 50px; font-weight: 700; text-align: center;
+            transition: background 0.3s;
         }
-        .btn-card:hover { background: #e6f6ff; }
-        .btn-card.filled { background: var(--primary); color: white; border: none; }
-        .btn-card.filled:hover { background: var(--primary-dark); box-shadow: 0 5px 15px rgba(1, 157, 244, 0.3); }
+        .card-cta:hover { background: var(--movistar-blue); }
 
         /* * ==========================================
-         * COMPONENT: MODAL (COVERAGE CHECKER)
+         * COMPONENT: SEO/INFORMATION BLOCK
          * ==========================================
          */
-        .modal-backdrop {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 39, 79, 0.6); backdrop-filter: blur(5px);
-            z-index: 2000; display: flex; align-items: center; justify-content: center;
-            opacity: 0; pointer-events: none; transition: opacity 0.3s;
+        .info-block {
+            background: white;
+            padding: 50px 0;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
         }
-        .modal-backdrop.open { opacity: 1; pointer-events: auto; }
-
-        .modal-box {
-            background: white; width: 90%; max-width: 500px; padding: 40px;
-            border-radius: 20px; position: relative; transform: translateY(20px);
-            transition: transform 0.3s; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        .info-header { 
+            font-size: 1.8rem; 
+            color: var(--movistar-dark); 
+            font-weight: 800; 
+            margin-bottom: 20px; 
+            border-left: 4px solid var(--movistar-accent);
+            padding-left: 15px;
         }
-        .modal-backdrop.open .modal-box { transform: translateY(0); }
-
-        .close-modal { position: absolute; top: 15px; right: 15px; background: none; font-size: 1.5rem; color: #999; }
+        .info-content p { margin-bottom: 20px; color: #555; }
         
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--secondary); }
-        .form-input { 
-            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; 
-            transition: border-color 0.2s;
+        /* Estilo para destacar palabras clave */
+        .keyword { 
+            font-weight: 700; 
+            color: var(--movistar-blue); 
+            text-decoration: underline; 
+            cursor: help;
         }
-        .form-input:focus { border-color: var(--primary); }
-
-        .loader {
-            width: 48px; height: 48px; border: 5px solid var(--primary);
-            border-bottom-color: transparent; border-radius: 50%;
-            display: inline-block; box-sizing: border-box;
-            animation: rotation 1s linear infinite;
-        }
-        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
+        
         /* * ==========================================
          * MOBILE & RESPONSIVE
          * ==========================================
          */
-        @media (max-width: 768px) {
-            .mobile-toggle { display: block; }
-            .nav-menu {
-                position: fixed; top: var(--header-h); left: 0; width: 100%;
-                flex-direction: column; background: white; padding: 30px;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-                transform: translateY(-150%); transition: transform 0.3s;
-            }
-            .nav-menu.active { transform: translateY(0); }
-            
-            .hero-title { font-size: 2.5rem; }
-            .sticky-bar { padding: 15px; }
-            .bar-content { flex-direction: column; width: 100%; }
-            .bar-input-group { width: 100%; }
-            .bar-input { width: 100%; }
-            
-            .cards-grid { padding: 0 10px; }
-            .plan-card.featured { transform: none; }
+        @media (max-width: 600px) {
+            .hero-mobile { padding: 60px 0 40px 0; }
+            .section-title-mobile { font-size: 1.8rem; }
+            .plan-cards-grid { gap: 20px; }
+            .mobile-card { padding: 25px 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Comentario de prueba para forzar la recarga del editor: 30/11/2025 -->
     <!-- Header -->
-    <header class="main-header" id="header">
+    <header class="main-header">
         <div class="container header-inner">
-            <!-- LOGO: Ícono de Rayo de Fibra animado + Texto de marca -->
-            <a href="#" class="logo">
-                <span class="logo-icon-wrapper">
-                    <!-- El ícono se renderiza con el gradiente de fondo, simulando el logo oficial -->
-                    <i data-lucide="zap" class="logo-icon" size="28"></i>
-                </span>
-                <span class="logo-text">MOVISTAR</span>
+            <a href="index.html" class="logo">MOVISTAR MÓVIL</a>
+            <a href="index.html" class="btn-home">
+                <i data-lucide="home" size="18"></i> Volver a Fibra
             </a>
-            
-            <button class="mobile-toggle" id="menuBtn" aria-label="Menu">
-                <i data-lucide="menu" size="28"></i>
-            </button>
-
-            <nav class="nav-menu" id="navMenu">
-                <a href="#planes" class="nav-link">Planes Fibra</a>
-                <a href="#beneficios" class="nav-link">Beneficios</a>
-                <a href="#faq" class="nav-link">Ayuda</a>
-                <!-- ENLACE AL BLOG (Abre en nueva pestaña) -->
-                <a href="blog.html" target="_blank" class="nav-link-blog">
-                    <i data-lucide="newspaper" size="16"></i> Blog
-                </a>
-                <button onclick="openModal()" class="btn-cta">Consultar Cobertura</button>
-            </nav>
         </div>
     </header>
 
-    <!-- Hero Section con Lógica JS Optimizada -->
-    <section class="hero">
-        <div class="hero-slider" id="heroSlider">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1200');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1200');"></div>
-        </div>
-
-        <div class="hero-overlay"></div>
-
-        <div class="container hero-content">
-            <!-- Slide 1 Content -->
-            <div class="dynamic-text-group active" data-index="0">
-                <span class="hero-badge" style="color: var(--primary); border-color: var(--primary);">🚀 Fibra Simétrica</span>
-                <h1 class="hero-title">NAVEGA A LA<br>VELOCIDAD DE LA LUZ</h1>
-                <p class="hero-subtitle">900 Megas Simétricas. La red más estable para tu hogar. Descarga, juega y trabaja sin interrupciones.</p>
-            </div>
-
-            <!-- Slide 2 Content -->
-            <div class="dynamic-text-group" data-index="1">
-                <span class="hero-badge" style="color: #FFC107; border-color: #FFC107;">⚽ Win Sports+ Incluido</span>
-                <h1 class="hero-title">LA PASIÓN DEL<br>FÚTBOL EN HD</h1>
-                <p class="hero-subtitle">No te pierdas ningún gol de la liga local. Vive la emoción del estadio en tu sala.</p>
-            </div>
-
-            <!-- Slide 3 Content -->
-            <div class="dynamic-text-group" data-index="2">
-                <span class="hero-badge" style="color: #E50914; border-color: #E50914;">🎬 Netflix & Disney+</span>
-                <h1 class="hero-title">CINE EN CASA<br>PARA TODOS</h1>
-                <p class="hero-subtitle">Las mejores series y estrenos mundiales incluidos en tu plan de fibra.</p>
-            </div>
-
-            <div class="partners-row">
-                <div class="partner-pill"><i data-lucide="wifi"></i> 900 Megas</div>
-                <div class="partner-pill"><i data-lucide="tv"></i> Win+</div>
-                <div class="partner-pill"><i data-lucide="film"></i> Disney+</div>
-            </div>
-
-            <button onclick="openModal()" class="btn-cta" style="padding: 16px 40px; font-size: 1.1rem; background:white; color:var(--secondary);">
-                Verificar Mi Cobertura
+    <!-- Hero Section Móvil -->
+    <section class="hero-mobile">
+        <div class="container hero-content-mobile">
+            <h1 class="hero-title-mobile">
+                PLANES MÓVILES ILIMITADOS<br>AL MEJOR PRECIO 2025
+            </h1>
+            <p class="hero-subtitle-mobile">
+                La mejor cobertura 4G y 5G con GIGAS que nunca se acaban. 
+                Elige tu libertad digital.
+            </p>
+            <button onclick="scrollToPlans()" class="hero-cta-mobile">
+                Ver Planes Postpago
             </button>
         </div>
     </section>
 
-    <!-- Sticky Lead Capture -->
-    <div class="sticky-bar">
-        <div class="container bar-content">
-            <div style="display:flex; align-items:center; gap:10px; font-weight:600; color:var(--secondary);">
-                <i data-lucide="map-pin" class="text-primary"></i>
-                <span>¿Llega a tu barrio?</span>
-            </div>
-            <form class="bar-input-group" onsubmit="handleStickySubmit(event)">
-                <input type="tel" class="bar-input" placeholder="Tu celular para llamarte..." required>
-                <button type="submit" class="bar-btn">¡LLÁMAME!</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Planes Section -->
-    <main class="container section-padded" id="planes">
-        <div class="text-center" style="margin-bottom: 50px;">
-            <h2 class="section-title">Elige la Potencia de tu Fibra</h2>
-            <p style="color: var(--text-light);">Instalación GRATIS en estrato 3, 4, 5 y 6.</p>
-        </div>
-
-        <div class="cards-grid">
-            <!-- Plan Basic -->
-            <article class="plan-card">
-                <h3 style="font-weight: 800; color: var(--secondary);">TRIO 500 MEGAS</h3>
-                <div class="price-tag">$84.990<span>/mes</span></div>
-                <ul class="features-list">
-                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> 500 Megas Fibra</li>
-                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Telefonía Ilimitada</li>
-                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Movistar TV App</li>
-                </ul>
-                <button onclick="selectPlan('TRIO 500', 84990)" class="btn-card">Lo Quiero</button>
-            </article>
-
-            <!-- Plan Recommended -->
-            <article class="plan-card featured">
-                <div class="badge-pop">🔥 MÁS VENDIDO</div>
-                <h3 style="font-weight: 800; color: var(--secondary);">FIBRA PRO 900</h3>
-                <div class="price-tag">$99.990<span>/mes</span></div>
-                <p style="font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 20px;">Incluye Win Sports+ (3 meses)</p>
-                
-                <ul class="features-list">
-                    <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>900 Megas Simétricas</strong></li>
-                    <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>Disney+ Estándar</strong></li>
-                    <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> Datos Móviles Ilimitados</li>
-                </ul>
-                <button onclick="selectPlan('PRO 900', 99990)" class="btn-card filled">Solicitar Ahora</button>
-            </article>
-
-            <!-- Plan Premium -->
-            <article class="plan-card">
-                <h3 style="font-weight: 800; color: var(--secondary);">TOTAL FULL</h3>
-                <div class="price-tag">$145.990<span>/mes</span></div>
-                <ul class="features-list">
-                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> 900 Megas Fibra</li>
-                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Netflix + Disney+</li>
-                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Amazon Prime</li>
-                </ul>
-                <button onclick="selectPlan('TOTAL FULL', 145990)" class="btn-card">Lo Quiero</button>
-            </article>
-        </div>
-    </main>
-
-    <!-- Beneficios -->
-    <section id="beneficios" style="background: white; padding: 80px 0;">
+    <!-- Planes Postpago -->
+    <section class="plans-section" id="planes-postpago">
         <div class="container">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
-                <div style="flex: 1; min-width: 300px;">
-                    <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=800" alt="Familia viendo TV" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);" loading="lazy">
-                </div>
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 class="section-title">Entretenimiento sin límites</h2>
-                    <p style="margin-bottom: 30px; color: var(--text-light);">
-                        Olvídate del buffering. Con nuestra fibra óptica directa al hogar (FTTH), todos pueden conectar sus dispositivos simultáneamente.
-                    </p>
-                    
-                    <div style="display: grid; gap: 20px;">
-                        <div style="display: flex; gap: 15px;">
-                            <div style="background: var(--bg-body); padding: 12px; border-radius: 12px; height: fit-content;">
-                                <i data-lucide="gamepad-2" color="var(--primary)"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 700;">Gaming Baja Latencia</h4>
-                                <p style="font-size: 0.9rem; color: #666;">Ping optimizado para servidores competitivos.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 15px;">
-                            <div style="background: var(--bg-body); padding: 12px; border-radius: 12px; height: fit-content;">
-                                <i data-lucide="download-cloud" color="var(--accent)"></i>
-                            </div>
-                            <div>
-                                <h4 style="font-weight: 700;">Simetría Real</h4>
-                                <p style="font-size: 0.9rem; color: #666;">Sube archivos pesados a la misma velocidad de descarga.</p>
-                            </div>
-                        </div>
+            <div class="text-center">
+                <h2 class="section-title-mobile">Planes Movistar Ilimitados para Celular</h2>
+                <p style="color: #666;">
+                    Conoce el <span class="keyword">mejor plan de datos para redes sociales</span> y disfruta sin límites.
+                </p>
+            </div>
+            
+            <div class="plan-cards-grid">
+                
+                <!-- Plan 1: Ilimitado Básico -->
+                <article class="mobile-card">
+                    <div class="card-header">
+                        <span class="plan-name">PLAN FULL 40GB</span>
+                        <span class="data-badge">40 GB</span>
                     </div>
-                </div>
+                    <p style="color: var(--movistar-blue); font-weight: 700; font-size: 0.9rem;">
+                        Ideal para el uso diario y redes sociales.
+                    </p>
+                    <div class="price-display">
+                        <span class="price-number">$55.900<small>/mes</small></span>
+                    </div>
+                    <ul class="feature-list-mobile">
+                        <li><i data-lucide="check" size="18" color="#019df4"></i> Voz y SMS Ilimitados</li>
+                        <li><i data-lucide="check" size="18" color="#019df4"></i> WhatsApp sin consumir datos</li>
+                        <li><i data-lucide="check" size="18" color="#019df4"></i> Redes Sociales (10GB)</li>
+                    </ul>
+                    <button onclick="handleLead('Plan Full 40GB')" class="card-cta">Contratar Plan</button>
+                </article>
+
+                <!-- Plan 2: Ilimitado PREMIUM (Recomendado) -->
+                <article class="mobile-card" style="border-top-color: var(--movistar-accent);">
+                    <span style="position: absolute; top: 15px; right: -20px; background: var(--movistar-accent); color: white; padding: 5px 25px; transform: rotate(45deg); font-weight: 700; font-size: 0.8rem;">¡TOP!</span>
+                    <div class="card-header">
+                        <span class="plan-name" style="color: var(--movistar-accent);">PLAN ILIMITADO</span>
+                        <span class="data-badge unlimited">ILIMITADO</span>
+                    </div>
+                    <p style="color: var(--movistar-accent); font-weight: 700; font-size: 0.9rem;">
+                        ¡La mejor opción para el precio 2025-2026!
+                    </p>
+                    <div class="price-display">
+                        <span class="price-number" style="color: var(--movistar-accent);">$89.900<small>/mes</small></span>
+                    </div>
+                    <ul class="feature-list-mobile">
+                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> **Datos Ilimitados 4G/5G**</li>
+                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> Roaming en 10 países de Latam</li>
+                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> Larga Distancia Ilimitada (LDI)</li>
+                    </ul>
+                    <button onclick="handleLead('Plan Ilimitado Premium')" class="card-cta" style="background: var(--movistar-accent); color: var(--movistar-dark);">¡Lo Quiero Ilimitado!</button>
+                </article>
+
+                <!-- Plan 3: Prepago con Más Gigas -->
+                <article class="mobile-card">
+                    <div class="card-header">
+                        <span class="plan-name">PREPAGO PLUS</span>
+                        <span class="data-badge" style="background: #198754;">MÁS GIGAS</span>
+                    </div>
+                    <p style="color: #198754; font-weight: 700; font-size: 0.9rem;">
+                        El mejor de los <span class="keyword">planes Movistar prepago con más gigas en Colombia</span>.
+                    </p>
+                    <div class="price-display">
+                        <span class="price-number">$30.000<small>/30 días</small></span>
+                    </div>
+                    <ul class="feature-list-mobile">
+                        <li><i data-lucide="cpu" size="18" color="#198754"></i> **30 GB** de navegación (Doble recarga)</li>
+                        <li><i data-lucide="cpu" size="18" color="#198754"></i> 10 min LDI a USA, Canadá y Puerto Rico</li>
+                        <li><i data-lucide="cpu" size="18" color="#198754"></i> Minutos y SMS nacionales ilimitados</li>
+                    </ul>
+                    <button onclick="handleLead('Prepago Plus')" class="card-cta">Recargar Ahora</button>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer style="background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto;">
-        <div class="container">
-            <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <!-- ENLACE A TÉRMINOS Y CONDICIONES (Abre en nueva pestaña) -->
-                <a href="Terminos y Condiciones.html" target="_blank" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; border-bottom: 1px dashed rgba(255,255,255,0.4);">Términos y Condiciones</a>
-                <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Política de Datos</a>
-            </div>
-            <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Distribuidor Autorizado. Aplican términos y condiciones.</p>
+    <!-- Bloque Informativo SEO/Ayuda -->
+    <section class="info-block">
+        <div class="container info-content">
+            <h2 class="info-header">Guía Rápida: Activar SIM Card y Portabilidad</h2>
+
+            <h3>¿Cómo cambiar de operador a Movistar con el mismo número?</h3>
+            <p>
+                La portabilidad numérica a Movistar es un proceso sencillo. Simplemente eliges tu plan postpago (como nuestros <span class="keyword">planes Movistar ilimitados para celular precio 2025-2026</span>), nos envías tu fotocopia de cédula y tu número. Nosotros nos encargamos de solicitar el PIN de portación y gestionar el cambio en menos de 24 horas, manteniendo tu número actual.
+            </p>
+
+            <h3>¿Cómo activar SIM Card Movistar Colombia?</h3>
+            <p>
+                Si tienes un chip nuevo, la activación de tu SIM Card Movistar Colombia es rápida. Coloca la SIM en tu celular, espera a que tome señal, y realiza una primera llamada. El sistema te guiará. Si es un plan prepago, realiza la primera recarga para activar tus <span class="keyword">planes Movistar prepago con más gigas en Colombia</span> y empezar a disfrutar de la mejor navegación.
+            </p>
+
+            <h3>¿Cuál es el mejor plan de datos para redes sociales?</h3>
+            <p>
+                Definitivamente, el <span class="keyword">mejor plan de datos para redes sociales</span> es nuestro Plan Ilimitado. Te permite usar TikTok, Instagram, YouTube y Facebook sin preocuparte por el consumo de datos, asegurando que siempre tengas la máxima velocidad para subir contenido o hacer *lives*.
+            </p>
         </div>
+    </section>
+
+
+    <!-- Footer (simple) -->
+    <footer style="background: var(--movistar-dark); color: white; padding: 30px 0; text-align: center;">
+        <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Movistar Móvil. ¡Conéctate a la red del futuro!</p>
     </footer>
-
-    <!-- 
-      === MODAL DE COBERTURA === 
-    -->
-    <div class="modal-backdrop" id="coverageModal">
-        <div class="modal-box">
-            <button class="close-modal" onclick="closeModal()">&times;</button>
-            
-            <div id="modalStep1">
-                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--secondary);">📍 Verificar Cobertura</h3>
-                <p style="color: #666; margin-bottom: 20px; font-size: 0.95rem;">Ingresa tu ubicación para validar disponibilidad de puertos de fibra.</p>
-                
-                <form onsubmit="checkCoverage(event)">
-                    <div class="form-group">
-                        <label class="form-label">Ciudad / Municipio</label>
-                        <select class="form-input" required>
-                            <option value="">Selecciona...</option>
-                            <option>Bogotá</option>
-                            <option>Medellín</option>
-                            <option>Cali</option>
-                            <option>Barranquilla</option>
-                            <option>Otra</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Barrio</label>
-                        <input type="text" class="form-input" placeholder="Ej: Laureles, Chapinero..." required id="inputBarrio">
-                    </div>
-                    <button type="submit" class="btn-cta" style="width: 100%;">VALIDAR AHORA</button>
-                </form>
-            </div>
-
-            <div id="modalStep2" class="hidden text-center" style="padding: 20px 0;">
-                <div class="loader"></div>
-                <p style="margin-top: 20px; font-weight: 500;">Consultando central...</p>
-            </div>
-
-            <div id="modalStep3" class="hidden text-center">
-                <div style="width: 60px; height: 60px; background: #d4edda; color: #155724; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
-                    <i data-lucide="check" size="32"></i>
-                </div>
-                <h3 style="color: var(--success); font-weight: 800; font-size: 1.5rem;">¡COBERTURA DISPONIBLE!</h3>
-                <p style="margin-bottom: 25px; color: #555;">Hemos encontrado puertos de fibra libre en tu zona.</p>
-                <button onclick="finishLead()" class="btn-cta" style="background: #25D366; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                    <i data-lucide="message-circle"></i> AGENDAR INSTALACIÓN
-                </button>
-            </div>
-        </div>
-    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
-            initSlider();
-            initHeader();
         });
 
-        const STATE = { currentSlide: 0, barrio: '' };
         const WHATSAPP_NUMBER = "573165593013";
 
-        function initSlider() {
-            const slides = document.querySelectorAll('.slide');
-            const contents = document.querySelectorAll('.dynamic-text-group');
-            setInterval(() => {
-                slides[STATE.currentSlide].classList.remove('active');
-                contents[STATE.currentSlide].classList.remove('active');
-                STATE.currentSlide = (STATE.currentSlide + 1) % slides.length;
-                slides[STATE.currentSlide].classList.add('active');
-                contents[STATE.currentSlide].classList.add('active');
-            }, 6000);
+        function scrollToPlans() {
+            document.getElementById('planes-postpago').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function initHeader() {
-            const header = document.getElementById('header');
-            const menuBtn = document.getElementById('menuBtn');
-            const navMenu = document.getElementById('navMenu');
-            
-            window.addEventListener('scroll', () => {
-                if(window.scrollY > 50) header.classList.add('scrolled');
-                else header.classList.remove('scrolled');
-            });
-
-            menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => navMenu.classList.remove('active'));
-            });
-        }
-
-        function openModal() { document.getElementById('coverageModal').classList.add('open'); }
-        function closeModal() { 
-            document.getElementById('coverageModal').classList.remove('open'); 
-            setTimeout(() => {
-                document.getElementById('modalStep1').classList.remove('hidden');
-                document.getElementById('modalStep2').classList.add('hidden');
-                document.getElementById('modalStep3').classList.add('hidden');
-            }, 300);
-        }
-
-        function checkCoverage(e) {
-            e.preventDefault();
-            STATE.barrio = document.getElementById('inputBarrio').value;
-            document.getElementById('modalStep1').classList.add('hidden');
-            document.getElementById('modalStep2').classList.remove('hidden');
-            setTimeout(() => {
-                document.getElementById('modalStep2').classList.add('hidden');
-                document.getElementById('modalStep3').classList.remove('hidden');
-            }, 1500);
-        }
-
-        function finishLead() {
-            const msg = `Hola! Verifiqué cobertura en el barrio *${STATE.barrio}* y dice DISPONIBLE. Quiero agendar instalación.`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-            closeModal();
-        }
-
-        function selectPlan(planName, price) {
-            const msg = `Hola! Estoy interesado en el plan *${planName}* de $${price}. ¿Me ayudan a contratar?`;
+        function handleLead(planName) {
+            const msg = `Hola! Estoy interesado en el plan móvil *${planName}*. Necesito ayuda para la portabilidad / contratación.`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function handleStickySubmit(e) {
-            e.preventDefault();
-            const input = e.target.querySelector('input');
-            const msg = `Hola! Solicito una llamada urgente al número: ${input.value}`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
     </script>
 </body>
 </html>
