@@ -7,7 +7,7 @@
     <!-- --- SEO & METADATA --- -->
     <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
     <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
-    <link rel="canonical" href="https://tu-dominio.com/planes-fibra" />
+    <link rel="canonical" href="https://tu-dominio.com/" />
     <meta name="theme-color" content="#019df4">
     
     <!-- Open Graph -->
@@ -18,10 +18,9 @@
     <!-- --- PERFORMANCE RESOURCES --- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Font Display Swap para evitar FOIT -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons (Script ligero) -->
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -37,10 +36,6 @@
             --accent: #E63700;        /* Movistar Orange/Win */
             --success: #28a745;
             
-            /* Colores de Partners */
-            --netflix: #E50914;
-            --disney: #113CCF;
-            
             /* UI Colors */
             --bg-body: #f4f7fa;
             --bg-card: #ffffff;
@@ -50,13 +45,11 @@
             
             /* Spacing & Layout */
             --header-h: 70px;
-            --radius-sm: 8px;
             --radius-lg: 16px;
             --container-w: 1200px;
             
             /* Animations */
             --trans-fast: 0.2s ease;
-            --trans-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* * ==========================================
@@ -65,10 +58,7 @@
          */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         
-        html { 
-            scroll-behavior: smooth; 
-            font-size: 16px;
-        }
+        html { scroll-behavior: smooth; font-size: 16px; }
         
         body {
             font-family: 'Roboto', sans-serif;
@@ -87,7 +77,6 @@
         /* Utility Classes */
         .container { width: 92%; max-width: var(--container-w); margin: 0 auto; }
         .text-center { text-align: center; }
-        .flex-center { display: flex; align-items: center; justify-content: center; }
         .hidden { display: none !important; }
 
         /* * ==========================================
@@ -96,12 +85,12 @@
          */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0,0,0,0.05);
             z-index: 1000;
-            transition: transform 0.3s;
+            transition: box-shadow 0.3s;
         }
         
         .main-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
@@ -113,11 +102,14 @@
         .nav-menu { display: flex; gap: 30px; align-items: center; }
         .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; }
         .nav-link:hover { color: var(--primary); }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-            background: var(--primary); transition: width 0.3s;
+        
+        /* Estilo especial para el Blog */
+        .nav-link-blog {
+            color: var(--accent);
+            font-weight: 700;
+            display: flex; align-items: center; gap: 5px;
         }
-        .nav-link:hover::after { width: 100%; }
+        .nav-link-blog:hover { opacity: 0.8; }
 
         .btn-cta {
             background: var(--primary); color: white; padding: 10px 24px;
@@ -160,7 +152,6 @@
             display: flex; flex-direction: column; align-items: center;
         }
 
-        /* Contenidos dinámicos que cambian con JS para mejor control */
         .dynamic-text-group { display: none; animation: fadeInUp 0.8s ease forwards; }
         .dynamic-text-group.active { display: block; }
 
@@ -340,6 +331,10 @@
                 <a href="#planes" class="nav-link">Planes Fibra</a>
                 <a href="#beneficios" class="nav-link">Beneficios</a>
                 <a href="#faq" class="nav-link">Ayuda</a>
+                <!-- ENLACE AL BLOG (Abre en nueva pestaña) -->
+                <a href="blog.html" target="_blank" class="nav-link-blog">
+                    <i data-lucide="newspaper" size="16"></i> Blog
+                </a>
                 <button onclick="openModal()" class="btn-cta">Consultar Cobertura</button>
             </nav>
         </div>
@@ -348,11 +343,6 @@
     <!-- Hero Section con Lógica JS Optimizada -->
     <section class="hero">
         <div class="hero-slider" id="heroSlider">
-            <!-- 
-               PERFORMANCE NOTE: 
-               First image fetchpriority="high" for LCP optimization.
-               Others lazy loaded.
-            -->
             <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200');"></div>
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1200');"></div>
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1200');"></div>
@@ -457,7 +447,7 @@
         </div>
     </main>
 
-    <!-- Beneficios (Layout Alternativo) -->
+    <!-- Beneficios -->
     <section id="beneficios" style="background: white; padding: 80px 0;">
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
@@ -495,22 +485,25 @@
         </div>
     </section>
 
-    <!-- Footer Simple -->
+    <!-- Footer -->
     <footer style="background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto;">
         <div class="container">
+            <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <!-- ENLACE A TÉRMINOS Y CONDICIONES (Abre en nueva pestaña) -->
+                <a href="Terminos y Condiciones.html" target="_blank" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; border-bottom: 1px dashed rgba(255,255,255,0.4);">Términos y Condiciones</a>
+                <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Política de Datos</a>
+            </div>
             <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Distribuidor Autorizado. Aplican términos y condiciones.</p>
         </div>
     </footer>
 
     <!-- 
-      === MODAL DE COBERTURA (NUEVA FEATURE) === 
-      Mejora la conversión capturando el lead antes de ir a WhatsApp
+      === MODAL DE COBERTURA === 
     -->
     <div class="modal-backdrop" id="coverageModal">
         <div class="modal-box">
             <button class="close-modal" onclick="closeModal()">&times;</button>
             
-            <!-- Step 1: Formulario -->
             <div id="modalStep1">
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--secondary);">📍 Verificar Cobertura</h3>
                 <p style="color: #666; margin-bottom: 20px; font-size: 0.95rem;">Ingresa tu ubicación para validar disponibilidad de puertos de fibra.</p>
@@ -535,13 +528,11 @@
                 </form>
             </div>
 
-            <!-- Step 2: Loading (Fake) -->
             <div id="modalStep2" class="hidden text-center" style="padding: 20px 0;">
                 <div class="loader"></div>
                 <p style="margin-top: 20px; font-weight: 500;">Consultando central...</p>
             </div>
 
-            <!-- Step 3: Success -->
             <div id="modalStep3" class="hidden text-center">
                 <div style="width: 60px; height: 60px; background: #d4edda; color: #155724; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
                     <i data-lucide="check" size="32"></i>
@@ -556,73 +547,46 @@
     </div>
 
     <script>
-        // --- JS MODULE: INITIALIZATION ---
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             initSlider();
             initHeader();
         });
 
-        const STATE = {
-            currentSlide: 0,
-            barrio: '',
-            planSelected: ''
-        };
-
+        const STATE = { currentSlide: 0, barrio: '' };
         const WHATSAPP_NUMBER = "573165593013";
 
-        // --- MODULE: SLIDER ---
         function initSlider() {
             const slides = document.querySelectorAll('.slide');
             const contents = document.querySelectorAll('.dynamic-text-group');
-            const total = slides.length;
-            
-            // Intervalo de 6 segundos
             setInterval(() => {
-                // Remove active
                 slides[STATE.currentSlide].classList.remove('active');
                 contents[STATE.currentSlide].classList.remove('active');
-                
-                // Increment
-                STATE.currentSlide = (STATE.currentSlide + 1) % total;
-                
-                // Add active
+                STATE.currentSlide = (STATE.currentSlide + 1) % slides.length;
                 slides[STATE.currentSlide].classList.add('active');
                 contents[STATE.currentSlide].classList.add('active');
             }, 6000);
         }
 
-        // --- MODULE: UI INTERACTIONS ---
         function initHeader() {
             const header = document.getElementById('header');
             const menuBtn = document.getElementById('menuBtn');
             const navMenu = document.getElementById('navMenu');
             
-            // Sticky effect
             window.addEventListener('scroll', () => {
                 if(window.scrollY > 50) header.classList.add('scrolled');
                 else header.classList.remove('scrolled');
             });
 
-            // Mobile Menu
-            menuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-
-            // Close menu on link click
+            menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => navMenu.classList.remove('active'));
             });
         }
 
-        // --- MODULE: MODAL LOGIC ---
-        function openModal() {
-            document.getElementById('coverageModal').classList.add('open');
-        }
-
-        function closeModal() {
-            document.getElementById('coverageModal').classList.remove('open');
-            // Reset modal state after delay
+        function openModal() { document.getElementById('coverageModal').classList.add('open'); }
+        function closeModal() { 
+            document.getElementById('coverageModal').classList.remove('open'); 
             setTimeout(() => {
                 document.getElementById('modalStep1').classList.remove('hidden');
                 document.getElementById('modalStep2').classList.add('hidden');
@@ -633,12 +597,8 @@
         function checkCoverage(e) {
             e.preventDefault();
             STATE.barrio = document.getElementById('inputBarrio').value;
-            
-            // UI Transition
             document.getElementById('modalStep1').classList.add('hidden');
             document.getElementById('modalStep2').classList.remove('hidden');
-            
-            // Simulate API latency (1.5s)
             setTimeout(() => {
                 document.getElementById('modalStep2').classList.add('hidden');
                 document.getElementById('modalStep3').classList.remove('hidden');
