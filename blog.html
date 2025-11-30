@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- --- SEO TÉCNICO AVANZADO PARA BLOG --- -->
+    <!-- Título optimizado con Palabras Clave Principales -->
+    <title>Blog Internet Movistar Colombia | Consejos Fibra Óptica, Planes y Entretenimiento</title>
+    
+    <!-- Meta Descripción con Palabras Clave Secundarias y Llamado a la Acción -->
+    <meta name="description" content="Descubre todo sobre los planes de internet fibra óptica Movistar. Consejos para mejorar tu velocidad, estrenos de Disney+, cómo ver Win Sports+ online y ofertas exclusivas en Colombia.">
+    
+    <!-- Palabras Clave (Keywords Meta - Aunque Google no la usa tanto, otros buscadores sí) -->
+    <meta name="keywords" content="internet movistar, fibra optica movistar, planes movistar, contratar movistar, velocidad internet, cobertura fibra, win sports online, disney plus colombia">
+    
+    <link rel="canonical" href="https://tu-dominio.com/blog-movistar" />
+    <meta name="theme-color" content="#019df4">
+
+    <!-- Open Graph (Redes Sociales) -->
+    <meta property="og:type" content="blog" />
+    <meta property="og:title" content="Blog Movistar: Expertos en Fibra y Entretenimiento" />
+    <meta property="og:description" content="¿Buscas el mejor plan para streaming y juegos? Lee nuestros consejos sobre fibra óptica." />
+    <meta property="og:image" content="https://tu-dominio.com/imagen-blog-share.jpg" />
+
+    <!-- Schema.org para Artículos de Blog (SEO Avanzado) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog de Fibra Óptica Movistar Colombia",
+      "description": "Artículos sobre tecnología, entretenimiento y planes de internet hogar.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Movistar Partner",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://tu-dominio.com/logo.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- Google Fonts & Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ESTILOS (Heredados de index.html + Nuevos para Blog) -->
+    <style>
+        :root {
+            --primary-blue: #019df4;
+            --primary-dark: #007bbd;
+            --dark-blue: #0b274f;
+            --light-blue: #e8f0fe;
+            --accent-orange: #E63700;
+            --text-main: #333333;
+            --text-light: #5f6368;
+            --white: #ffffff;
+            --radius: 12px;
+            --header-height: 70px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Roboto', sans-serif; color: var(--text-main); background-color: #f8faff; padding-top: var(--header-height); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+        
+        /* HEADER (Idéntico al Home) */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04); z-index: 1000; display: flex; align-items: center;
+        }
+        .container { width: 92%; max-width: 1200px; margin: 0 auto; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-size: 1.5rem; font-weight: 900; color: var(--primary-blue); display: flex; align-items: center; gap: 8px; }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 500; color: var(--dark-blue); font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary-blue); }
+        .btn-header { background: var(--primary-blue); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 10px rgba(1, 157, 244, 0.3); }
+        .btn-header:hover { background: var(--primary-dark); transform: translateY(-1px); }
+        .menu-toggle { display: none; background: none; color: var(--dark-blue); }
+
+        /* BLOG HERO */
+        .blog-hero {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #004e92 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .blog-hero h1 { font-size: 3rem; font-weight: 900; margin-bottom: 15px; }
+        .blog-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 20px; display: block; }
+
+        /* LAYOUT BLOG */
+        .blog-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 80px; }
+        
+        /* Artículos */
+        .articles-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        
+        .article-card {
+            background: white; border-radius: var(--radius); overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s;
+            display: flex; flex-direction: column; border: 1px solid #eee;
+        }
+        .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        
+        .article-img { height: 250px; background: #ddd; position: relative; overflow: hidden; }
+        .img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 2rem; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+        
+        /* Colores para placeholders (reemplazar con <img> reales) */
+        .bg-tech { background: linear-gradient(45deg, #0b274f, #019df4); }
+        .bg-streaming { background: linear-gradient(45deg, #E50914, #000); }
+        .bg-sports { background: linear-gradient(45deg, #E63700, #ff8c00); }
+        
+        .article-body { padding: 30px; }
+        .article-tag { background: var(--light-blue); color: var(--primary-blue); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: inline-block; }
+        .article-title { font-size: 1.6rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 15px; line-height: 1.3; }
+        .article-excerpt { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+        .read-more { color: var(--primary-blue); font-weight: 700; display: flex; align-items: center; gap: 5px; }
+
+        /* SIDEBAR (Barra lateral para SEO Long Tail) */
+        .sidebar { position: sticky; top: 100px; height: fit-content; }
+        
+        .sidebar-widget { background: white; padding: 25px; border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #eee; }
+        .widget-title { font-size: 1.2rem; font-weight: 800; color: var(--dark-blue); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--light-blue); }
+        
+        .popular-posts li { margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; }
+        .popular-posts a { font-weight: 500; color: var(--text-main); font-size: 0.95rem; display: block; }
+        .popular-posts a:hover { color: var(--primary-blue); }
+        .post-meta { font-size: 0.8rem; color: #999; margin-top: 5px; display: block; }
+
+        .offer-card { background: var(--dark-blue); color: white; padding: 25px; border-radius: var(--radius); text-align: center; }
+        .offer-price { font-size: 2.5rem; font-weight: 900; color: var(--primary-blue); margin: 10px 0; }
+        .btn-offer { background: var(--accent-orange); color: white; padding: 12px 20px; border-radius: 50px; font-weight: 700; display: inline-block; width: 100%; margin-top: 15px; }
+
+        /* SEO Footer Section */
+        .seo-footer { background: #fff; padding: 60px 0; margin-top: 40px; border-top: 1px solid #eee; }
+        .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .seo-column h3 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 15px; }
+        .seo-column ul li { margin-bottom: 8px; color: var(--text-light); font-size: 0.9rem; }
+        .seo-column ul li:before { content: "•"; color: var(--primary-blue); margin-right: 8px; }
+
+        /* Footer Main */
+        .main-footer { background-color: var(--dark-blue); color: white; padding: 40px 0; text-align: center; font-size: 0.9rem; margin-top: 0; }
+
+        @media (max-width: 900px) {
+            .blog-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; /* Opcional: ocultar sidebar en móvil o mover abajo */ }
+            .blog-hero h1 { font-size: 2.2rem; }
+            .nav-links { display: none; } 
+            .menu-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <i data-lucide="zap" fill="#019df4"></i>
+                <span>MOVISTAR</span>
+            </a>
+            <button class="menu-toggle"><i data-lucide="menu"></i></button>
+            <nav class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#servicios">Planes Fibra</a>
+                <a href="#" style="color: var(--primary-blue); font-weight: 700;">Blog</a>
+            </nav>
+            <a href="index.html#contacto" class="btn-header">Cotizar Ahora</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="blog-hero">
+            <div class="container">
+                <span class="breadcrumb">Inicio > Blog > Internet y Entretenimiento</span>
+                <!-- H1 Optimizado con Palabras Clave Principales -->
+                <h1>Blog de Internet Movistar y Fibra Óptica</h1>
+                <p>Tu guía definitiva sobre <strong>planes de internet fibra óptica</strong>, trucos para mejorar tu WiFi, estrenos de entretenimiento y noticias de <strong>Movistar Colombia</strong>.</p>
+            </div>
+        </section>
+
+        <div class="container blog-layout">
+            
+            <!-- Columna Principal: Artículos -->
+            <section class="articles-grid">
+                
+                <!-- Artículo Destacado 1: Streaming / Netflix -->
+                <article class="article-card">
+                    <div class="article-img bg-streaming">
+                        <div class="img-placeholder">NETFLIX 4K</div>
+                    </div>
+                    <div class="article-body">
+                        <span class="article-tag">Velocidad Internet</span>
+                        <!-- Título con Keyword de Contenido -->
+                        <h2 class="article-title">¿Cuál es la mejor velocidad de internet para ver Netflix sin cortes?</h2>
+                        <p class="article-excerpt">
+                            Si eres fanático del streaming, necesitas saber qué ancho de banda requiere el contenido 4K. Descubre el <strong>mejor plan de internet para streaming</strong> y olvídate del 'buffering' con la fibra simétrica.
+                        </p>
+                        <a href="#" class="read-more">Leer Artículo <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                </article>
+
+                <!-- Artículo 2: Fibra vs Tradicional -->
+                <article class="article-card">
+                    <div class="article-img bg-tech">
+                        <div class="img-placeholder">FIBRA vs COBRE</div>
+                    </div>
+                    <div class="article-body">
+                        <span class="article-tag">Tecnología</span>
+                        <!-- Título con Keyword Secundaria -->
+                        <h2 class="article-title">Ventajas de la fibra óptica vs. internet tradicional (Cobre)</h2>
+                        <p class="article-excerpt">
+                            No todos los internet son iguales. Analizamos por qué la <strong>fibra óptica Movistar</strong> ofrece menor latencia para juegos y mayor estabilidad que las conexiones antiguas.
+                        </p>
+                        <a href="#" class="read-more">Leer Artículo <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                </article>
+
+                <!-- Artículo 3: Win Sports & Disney+ -->
+                <article class="article-card">
+                    <div class="article-img bg-sports">
+                        <div class="img-placeholder">FÚTBOL & CINE</div>
+                    </div>
+                    <div class="article-body">
+                        <span class="article-tag">Entretenimiento</span>
+                        <!-- Título con Keywords Long Tail -->
+                        <h2 class="article-title">Cómo ver partidos de fútbol online con WIN SPORTS+ y estrenos de Disney+</h2>
+                        <p class="article-excerpt">
+                            Aprende <strong>cómo tener Win Sport+ con Movistar</strong> incluido en tu factura. Además, revisamos los estrenos de Disney+ este mes para que aproveches tu <strong>combo de internet y TV</strong>.
+                        </p>
+                        <a href="#" class="read-more">Leer Artículo <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Sidebar: Optimización Long Tail y Conversión -->
+            <aside class="sidebar">
+                
+                <!-- Widget: Oferta Destacada (Keyword Long Tail: contratar movistar fibra optica con disney+) -->
+                <div class="offer-card">
+                    <h3>¡Oferta del Mes!</h3>
+                    <p>Fibra 900 Megas + Disney+</p>
+                    <div class="offer-price">$99.990</div>
+                    <p style="font-size: 0.8rem; opacity: 0.8;">Precio exclusivo web</p>
+                    <a href="https://wa.me/573165593013?text=Hola,%20vi%20la%20oferta%20en%20el%20blog%20de%20Fibra%20con%20Disney" target="_blank" class="btn-offer">
+                        Contratar Ahora
+                    </a>
+                </div>
+
+                <!-- Widget: Posts Populares (Keywords de Intención de Compra) -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Lo más buscado</h3>
+                    <ul class="popular-posts">
+                        <li>
+                            <a href="#">Movistar fibra óptica 500 megas precio y características</a>
+                            <span class="post-meta">Lectura: 3 min</span>
+                        </li>
+                        <li>
+                            <a href="#">Precio plan internet Movistar con Win Sport+ incluido</a>
+                            <span class="post-meta">Lectura: 2 min</span>
+                        </li>
+                        <li>
+                            <a href="#">¿Cómo contratar Movistar Colombia por WhatsApp?</a>
+                            <span class="post-meta">Lectura: 1 min</span>
+                        </li>
+                        <li>
+                            <a href="#">Mapa de Cobertura Fibra Movistar 2025</a>
+                            <span class="post-meta">Actualizado hoy</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+
+        <!-- Sección SEO Inferior: Guía rápida para capturar Long Tail Keywords -->
+        <section class="seo-footer">
+            <div class="container">
+                <div class="seo-grid">
+                    <div class="seo-column">
+                        <h3>Planes Movistar Internet</h3>
+                        <ul>
+                            <li>Planes de internet fibra óptica hogar</li>
+                            <li>Ofertas internet Movistar para estratos 3 y 4</li>
+                            <li>Movistar internet y TV combos</li>
+                            <li>Internet simétrico para Gamers</li>
+                        </ul>
+                    </div>
+                    <div class="seo-column">
+                        <h3>Atención al Cliente</h3>
+                        <ul>
+                            <li>Cómo contratar Movistar fibra</li>
+                            <li>Cobertura fibra Movistar en mi barrio</li>
+                            <li>Test de velocidad internet Movistar</li>
+                            <li>Soporte técnico Movistar Colombia</li>
+                        </ul>
+                    </div>
+                    <div class="seo-column">
+                        <h3>Entretenimiento Incluido</h3>
+                        <ul>
+                            <li>Contratar Movistar fibra óptica con Disney+</li>
+                            <li>Ver Win Sports+ online gratis con mi plan</li>
+                            <li>Amazon Prime y Netflix en Movistar</li>
+                            <li>Star+ combos fibra óptica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>Distribuidor Autorizado Movistar Colombia. © 2025. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile Menu Logic (Igual que en index.html)
+        const menuBtn = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-links');
+        if(menuBtn){
+            menuBtn.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+                if(navMenu.style.display === 'flex') {
+                    navMenu.style.flexDirection = 'column';
+                    navMenu.style.position = 'absolute';
+                    navMenu.style.top = '70px';
+                    navMenu.style.left = '0';
+                    navMenu.style.width = '100%';
+                    navMenu.style.background = 'white';
+                    navMenu.style.padding = '20px';
+                    navMenu.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
