@@ -11,17 +11,19 @@
     <!-- Meta Descripción con Palabras Clave Secundarias y Llamado a la Acción -->
     <meta name="description" content="Descubre todo sobre los planes de internet fibra óptica Movistar. Consejos para mejorar tu velocidad, estrenos de Disney+, cómo ver Win Sports+ online y ofertas exclusivas en Colombia.">
     
-    <!-- Palabras Clave (Keywords Meta - Aunque Google no la usa tanto, otros buscadores sí) -->
+    <!-- Palabras Clave -->
     <meta name="keywords" content="internet movistar, fibra optica movistar, planes movistar, contratar movistar, velocidad internet, cobertura fibra, win sports online, disney plus colombia">
     
-    <link rel="canonical" href="https://tu-dominio.com/blog-movistar" />
+    <!-- Canonical apuntando a la URL limpia (sin .html) -->
+    <link rel="canonical" href="https://www.fibrahogar.co/blog" />
     <meta name="theme-color" content="#019df4">
 
     <!-- Open Graph (Redes Sociales) -->
     <meta property="og:type" content="blog" />
     <meta property="og:title" content="Blog Movistar: Expertos en Fibra y Entretenimiento" />
     <meta property="og:description" content="¿Buscas el mejor plan para streaming y juegos? Lee nuestros consejos sobre fibra óptica." />
-    <meta property="og:image" content="https://tu-dominio.com/imagen-blog-share.jpg" />
+    <!-- Reemplazar con URL real de imagen destacada -->
+    <meta property="og:image" content="https://www.fibrahogar.co/images/blog-share.jpg" />
 
     <!-- Schema.org para Artículos de Blog (SEO Avanzado) -->
     <script type="application/ld+json">
@@ -35,7 +37,7 @@
         "name": "Movistar Partner",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://tu-dominio.com/logo.png"
+          "url": "https://www.fibrahogar.co/images/logo.png"
         }
       }
     }
@@ -84,7 +86,7 @@
 
         /* BLOG HERO */
         .blog-hero {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, #004e92 100%);
+            background: radial-gradient(circle at 80% 20%, #004e92 0%, #000428 100%);
             color: white;
             padding: 80px 0;
             text-align: center;
@@ -142,6 +144,10 @@
         .seo-column h3 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 15px; }
         .seo-column ul li { margin-bottom: 8px; color: var(--text-light); font-size: 0.9rem; }
         .seo-column ul li:before { content: "•"; color: var(--primary-blue); margin-right: 8px; }
+        
+        /* Enlaces en el SEO Footer */
+        .seo-column ul li a { color: var(--text-light); transition: color 0.2s; }
+        .seo-column ul li a:hover { color: var(--primary-blue); text-decoration: underline; }
 
         /* Footer Main */
         .main-footer { background-color: var(--dark-blue); color: white; padding: 40px 0; text-align: center; font-size: 0.9rem; margin-top: 0; }
@@ -168,7 +174,7 @@
             <nav class="nav-links">
                 <a href="index.html">Inicio</a>
                 <a href="index.html#servicios">Planes Fibra</a>
-                <a href="#" style="color: var(--primary-blue); font-weight: 700;">Blog</a>
+                <a href="/blog" style="color: var(--primary-blue); font-weight: 700;">Blog</a>
             </nav>
             <a href="index.html#contacto" class="btn-header">Cotizar Ahora</a>
         </div>
@@ -287,7 +293,9 @@
                     <div class="seo-column">
                         <h3>Planes Movistar Internet</h3>
                         <ul>
-                            <li>Planes de internet fibra óptica hogar</li>
+                            <li>
+                                <a href="https://www.fibrahogar.co/" target="_self">Planes de internet fibra óptica hogar</a>
+                            </li>
                             <li>Ofertas internet Movistar para estratos 3 y 4</li>
                             <li>Movistar internet y TV combos</li>
                             <li>Internet simétrico para Gamers</li>
@@ -296,9 +304,15 @@
                     <div class="seo-column">
                         <h3>Atención al Cliente</h3>
                         <ul>
-                            <li>Cómo contratar Movistar fibra</li>
-                            <li>Cobertura fibra Movistar en mi barrio</li>
-                            <li>Test de velocidad internet Movistar</li>
+                            <li>
+                                <a href="https://wa.me/573165593013" target="_blank">Cómo contratar Movistar fibra</a>
+                            </li>
+                            <li>
+                                <a href="https://www.nperf.com/es/map/CO/3674962.Medellin/7239.Movistar-Movil/signal?ll=6.25184&lg=-75.56359&zoom=12" target="_blank" rel="noopener noreferrer">Cobertura fibra Movistar en mi barrio</a>
+                            </li>
+                            <li>
+                                <a href="https://www.movistar.com.co/test-de-velocidad" target="_blank" rel="noopener noreferrer">Test de velocidad internet Movistar</a>
+                            </li>
                             <li>Soporte técnico Movistar Colombia</li>
                         </ul>
                     </div>
@@ -306,8 +320,8 @@
                         <h3>Entretenimiento Incluido</h3>
                         <ul>
                             <li>Contratar Movistar fibra óptica con Disney+</li>
-                            <li>Ver Win Sports+ online gratis con mi plan</li>
-                            <li>Amazon Prime y Netflix en Movistar</li>
+                            <li>Ver <a href="https://www.winsports.co/" target="_blank" rel="noopener noreferrer">Win Sports+</a> online gratis con mi plan</li>
+                            <li><a href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">Amazon Prime</a> y <a href="https://www.netflix.com/co/" target="_blank" rel="noopener noreferrer">Netflix</a> en Movistar</li>
                             <li>Star+ combos fibra óptica</li>
                         </ul>
                     </div>
