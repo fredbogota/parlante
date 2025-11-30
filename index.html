@@ -117,16 +117,17 @@
         
         /* 1. MOVISTAR FIBRA (Nuevo) */
         .slide-movistar {
-            /* Imagen tecnológica/azul Movistar */
             background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600'); 
             animation-delay: 0s;
         }
 
-        /* 2. WIN SPORTS (Fútbol Acción - Restaurado) */
+        /* 2. WIN SPORTS - James Rodríguez (Estilo) */
         .slide-win {
-            /* Imagen de acción de fútbol clara y dinámica */
-            background-image: url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1600'); 
-            background-position: center; 
+            /* IMAGEN: Jugador con camiseta amarilla (#10 style). 
+               AJUSTE DE POSICIÓN: center 25% para enfocar el cuerpo/rostro.
+            */
+            background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1600'); 
+            background-position: center 25%; 
             animation-delay: 6s;
         }
         
@@ -142,11 +143,11 @@
             animation-delay: 18s;
         }
 
-        /* Animación Background (Zoom/Pan Micro-movimiento) */
+        /* Animación Background */
         @keyframes slideShow {
             0% { opacity: 0; transform: scale(1); }
             4% { opacity: 1; } /* Fade in rápido */
-            21% { opacity: 1; transform: scale(1.08); } /* Zoom progresivo "cool" */
+            21% { opacity: 1; transform: scale(1.08); } /* Zoom progresivo */
             25% { opacity: 0; } /* Fade out */
             100% { opacity: 0; }
         }
@@ -156,7 +157,8 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: 2;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
+            /* Gradiente ajustado para que se vea la imagen de fondo pero el texto sea legible */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
         }
 
         /* Contenido del Hero */
@@ -171,7 +173,7 @@
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 10px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8); /* Sombra fuerte para contraste sobre amarillo */
         }
 
         .dynamic-subtitle {
@@ -179,7 +181,8 @@
             font-weight: 300;
             max-width: 800px;
             margin: 0 auto 30px;
-            color: #f0f0f0;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
         
         .hero-badges-container {
@@ -193,7 +196,7 @@
         .brand-pill {
             padding: 8px 20px;
             border-radius: 50px;
-            background: rgba(255,255,255,0.15);
+            background: rgba(0, 0, 0, 0.4); /* Fondo más oscuro para legibilidad */
             backdrop-filter: blur(5px);
             font-weight: 700;
             font-size: 0.9rem;
@@ -201,9 +204,10 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            animation: pillFade 24s infinite; /* Ajustado a 24s */
+            animation: pillFade 24s infinite;
             opacity: 0;
             transform: translateY(10px);
+            color: white;
         }
         
         /* Grupos de Contenido (Texto) */
@@ -215,7 +219,7 @@
             transform: translate(-50%, -50%);
             opacity: 0;
             transition: opacity 0.5s;
-            animation: contentFade 24s infinite; /* Ajustado a 24s */
+            animation: contentFade 24s infinite; 
             pointer-events: none;
         }
         
@@ -233,11 +237,11 @@
         }
 
         /* Estilos de Botones/Badges */
-        .pill-movistar { background: rgba(1, 157, 244, 0.3); border-color: #019df4; }
-        .pill-win { background: rgba(230, 55, 0, 0.3); border-color: #E63700; }
-        .pill-nal { background: rgba(40, 167, 69, 0.3); border-color: #28a745; }
-        .pill-col { background: rgba(255, 193, 7, 0.3); border-color: #ffc107; color: #fff; }
-        .pill-netflix { background: rgba(229, 9, 20, 0.3); border-color: #E50914; }
+        .pill-movistar { border-color: #019df4; }
+        .pill-win { border-color: #E63700; }
+        .pill-nal { border-color: #28a745; }
+        .pill-col { border-color: #ffc107; }
+        .pill-netflix { border-color: #E50914; }
         
         /* Antetítulo Interactivo (Clickable) */
         .hero-promo-badge {
@@ -246,14 +250,15 @@
             color: #000;
             font-weight: 900;
             padding: 8px 20px;
-            border-radius: 50px; /* Redondeado tipo Netflix */
+            border-radius: 50px;
             margin-bottom: 20px;
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
-            text-decoration: none; /* Quitar subrayado por ser enlace */
+            text-decoration: none; 
             transition: transform 0.2s, box-shadow 0.2s;
             border: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .hero-promo-badge:hover {
@@ -375,7 +380,7 @@
             <!-- Background Slider (4 Slides) -->
             <div class="hero-bg-slider">
                 <div class="hero-slide slide-movistar"></div> <!-- 1. Movistar Fibra -->
-                <div class="hero-slide slide-win"></div>      <!-- 2. Win Sports (Fútbol Acción) -->
+                <div class="hero-slide slide-win"></div>      <!-- 2. Win Sports (James/Selección) -->
                 <div class="hero-slide slide-netflix"></div>  <!-- 3. Netflix (Cine Granadino) -->
                 <div class="hero-slide slide-disney"></div>   <!-- 4. Disney+ (Magia) -->
             </div>
@@ -400,15 +405,22 @@
                     </div>
                 </div>
 
-                <!-- GRUPO 2: WIN SPORTS (FÚTBOL) -->
+                <!-- GRUPO 2: WIN SPORTS (MODIFICADO - James Rodríguez) -->
                 <div class="content-group win">
-                    <div class="hero-promo-badge" style="background: #E63700; color: white;">⚽ ¡VIVE LA PASIÓN!</div>
-                    <h1 class="dynamic-title">FÚTBOL PROFESIONAL<br>EN TU CASA</h1>
-                    <p class="dynamic-subtitle">Apoya a <strong>Atlético Nacional</strong> y vibra con la <strong>Selección Colombia</strong>. Todos los partidos en exclusiva por Win Sports+.</p>
+                    <!-- LOGO WIN SPORTS AÑADIDO (Vectorial SVG) -->
+                    <div style="margin-bottom: 20px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Win_Sports_nuevo_logo.svg" alt="Win Sports Logo" style="height: 60px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.8));">
+                    </div>
+                    
+                    <div class="hero-promo-badge" style="background: transparent; border: 2px solid #FFC107; color: #FFC107; backdrop-filter: blur(5px); text-shadow: 0 2px 4px rgba(0,0,0,0.8);">🇨🇴 ¡ORGULLO COLOMBIANO!</div>
+                    
+                    <!-- Copywriting actualizado para James/10 -->
+                    <h1 class="dynamic-title" style="font-size: 3rem; line-height: 1.1;">VIBRA CON LA ZURDA<br>MÁGICA DE JAMES</h1>
+                    <p class="dynamic-subtitle">Disfruta cada pase, cada gol del '10' y toda la emoción de la <strong>Selección Colombia</strong>. La pasión tricolor se vive mejor en <strong>Win Sports+</strong>.</p>
                     
                     <div class="hero-badges-container">
                         <div class="brand-pill pill-win"><i data-lucide="tv"></i> Win Sports+</div>
-                        <div class="brand-pill pill-nal"><i data-lucide="shield"></i> Atl. Nacional</div>
+                        <div class="brand-pill pill-col"><i data-lucide="shirt"></i> El '10'</div>
                         <div class="brand-pill pill-col"><i data-lucide="flag"></i> Selección</div>
                     </div>
                 </div>
@@ -650,7 +662,11 @@
     <div id="toast"><span id="toast-message"></span></div>
 
     <script>
-        lucide.createIcons();
+        // Inicialización de Lucide al cargar el DOM para asegurar renderizado
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
         const whatsappNumber = "573165593013";
         const menuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
@@ -658,8 +674,18 @@
         if(menuBtn) {
             menuBtn.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
-                const icon = navMenu.classList.contains('active') ? 'x' : 'menu';
-                menuBtn.innerHTML = `<i data-lucide="${icon}" size="28"></i>`;
+                // Alternar icono
+                const isNavActive = navMenu.classList.contains('active');
+                // Limpiamos contenido previo
+                menuBtn.innerHTML = ''; 
+                
+                // Creamos elemento i
+                const icon = document.createElement('i');
+                icon.setAttribute('data-lucide', isNavActive ? 'x' : 'menu');
+                icon.setAttribute('size', '28');
+                menuBtn.appendChild(icon);
+                
+                // Re-renderizamos iconos
                 lucide.createIcons();
             });
         }
@@ -668,7 +694,11 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 if(menuBtn) {
-                    menuBtn.innerHTML = `<i data-lucide="menu" size="28"></i>`;
+                    menuBtn.innerHTML = '';
+                    const icon = document.createElement('i');
+                    icon.setAttribute('data-lucide', 'menu');
+                    icon.setAttribute('size', '28');
+                    menuBtn.appendChild(icon);
                     lucide.createIcons();
                 }
             });
