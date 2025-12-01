@@ -7,16 +7,18 @@
     <!-- --- SEO & METADATA --- -->
     <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
     <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
-    <!-- CORRECCIÓN SEO CLAVE: Se establece la URL raíz como la canónica para evitar la indexación de index.html -->
+    
+    <!-- CANONICAL: Apuntando a la raíz como debe ser -->
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     
-    <!-- FAVICON (Usamos un SVG de la M de Movistar para asegurar visibilidad) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Internet Fibra Óptica - 900 Megas Simétricas" />
+    <meta property="og:url" content="https://www.fibrahogar.co/" />
     <meta property="og:image" content="https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200" />
 
     <!-- --- PERFORMANCE RESOURCES --- -->
@@ -101,17 +103,16 @@
 
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         
-        /* LOGO INTERACTIVO Y VIBRANTE (IA Generada) */
+        /* LOGO INTERACTIVO Y VIBRANTE */
         .logo { 
             display: flex; align-items: center; text-decoration: none; 
             gap: 5px;
             transition: transform 0.3s ease;
             cursor: pointer;
-            padding: 5px; /* Área de click aumentada */
+            padding: 5px;
             border-radius: 8px;
         }
 
-        /* CONTENEDOR DE ICONO PARA EFECTOS VISUALES */
         .logo-icon-wrapper {
             position: relative;
             width: 32px;
@@ -121,7 +122,6 @@
             justify-content: center;
         }
 
-        /* Efecto de GLOW detrás del ícono */
         .logo-icon-wrapper::before {
             content: '';
             position: absolute;
@@ -136,9 +136,8 @@
         
         .logo-icon {
             transform: scale(1.1);
-            color: var(--white); /* El ícono es blanco dentro del gradiente */
+            color: var(--white);
             z-index: 1;
-            /* Aplicamos gradiente al fondo del ícono para el efecto Movistar */
             background: linear-gradient(135deg, var(--primary) 0%, #00d2ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -146,39 +145,27 @@
             transition: transform 0.3s ease;
         }
         
-        .logo:hover .logo-icon {
-            transform: scale(1.3) rotate(-10deg);
-        }
-
+        .logo:hover .logo-icon { transform: scale(1.3) rotate(-10deg); }
         .logo-text {
             color: var(--secondary);
             font-weight: 900;
-            font-size: 1.3rem; /* Tamaño más grande para resaltar */
+            font-size: 1.3rem;
             letter-spacing: -0.5px;
             transition: color 0.3s ease;
         }
         
-        .logo:hover .logo-text {
-            color: var(--primary); /* El texto cambia a azul primario al interactuar */
-        }
-        
-        /* Animación continua sutil del glow */
-        .logo-icon-wrapper::before {
-             animation: pulse-glow 3s infinite alternate;
-        }
+        .logo:hover .logo-text { color: var(--primary); }
+        .logo-icon-wrapper::before { animation: pulse-glow 3s infinite alternate; }
 
         @keyframes pulse-glow {
             from { opacity: 0.5; transform: scale(0.9); }
             to { opacity: 0.8; transform: scale(1.1); }
         }
-        
-        /* FIN LOGO INTERACTIVO */
 
         .nav-menu { display: flex; gap: 30px; align-items: center; }
         .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; }
         .nav-link:hover { color: var(--primary); }
         
-        /* Estilo especial para el Blog */
         .nav-link-blog {
             color: var(--accent);
             font-weight: 700;
@@ -389,15 +376,12 @@
     </style>
 </head>
 <body>
-    <!-- Comentario de prueba para forzar la recarga del editor: 30/11/2025 -->
     <!-- Header -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <!-- LOGO: Ícono de Rayo de Fibra animado + Texto de marca -->
-            <!-- CORRECCIÓN SEO: Se mantiene href="/" para que siempre apunte a la raíz, eliminando index.html y el hash. -->
-            <a href="/" class="logo">
+            <!-- LOGO: Href limpio a la raíz -->
+            <a href="https://www.fibrahogar.co/" class="logo">
                 <span class="logo-icon-wrapper">
-                    <!-- El ícono se renderiza con el gradiente de fondo, simulando el logo oficial -->
                     <i data-lucide="zap" class="logo-icon" size="28"></i>
                 </span>
                 <span class="logo-text">MOVISTAR</span>
@@ -408,14 +392,24 @@
             </button>
 
             <nav class="nav-menu" id="navMenu">
-                <!-- Se mantienen los enlaces ancla internos (Ej. #planes) para el scroll suave dentro de la página -->
-                <a href="#planes" class="nav-link">Planes Fibra</a>
-                <!-- Los enlaces a otras páginas se mantienen sin el dominio, forzando la ruta relativa (Ej. /Planes Moviles.html) -->
-                <a href="Planes Moviles.html" target="_blank" class="nav-link">Planes Móviles</a>
-                <a href="#beneficios" class="nav-link">Beneficios</a>
-                <a href="#faq" class="nav-link">Ayuda</a>
-                <!-- ENLACE AL BLOG (Abre en nueva pestaña) -->
-                <a href="blog.html" target="_blank" class="nav-link-blog">
+                <!-- 
+                  ARREGLO SEO #1: Links absolutos y limpios.
+                  Hemos cambiado #planes a la URL solicitada: /planesfibra
+                  El script 'handleSeoNav' al final se encarga de que esto funcione sin recargar.
+                -->
+                <a href="https://www.fibrahogar.co/planesfibra" class="nav-link seo-scroll-link" data-target="planes">Planes Fibra</a>
+                
+                <!-- ARREGLO SEO #2: Eliminación de .html en la URL pública -->
+                <a href="https://www.fibrahogar.co/planes-moviles" target="_blank" class="nav-link">Planes Móviles</a>
+                
+                <!-- ARREGLO SEO #3: URL Limpia para Beneficios -->
+                <a href="https://www.fibrahogar.co/beneficios" class="nav-link seo-scroll-link" data-target="beneficios">Beneficios</a>
+                
+                <!-- ARREGLO SEO #4: URL Limpia para Ayuda/Faq -->
+                <a href="https://www.fibrahogar.co/ayuda" class="nav-link seo-scroll-link" data-target="footer-help">Ayuda</a>
+                
+                <!-- ENLACE AL BLOG (URL Limpia, sin .html) -->
+                <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link-blog">
                     <i data-lucide="newspaper" size="16"></i> Blog
                 </a>
                 <button onclick="openModal()" class="btn-cta">Consultar Cobertura</button>
@@ -423,7 +417,7 @@
         </div>
     </header>
 
-    <!-- Hero Section con Lógica JS Optimizada -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-slider" id="heroSlider">
             <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200');"></div>
@@ -434,21 +428,18 @@
         <div class="hero-overlay"></div>
 
         <div class="container hero-content">
-            <!-- Slide 1 Content -->
             <div class="dynamic-text-group active" data-index="0">
                 <span class="hero-badge" style="color: var(--primary); border-color: var(--primary);">🚀 Fibra Simétrica</span>
                 <h1 class="hero-title">NAVEGA A LA<br>VELOCIDAD DE LA LUZ</h1>
                 <p class="hero-subtitle">900 Megas Simétricas. La red más estable para tu hogar. Descarga, juega y trabaja sin interrupciones.</p>
             </div>
 
-            <!-- Slide 2 Content -->
             <div class="dynamic-text-group" data-index="1">
                 <span class="hero-badge" style="color: #FFC107; border-color: #FFC107;">⚽ Win Sports+ Incluido</span>
                 <h1 class="hero-title">LA PASIÓN DEL<br>FÚTBOL EN HD</h1>
                 <p class="hero-subtitle">No te pierdas ningún gol de la liga local. Vive la emoción del estadio en tu sala.</p>
             </div>
 
-            <!-- Slide 3 Content -->
             <div class="dynamic-text-group" data-index="2">
                 <span class="hero-badge" style="color: #E50914; border-color: #E50914;">🎬 Netflix & Disney+</span>
                 <h1 class="hero-title">CINE EN CASA<br>PARA TODOS</h1>
@@ -481,7 +472,7 @@
         </div>
     </div>
 
-    <!-- Planes Section -->
+    <!-- Planes Section (ID: planes) -->
     <main class="container section-padded" id="planes">
         <div class="text-center" style="margin-bottom: 50px;">
             <h2 class="section-title">Elige la Potencia de tu Fibra</h2>
@@ -530,7 +521,7 @@
         </div>
     </main>
 
-    <!-- Beneficios -->
+    <!-- Beneficios (ID: beneficios) -->
     <section id="beneficios" style="background: white; padding: 80px 0;">
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
@@ -568,12 +559,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer style="background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto;">
+    <!-- Footer (ID agregado para navegación: footer-help) -->
+    <footer id="footer-help" style="background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto;">
         <div class="container">
             <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <!-- ENLACE CORREGIDO: Apunta a la URL amigable /terminosycondiciones -->
-                <a href="/terminosycondiciones" target="_blank" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; border-bottom: 1px dashed rgba(255,255,255,0.4);">Términos y Condiciones</a>
+                <!-- ENLACE CORREGIDO: Apunta a la URL amigable absoluta -->
+                <a href="https://www.fibrahogar.co/terminosycondiciones" target="_blank" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; border-bottom: 1px dashed rgba(255,255,255,0.4);">Términos y Condiciones</a>
                 <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Política de Datos</a>
             </div>
             <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Distribuidor Autorizado. Aplican términos y condiciones.</p>
@@ -634,6 +625,7 @@
             lucide.createIcons();
             initSlider();
             initHeader();
+            initSeoNavigation(); // Nueva función para manejo de URLs limpias
         });
 
         const STATE = { currentSlide: 0, barrio: '' };
@@ -662,8 +654,38 @@
             });
 
             menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
+            // Los links normales cierran el menú
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => navMenu.classList.remove('active'));
+            });
+        }
+
+        /* * ===============================================
+         * NUEVA FUNCIÓN: NAVEGACIÓN SEO OPTIMIZADA
+         * Maneja los clics en los enlaces con URLs limpias
+         * para evitar recargas si estamos en la home.
+         * ===============================================
+         */
+        function initSeoNavigation() {
+            const seoLinks = document.querySelectorAll('.seo-scroll-link');
+            
+            seoLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        e.preventDefault(); // Evita la navegación por defecto (que daría 404 o recarga)
+                        
+                        // 1. Cambia la URL en el navegador visualmente (HTML5 History API)
+                        // Esto hace que la URL se vea como "fibrahogar.co/planesfibra"
+                        history.pushState(null, '', this.getAttribute('href'));
+                        
+                        // 2. Hace scroll suave a la sección
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    // Si la sección no existe (ej: es otra página real), deja que el enlace funcione normal.
+                });
             });
         }
 
