@@ -7,7 +7,7 @@
     <!-- --- SEO & METADATA --- -->
     <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
     <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
-    <!-- Recomendación SEO: Asegúrate de actualizar el canonical con tu dominio real -->
+    <!-- CORRECCIÓN SEO CLAVE: Se establece la URL raíz como la canónica para evitar la indexación de index.html -->
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     
@@ -394,7 +394,7 @@
     <header class="main-header" id="header">
         <div class="container header-inner">
             <!-- LOGO: Ícono de Rayo de Fibra animado + Texto de marca -->
-            <!-- CORRECCIÓN SEO: Se cambió href="#" a href="/" para eliminar el '#' en la URL. -->
+            <!-- CORRECCIÓN SEO: Se mantiene href="/" para que siempre apunte a la raíz, eliminando index.html y el hash. -->
             <a href="/" class="logo">
                 <span class="logo-icon-wrapper">
                     <!-- El ícono se renderiza con el gradiente de fondo, simulando el logo oficial -->
@@ -410,7 +410,7 @@
             <nav class="nav-menu" id="navMenu">
                 <!-- Se mantienen los enlaces ancla internos (Ej. #planes) para el scroll suave dentro de la página -->
                 <a href="#planes" class="nav-link">Planes Fibra</a>
-                <!-- NUEVO ENLACE: Planes Móviles, abre en nueva pestaña -->
+                <!-- Los enlaces a otras páginas se mantienen sin el dominio, forzando la ruta relativa (Ej. /Planes Moviles.html) -->
                 <a href="Planes Moviles.html" target="_blank" class="nav-link">Planes Móviles</a>
                 <a href="#beneficios" class="nav-link">Beneficios</a>
                 <a href="#faq" class="nav-link">Ayuda</a>
