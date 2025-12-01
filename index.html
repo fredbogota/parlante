@@ -12,9 +12,9 @@
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     
-    <!-- SCRIPT DE LIMPIEZA DE URL (SEO) -->
+    <!-- SCRIPT DE LIMPIEZA INICIAL DE URL -->
     <script>
-        // Si la URL termina en "index.html", la limpiamos visualmente sin recargar
+        // Elimina "index.html" si alguien entra directamente a ese archivo
         if (window.location.pathname.endsWith('index.html')) {
             var newPath = window.location.pathname.replace(/index\.html$/, '');
             window.history.replaceState(null, '', newPath + window.location.hash);
@@ -389,8 +389,7 @@
     <header class="main-header" id="header">
         <div class="container header-inner">
             <!-- 
-                LOGO OPTIMIZADO: 
-                En lugar de href="index.html", usamos href="/" para ir a la raíz limpia.
+                LOGO: href="/" para limpiar URL al hacer click 
             -->
             <a href="/" class="logo">
                 <span class="logo-icon-wrapper">
@@ -405,20 +404,19 @@
 
             <nav class="nav-menu" id="navMenu">
                 <!-- 
-                  NAVEGACIÓN INTERNA OPTIMIZADA
-                  Usamos hash (#) para secciones internas. El script de arriba asegura que no se vea el "index.html".
+                  NAVEGACIÓN INTERNA "LIMPIA" (Visual SEO)
+                  data-url define la URL que aparecerá en el navegador.
                 -->
-                <a href="#planes" class="nav-link seo-scroll-link" data-target="planes">Planes Fibra</a>
+                <a href="#planes" class="nav-link seo-link" data-url="/planes">Planes Fibra</a>
                 
                 <!-- 
-                     *** ENLACE LIMPIO A PLANES MÓVILES ***
-                     Usamos "/planes-moviles" en lugar de ".html".
-                     IMPORTANTE: Mira el paso 2 de las instrucciones para que esto funcione.
+                     Enlace a Planes Móviles 
+                     (Requiere que hayas hecho el "truco de la carpeta" /planes-moviles/index.html)
                 -->
                 <a href="/planes-moviles" target="_blank" class="nav-link">Planes Móviles</a>
                 
-                <a href="#beneficios" class="nav-link seo-scroll-link" data-target="beneficios">Beneficios</a>
-                <a href="#footer-help" class="nav-link seo-scroll-link" data-target="footer-help">Ayuda</a>
+                <a href="#beneficios" class="nav-link seo-link" data-url="/beneficios">Beneficios</a>
+                <a href="#footer-help" class="nav-link seo-link" data-url="/help">Ayuda</a>
                 
                 <!-- ENLACE AL BLOG -->
                 <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link-blog">
@@ -637,7 +635,7 @@
             lucide.createIcons();
             initSlider();
             initHeader();
-            initSeoNavigation(); // Manejo de URLs limpias
+            initSeoNavigation(); // MANEJO DE URLs LIMPIAS
         });
 
         const STATE = { currentSlide: 0, barrio: '' };
@@ -673,23 +671,32 @@
         }
 
         /* * ===============================================
-         * NAVEGACIÓN SEO OPTIMIZADA
+         * ACTUALIZADO: NAVEGACIÓN SEO VISUAL
+         * Convierte clicks en anchors (#) a URLs limpias (/)
          * ===============================================
          */
         function initSeoNavigation() {
-            const seoLinks = document.querySelectorAll('.seo-scroll-link');
+            // Buscamos todos los links con la clase "seo-link"
+            const seoLinks = document.querySelectorAll('.seo-link');
             
             seoLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('data-target');
+                    // Prevenir el comportamiento por defecto (que pondría el # en la URL)
+                    e.preventDefault();
+                    
+                    // Obtener la URL limpia que definimos en el atributo data-url
+                    const cleanUrl = this.getAttribute('data-url');
+                    
+                    // Obtener el ID de la sección (quitamos el # del href)
+                    const targetId = this.getAttribute('href').substring(1);
                     const targetSection = document.getElementById(targetId);
                     
                     if (targetSection) {
-                        e.preventDefault();
+                        // 1. Cambiamos la URL visualmente sin recargar
+                        // Si el usuario da "Atrás", volverá a la URL anterior
+                        history.pushState(null, '', cleanUrl);
                         
-                        // Esto hace que la URL cambie visualmente a limpio, ej: /planes
-                        // (Nota: Si el usuario refresca, puede dar 404 en servidores simples)
-                        history.pushState(null, '', this.getAttribute('href'));
+                        // 2. Hacemos el scroll suave hacia la sección
                         targetSection.scrollIntoView({ behavior: 'smooth' });
                     }
                 });
