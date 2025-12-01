@@ -8,9 +8,18 @@
     <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
     <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
     
-    <!-- CANONICAL: Apuntando a la raíz como debe ser -->
+    <!-- CANONICAL: Apuntando a la raíz limpia -->
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
+    
+    <!-- SCRIPT DE LIMPIEZA DE URL (SEO) -->
+    <script>
+        // Si la URL termina en "index.html", la limpiamos visualmente sin recargar
+        if (window.location.pathname.endsWith('index.html')) {
+            var newPath = window.location.pathname.replace(/index\.html$/, '');
+            window.history.replaceState(null, '', newPath + window.location.hash);
+        }
+    </script>
     
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
@@ -379,8 +388,11 @@
     <!-- Header -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <!-- LOGO: Href limpio a la raíz -->
-            <a href="index.html" class="logo">
+            <!-- 
+                LOGO OPTIMIZADO: 
+                En lugar de href="index.html", usamos href="/" para ir a la raíz limpia.
+            -->
+            <a href="/" class="logo">
                 <span class="logo-icon-wrapper">
                     <i data-lucide="zap" class="logo-icon" size="28"></i>
                 </span>
@@ -393,16 +405,17 @@
 
             <nav class="nav-menu" id="navMenu">
                 <!-- 
-                  NAVEGACIÓN INTERNA
-                  Uso de enlaces ancla para secciones dentro de esta misma página
+                  NAVEGACIÓN INTERNA OPTIMIZADA
+                  Usamos hash (#) para secciones internas. El script de arriba asegura que no se vea el "index.html".
                 -->
                 <a href="#planes" class="nav-link seo-scroll-link" data-target="planes">Planes Fibra</a>
                 
                 <!-- 
-                     *** CORRECCIÓN SOLICITADA *** Enlace directo al archivo planes-moviles.html
-                     target="_blank" abre en nueva pestaña
+                     *** ENLACE LIMPIO A PLANES MÓVILES ***
+                     Usamos "/planes-moviles" en lugar de ".html".
+                     IMPORTANTE: Mira el paso 2 de las instrucciones para que esto funcione.
                 -->
-                <a href="planes-moviles.html" target="_blank" class="nav-link">Planes Móviles</a>
+                <a href="/planes-moviles" target="_blank" class="nav-link">Planes Móviles</a>
                 
                 <a href="#beneficios" class="nav-link seo-scroll-link" data-target="beneficios">Beneficios</a>
                 <a href="#footer-help" class="nav-link seo-scroll-link" data-target="footer-help">Ayuda</a>
@@ -624,7 +637,7 @@
             lucide.createIcons();
             initSlider();
             initHeader();
-            initSeoNavigation(); // Nueva función para manejo de URLs limpias
+            initSeoNavigation(); // Manejo de URLs limpias
         });
 
         const STATE = { currentSlide: 0, barrio: '' };
@@ -660,9 +673,7 @@
         }
 
         /* * ===============================================
-         * NUEVA FUNCIÓN: NAVEGACIÓN SEO OPTIMIZADA
-         * Maneja los clics en los enlaces con URLs limpias
-         * para evitar recargas si estamos en la home.
+         * NAVEGACIÓN SEO OPTIMIZADA
          * ===============================================
          */
         function initSeoNavigation() {
@@ -674,16 +685,13 @@
                     const targetSection = document.getElementById(targetId);
                     
                     if (targetSection) {
-                        e.preventDefault(); // Evita la navegación por defecto (que daría 404 o recarga)
+                        e.preventDefault();
                         
-                        // 1. Cambia la URL en el navegador visualmente (HTML5 History API)
-                        // Esto hace que la URL se vea como "fibrahogar.co/planesfibra"
+                        // Esto hace que la URL cambie visualmente a limpio, ej: /planes
+                        // (Nota: Si el usuario refresca, puede dar 404 en servidores simples)
                         history.pushState(null, '', this.getAttribute('href'));
-                        
-                        // 2. Hace scroll suave a la sección
                         targetSection.scrollIntoView({ behavior: 'smooth' });
                     }
-                    // Si la sección no existe (ej: es otra página real), deja que el enlace funcione normal.
                 });
             });
         }
