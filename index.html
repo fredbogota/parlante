@@ -380,7 +380,7 @@
     <header class="main-header" id="header">
         <div class="container header-inner">
             <!-- LOGO: Href limpio a la raíz -->
-            <a href="https://www.fibrahogar.co/" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-icon-wrapper">
                     <i data-lucide="zap" class="logo-icon" size="28"></i>
                 </span>
@@ -393,22 +393,21 @@
 
             <nav class="nav-menu" id="navMenu">
                 <!-- 
-                  ARREGLO SEO #1: Links absolutos y limpios.
-                  Hemos cambiado #planes a la URL solicitada: /planesfibra
-                  El script 'handleSeoNav' al final se encarga de que esto funcione sin recargar.
+                  NAVEGACIÓN INTERNA
+                  Uso de enlaces ancla para secciones dentro de esta misma página
                 -->
-                <a href="https://www.fibrahogar.co/planesfibra" class="nav-link seo-scroll-link" data-target="planes">Planes Fibra</a>
+                <a href="#planes" class="nav-link seo-scroll-link" data-target="planes">Planes Fibra</a>
                 
-                <!-- ARREGLO SEO #2: Eliminación de .html en la URL pública -->
-                <a href="https://www.fibrahogar.co/planes_moviles" target="_blank" class="nav-link">Planes Móviles</a>
+                <!-- 
+                     *** CORRECCIÓN SOLICITADA *** Enlace directo al archivo planes_moviles.html
+                     target="_blank" abre en nueva pestaña
+                -->
+                <a href="planes_moviles.html" target="_blank" class="nav-link">Planes Móviles</a>
                 
-                <!-- ARREGLO SEO #3: URL Limpia para Beneficios -->
-                <a href="https://www.fibrahogar.co/beneficios" class="nav-link seo-scroll-link" data-target="beneficios">Beneficios</a>
+                <a href="#beneficios" class="nav-link seo-scroll-link" data-target="beneficios">Beneficios</a>
+                <a href="#footer-help" class="nav-link seo-scroll-link" data-target="footer-help">Ayuda</a>
                 
-                <!-- ARREGLO SEO #4: URL Limpia para Ayuda/Faq -->
-                <a href="https://www.fibrahogar.co/ayuda" class="nav-link seo-scroll-link" data-target="footer-help">Ayuda</a>
-                
-                <!-- ENLACE AL BLOG (URL Limpia, sin .html) -->
+                <!-- ENLACE AL BLOG -->
                 <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link-blog">
                     <i data-lucide="newspaper" size="16"></i> Blog
                 </a>
