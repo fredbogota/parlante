@@ -4,441 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- --- SEO & METADATA CRÍTICA PARA POSICIONAMIENTO --- --><title>Planes Movistar Ilimitados y Prepago con Más Gigas | Colombia 2025-2026</title>
-    <meta name="description" content="Descubre el mejor plan de datos para redes sociales y planes Movistar ilimitados para celular precio 2025-2026. Te enseñamos cómo activar SIM Card Movistar Colombia y cómo cambiar de operador a Movistar con el mismo número. ¡Planes prepago con más gigas!">
-    <link rel="canonical" href="https://tu-dominio.com/Planes Moviles.html" />
-    <meta name="theme-color" content="#019df4">
+    <!-- --- SEO: PQR y Servicio al Cliente --- -->
+    <title>PQR Movistar | Radicar Peticiones, Quejas y Reclamos</title>
+    <meta name="description" content="Centro de ayuda y PQR Movistar Colombia. Radica tus peticiones, quejas, reclamos y recursos. Atención al cliente y soporte técnico en línea.">
+    <link rel="canonical" href="https://tu-dominio.com/PQR_Movistar.html" />
+    <meta name="theme-color" content="#0b274f">
 
-    <!-- PALABRAS CLAVE: CRUCIALES PARA INDEXACIÓN --><meta name="keywords" content="mejor plan de datos para redes sociales, cómo activar sim card movistar Colombia, planes movistar ilimitados para celular precio 2025-2026, como cambiar de operador a movistar con el mismo número, planes movistar prepago con más gigas en Colombia, planes moviles movistar, portabilidad movistar">
-    
-    <!-- FAVICON --><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
-    <!-- Open Graph --><meta property="og:title" content="Planes Móviles Ilimitados y Prepago - Movistar Colombia" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1510531707963-fc2909f1969a?q=80&w=1200" />
-    
-    <!-- --- RECURSOS Y ESTILOS --- --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- RECURSOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* * ==========================================
-         * DESIGN TOKENS & VARIABLES (Movistar Mobile Theme)
-         * ==========================================
-         */
+        /* ESTILOS BASE (Heredados del sistema de diseño actual) */
         :root {
-            /* Colores de Marca Móvil */
-            --movistar-blue: #019df4;
-            --movistar-dark: #0b274f;
-            --movistar-accent: #ff9100; /* Naranja para destacar ofertas */
+            --primary: #019df4;
+            --primary-dark: #007bbd;
+            --secondary: #0b274f;
+            --success: #28a745;
             --bg-body: #f4f7fa;
-            --bg-card: #ffffff;
-            --text-main: #2c3e50;
             --white: #ffffff;
-            
-            /* Layout */
+            --radius: 12px;
             --header-h: 80px;
-            --radius-lg: 16px;
-            --container-w: 1000px;
-            --trans-fast: 0.3s ease;
         }
 
-        /* * ==========================================
-         * RESET & BASE
-         * ==========================================
-         */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        html { scroll-behavior: smooth; font-size: 16px; }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-top: var(--header-h);
-            overflow-x: hidden;
-        }
+        body { font-family: 'Roboto', sans-serif; background: var(--bg-body); color: #333; padding-top: var(--header-h); }
+        .container { width: 90%; max-width: 1000px; margin: 0 auto; }
+        a { text-decoration: none; color: inherit; }
 
-        a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
-        ul { list-style: none; }
-        button { cursor: pointer; }
-
-        .container { width: 92%; max-width: var(--container-w); margin: 0 auto; }
-        .text-center { text-align: center; }
-
-        /* * ==========================================
-         * COMPONENT: HEADER (Minimalist for Child Page)
-         * ==========================================
-         */
+        /* HEADER SIMPLE */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: var(--movistar-dark);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
+            background: var(--secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 1000; display: flex; align-items: center;
         }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; color: var(--white); }
-        .logo { color: var(--white); font-weight: 900; font-size: 1.5rem; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1200px; margin: 0 auto; }
+        .logo { color: white; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 8px; }
+        .btn-back { background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 6px;}
+        .btn-back:hover { background: var(--primary); }
+
+        /* HERO PQR */
+        .hero-pqr {
+            background: linear-gradient(135deg, var(--secondary) 0%, #001835 100%);
+            color: white; padding: 60px 0 80px 0; text-align: center;
+        }
+        .hero-title { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero-subtitle { font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto; }
+
+        /* FORMULARIO Y CONTENIDO */
+        .pqr-wrapper { margin-top: -50px; padding-bottom: 60px; display: flex; gap: 30px; flex-wrap: wrap; }
         
-        /* Botón de regreso / Home */
-        .btn-home {
-            background: var(--movistar-blue); color: white; padding: 8px 15px;
-            border-radius: 50px; font-weight: 500; display: flex; align-items: center; gap: 8px;
-        }
-        .btn-home:hover { background: var(--movistar-accent); }
-
-        /* * ==========================================
-         * COMPONENT: HERO SLIDER (ADAPTADO PARA MÓVILES)
-         * ==========================================
-         */
-        .hero-mobile {
-            position: relative; height: 500px; width: 100%;
-            background: #000; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
+        /* Columna Formulario */
+        .form-card {
+            flex: 2; min-width: 300px;
+            background: white; border-radius: var(--radius); padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .hero-slider-mobile { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        
-        .slide-mobile {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1.1);
-            transition: opacity 1s ease-in-out, transform 8s linear;
+        .form-group { margin-bottom: 20px; }
+        .label { display: block; font-weight: 500; margin-bottom: 8px; color: var(--secondary); }
+        .input, .textarea, .select {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+            font-family: inherit; font-size: 1rem; transition: 0.3s;
         }
-        
-        .slide-mobile.active { opacity: 1; transform: scale(1); }
+        .input:focus, .textarea:focus, .select:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(1, 157, 244, 0.1); }
+        .textarea { resize: vertical; min-height: 120px; }
 
-        .hero-overlay-mobile {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
-            background: linear-gradient(180deg, rgba(11,39,79,0.3) 0%, rgba(11,39,79,0.7) 60%, rgba(11,39,79,0.95) 100%);
+        .btn-submit {
+            background: var(--success); color: white; border: none; padding: 15px 30px;
+            border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer;
+            width: 100%; transition: 0.3s; display: flex; justify-content: center; gap: 10px; align-items: center;
         }
+        .btn-submit:hover { background: #218838; transform: translateY(-2px); }
 
-        .hero-content-mobile {
-            position: relative; z-index: 3; text-align: center; color: white;
-            max-width: 800px; padding: 0 20px;
-            display: flex; flex-direction: column; align-items: center;
+        /* Columna Info Lateral */
+        .info-card {
+            flex: 1; min-width: 280px;
+            background: white; border-radius: var(--radius); padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); height: fit-content;
         }
+        .info-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
+        .info-icon { color: var(--primary); margin-top: 3px; }
+        .info-title { font-weight: 700; color: var(--secondary); margin-bottom: 5px; display: block; }
+        .info-text { font-size: 0.9rem; color: #666; }
 
-        .dynamic-text-group-mobile { display: none; animation: fadeInUp 0.8s ease forwards; }
-        .dynamic-text-group-mobile.active { display: block; }
+        /* Footer Simple */
+        footer { text-align: center; padding: 30px; color: #888; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: auto; }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-badge-mobile {
-            display: inline-block; padding: 6px 16px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;
-            background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .hero-title-mobile {
-            font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
-            margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle-mobile {
-            font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto;
-        }
-        
-        .hero-cta-mobile {
-            background: var(--movistar-accent); color: var(--movistar-dark);
-            padding: 15px 30px; border-radius: 50px; font-weight: 800;
-            font-size: 1.1rem; box-shadow: 0 6px 20px rgba(255, 145, 0, 0.5);
-            transition: var(--trans-fast);
-        }
-        .hero-cta-mobile:hover { transform: translateY(-3px); background: #ff7f00; }
-        
-        /* * ==========================================
-         * COMPONENT: PLAN CARDS (POSTPAGO)
-         * ==========================================
-         */
-        .plans-section { padding: 40px 0 80px 0; }
-        .section-title-mobile { font-size: 2.2rem; color: var(--movistar-dark); font-weight: 900; margin-bottom: 15px; }
-        
-        .plan-cards-grid {
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px; 
-            margin-top: 50px;
-        }
-
-        .mobile-card {
-            background: var(--bg-card); border-radius: var(--radius-lg); 
-            padding: 30px 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            position: relative; 
-            display: flex; flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 5px solid var(--movistar-blue);
-            overflow: hidden;
-        }
-        .mobile-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(1, 157, 244, 0.2); }
-
-        .card-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .plan-name { font-size: 1.5rem; font-weight: 800; color: var(--movistar-dark); }
-        
-        .data-badge {
-            background: var(--movistar-blue); color: white; padding: 5px 12px;
-            border-radius: 20px; font-weight: 700; font-size: 0.9rem;
-        }
-        .data-badge.unlimited { background: var(--movistar-accent); }
-
-        .price-display { margin: 20px 0 10px 0; }
-        .price-number { font-size: 2.5rem; font-weight: 900; color: var(--movistar-blue); line-height: 1; }
-        .price-number small { font-size: 1rem; font-weight: 400; color: var(--text-main); }
-
-        .feature-list-mobile { margin-bottom: 25px; flex-grow: 1; }
-        .feature-list-mobile li { 
-            display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.95rem;
-            align-items: center; 
-        }
-
-        .card-cta {
-            background: var(--movistar-dark); color: white; padding: 12px;
-            border-radius: 50px; font-weight: 700; text-align: center;
-            transition: background 0.3s;
-        }
-        .card-cta:hover { background: var(--movistar-blue); }
-
-        /* * ==========================================
-         * COMPONENT: SEO/INFORMATION BLOCK
-         * ==========================================
-         */
-        .info-block {
-            background: white;
-            padding: 50px 0;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
-        }
-        .info-header { 
-            font-size: 1.8rem; 
-            color: var(--movistar-dark); 
-            font-weight: 800; 
-            margin-bottom: 20px; 
-            border-left: 4px solid var(--movistar-accent);
-            padding-left: 15px;
-        }
-        .info-content p { margin-bottom: 20px; color: #555; }
-        
-        /* Estilo para destacar palabras clave */
-        .keyword { 
-            font-weight: 700; 
-            color: var(--movistar-blue); 
-            text-decoration: underline; 
-            cursor: help;
-        }
-        
-        /* * ==========================================
-         * MOBILE & RESPONSIVE
-         * ==========================================
-         */
-        @media (max-width: 600px) {
-            .hero-mobile { height: 400px; } /* Ajuste de altura para móviles */
-            .section-title-mobile { font-size: 1.8rem; }
-            .plan-cards-grid { gap: 20px; }
-            .mobile-card { padding: 25px 20px; }
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2rem; }
+            .pqr-wrapper { flex-direction: column; }
+            .form-card { padding: 25px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header --><header class="main-header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">MOVISTAR MÓVIL</a>
-            <a href="index.html" class="btn-home">
-                <i data-lucide="home" size="18"></i> Volver a Fibra
+
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <i data-lucide="shield-check"></i> TE ESCUCHAMOS
+            </a>
+            <a href="index.html" class="btn-back">
+                <i data-lucide="arrow-left" size="16"></i> Volver al Inicio
             </a>
         </div>
     </header>
 
-    <!-- Hero Section con Slider (Adaptado para Móviles) --><section class="hero-mobile">
-        <div class="hero-slider-mobile" id="heroSliderMobile">
-            <!-- Slide 1: Mujer joven y atractiva hablando por celular, con efecto de conectividad --><div class="slide-mobile active" style="background-image: url('https://image.pollinations.ai/prompt/a%20beautiful%20young%20woman%20smiling%20and%20talking%20on%20a%20smartphone%20with%20digital%20connectivity%20lines%20and%20data%20flowing%20around%20her,%20futuristic,%20telecommunications,%20movistar%20colors,%20dynamic%20lighting?width=1200&height=600&seed=1');"></div>
-            <!-- Slide 2: Persona feliz con el celular en un parque (redes sociales) --><div class="slide-mobile" style="background-image: url('https://image.pollinations.ai/prompt/a%20diverse%20group%20of%20friends%20happily%20using%20smartphones%20outdoors,%20representing%20unlimited%20data%20and%20social%20media%20connectivity,%20bright,%20energetic,%20movistar%20branding?width=1200&height=600&seed=2');"></div>
-            <!-- Slide 3: Pareja viendo contenido en el celular (ilimitado) --><div class="slide-mobile" style="background-image: url('https://image.pollinations.ai/prompt/a%20person%20holding%20a%20smartphone%20with%20a%20glowing%20screen%20showing%20abstract%20data%20streams,%20representing%20fast%20mobile%20internet%20and%205G,%20modern,%20tech-focused,%20movistar%20blue%20and%20orange%20accents?width=1200&height=600&seed=3');"></div>
-        </div>
-
-        <div class="hero-overlay-mobile"></div>
-
-        <div class="container hero-content-mobile">
-            <!-- Contenido Dinámico para cada slide --><div class="dynamic-text-group-mobile active" data-index="0">
-                <span class="hero-badge-mobile" style="color: var(--movistar-blue); border-color: var(--movistar-blue);">✨ Conexión Total</span>
-                <h1 class="hero-title-mobile">
-                    HABLA, CHATEA, NAVEGA <br>SIN LÍMITES
-                </h1>
-                <p class="hero-subtitle-mobile">
-                    Elige el <span class="keyword">mejor plan de datos para redes sociales</span> y mantente siempre conectado.
-                </p>
-            </div>
-
-            <div class="dynamic-text-group-mobile" data-index="1">
-                <span class="hero-badge-mobile" style="color: var(--movistar-accent); border-color: var(--movistar-accent);">🚀 5G y Más Gigas</span>
-                <h1 class="hero-title-mobile">
-                    VELOCIDAD QUE TE SORPRENDE<br>GIGAS QUE RINDEN
-                </h1>
-                <p class="hero-subtitle-mobile">
-                    Descubre nuestros <span class="keyword">planes Movistar prepago con más gigas en Colombia</span>.
-                </p>
-            </div>
-
-            <div class="dynamic-text-group-mobile" data-index="2">
-                <span class="hero-badge-mobile" style="color: #6c757d; border-color: #6c757d;">✅ Portabilidad Fácil</span>
-                <h1 class="hero-title-mobile">
-                    MISMOS NÚMERO, NUEVA LIBERTAD<br>EN MOVISTAR
-                </h1>
-                <p class="hero-subtitle-mobile">
-                    Te ayudamos a <span class="keyword">cambiar de operador a Movistar con el mismo número</span>.
-                </p>
-            </div>
-            
-            <button onclick="scrollToPlans()" class="hero-cta-mobile">
-                Explorar Planes Ahora
-            </button>
-        </div>
-    </section>
-
-    <!-- Planes Postpago --><section class="plans-section" id="planes-postpago">
+    <section class="hero-pqr">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-title-mobile">Planes Movistar Ilimitados para Celular</h2>
-                <p style="color: #666;">
-                    Encuentra el <span class="keyword">mejor plan de datos para redes sociales</span> y todas tus necesidades.
-                </p>
+            <h1 class="hero-title">Centro de Soluciones PQR</h1>
+            <p class="hero-subtitle">Radica tus Peticiones, Quejas, Reclamos y Recursos. Estamos comprometidos con darte una respuesta oportuna.</p>
+        </div>
+    </section>
+
+    <div class="container pqr-wrapper">
+        
+        <!-- Formulario -->
+        <div class="form-card">
+            <h2 style="color: var(--secondary); margin-bottom: 25px; font-size: 1.5rem;">Radicar Solicitud</h2>
+            <form id="pqrForm" onsubmit="submitPQR(event)">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <div class="form-group" style="flex: 1;">
+                        <label class="label">Tipo de Identificación</label>
+                        <select class="select" required>
+                            <option>Cédula de Ciudadanía</option>
+                            <option>Cédula de Extranjería</option>
+                            <option>NIT</option>
+                            <option>Pasaporte</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label class="label">Número de Documento</label>
+                        <input type="number" class="input" placeholder="Ej: 1020304050" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Nombre Completo</label>
+                    <input type="text" class="input" placeholder="Tu nombre y apellidos" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Correo Electrónico</label>
+                    <input type="email" class="input" placeholder="para enviarte la respuesta" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Tipo de Solicitud</label>
+                    <select class="select" id="requestType" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option>Petición (Información general)</option>
+                        <option>Queja (Inconformidad con el servicio)</option>
+                        <option>Reclamo (Facturación o cobros)</option>
+                        <option>Recurso de Reposición</option>
+                        <option>Reporte de Falla Técnica</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Detalle de tu solicitud</label>
+                    <textarea class="textarea" placeholder="Describe brevemente tu caso para poder ayudarte..." required></textarea>
+                </div>
+
+                <div class="form-group" style="font-size: 0.9rem; color: #666; display: flex; gap: 10px;">
+                    <input type="checkbox" required id="terms"> 
+                    <label for="terms">Acepto la política de tratamiento de datos personales.</label>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    RADICAR SOLICITUD <i data-lucide="send"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Barra Lateral Informativa -->
+        <aside class="info-card">
+            <div class="info-item">
+                <i data-lucide="phone" class="info-icon"></i>
+                <div>
+                    <span class="info-title">Líneas de Atención</span>
+                    <p class="info-text">Desde celular Movistar: *611</p>
+                    <p class="info-text">Bogotá: 601 380 80 80</p>
+                    <p class="info-text">Nacional: 01 8000 930 930</p>
+                </div>
             </div>
+
+            <div class="info-item">
+                <i data-lucide="message-circle" class="info-icon"></i>
+                <div>
+                    <span class="info-title">WhatsApp Oficial</span>
+                    <p class="info-text">Escríbenos para soporte rápido.</p>
+                    <a href="https://wa.me/573165593013" target="_blank" style="color: var(--success); font-weight: 600; margin-top: 5px; display: inline-block;">Ir al Chat &rarr;</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i data-lucide="info" class="info-icon"></i>
+                <div>
+                    <span class="info-title">Tiempos de Respuesta</span>
+                    <p class="info-text">Peticiones: 15 días hábiles</p>
+                    <p class="info-text">Quejas y Reclamos: 15 días hábiles</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
             
-            <div class="plan-cards-grid">
-                
-                <!-- Plan 1: Ilimitado Básico --><article class="mobile-card">
-                    <div class="card-header">
-                        <span class="plan-name">PLAN FULL 40GB</span>
-                        <span class="data-badge">40 GB</span>
-                    </div>
-                    <p style="color: var(--movistar-blue); font-weight: 700; font-size: 0.9rem;">
-                        Ideal para el uso diario y redes sociales.
-                    </p>
-                    <div class="price-display">
-                        <span class="price-number">$55.900<small>/mes</small></span>
-                    </div>
-                    <ul class="feature-list-mobile">
-                        <li><i data-lucide="check" size="18" color="#019df4"></i> Voz y SMS Ilimitados</li>
-                        <li><i data-lucide="check" size="18" color="#019df4"></i> WhatsApp sin consumir datos</li>
-                        <li><i data-lucide="check" size="18" color="#019df4"></i> Redes Sociales (10GB)</li>
-                    </ul>
-                    <button onclick="handleLead('Plan Full 40GB')" class="card-cta">Contratar Plan</button>
-                </article>
-
-                <!-- Plan 2: Ilimitado PREMIUM (Recomendado) --><article class="mobile-card" style="border-top-color: var(--movistar-accent);">
-                    <span style="position: absolute; top: 15px; right: -20px; background: var(--movistar-accent); color: white; padding: 5px 25px; transform: rotate(45deg); font-weight: 700; font-size: 0.8rem;">¡TOP!</span>
-                    <div class="card-header">
-                        <span class="plan-name" style="color: var(--movistar-accent);">PLAN ILIMITADO</span>
-                        <span class="data-badge unlimited">ILIMITADO</span>
-                    </div>
-                    <p style="color: var(--movistar-accent); font-weight: 700; font-size: 0.9rem;">
-                        ¡La mejor opción para el <span class="keyword">precio 2025-2026</span>!
-                    </p>
-                    <div class="price-display">
-                        <span class="price-number" style="color: var(--movistar-accent);">$89.900<small>/mes</small></span>
-                    </div>
-                    <ul class="feature-list-mobile">
-                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> **Datos Ilimitados 4G/5G**</li>
-                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> Roaming en 10 países de Latam</li>
-                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> Larga Distancia Ilimitada (LDI)</li>
-                    </ul>
-                    <button onclick="handleLead('Plan Ilimitado Premium')" class="card-cta" style="background: var(--movistar-accent); color: var(--movistar-dark);">¡Lo Quiero Ilimitado!</button>
-                </article>
-
-                <!-- Plan 3: Prepago con Más Gigas --><article class="mobile-card">
-                    <div class="card-header">
-                        <span class="plan-name">PREPAGO PLUS</span>
-                        <span class="data-badge" style="background: #198754;">MÁS GIGAS</span>
-                    </div>
-                    <p style="color: #198754; font-weight: 700; font-size: 0.9rem;">
-                        El mejor de los <span class="keyword">planes Movistar prepago con más gigas en Colombia</span>.
-                    </p>
-                    <div class="price-display">
-                        <span class="price-number">$30.000<small>/30 días</small></span>
-                    </div>
-                    <ul class="feature-list-mobile">
-                        <li><i data-lucide="cpu" size="18" color="#198754"></i> **30 GB** de navegación (Doble recarga)</li>
-                        <li><i data-lucide="cpu" size="18" color="#198754"></i> 10 min LDI a USA, Canadá y Puerto Rico</li>
-                        <li><i data-lucide="cpu" size="18" color="#198754"></i> Minutos y SMS nacionales ilimitados</li>
-                    </ul>
-                    <button onclick="handleLead('Prepago Plus')" class="card-cta">Recargar Ahora</button>
-                </article>
+            <div style="text-align: center;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Superintendencia_de_Industria_y_Comercio.svg" alt="Vigilado SuperIndustria" style="width: 150px; opacity: 0.7;">
+                <p style="font-size: 0.7rem; color: #999; margin-top: 10px;">Vigilado Superintendencia de Industria y Comercio</p>
             </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Movistar Colombia - Canal Autorizado de Gestión.</p>
+            <p>Este sitio cumple con la normativa de protección al usuario TIC.</p>
         </div>
-    </section>
-
-    <!-- Bloque Informativo SEO/Ayuda --><section class="info-block">
-        <div class="container info-content">
-            <h2 class="info-header">Guía Rápida: Activar SIM Card y Portabilidad</h2>
-
-            <h3>¿Cómo cambiar de operador a Movistar con el mismo número?</h3>
-            <p>
-                La portabilidad numérica a Movistar es un proceso sencillo. Simplemente eliges tu plan postpago (como nuestros <span class="keyword">planes Movistar ilimitados para celular precio 2025-2026</span>), nos envías tu fotocopia de cédula y tu número. Nosotros nos encargamos de solicitar el PIN de portación y gestionar el cambio en menos de 24 horas, manteniendo tu número actual.
-            </p>
-
-            <h3>¿Cómo activar SIM Card Movistar Colombia?</h3>
-            <p>
-                Si tienes un chip nuevo, la activación de tu <span class="keyword">SIM Card Movistar Colombia</span> es rápida. Coloca la SIM en tu celular, espera a que tome señal, y realiza una primera llamada. El sistema te guiará. Si es un plan prepago, realiza la primera recarga para activar tus <span class="keyword">planes Movistar prepago con más gigas en Colombia</span> y empezar a disfrutar de la mejor navegación.
-            </p>
-
-            <h3>¿Cuál es el mejor plan de datos para redes sociales?</h3>
-            <p>
-                Definitivamente, el <span class="keyword">mejor plan de datos para redes sociales</span> es nuestro Plan Ilimitado. Te permite usar TikTok, Instagram, YouTube y Facebook sin preocuparte por el consumo de datos, asegurando que siempre tengas la máxima velocidad para subir contenido o hacer *lives*.
-            </p>
-        </div>
-    </section>
-
-
-    <!-- Footer (simple) --><footer style="background: var(--movistar-dark); color: white; padding: 30px 0; text-align: center;">
-        <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Movistar Móvil. ¡Conéctate a la red del futuro!</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            initMobileSlider();
-        });
+        lucide.createIcons();
 
-        const WHATSAPP_NUMBER = "573165593013";
-        let currentMobileSlide = 0;
-
-        function initMobileSlider() {
-            const slides = document.querySelectorAll('.slide-mobile');
-            const contents = document.querySelectorAll('.dynamic-text-group-mobile');
-            
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    contents[i].classList.remove('active');
-                });
-                slides[index].classList.add('active');
-                contents[index].classList.add('active');
-            }
-
-            setInterval(() => {
-                currentMobileSlide = (currentMobileSlide + 1) % slides.length;
-                showSlide(currentMobileSlide);
-            }, 6000); // Cambia cada 6 segundos
-            
-            showSlide(currentMobileSlide); // Mostrar la primera slide al cargar
+        function submitPQR(e) {
+            e.preventDefault();
+            // Simulación de envío
+            const type = document.getElementById('requestType').value;
+            alert(`¡Solicitud Radicada con Éxito!\n\nHemos recibido tu ${type}. En breve recibirás un correo con el número de radicado (CUN) para seguimiento.`);
+            e.target.reset();
         }
-
-        function scrollToPlans() {
-            document.getElementById('planes-postpago').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function handleLead(planName) {
-            const msg = `Hola! Estoy interesado en el plan móvil *${planName}*. Necesito ayuda para la portabilidad / contratación.`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
     </script>
 </body>
 </html>
