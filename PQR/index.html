@@ -4,12 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- --- SEO: PQR y Servicio al Cliente --- -->
-    <title>PQR Movistar | Radicar Peticiones, Quejas y Reclamos</title>
-    <meta name="description" content="Centro de ayuda y PQR Movistar Colombia. Radica tus peticiones, quejas, reclamos y recursos. Atención al cliente y soporte técnico en línea.">
-    <!-- Canonical apuntando a la carpeta limpia -->
+    <!-- =========================================
+         SEO: METAETIQUETAS AVANZADAS
+         ========================================= -->
+    <title>Centro de Ayuda y PQR Movistar | Pagos, Facturas y Traslados</title>
+    <meta name="description" content="¿Necesitas ayuda con Movistar? Radica tu PQR aquí. Aprende cómo pagar sin registro, descargar tu factura duplicada, solicitar traslados de internet y cancelar planes sin multa.">
+    <meta name="keywords" content="PQR Movistar, pagar factura movistar pse, duplicado factura movistar, traslado internet movistar, cancelar plan movistar sin multa, atencion al cliente movistar colombia">
+    <meta name="author" content="Distribuidor Autorizado Movistar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- CANONICAL -->
     <link rel="canonical" href="https://www.fibrahogar.co/pqr" />
     <meta name="theme-color" content="#0b274f">
+
+    <!-- OPEN GRAPH (Para redes sociales) -->
+    <meta property="og:title" content="Centro de Ayuda Movistar: Facturas, Pagos y PQR">
+    <meta property="og:description" content="Soluciona tus dudas sobre facturación, traslados y cancelaciones. Radica tu PQR fácil y rápido.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.fibrahogar.co/pqr">
+    <meta property="og:image" content="https://www.fibrahogar.co/images/soporte-movistar.jpg">
+
+    <!-- DATOS ESTRUCTURADOS (Schema.org) - CLAVE PARA SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Cómo pagar la factura Movistar sin estar registrado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puedes pagar tu factura fácilmente a través del botón de Pagos en Línea en el sitio web oficial, ingresando solo el número de referencia de pago o tu número de línea, y pagando vía PSE o tarjeta de crédito."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Por qué no me llega la factura Movistar por correo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si no recibes tu factura, verifica tu carpeta de SPAM. También puedes actualizar tu correo electrónico desde la App Mi Movistar o descargarla directamente desde allí."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cómo descargar un duplicado de factura Movistar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ingresa a la App Mi Movistar o a la sucursal virtual web. Ve a la sección 'Facturación', selecciona el mes deseado y haz clic en 'Descargar PDF'."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cómo solicitar traslado de internet Movistar a otra dirección?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Debes verificar primero la cobertura en tu nueva dirección. Luego, solicita el traslado llamando al *611 o a través del chat de WhatsApp oficial de Movistar con al menos 3 días de anticipación."
+        }
+      }, {
+        "@type": "Question",
+        "name": "¿Cómo cancelar un plan Movistar en Colombia sin multa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para evitar multas, verifica que no tengas una cláusula de permanencia vigente. Si ya cumpliste el tiempo o no tienes cláusula, radica la solicitud 10 días hábiles antes de tu fecha de corte de facturación."
+        }
+      }]
+    }
+    </script>
 
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
@@ -94,6 +151,20 @@
         .info-title { font-weight: 700; color: var(--secondary); margin-bottom: 5px; display: block; }
         .info-text { font-size: 0.9rem; color: #666; }
 
+        /* ESTILOS NUEVA SECCIÓN FAQ */
+        .faq-section { width: 100%; margin-top: 50px; }
+        .faq-title { font-size: 2rem; color: var(--secondary); text-align: center; margin-bottom: 30px; font-weight: 800; }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .faq-item { background: white; padding: 25px; border-radius: var(--radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; border-left: 4px solid var(--primary); }
+        .faq-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+        .faq-q { font-weight: 700; color: var(--secondary); margin-bottom: 10px; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+        .faq-a { color: #555; font-size: 0.95rem; line-height: 1.6; }
+        .faq-link { color: var(--primary); font-weight: 600; text-decoration: underline; }
+
+        /* Video Container */
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
         /* Footer Simple */
         footer { text-align: center; padding: 30px; color: #888; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: auto; }
 
@@ -110,9 +181,7 @@
     <header class="main-header">
         <div class="header-inner">
             <!-- 
-                CORRECCIÓN DE RUTA DE REGRESO
-                ../index.html significa "subir una carpeta y buscar index.html"
-                Esto funciona perfecto localmente.
+               Enlace relativo para volver a la Home
             -->
             <a href="../index.html" class="logo">
                 <i data-lucide="shield-check"></i> TE ESCUCHAMOS
@@ -226,7 +295,70 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Superintendencia_de_Industria_y_Comercio.svg" alt="Vigilado SuperIndustria" style="width: 150px; opacity: 0.7;">
                 <p style="font-size: 0.7rem; color: #999; margin-top: 10px;">Vigilado Superintendencia de Industria y Comercio</p>
             </div>
+            
+            <!-- Imagen SEO Promocional (Placeholder) -->
+            <div style="margin-top: 20px; border-radius: 8px; overflow: hidden;">
+                
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=400" alt="Pago de factura movistar en línea seguro" style="width: 100%; display: block;">
+            </div>
         </aside>
+
+        <!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES (SEO CONTENT) -->
+        <section class="faq-section">
+            <h2 class="faq-title">Centro de Ayuda y Preguntas Frecuentes</h2>
+            
+            <div class="faq-grid">
+                <!-- Pregunta 1 -->
+                <article class="faq-item">
+                    <h3 class="faq-q"><i data-lucide="credit-card" size="20"></i> ¿Cómo pagar factura Movistar sin estar registrado?</h3>
+                    <p class="faq-a">
+                        ¡Es muy fácil! No necesitas crear una cuenta. Solo ingresa al portal de pagos de Movistar, selecciona la opción <strong>"Pago en Línea"</strong> e ingresa el número de referencia de tu factura o tu número de celular. Podrás pagar de forma segura usando <strong>PSE</strong> o tu tarjeta de crédito en minutos.
+                    </p>
+                </article>
+
+                <!-- Pregunta 2 -->
+                <article class="faq-item">
+                    <h3 class="faq-q"><i data-lucide="mail-warning" size="20"></i> No me llega la factura Movistar por correo</h3>
+                    <p class="faq-a">
+                        A veces los filtros de seguridad envían los recibos a la carpeta de <strong>SPAM o Correo no deseado</strong>, por favor revísala primero. Si no está allí, te recomendamos descargar la <strong>App Mi Movistar</strong> donde siempre tendrás disponible tu factura actual y el histórico para descargar en PDF cuando quieras.
+                    </p>
+                </article>
+
+                <!-- Pregunta 3 -->
+                <article class="faq-item">
+                    <h3 class="faq-q"><i data-lucide="file-text" size="20"></i> ¿Cómo descargar duplicado de factura Movistar?</h3>
+                    <p class="faq-a">
+                        La forma más ecológica y rápida es a través de la App Mi Movistar. Ingresa con tus datos, ve a la sección <strong>"Facturación"</strong> y allí verás el icono de descarga. También puedes escribir al <strong>WhatsApp oficial</strong> y el chatbot te enviará el PDF al instante.
+                    </p>
+                </article>
+
+                <!-- Pregunta 4 -->
+                <article class="faq-item">
+                    <h3 class="faq-q"><i data-lucide="truck" size="20"></i> Solicitar traslado de internet Movistar</h3>
+                    <p class="faq-a">
+                        ¿Te mudas? ¡Nos vamos contigo! Antes de desconectar tus equipos, comunícate al <strong>*611</strong> o visita un centro de experiencia para validar la cobertura de fibra óptica en tu nueva dirección. Recuerda solicitarlo con al menos <strong>3 días hábiles</strong> de anticipación para no quedarte sin servicio.
+                    </p>
+                </article>
+
+                <!-- Pregunta 5 -->
+                <article class="faq-item">
+                    <h3 class="faq-q"><i data-lucide="ban" size="20"></i> Cancelar plan Movistar sin multa</h3>
+                    <p class="faq-a">
+                        Entendemos que las circunstancias cambian. Para evitar multas, verifica en tu contrato o en la App si tu <strong>cláusula de permanencia</strong> (generalmente de 12 meses) ya finalizó. Si es así, puedes solicitar la cancelación <strong>10 días antes</strong> de tu fecha de corte para que no se genere una nueva factura.
+                    </p>
+                </article>
+            </div>
+
+            <!-- Video Explicativo SEO -->
+            <div style="margin-top: 40px;">
+                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 20px;">Video Tutorial: Gestiona tus servicios fácilmente</h3>
+                <div class="video-container">
+                    <!-- Video embebido de YouTube relevante para pagos y facturas -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xhBkmTbTAWY" title="Pago de Facturas Movistar en Línea" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </section>
 
     </div>
 
