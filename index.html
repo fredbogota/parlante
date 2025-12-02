@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- --- SEO & METADATA --- -->
-    <title>Fibra Óptica Movistar | Internet + TV + PQR</title>
-    <meta name="description" content="🚀 Internet Fibra Óptica Movistar y Centro de Ayuda PQR. Planes desde $99.990 y radicación de solicitudes en línea.">
-    <!-- Canonical dinámico se manejará mejor desde el servidor, pero aquí dejamos la raíz -->
-    <link rel="canonical" href="https://www.fibrahogar.co/" />
+    <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
+    <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
+    
+    <!-- CANONICAL: Apuntando a la raíz limpia -->
+    <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
-    <!-- RECURSOS -->
+    <!-- --- PERFORMANCE RESOURCES --- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -60,18 +61,16 @@
         }
         a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
         ul { list-style: none; }
-        button, input, select, textarea { font-family: inherit; border: none; outline: none; }
+        button, input { font-family: inherit; border: none; outline: none; }
         button { cursor: pointer; }
 
         /* Utility Classes */
         .container { width: 92%; max-width: var(--container-w); margin: 0 auto; }
         .text-center { text-align: center; }
         .hidden { display: none !important; }
-        .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* * ==========================================
-         * HEADER GLOBAL
+         * HEADER
          * ==========================================
          */
         .main-header {
@@ -87,25 +86,27 @@
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         
         .logo { display: flex; align-items: center; text-decoration: none; gap: 5px; transition: transform 0.3s ease; cursor: pointer; padding: 5px; border-radius: 8px; }
-        .logo:hover { transform: scale(1.02); }
         .logo-icon-wrapper { position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
-        .logo-icon { transform: scale(1.1); color: var(--primary); }
-        .logo-text { color: var(--secondary); font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; }
+        .logo-icon-wrapper::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: var(--primary); opacity: 0.5; filter: blur(10px); transition: opacity 0.3s ease; animation: pulse-glow 3s infinite alternate; }
+        .logo-icon { transform: scale(1.1); color: var(--white); z-index: 1; background: linear-gradient(135deg, var(--primary) 0%, #00d2ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 5px rgba(1, 157, 244, 0.5)); transition: transform 0.3s ease; }
+        .logo:hover .logo-icon { transform: scale(1.3) rotate(-10deg); }
+        .logo-text { color: var(--secondary); font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; transition: color 0.3s ease; }
+        .logo:hover .logo-text { color: var(--primary); }
+
+        @keyframes pulse-glow { from { opacity: 0.5; transform: scale(0.9); } to { opacity: 0.8; transform: scale(1.1); } }
 
         .nav-menu { display: flex; gap: 30px; align-items: center; }
         .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; cursor: pointer; }
-        .nav-link:hover, .nav-link.active { color: var(--primary); }
-        
-        /* Estilos específicos para PQR y Blog */
-        .nav-link-special { color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 5px; }
-        .nav-link-special:hover { opacity: 0.8; }
-        
+        .nav-link:hover { color: var(--primary); }
+        .nav-link-blog { color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 5px; }
+        .nav-link-blog:hover { opacity: 0.8; }
+
         .btn-cta { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 15px rgba(1, 157, 244, 0.4); transition: var(--trans-fast); }
         .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(1, 157, 244, 0.6); background: var(--primary-dark); }
         .mobile-toggle { display: none; color: var(--secondary); background: none; }
 
         /* * ==========================================
-         * VISTA HOME (LANDING) STYLES
+         * COMPONENTS: HERO, CARDS, ETC
          * ==========================================
          */
         .hero { position: relative; height: 680px; width: 100%; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -120,14 +121,24 @@
         .hero-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
         .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
         .hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto; }
-        
+        .partners-row { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+        .partner-pill { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; }
+
+        .sticky-bar { position: sticky; top: var(--header-h); z-index: 900; background: white; border-bottom: 2px solid var(--accent); padding: 12px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .bar-content { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .bar-input-group { display: flex; gap: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        .bar-input { padding: 10px 15px; border: 1px solid #ddd; width: 220px; font-size: 1rem; border-right: none; }
+        .bar-btn { background: var(--accent); color: white; padding: 0 20px; font-weight: 700; transition: background 0.2s; }
+        .bar-btn:hover { background: #c42e00; }
+
         .section-padded { padding: 80px 0; }
         .section-title { font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .plan-card { background: white; border-radius: var(--radius-lg); padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05); position: relative; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
         .plan-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(1, 157, 244, 0.15); }
         .plan-card.featured { border: 2px solid var(--primary); transform: scale(1.05); z-index: 2; }
-        .badge-pop { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; }
+        .plan-card.featured:hover { transform: scale(1.08); }
+        .badge-pop { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(230, 55, 0, 0.3); }
         .price-tag { font-size: 3rem; font-weight: 900; color: var(--primary); line-height: 1; margin: 10px 0; }
         .price-tag span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
         .features-list { margin: 30px 0; flex-grow: 1; }
@@ -135,338 +146,401 @@
         .btn-card { width: 100%; padding: 14px; border-radius: 50px; font-weight: 700; text-align: center; border: 2px solid var(--primary); color: var(--primary); background: transparent; transition: all 0.2s; }
         .btn-card:hover { background: #e6f6ff; }
         .btn-card.filled { background: var(--primary); color: white; border: none; }
+        .btn-card.filled:hover { background: var(--primary-dark); box-shadow: 0 5px 15px rgba(1, 157, 244, 0.3); }
 
-        /* * ==========================================
-         * VISTA PQR STYLES
-         * ==========================================
-         */
-        .pqr-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 60px 0; align-items: start; }
-        .pqr-card { background: white; padding: 40px; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-full { grid-column: 1 / -1; }
-        .form-group { display: flex; flex-direction: column; gap: 8px; }
-        .form-label { font-weight: 600; color: var(--secondary); font-size: 0.9rem; }
-        .form-input, .form-select, .form-textarea { padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; width: 100%; font-size: 1rem; transition: border-color 0.3s; }
-        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--primary); }
-        .form-textarea { height: 120px; resize: vertical; }
-        .info-card { background: var(--secondary); color: white; padding: 30px; border-radius: var(--radius-lg); margin-bottom: 30px; }
-        .info-item { display: flex; gap: 15px; margin-bottom: 25px; }
-
-        /* * ==========================================
-         * MODALS & FOOTER
-         * ==========================================
-         */
         .modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 39, 79, 0.6); backdrop-filter: blur(5px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
         .modal-backdrop.open { opacity: 1; pointer-events: auto; }
-        .modal-box { background: white; width: 90%; max-width: 500px; padding: 40px; border-radius: 20px; position: relative; transform: translateY(20px); transition: transform 0.3s; }
+        .modal-box { background: white; width: 90%; max-width: 500px; padding: 40px; border-radius: 20px; position: relative; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
         .modal-backdrop.open .modal-box { transform: translateY(0); }
         .close-modal { position: absolute; top: 15px; right: 15px; background: none; font-size: 1.5rem; color: #999; }
-        .footer { background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--secondary); }
+        .form-input { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
+        .form-input:focus { border-color: var(--primary); }
+        .loader { width: 48px; height: 48px; border: 5px solid var(--primary); border-bottom-color: transparent; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        @media (max-width: 900px) {
-            .pqr-layout { grid-template-columns: 1fr; }
-            .form-grid { grid-template-columns: 1fr; }
-        }
         @media (max-width: 768px) {
             .mobile-toggle { display: block; }
             .nav-menu { position: fixed; top: var(--header-h); left: 0; width: 100%; flex-direction: column; background: white; padding: 30px; box-shadow: 0 10px 10px rgba(0,0,0,0.05); transform: translateY(-150%); transition: transform 0.3s; }
             .nav-menu.active { transform: translateY(0); }
+            .hero-title { font-size: 2.5rem; }
+            .sticky-bar { padding: 15px; }
+            .bar-content { flex-direction: column; width: 100%; }
+            .bar-input-group { width: 100%; }
+            .bar-input { width: 100%; }
+            .cards-grid { padding: 0 10px; }
+            .plan-card.featured { transform: none; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header Global -->
+    <!-- Header -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <a href="/" onclick="switchView('home', event)" class="logo">
-                <span class="logo-icon-wrapper"><i data-lucide="zap" class="logo-icon"></i></span>
+            <!-- LOGO: Clic limpia URL a raíz -->
+            <a href="/" onclick="cleanHome(event)" class="logo">
+                <span class="logo-icon-wrapper">
+                    <i data-lucide="zap" class="logo-icon" size="28"></i>
+                </span>
                 <span class="logo-text">MOVISTAR</span>
             </a>
             
-            <button class="mobile-toggle" id="menuBtn"><i data-lucide="menu"></i></button>
+            <button class="mobile-toggle" id="menuBtn" aria-label="Menu">
+                <i data-lucide="menu" size="28"></i>
+            </button>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="/" onclick="switchView('home', event)" class="nav-link active" id="link-home">Inicio</a>
-                <a href="#planes" onclick="switchView('home', null, 'planes')" class="nav-link">Planes</a>
-                <a href="#beneficios" onclick="switchView('home', null, 'beneficios')" class="nav-link">Beneficios</a>
+                <!-- 
+                  ENLACES INTERNOS OPTIMIZADOS PARA SEO VISUAL
+                -->
+                <a href="#planes" class="nav-link seo-link" data-path="/planes">Planes Fibra</a>
+                <a href="/planes-moviles" target="_blank" class="nav-link">Planes Móviles</a>
+                <a href="#beneficios" class="nav-link seo-link" data-path="/beneficios">Beneficios</a>
                 
-                <!-- BOTÓN PQR (Modificado: href="/pqr" para SEO) -->
-                <a href="/pqr" onclick="switchView('pqr', event)" class="nav-link nav-link-special" id="link-pqr">
-                    <i data-lucide="file-text" size="18"></i> PQR
-                </a>
-
-                <!-- LINK BLOG -->
-                <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link nav-link-special">
-                    <i data-lucide="newspaper" size="18"></i> Blog
-                </a>
+                <!-- 
+                     *** MODIFICACIÓN REALIZADA ***
+                     El botón "PQR" ahora apunta a la ruta /pqr
+                -->
+                <a href="/pqr" target="_blank" class="nav-link" style="color: var(--accent); font-weight: 700;">PQR</a>
                 
-                <button onclick="openModal('coverageModal')" class="btn-cta">Consultar Cobertura</button>
+                <a href="#footer-help" class="nav-link seo-link" data-path="/help">Ayuda</a>
+                
+                <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link-blog">
+                    <i data-lucide="newspaper" size="16"></i> Blog
+                </a>
+                <button onclick="openModal()" class="btn-cta">Consultar Cobertura</button>
             </nav>
         </div>
     </header>
 
-    <!-- =========================================
-         VISTA 1: HOME (LANDING PAGE)
-         ========================================= -->
-    <div id="view-home" class="fade-in">
-        
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-slider">
-                <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200');"></div>
-                <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1200');"></div>
-            </div>
-            <div class="hero-overlay"></div>
-            <div class="container hero-content">
-                <div class="dynamic-text-group active">
-                    <span class="hero-badge" style="color: var(--primary); border-color: var(--primary);">🚀 Fibra Simétrica</span>
-                    <h1 class="hero-title">NAVEGA A LA<br>VELOCIDAD DE LA LUZ</h1>
-                    <p class="hero-subtitle">900 Megas Simétricas + Disney+ Incluido.</p>
-                    <button onclick="openModal('coverageModal')" class="btn-cta" style="padding: 16px 40px; background:white; color:var(--secondary);">
-                        Verificar Mi Cobertura
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Planes Section -->
-        <main class="container section-padded" id="planes">
-            <div class="text-center" style="margin-bottom: 50px;">
-                <h2 class="section-title">Elige tu Plan Ideal</h2>
-                <p style="color: var(--text-light);">Instalación GRATIS en estrato 3, 4, 5 y 6.</p>
-            </div>
-            <div class="cards-grid">
-                <article class="plan-card">
-                    <h3 style="font-weight: 800; color: var(--secondary);">TRIO 500 MEGAS</h3>
-                    <div class="price-tag">$84.990<span>/mes</span></div>
-                    <ul class="features-list">
-                        <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> 500 Megas Fibra</li>
-                        <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Telefonía Ilimitada</li>
-                    </ul>
-                    <button onclick="contactWhatsApp('Plan 500 Megas')" class="btn-card">Lo Quiero</button>
-                </article>
-
-                <article class="plan-card featured">
-                    <div class="badge-pop">🔥 MÁS VENDIDO</div>
-                    <h3 style="font-weight: 800; color: var(--secondary);">FIBRA PRO 900</h3>
-                    <div class="price-tag">$99.990<span>/mes</span></div>
-                    <ul class="features-list">
-                        <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>900 Megas Simétricas</strong></li>
-                        <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>Disney+ Estándar</strong></li>
-                    </ul>
-                    <button onclick="contactWhatsApp('Plan Pro 900 Megas')" class="btn-card filled">Solicitar Ahora</button>
-                </article>
-            </div>
-        </main>
-
-        <!-- Beneficios -->
-        <section id="beneficios" style="background: white; padding: 80px 0;">
-            <div class="container">
-                <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
-                    <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=800" style="flex:1; min-width:300px; border-radius: 20px;" alt="TV">
-                    <div style="flex:1; min-width:300px;">
-                        <h2 class="section-title">Entretenimiento Total</h2>
-                        <p>Disfruta de la mejor televisión y streaming sin interrupciones gracias a nuestra fibra óptica directa al hogar.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- =========================================
-         VISTA 2: PQR (FORMULARIO) - Oculta por defecto
-         ========================================= -->
-    <div id="view-pqr" class="hidden fade-in">
-        <div class="container pqr-layout">
-            <main class="pqr-card">
-                <h1 style="font-size: 2rem; color: var(--secondary); margin-bottom: 10px;">Radicar PQR</h1>
-                <p style="color: var(--text-light); margin-bottom: 30px;">Diligencia el formulario para registrar Peticiones, Quejas o Reclamos.</p>
-                
-                <form onsubmit="submitPQR(event)">
-                    <div class="form-grid">
-                        <div class="form-group form-full">
-                            <label class="form-label">Tipo de Solicitud</label>
-                            <select class="form-select" required>
-                                <option value="">Seleccione...</option>
-                                <option>Petición</option>
-                                <option>Queja</option>
-                                <option>Reclamo</option>
-                                <option>Recurso</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Cédula / NIT</label>
-                            <input type="text" class="form-input" required placeholder="Número de documento">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Nombre Completo</label>
-                            <input type="text" class="form-input" required placeholder="Nombre del titular">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Celular</label>
-                            <input type="tel" class="form-input" required placeholder="Número de contacto">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-input" required placeholder="Email de respuesta">
-                        </div>
-                        <div class="form-group form-full">
-                            <label class="form-label">Descripción de los hechos</label>
-                            <textarea class="form-textarea" required placeholder="Describe tu caso detalladamente..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-cta form-full" style="width: 100%; padding: 15px;">RADICAR SOLICITUD</button>
-                    </div>
-                </form>
-            </main>
-
-            <aside>
-                <div class="info-card">
-                    <h3><i data-lucide="help-circle"></i> Canales de Atención</h3>
-                    <div class="info-item" style="margin-top: 20px;">
-                        <i data-lucide="phone"></i>
-                        <div>
-                            <strong>Líneas Telefónicas</strong>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">*611 desde Movistar<br>01 8000 930 930</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i data-lucide="message-square"></i>
-                        <div>
-                            <strong>WhatsApp 24/7</strong>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">+57 316 606 6666</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align: center; opacity: 0.6;">
-                    <p style="font-size: 0.8rem;">Vigilado SuperIndustria</p>
-                </div>
-            </aside>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider" id="heroSlider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?q=80&w=1200');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1200');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1200');"></div>
         </div>
-    </div>
-
-    <!-- Footer Global -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 Movistar Colombia - Canal Autorizado.</p>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="dynamic-text-group active" data-index="0">
+                <span class="hero-badge" style="color: var(--primary); border-color: var(--primary);">🚀 Fibra Simétrica</span>
+                <h1 class="hero-title">NAVEGA A LA<br>VELOCIDAD DE LA LUZ</h1>
+                <p class="hero-subtitle">900 Megas Simétricas. La red más estable para tu hogar. Descarga, juega y trabaja sin interrupciones.</p>
+            </div>
+            <div class="dynamic-text-group" data-index="1">
+                <span class="hero-badge" style="color: #FFC107; border-color: #FFC107;">⚽ Win Sports+ Incluido</span>
+                <h1 class="hero-title">LA PASIÓN DEL<br>FÚTBOL EN HD</h1>
+                <p class="hero-subtitle">No te pierdas ningún gol de la liga local. Vive la emoción del estadio en tu sala.</p>
+            </div>
+            <div class="dynamic-text-group" data-index="2">
+                <span class="hero-badge" style="color: #E50914; border-color: #E50914;">🎬 Netflix & Disney+</span>
+                <h1 class="hero-title">CINE EN CASA<br>PARA TODOS</h1>
+                <p class="hero-subtitle">Las mejores series y estrenos mundiales incluidos en tu plan de fibra.</p>
+            </div>
+            <div class="partners-row">
+                <div class="partner-pill"><i data-lucide="wifi"></i> 900 Megas</div>
+                <div class="partner-pill"><i data-lucide="tv"></i> Win+</div>
+                <div class="partner-pill"><i data-lucide="film"></i> Disney+</div>
+            </div>
+            <button onclick="openModal()" class="btn-cta" style="padding: 16px 40px; font-size: 1.1rem; background:white; color:var(--secondary);">
+                Verificar Mi Cobertura
+            </button>
         </div>
-    </footer>
+    </section>
 
-    <!-- Modals -->
-    <div class="modal-backdrop" id="coverageModal">
-        <div class="modal-box">
-            <button class="close-modal" onclick="closeModal('coverageModal')">&times;</button>
-            <h3 style="color: var(--secondary); margin-bottom: 15px;">📍 Verificar Cobertura</h3>
-            <form onsubmit="checkCoverage(event)">
-                <div class="form-group">
-                    <label class="form-label">Barrio</label>
-                    <input type="text" id="inputBarrio" class="form-input" required placeholder="Ej: Laureles">
-                </div>
-                <button type="submit" class="btn-cta" style="width: 100%; margin-top: 15px;">VALIDAR</button>
+    <!-- Sticky Lead Capture -->
+    <div class="sticky-bar">
+        <div class="container bar-content">
+            <div style="display:flex; align-items:center; gap:10px; font-weight:600; color:var(--secondary);">
+                <i data-lucide="map-pin" class="text-primary"></i>
+                <span>¿Llega a tu barrio?</span>
+            </div>
+            <form class="bar-input-group" onsubmit="handleStickySubmit(event)">
+                <input type="tel" class="bar-input" placeholder="Tu celular para llamarte..." required>
+                <button type="submit" class="bar-btn">¡LLÁMAME!</button>
             </form>
         </div>
     </div>
 
-    <div class="modal-backdrop" id="successModal">
-        <div class="modal-box text-center">
-            <div style="color: var(--success); margin-bottom: 15px;"><i data-lucide="check-circle" size="48"></i></div>
-            <h3 style="color: var(--secondary);">¡Solicitud Radicada!</h3>
-            <p>Hemos enviado el número de radicado a tu correo.</p>
-            <button onclick="closeModal('successModal')" class="btn-cta" style="margin-top: 20px;">ENTENDIDO</button>
+    <!-- Planes Section (ID: planes) -->
+    <main class="container section-padded" id="planes">
+        <div class="text-center" style="margin-bottom: 50px;">
+            <h2 class="section-title">Elige la Potencia de tu Fibra</h2>
+            <p style="color: var(--text-light);">Instalación GRATIS en estrato 3, 4, 5 y 6.</p>
+        </div>
+
+        <div class="cards-grid">
+            <article class="plan-card">
+                <h3 style="font-weight: 800; color: var(--secondary);">TRIO 500 MEGAS</h3>
+                <div class="price-tag">$84.990<span>/mes</span></div>
+                <ul class="features-list">
+                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> 500 Megas Fibra</li>
+                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Telefonía Ilimitada</li>
+                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Movistar TV App</li>
+                </ul>
+                <button onclick="selectPlan('TRIO 500', 84990)" class="btn-card">Lo Quiero</button>
+            </article>
+
+            <article class="plan-card featured">
+                <div class="badge-pop">🔥 MÁS VENDIDO</div>
+                <h3 style="font-weight: 800; color: var(--secondary);">FIBRA PRO 900</h3>
+                <div class="price-tag">$99.990<span>/mes</span></div>
+                <p style="font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 20px;">Incluye Win Sports+ (3 meses)</p>
+                <ul class="features-list">
+                    <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>900 Megas Simétricas</strong></li>
+                    <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>Disney+ Estándar</strong></li>
+                    <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> Datos Móviles Ilimitados</li>
+                </ul>
+                <button onclick="selectPlan('PRO 900', 99990)" class="btn-card filled">Solicitar Ahora</button>
+            </article>
+
+            <article class="plan-card">
+                <h3 style="font-weight: 800; color: var(--secondary);">TOTAL FULL</h3>
+                <div class="price-tag">$145.990<span>/mes</span></div>
+                <ul class="features-list">
+                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> 900 Megas Fibra</li>
+                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Netflix + Disney+</li>
+                    <li class="feature-li"><i data-lucide="check" size="18" color="var(--success)"></i> Amazon Prime</li>
+                </ul>
+                <button onclick="selectPlan('TOTAL FULL', 145990)" class="btn-card">Lo Quiero</button>
+            </article>
+        </div>
+    </main>
+
+    <!-- Beneficios (ID: beneficios) -->
+    <section id="beneficios" style="background: white; padding: 80px 0;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=800" alt="Familia viendo TV" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.1);" loading="lazy">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title">Entretenimiento sin límites</h2>
+                    <p style="margin-bottom: 30px; color: var(--text-light);">
+                        Olvídate del buffering. Con nuestra fibra óptica directa al hogar (FTTH), todos pueden conectar sus dispositivos simultáneamente.
+                    </p>
+                    <div style="display: grid; gap: 20px;">
+                        <div style="display: flex; gap: 15px;">
+                            <div style="background: var(--bg-body); padding: 12px; border-radius: 12px; height: fit-content;">
+                                <i data-lucide="gamepad-2" color="var(--primary)"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 700;">Gaming Baja Latencia</h4>
+                                <p style="font-size: 0.9rem; color: #666;">Ping optimizado para servidores competitivos.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px;">
+                            <div style="background: var(--bg-body); padding: 12px; border-radius: 12px; height: fit-content;">
+                                <i data-lucide="download-cloud" color="var(--accent)"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-weight: 700;">Simetría Real</h4>
+                                <p style="font-size: 0.9rem; color: #666;">Sube archivos pesados a la misma velocidad de descarga.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (ID: footer-help) -->
+    <footer id="footer-help" style="background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto;">
+        <div class="container">
+            <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://www.fibrahogar.co/terminosycondiciones" target="_blank" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; border-bottom: 1px dashed rgba(255,255,255,0.4);">Términos y Condiciones</a>
+                <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Política de Datos</a>
+            </div>
+            <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Distribuidor Autorizado. Aplican términos y condiciones.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE COBERTURA -->
+    <div class="modal-backdrop" id="coverageModal">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="modalStep1">
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--secondary);">📍 Verificar Cobertura</h3>
+                <p style="color: #666; margin-bottom: 20px; font-size: 0.95rem;">Ingresa tu ubicación para validar disponibilidad de puertos de fibra.</p>
+                <form onsubmit="checkCoverage(event)">
+                    <div class="form-group">
+                        <label class="form-label">Ciudad / Municipio</label>
+                        <select class="form-input" required>
+                            <option value="">Selecciona...</option>
+                            <option>Bogotá</option>
+                            <option>Medellín</option>
+                            <option>Cali</option>
+                            <option>Barranquilla</option>
+                            <option>Otra</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Barrio</label>
+                        <input type="text" class="form-input" placeholder="Ej: Laureles, Chapinero..." required id="inputBarrio">
+                    </div>
+                    <button type="submit" class="btn-cta" style="width: 100%;">VALIDAR AHORA</button>
+                </form>
+            </div>
+            <div id="modalStep2" class="hidden text-center" style="padding: 20px 0;">
+                <div class="loader"></div>
+                <p style="margin-top: 20px; font-weight: 500;">Consultando central...</p>
+            </div>
+            <div id="modalStep3" class="hidden text-center">
+                <div style="width: 60px; height: 60px; background: #d4edda; color: #155724; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
+                    <i data-lucide="check" size="32"></i>
+                </div>
+                <h3 style="color: var(--success); font-weight: 800; font-size: 1.5rem;">¡COBERTURA DISPONIBLE!</h3>
+                <p style="margin-bottom: 25px; color: #555;">Hemos encontrado puertos de fibra libre en tu zona.</p>
+                <button onclick="finishLead()" class="btn-cta" style="background: #25D366; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i data-lucide="message-circle"></i> AGENDAR INSTALACIÓN
+                </button>
+            </div>
         </div>
     </div>
 
     <script>
-        // === LÓGICA DE NAVEGACIÓN (SPA / Clean URL) ===
-        function switchView(viewName, event = null, scrollTarget = null) {
-            if (event) event.preventDefault();
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            initSlider();
+            initHeader();
+            initSeoLinks();     // Activa la navegación limpia al hacer clic
+            cleanUrlOnLoad();   // Limpia la URL si entran con # o index.html
+        });
 
-            // 1. Ocultar todas las vistas
-            document.getElementById('view-home').classList.add('hidden');
-            document.getElementById('view-pqr').classList.add('hidden');
-            
-            // 2. Desactivar links
-            document.getElementById('link-home').classList.remove('active');
-            
-            // 3. Mostrar vista seleccionada y actualizar URL Limpia
-            if (viewName === 'home') {
-                document.getElementById('view-home').classList.remove('hidden');
-                document.getElementById('link-home').classList.add('active');
+        const STATE = { currentSlide: 0, barrio: '' };
+        const WHATSAPP_NUMBER = "573165593013";
+
+        // === 1. LÓGICA SEO PARA URLS LIMPIAS ===
+
+        // A. Limpiar URL al Cargar (Ej: entra a /#planes -> transforma a /planes)
+        function cleanUrlOnLoad() {
+            // 1. Quitar 'index.html'
+            if (window.location.pathname.endsWith('index.html')) {
+                const newPath = window.location.pathname.replace(/index\.html$/, '');
+                window.history.replaceState(null, '', newPath + window.location.hash);
+            }
+
+            // 2. Mapear Hash (#) a Rutas Limpias (/)
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1); // ej: 'planes'
+                const targetEl = document.getElementById(hash);
                 
-                // URL Limpia: Raíz
-                history.pushState(null, '', '/');
-                
-                if (scrollTarget) {
-                    setTimeout(() => {
-                        const el = document.getElementById(scrollTarget);
-                        if(el) el.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                } else {
-                    window.scrollTo(0,0);
+                // Mapeo manual de IDs a rutas limpias deseadas
+                const routes = {
+                    'planes': '/planes',
+                    'beneficios': '/beneficios',
+                    'footer-help': '/help'
+                };
+
+                if (targetEl) {
+                    // Scroll inmediato
+                    setTimeout(() => targetEl.scrollIntoView(), 100);
+                    
+                    // Si el hash está en nuestro mapa, limpiamos la URL
+                    if (routes[hash]) {
+                        window.history.replaceState(null, '', routes[hash]);
+                    }
                 }
-
-            } else if (viewName === 'pqr') {
-                document.getElementById('view-pqr').classList.remove('hidden');
-                
-                // URL Limpia: /pqr (en vez de #pqr)
-                history.pushState(null, '', '/pqr');
-                
-                window.scrollTo(0,0);
             }
         }
 
-        // === FUNCIONES UTILITARIAS ===
-        function openModal(id) { document.getElementById(id).classList.add('open'); }
-        function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-        
-        function contactWhatsApp(msg) {
-            const num = "573165593013";
-            window.open(`https://wa.me/${num}?text=${encodeURIComponent('Hola, me interesa: ' + msg)}`, '_blank');
+        // B. Interceptar Clics en el Menú
+        function initSeoLinks() {
+            const links = document.querySelectorAll('.seo-link');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Detiene el comportamiento # por defecto
+                    
+                    const targetId = link.getAttribute('href').substring(1); // 'planes'
+                    const cleanPath = link.getAttribute('data-path');        // '/planes'
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        // Cambia la URL visualmente
+                        window.history.pushState(null, '', cleanPath);
+                        // Hace el scroll
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        function cleanHome(e) {
+            e.preventDefault();
+            window.history.pushState(null, '', '/');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // === 2. LÓGICA DE INTERFAZ ===
+
+        function initSlider() {
+            const slides = document.querySelectorAll('.slide');
+            const contents = document.querySelectorAll('.dynamic-text-group');
+            setInterval(() => {
+                slides[STATE.currentSlide].classList.remove('active');
+                contents[STATE.currentSlide].classList.remove('active');
+                STATE.currentSlide = (STATE.currentSlide + 1) % slides.length;
+                slides[STATE.currentSlide].classList.add('active');
+                contents[STATE.currentSlide].classList.add('active');
+            }, 6000);
+        }
+
+        function initHeader() {
+            const header = document.getElementById('header');
+            const menuBtn = document.getElementById('menuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+
+            menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
+            // Los links cierran el menú en móvil
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => navMenu.classList.remove('active'));
+            });
+        }
+
+        function openModal() { document.getElementById('coverageModal').classList.add('open'); }
+        function closeModal() { 
+            document.getElementById('coverageModal').classList.remove('open'); 
+            setTimeout(() => {
+                document.getElementById('modalStep1').classList.remove('hidden');
+                document.getElementById('modalStep2').classList.add('hidden');
+                document.getElementById('modalStep3').classList.add('hidden');
+            }, 300);
         }
 
         function checkCoverage(e) {
             e.preventDefault();
-            const barrio = document.getElementById('inputBarrio').value;
-            closeModal('coverageModal');
-            contactWhatsApp(`Verificar cobertura en barrio ${barrio}`);
+            STATE.barrio = document.getElementById('inputBarrio').value;
+            document.getElementById('modalStep1').classList.add('hidden');
+            document.getElementById('modalStep2').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('modalStep2').classList.add('hidden');
+                document.getElementById('modalStep3').classList.remove('hidden');
+            }, 1500);
         }
 
-        function submitPQR(e) {
+        function finishLead() {
+            const msg = `Hola! Verifiqué cobertura en el barrio *${STATE.barrio}* y dice DISPONIBLE. Quiero agendar instalación.`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+            closeModal();
+        }
+
+        function selectPlan(planName, price) {
+            const msg = `Hola! Estoy interesado en el plan *${planName}* de $${price}. ¿Me ayudan a contratar?`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function handleStickySubmit(e) {
             e.preventDefault();
-            openModal('successModal');
-            e.target.reset();
+            const input = e.target.querySelector('input');
+            const msg = `Hola! Solicito una llamada urgente al número: ${input.value}`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
-
-        // === INICIALIZACIÓN ===
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            
-            // Menú Móvil
-            const menuBtn = document.getElementById('menuBtn');
-            const navMenu = document.getElementById('navMenu');
-            menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
-
-            // === ROUTING INICIAL INTELIGENTE ===
-            // Detecta si la URL es /pqr (si el server soporta reescritura) o tiene hash #pqr
-            const path = window.location.pathname;
-            const hash = window.location.hash;
-
-            if (path === '/pqr' || hash === '#pqr') {
-                switchView('pqr');
-            }
-        });
-
-        // === MANEJO DE BOTONES ATRÁS/ADELANTE DEL NAVEGADOR ===
-        window.onpopstate = () => {
-            const path = window.location.pathname;
-            const hash = window.location.hash;
-
-            if (path === '/pqr' || hash === '#pqr') {
-                switchView('pqr');
-            } else {
-                switchView('home');
-            }
-        };
     </script>
 </body>
 </html>
