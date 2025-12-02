@@ -12,15 +12,6 @@
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     
-    <!-- SCRIPT DE LIMPIEZA INICIAL DE URL -->
-    <script>
-        // Elimina "index.html" si alguien entra directamente a ese archivo
-        if (window.location.pathname.endsWith('index.html')) {
-            var newPath = window.location.pathname.replace(/index\.html$/, '');
-            window.history.replaceState(null, '', newPath + window.location.hash);
-        }
-    </script>
-    
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
@@ -44,26 +35,19 @@
          * ==========================================
          */
         :root {
-            /* Colores de Marca */
             --primary: #019df4;
             --primary-dark: #007bbd;
-            --secondary: #0b274f;     /* Dark Blue */
-            --accent: #E63700;        /* Movistar Orange/Win */
+            --secondary: #0b274f;
+            --accent: #E63700;
             --success: #28a745;
-            
-            /* UI Colors */
             --bg-body: #f4f7fa;
             --bg-card: #ffffff;
             --text-main: #2c3e50;
             --text-light: #636e72;
             --white: #ffffff;
-            
-            /* Spacing & Layout */
             --header-h: 80px;
             --radius-lg: 16px;
             --container-w: 1200px;
-            
-            /* Animations */
             --trans-fast: 0.2s ease;
         }
 
@@ -72,9 +56,7 @@
          * ==========================================
          */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        
         html { scroll-behavior: smooth; font-size: 16px; }
-        
         body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--bg-body);
@@ -83,7 +65,6 @@
             padding-top: var(--header-h);
             overflow-x: hidden;
         }
-
         a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
         ul { list-style: none; }
         button, input { font-family: inherit; border: none; outline: none; }
@@ -95,7 +76,7 @@
         .hidden { display: none !important; }
 
         /* * ==========================================
-         * COMPONENT: HEADER
+         * HEADER
          * ==========================================
          */
         .main-header {
@@ -107,278 +88,93 @@
             z-index: 1000;
             transition: box-shadow 0.3s;
         }
-        
         .main-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         
-        /* LOGO INTERACTIVO Y VIBRANTE */
-        .logo { 
-            display: flex; align-items: center; text-decoration: none; 
-            gap: 5px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 8px;
-        }
-
-        .logo-icon-wrapper {
-            position: relative;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: 0.5;
-            filter: blur(10px);
-            transition: opacity 0.3s ease;
-        }
-        
-        .logo-icon {
-            transform: scale(1.1);
-            color: var(--white);
-            z-index: 1;
-            background: linear-gradient(135deg, var(--primary) 0%, #00d2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px rgba(1, 157, 244, 0.5));
-            transition: transform 0.3s ease;
-        }
-        
+        .logo { display: flex; align-items: center; text-decoration: none; gap: 5px; transition: transform 0.3s ease; cursor: pointer; padding: 5px; border-radius: 8px; }
+        .logo-icon-wrapper { position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon-wrapper::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: var(--primary); opacity: 0.5; filter: blur(10px); transition: opacity 0.3s ease; animation: pulse-glow 3s infinite alternate; }
+        .logo-icon { transform: scale(1.1); color: var(--white); z-index: 1; background: linear-gradient(135deg, var(--primary) 0%, #00d2ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 5px rgba(1, 157, 244, 0.5)); transition: transform 0.3s ease; }
         .logo:hover .logo-icon { transform: scale(1.3) rotate(-10deg); }
-        .logo-text {
-            color: var(--secondary);
-            font-weight: 900;
-            font-size: 1.3rem;
-            letter-spacing: -0.5px;
-            transition: color 0.3s ease;
-        }
-        
+        .logo-text { color: var(--secondary); font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; transition: color 0.3s ease; }
         .logo:hover .logo-text { color: var(--primary); }
-        .logo-icon-wrapper::before { animation: pulse-glow 3s infinite alternate; }
 
-        @keyframes pulse-glow {
-            from { opacity: 0.5; transform: scale(0.9); }
-            to { opacity: 0.8; transform: scale(1.1); }
-        }
+        @keyframes pulse-glow { from { opacity: 0.5; transform: scale(0.9); } to { opacity: 0.8; transform: scale(1.1); } }
 
         .nav-menu { display: flex; gap: 30px; align-items: center; }
-        .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; }
+        .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; cursor: pointer; }
         .nav-link:hover { color: var(--primary); }
-        
-        .nav-link-blog {
-            color: var(--accent);
-            font-weight: 700;
-            display: flex; align-items: center; gap: 5px;
-        }
+        .nav-link-blog { color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 5px; }
         .nav-link-blog:hover { opacity: 0.8; }
 
-        .btn-cta {
-            background: var(--primary); color: white; padding: 10px 24px;
-            border-radius: 50px; font-weight: 700; box-shadow: 0 4px 15px rgba(1, 157, 244, 0.4);
-            transition: var(--trans-fast);
-        }
+        .btn-cta { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 15px rgba(1, 157, 244, 0.4); transition: var(--trans-fast); }
         .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(1, 157, 244, 0.6); background: var(--primary-dark); }
-        
         .mobile-toggle { display: none; color: var(--secondary); background: none; }
 
         /* * ==========================================
-         * COMPONENT: HERO SLIDER
+         * COMPONENTS: HERO, CARDS, ETC
          * ==========================================
          */
-        .hero {
-            position: relative; height: 680px; width: 100%;
-            background: #000; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-        }
-
+        .hero { position: relative; height: 680px; width: 100%; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        
-        .slide {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1.1);
-            transition: opacity 1s ease-in-out, transform 8s linear;
-        }
-        
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transform: scale(1.1); transition: opacity 1s ease-in-out, transform 8s linear; }
         .slide.active { opacity: 1; transform: scale(1); }
-
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
-            background: linear-gradient(180deg, rgba(11,39,79,0.3) 0%, rgba(11,39,79,0.7) 60%, rgba(11,39,79,0.95) 100%);
-        }
-
-        .hero-content {
-            position: relative; z-index: 3; text-align: center; color: white;
-            max-width: 900px; padding: 0 20px;
-            display: flex; flex-direction: column; align-items: center;
-        }
-
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: linear-gradient(180deg, rgba(11,39,79,0.3) 0%, rgba(11,39,79,0.7) 60%, rgba(11,39,79,0.95) 100%); }
+        .hero-content { position: relative; z-index: 3; text-align: center; color: white; max-width: 900px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; }
         .dynamic-text-group { display: none; animation: fadeInUp 0.8s ease forwards; }
         .dynamic-text-group.active { display: block; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-badge {
-            display: inline-block; padding: 6px 16px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;
-            background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .hero-title {
-            font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
-            margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto;
-        }
-
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
+        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto; }
         .partners-row { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
-        .partner-pill {
-            background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem;
-        }
+        .partner-pill { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.9rem; }
 
-        /* * ==========================================
-         * COMPONENT: STICKY LEAD BAR
-         * ==========================================
-         */
-        .sticky-bar {
-            position: sticky; top: var(--header-h); z-index: 900;
-            background: white; border-bottom: 2px solid var(--accent);
-            padding: 12px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+        .sticky-bar { position: sticky; top: var(--header-h); z-index: 900; background: white; border-bottom: 2px solid var(--accent); padding: 12px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .bar-content { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
-        
         .bar-input-group { display: flex; gap: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
-        .bar-input {
-            padding: 10px 15px; border: 1px solid #ddd; width: 220px; font-size: 1rem;
-            border-right: none;
-        }
-        .bar-btn {
-            background: var(--accent); color: white; padding: 0 20px; font-weight: 700;
-            transition: background 0.2s;
-        }
+        .bar-input { padding: 10px 15px; border: 1px solid #ddd; width: 220px; font-size: 1rem; border-right: none; }
+        .bar-btn { background: var(--accent); color: white; padding: 0 20px; font-weight: 700; transition: background 0.2s; }
         .bar-btn:hover { background: #c42e00; }
 
-        /* * ==========================================
-         * COMPONENT: CARDS & GRID
-         * ==========================================
-         */
         .section-padded { padding: 80px 0; }
         .section-title { font-size: 2.2rem; color: var(--secondary); font-weight: 800; margin-bottom: 15px; }
-        
-        .cards-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; margin-top: 50px;
-        }
-
-        .plan-card {
-            background: white; border-radius: var(--radius-lg); padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05);
-            position: relative; display: flex; flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .plan-card { background: white; border-radius: var(--radius-lg); padding: 40px 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05); position: relative; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
         .plan-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(1, 157, 244, 0.15); }
-        
-        .plan-card.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05); z-index: 2;
-        }
+        .plan-card.featured { border: 2px solid var(--primary); transform: scale(1.05); z-index: 2; }
         .plan-card.featured:hover { transform: scale(1.08); }
-
-        .badge-pop {
-            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: white; padding: 5px 15px;
-            border-radius: 20px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(230, 55, 0, 0.3);
-        }
-
+        .badge-pop { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(230, 55, 0, 0.3); }
         .price-tag { font-size: 3rem; font-weight: 900; color: var(--primary); line-height: 1; margin: 10px 0; }
         .price-tag span { font-size: 1rem; color: var(--text-light); font-weight: 400; }
-        
         .features-list { margin: 30px 0; flex-grow: 1; }
         .feature-li { display: flex; gap: 12px; margin-bottom: 15px; font-size: 0.95rem; align-items: start; }
-        
-        .btn-card {
-            width: 100%; padding: 14px; border-radius: 50px; font-weight: 700; text-align: center;
-            border: 2px solid var(--primary); color: var(--primary); background: transparent;
-            transition: all 0.2s;
-        }
+        .btn-card { width: 100%; padding: 14px; border-radius: 50px; font-weight: 700; text-align: center; border: 2px solid var(--primary); color: var(--primary); background: transparent; transition: all 0.2s; }
         .btn-card:hover { background: #e6f6ff; }
         .btn-card.filled { background: var(--primary); color: white; border: none; }
         .btn-card.filled:hover { background: var(--primary-dark); box-shadow: 0 5px 15px rgba(1, 157, 244, 0.3); }
 
-        /* * ==========================================
-         * COMPONENT: MODAL (COVERAGE CHECKER)
-         * ==========================================
-         */
-        .modal-backdrop {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 39, 79, 0.6); backdrop-filter: blur(5px);
-            z-index: 2000; display: flex; align-items: center; justify-content: center;
-            opacity: 0; pointer-events: none; transition: opacity 0.3s;
-        }
+        .modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 39, 79, 0.6); backdrop-filter: blur(5px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
         .modal-backdrop.open { opacity: 1; pointer-events: auto; }
-
-        .modal-box {
-            background: white; width: 90%; max-width: 500px; padding: 40px;
-            border-radius: 20px; position: relative; transform: translateY(20px);
-            transition: transform 0.3s; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
+        .modal-box { background: white; width: 90%; max-width: 500px; padding: 40px; border-radius: 20px; position: relative; transform: translateY(20px); transition: transform 0.3s; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
         .modal-backdrop.open .modal-box { transform: translateY(0); }
-
         .close-modal { position: absolute; top: 15px; right: 15px; background: none; font-size: 1.5rem; color: #999; }
-        
         .form-group { margin-bottom: 20px; text-align: left; }
         .form-label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--secondary); }
-        .form-input { 
-            width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; 
-            transition: border-color 0.2s;
-        }
+        .form-input { width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
         .form-input:focus { border-color: var(--primary); }
-
-        .loader {
-            width: 48px; height: 48px; border: 5px solid var(--primary);
-            border-bottom-color: transparent; border-radius: 50%;
-            display: inline-block; box-sizing: border-box;
-            animation: rotation 1s linear infinite;
-        }
+        .loader { width: 48px; height: 48px; border: 5px solid var(--primary); border-bottom-color: transparent; border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
         @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* * ==========================================
-         * MOBILE & RESPONSIVE
-         * ==========================================
-         */
         @media (max-width: 768px) {
             .mobile-toggle { display: block; }
-            .nav-menu {
-                position: fixed; top: var(--header-h); left: 0; width: 100%;
-                flex-direction: column; background: white; padding: 30px;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-                transform: translateY(-150%); transition: transform 0.3s;
-            }
+            .nav-menu { position: fixed; top: var(--header-h); left: 0; width: 100%; flex-direction: column; background: white; padding: 30px; box-shadow: 0 10px 10px rgba(0,0,0,0.05); transform: translateY(-150%); transition: transform 0.3s; }
             .nav-menu.active { transform: translateY(0); }
-            
             .hero-title { font-size: 2.5rem; }
             .sticky-bar { padding: 15px; }
             .bar-content { flex-direction: column; width: 100%; }
             .bar-input-group { width: 100%; }
             .bar-input { width: 100%; }
-            
             .cards-grid { padding: 0 10px; }
             .plan-card.featured { transform: none; }
         }
@@ -388,10 +184,8 @@
     <!-- Header -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <!-- 
-                LOGO: href="/" para limpiar URL al hacer click 
-            -->
-            <a href="/" class="logo">
+            <!-- LOGO: Clic limpia URL a raíz -->
+            <a href="/" onclick="cleanHome(event)" class="logo">
                 <span class="logo-icon-wrapper">
                     <i data-lucide="zap" class="logo-icon" size="28"></i>
                 </span>
@@ -404,21 +198,22 @@
 
             <nav class="nav-menu" id="navMenu">
                 <!-- 
-                  NAVEGACIÓN INTERNA "LIMPIA" (Visual SEO)
-                  data-url define la URL que aparecerá en el navegador.
+                  ENLACES INTERNOS OPTIMIZADOS PARA SEO VISUAL
+                  1. 'href' apunta al ID real para que funcione sin JS (fallback).
+                  2. 'data-path' indica la ruta limpia que queremos mostrar (/planes).
+                  3. 'onclick' intercepta y reescribe la URL.
                 -->
-                <a href="#planes" class="nav-link seo-link" data-url="/planes">Planes Fibra</a>
+                <a href="#planes" class="nav-link seo-link" data-path="/planes">Planes Fibra</a>
                 
-                <!-- 
-                     Enlace a Planes Móviles 
-                     (Requiere que hayas hecho el "truco de la carpeta" /planes-moviles/index.html)
-                -->
+                <!-- ENLACE EXTERNO A PLANES MÓVILES (CARPETA) -->
                 <a href="/planes-moviles" target="_blank" class="nav-link">Planes Móviles</a>
                 
-                <a href="#beneficios" class="nav-link seo-link" data-url="/beneficios">Beneficios</a>
-                <a href="#footer-help" class="nav-link seo-link" data-url="/help">Ayuda</a>
+                <a href="#beneficios" class="nav-link seo-link" data-path="/beneficios">Beneficios</a>
                 
-                <!-- ENLACE AL BLOG -->
+                <!-- AYUDA (FOOTER) TRANSFORMADO A /help -->
+                <a href="#footer-help" class="nav-link seo-link" data-path="/help">Ayuda</a>
+                
+                <!-- BLOG EXTERNO -->
                 <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link-blog">
                     <i data-lucide="newspaper" size="16"></i> Blog
                 </a>
@@ -434,34 +229,28 @@
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1200');"></div>
             <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1200');"></div>
         </div>
-
         <div class="hero-overlay"></div>
-
         <div class="container hero-content">
             <div class="dynamic-text-group active" data-index="0">
                 <span class="hero-badge" style="color: var(--primary); border-color: var(--primary);">🚀 Fibra Simétrica</span>
                 <h1 class="hero-title">NAVEGA A LA<br>VELOCIDAD DE LA LUZ</h1>
                 <p class="hero-subtitle">900 Megas Simétricas. La red más estable para tu hogar. Descarga, juega y trabaja sin interrupciones.</p>
             </div>
-
             <div class="dynamic-text-group" data-index="1">
                 <span class="hero-badge" style="color: #FFC107; border-color: #FFC107;">⚽ Win Sports+ Incluido</span>
                 <h1 class="hero-title">LA PASIÓN DEL<br>FÚTBOL EN HD</h1>
                 <p class="hero-subtitle">No te pierdas ningún gol de la liga local. Vive la emoción del estadio en tu sala.</p>
             </div>
-
             <div class="dynamic-text-group" data-index="2">
                 <span class="hero-badge" style="color: #E50914; border-color: #E50914;">🎬 Netflix & Disney+</span>
                 <h1 class="hero-title">CINE EN CASA<br>PARA TODOS</h1>
                 <p class="hero-subtitle">Las mejores series y estrenos mundiales incluidos en tu plan de fibra.</p>
             </div>
-
             <div class="partners-row">
                 <div class="partner-pill"><i data-lucide="wifi"></i> 900 Megas</div>
                 <div class="partner-pill"><i data-lucide="tv"></i> Win+</div>
                 <div class="partner-pill"><i data-lucide="film"></i> Disney+</div>
             </div>
-
             <button onclick="openModal()" class="btn-cta" style="padding: 16px 40px; font-size: 1.1rem; background:white; color:var(--secondary);">
                 Verificar Mi Cobertura
             </button>
@@ -490,7 +279,6 @@
         </div>
 
         <div class="cards-grid">
-            <!-- Plan Basic -->
             <article class="plan-card">
                 <h3 style="font-weight: 800; color: var(--secondary);">TRIO 500 MEGAS</h3>
                 <div class="price-tag">$84.990<span>/mes</span></div>
@@ -502,13 +290,11 @@
                 <button onclick="selectPlan('TRIO 500', 84990)" class="btn-card">Lo Quiero</button>
             </article>
 
-            <!-- Plan Recommended -->
             <article class="plan-card featured">
                 <div class="badge-pop">🔥 MÁS VENDIDO</div>
                 <h3 style="font-weight: 800; color: var(--secondary);">FIBRA PRO 900</h3>
                 <div class="price-tag">$99.990<span>/mes</span></div>
                 <p style="font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 20px;">Incluye Win Sports+ (3 meses)</p>
-                
                 <ul class="features-list">
                     <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>900 Megas Simétricas</strong></li>
                     <li class="feature-li"><i data-lucide="check-circle-2" size="20" color="var(--primary)"></i> <strong>Disney+ Estándar</strong></li>
@@ -517,7 +303,6 @@
                 <button onclick="selectPlan('PRO 900', 99990)" class="btn-card filled">Solicitar Ahora</button>
             </article>
 
-            <!-- Plan Premium -->
             <article class="plan-card">
                 <h3 style="font-weight: 800; color: var(--secondary);">TOTAL FULL</h3>
                 <div class="price-tag">$145.990<span>/mes</span></div>
@@ -543,7 +328,6 @@
                     <p style="margin-bottom: 30px; color: var(--text-light);">
                         Olvídate del buffering. Con nuestra fibra óptica directa al hogar (FTTH), todos pueden conectar sus dispositivos simultáneamente.
                     </p>
-                    
                     <div style="display: grid; gap: 20px;">
                         <div style="display: flex; gap: 15px;">
                             <div style="background: var(--bg-body); padding: 12px; border-radius: 12px; height: fit-content;">
@@ -569,11 +353,10 @@
         </div>
     </section>
 
-    <!-- Footer (ID agregado para navegación: footer-help) -->
+    <!-- Footer (ID: footer-help) -->
     <footer id="footer-help" style="background: var(--secondary); color: white; padding: 40px 0; text-align: center; margin-top: auto;">
         <div class="container">
             <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <!-- ENLACE CORREGIDO: Apunta a la URL amigable absoluta -->
                 <a href="https://www.fibrahogar.co/terminosycondiciones" target="_blank" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; border-bottom: 1px dashed rgba(255,255,255,0.4);">Términos y Condiciones</a>
                 <a href="#" style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Política de Datos</a>
             </div>
@@ -581,17 +364,13 @@
         </div>
     </footer>
 
-    <!-- 
-      === MODAL DE COBERTURA === 
-    -->
+    <!-- MODAL DE COBERTURA -->
     <div class="modal-backdrop" id="coverageModal">
         <div class="modal-box">
             <button class="close-modal" onclick="closeModal()">&times;</button>
-            
             <div id="modalStep1">
                 <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: var(--secondary);">📍 Verificar Cobertura</h3>
                 <p style="color: #666; margin-bottom: 20px; font-size: 0.95rem;">Ingresa tu ubicación para validar disponibilidad de puertos de fibra.</p>
-                
                 <form onsubmit="checkCoverage(event)">
                     <div class="form-group">
                         <label class="form-label">Ciudad / Municipio</label>
@@ -611,12 +390,10 @@
                     <button type="submit" class="btn-cta" style="width: 100%;">VALIDAR AHORA</button>
                 </form>
             </div>
-
             <div id="modalStep2" class="hidden text-center" style="padding: 20px 0;">
                 <div class="loader"></div>
                 <p style="margin-top: 20px; font-weight: 500;">Consultando central...</p>
             </div>
-
             <div id="modalStep3" class="hidden text-center">
                 <div style="width: 60px; height: 60px; background: #d4edda; color: #155724; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto;">
                     <i data-lucide="check" size="32"></i>
@@ -635,11 +412,75 @@
             lucide.createIcons();
             initSlider();
             initHeader();
-            initSeoNavigation(); // MANEJO DE URLs LIMPIAS
+            initSeoLinks();     // Activa la navegación limpia al hacer clic
+            cleanUrlOnLoad();   // Limpia la URL si entran con # o index.html
         });
 
         const STATE = { currentSlide: 0, barrio: '' };
         const WHATSAPP_NUMBER = "573165593013";
+
+        // === 1. LÓGICA SEO PARA URLS LIMPIAS ===
+
+        // A. Limpiar URL al Cargar (Ej: entra a /#planes -> transforma a /planes)
+        function cleanUrlOnLoad() {
+            // 1. Quitar 'index.html'
+            if (window.location.pathname.endsWith('index.html')) {
+                const newPath = window.location.pathname.replace(/index\.html$/, '');
+                window.history.replaceState(null, '', newPath + window.location.hash);
+            }
+
+            // 2. Mapear Hash (#) a Rutas Limpias (/)
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1); // ej: 'planes'
+                const targetEl = document.getElementById(hash);
+                
+                // Mapeo manual de IDs a rutas limpias deseadas
+                const routes = {
+                    'planes': '/planes',
+                    'beneficios': '/beneficios',
+                    'footer-help': '/help'
+                };
+
+                if (targetEl) {
+                    // Scroll inmediato
+                    setTimeout(() => targetEl.scrollIntoView(), 100);
+                    
+                    // Si el hash está en nuestro mapa, limpiamos la URL
+                    if (routes[hash]) {
+                        window.history.replaceState(null, '', routes[hash]);
+                    }
+                }
+            }
+        }
+
+        // B. Interceptar Clics en el Menú
+        function initSeoLinks() {
+            const links = document.querySelectorAll('.seo-link');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Detiene el comportamiento # por defecto
+                    
+                    const targetId = link.getAttribute('href').substring(1); // 'planes'
+                    const cleanPath = link.getAttribute('data-path');        // '/planes'
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        // Cambia la URL visualmente
+                        window.history.pushState(null, '', cleanPath);
+                        // Hace el scroll
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        function cleanHome(e) {
+            e.preventDefault();
+            window.history.pushState(null, '', '/');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // === 2. LÓGICA DE INTERFAZ ===
 
         function initSlider() {
             const slides = document.querySelectorAll('.slide');
@@ -664,42 +505,9 @@
             });
 
             menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
-            // Los links normales cierran el menú
+            // Los links cierran el menú en móvil
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => navMenu.classList.remove('active'));
-            });
-        }
-
-        /* * ===============================================
-         * ACTUALIZADO: NAVEGACIÓN SEO VISUAL
-         * Convierte clicks en anchors (#) a URLs limpias (/)
-         * ===============================================
-         */
-        function initSeoNavigation() {
-            // Buscamos todos los links con la clase "seo-link"
-            const seoLinks = document.querySelectorAll('.seo-link');
-            
-            seoLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Prevenir el comportamiento por defecto (que pondría el # en la URL)
-                    e.preventDefault();
-                    
-                    // Obtener la URL limpia que definimos en el atributo data-url
-                    const cleanUrl = this.getAttribute('data-url');
-                    
-                    // Obtener el ID de la sección (quitamos el # del href)
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    
-                    if (targetSection) {
-                        // 1. Cambiamos la URL visualmente sin recargar
-                        // Si el usuario da "Atrás", volverá a la URL anterior
-                        history.pushState(null, '', cleanUrl);
-                        
-                        // 2. Hacemos el scroll suave hacia la sección
-                        targetSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
             });
         }
 
