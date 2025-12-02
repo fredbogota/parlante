@@ -211,6 +211,34 @@
         .info-title { font-weight: 700; color: var(--secondary); margin-bottom: 5px; display: block; }
         .info-text { font-size: 0.9rem; color: #666; line-height: 1.5; }
 
+        /* ESTILOS BOTÓN WHATSAPP PULSANTE (NUEVO) */
+        .btn-whatsapp-pulse {
+            background: #25D366; 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 8px; 
+            font-weight: 700; 
+            font-size: 0.95rem; 
+            margin-top: 10px; 
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); 
+            transition: all 0.3s ease;
+            animation: pulse-green 2s infinite;
+        }
+        .btn-whatsapp-pulse:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: #20bd5a;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
         /* FAQ SECTION - STYLING MEJORADO */
         .faq-section { width: 100%; margin-top: 60px; }
         .faq-title { 
@@ -245,7 +273,7 @@
         }
         .faq-a { color: #555; font-size: 0.95rem; line-height: 1.7; position: relative; z-index: 1; }
 
-        /* VIDEO CONTAINER - CORREGIDO */
+        /* VIDEO CONTAINER */
         .video-wrapper {
             margin-top: 50px; background: white; padding: 20px; border-radius: var(--radius);
             box-shadow: var(--shadow-lg); text-align: center;
@@ -367,7 +395,7 @@
             </form>
         </div>
 
-        <!-- Barra Lateral Informativa -->
+        <!-- Barra Lateral Informativa (ACTUALIZADO CON CTA WHATSAPP) -->
         <aside class="info-card">
             <h3 style="color:var(--secondary); margin-bottom:20px; font-weight:800;">¿Necesitas ayuda inmediata?</h3>
             
@@ -381,12 +409,15 @@
                 </div>
             </div>
 
+            <!-- BLOQUE DE WHATSAPP MEJORADO -->
             <div class="info-item">
-                <div class="info-icon-box"><i data-lucide="message-circle"></i></div>
+                <div class="info-icon-box" style="background: rgba(37, 211, 102, 0.1); color: #25D366;"><i data-lucide="message-circle"></i></div>
                 <div>
                     <span class="info-title">WhatsApp Oficial</span>
-                    <p class="info-text">Soporte rápido y sin filas.</p>
-                    <a href="https://wa.me/573165593013" target="_blank" style="color: var(--success); font-weight: 700; margin-top: 5px; display: inline-flex; align-items:center; gap:5px;">
+                    <p class="info-text" style="font-weight: 700; color: #333; margin-bottom: 2px;">+57 316 559 3013</p>
+                    <p class="info-text" style="font-size: 0.85rem;">Soporte rápido y sin filas.</p>
+                    
+                    <a href="https://wa.me/573165593013" target="_blank" class="btn-whatsapp-pulse">
                         Chatear ahora <i data-lucide="external-link" size="14"></i>
                     </a>
                 </div>
@@ -443,15 +474,11 @@
                 </article>
             </div>
 
-            <!-- Video Explicativo REVERTIDO AL ORIGINAL -->
+            <!-- Video Explicativo -->
             <div class="video-wrapper">
                 <h3 style="color: var(--secondary); margin-bottom: 10px; font-weight:800;">🎥 Video Tutorial: Gestiona tus Servicios</h3>
                 <p style="color:#666; margin-bottom:20px;">Aprende paso a paso cómo pagar y gestionar tu cuenta</p>
                 <div class="video-container">
-                    <!-- 
-                       VIDEO REVERTIDO A xhBkmTbTAWY: 
-                       Tutorial oficial de Pagos en Sitio Web que mencionaste que funcionaba.
-                    -->
                     <iframe 
                         width="560" 
                         height="315" 
@@ -497,7 +524,6 @@
         function submitPQR(e) {
             e.preventDefault();
             const type = document.getElementById('requestType').value;
-            // Simulamos un loading
             const btn = e.target.querySelector('button');
             const originalText = btn.innerHTML;
             btn.innerHTML = 'Enviando...';
