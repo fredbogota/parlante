@@ -7,6 +7,8 @@
     <!-- --- SEO & METADATA --- -->
     <title>Fibra Óptica Movistar | Internet + TV + PQR</title>
     <meta name="description" content="🚀 Internet Fibra Óptica Movistar y Centro de Ayuda PQR. Planes desde $99.990 y radicación de solicitudes en línea.">
+    <!-- Canonical dinámico se manejará mejor desde el servidor, pero aquí dejamos la raíz -->
+    <link rel="canonical" href="https://www.fibrahogar.co/" />
     <meta name="theme-color" content="#019df4">
     
     <!-- FAVICON -->
@@ -177,7 +179,7 @@
     <!-- Header Global -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <a href="#" onclick="switchView('home', event)" class="logo">
+            <a href="/" onclick="switchView('home', event)" class="logo">
                 <span class="logo-icon-wrapper"><i data-lucide="zap" class="logo-icon"></i></span>
                 <span class="logo-text">MOVISTAR</span>
             </a>
@@ -185,16 +187,16 @@
             <button class="mobile-toggle" id="menuBtn"><i data-lucide="menu"></i></button>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="#" onclick="switchView('home', event)" class="nav-link active" id="link-home">Inicio</a>
+                <a href="/" onclick="switchView('home', event)" class="nav-link active" id="link-home">Inicio</a>
                 <a href="#planes" onclick="switchView('home', null, 'planes')" class="nav-link">Planes</a>
                 <a href="#beneficios" onclick="switchView('home', null, 'beneficios')" class="nav-link">Beneficios</a>
                 
-                <!-- BOTÓN PQR -->
-                <a href="#pqr" onclick="switchView('pqr', event)" class="nav-link nav-link-special" id="link-pqr">
+                <!-- BOTÓN PQR (Modificado: href="/pqr" para SEO) -->
+                <a href="/pqr" onclick="switchView('pqr', event)" class="nav-link nav-link-special" id="link-pqr">
                     <i data-lucide="file-text" size="18"></i> PQR
                 </a>
 
-                <!-- LINK BLOG (AÑADIDO) -->
+                <!-- LINK BLOG -->
                 <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link nav-link-special">
                     <i data-lucide="newspaper" size="18"></i> Blog
                 </a>
@@ -375,7 +377,7 @@
     </div>
 
     <script>
-        // === LÓGICA DE NAVEGACIÓN (SPA) ===
+        // === LÓGICA DE NAVEGACIÓN (SPA / Clean URL) ===
         function switchView(viewName, event = null, scrollTarget = null) {
             if (event) event.preventDefault();
 
@@ -386,13 +388,14 @@
             // 2. Desactivar links
             document.getElementById('link-home').classList.remove('active');
             
-            // 3. Mostrar vista seleccionada
+            // 3. Mostrar vista seleccionada y actualizar URL Limpia
             if (viewName === 'home') {
                 document.getElementById('view-home').classList.remove('hidden');
                 document.getElementById('link-home').classList.add('active');
+                
+                // URL Limpia: Raíz
                 history.pushState(null, '', '/');
                 
-                // Si hay un objetivo de scroll (ej: #planes), ir allá
                 if (scrollTarget) {
                     setTimeout(() => {
                         const el = document.getElementById(scrollTarget);
@@ -404,7 +407,10 @@
 
             } else if (viewName === 'pqr') {
                 document.getElementById('view-pqr').classList.remove('hidden');
-                history.pushState(null, '', '#pqr');
+                
+                // URL Limpia: /pqr (en vez de #pqr)
+                history.pushState(null, '', '/pqr');
+                
                 window.scrollTo(0,0);
             }
         }
@@ -440,16 +446,26 @@
             const navMenu = document.getElementById('navMenu');
             menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-            // Verificar si entran directamente a #pqr
-            if (window.location.hash === '#pqr') {
+            // === ROUTING INICIAL INTELIGENTE ===
+            // Detecta si la URL es /pqr (si el server soporta reescritura) o tiene hash #pqr
+            const path = window.location.pathname;
+            const hash = window.location.hash;
+
+            if (path === '/pqr' || hash === '#pqr') {
                 switchView('pqr');
             }
         });
 
-        // Manejar botón "Atrás" del navegador
+        // === MANEJO DE BOTONES ATRÁS/ADELANTE DEL NAVEGADOR ===
         window.onpopstate = () => {
-            if (window.location.hash === '#pqr') switchView('pqr');
-            else switchView('home');
+            const path = window.location.pathname;
+            const hash = window.location.hash;
+
+            if (path === '/pqr' || hash === '#pqr') {
+                switchView('pqr');
+            } else {
+                switchView('home');
+            }
         };
     </script>
 </body>
