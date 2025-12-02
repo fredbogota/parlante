@@ -77,6 +77,21 @@
         .nav-link { font-weight: 600; color: var(--secondary); font-size: 0.95rem; position: relative; }
         .nav-link:hover { color: var(--primary); }
         
+        /* Estilo especial para el botón INICIO */
+        .nav-link-home {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f0f4f8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .nav-link-home:hover {
+            background: #e1e8f0;
+            color: var(--primary);
+        }
+
         .btn-cta { 
             background: linear-gradient(135deg, var(--accent) 0%, #45a049 100%);
             color: white; padding: 12px 28px; border-radius: 50px; 
@@ -160,7 +175,8 @@
     <!-- Header -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <a href="/" onclick="cleanHome(event)" class="logo">
+            <!-- Logo Ahora con enlace real a la raíz -->
+            <a href="/" class="logo">
                 <i data-lucide="wifi" color="var(--primary)" size="32"></i>
                 <div style="line-height:1.1">
                     <div class="logo-text">MOVISTAR</div>
@@ -173,6 +189,11 @@
             </button>
 
             <nav class="nav-menu" id="navMenu">
+                <!-- Botón de Inicio Agregado -->
+                <a href="/" class="nav-link nav-link-home">
+                    <i data-lucide="home" size="18"></i> Inicio
+                </a>
+                
                 <a href="#planes" class="nav-link seo-link" data-path="/planes">Planes</a>
                 <a href="#preguntas-frecuentes" class="nav-link seo-link" data-path="/faq">Preguntas Frecuentes</a>
                 <a href="#cobertura-antioquia" class="nav-link seo-link" data-path="/cobertura">Cobertura</a>
