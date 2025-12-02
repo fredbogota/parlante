@@ -8,26 +8,20 @@
     <title>Fibra Óptica Movistar | 900 Megas + Disney+ y Win Sports+</title>
     <meta name="description" content="🚀 Internet Fibra Óptica Movistar. Planes desde $99.990 con 900 Megas Simétricas. Incluye Disney+, Star+ y Win Sports+. ¡Verifica tu cobertura aquí!">
     
-    <!-- CANONICAL: Apuntando a la raíz limpia -->
+    <!-- CANONICAL -->
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     
     <!-- FAVICON -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
-    <!-- --- PERFORMANCE RESOURCES --- -->
+    <!-- RECURSOS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* * ==========================================
-         * DESIGN TOKENS & VARIABLES
-         * ==========================================
-         */
         :root {
             --primary: #019df4;
             --primary-dark: #007bbd;
@@ -45,43 +39,20 @@
             --trans-fast: 0.2s ease;
         }
 
-        /* * ==========================================
-         * RESET & BASE
-         * ==========================================
-         */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-top: var(--header-h);
-            overflow-x: hidden;
-        }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.6; padding-top: var(--header-h); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
         ul { list-style: none; }
         button, input { font-family: inherit; border: none; outline: none; }
         button { cursor: pointer; }
 
-        /* Utility Classes */
         .container { width: 92%; max-width: var(--container-w); margin: 0 auto; }
         .text-center { text-align: center; }
         .hidden { display: none !important; }
 
-        /* * ==========================================
-         * HEADER
-         * ==========================================
-         */
-        .main-header {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            z-index: 1000;
-            transition: box-shadow 0.3s;
-        }
+        /* HEADER */
+        .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h); background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000; transition: box-shadow 0.3s; }
         .main-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; }
         
@@ -92,7 +63,6 @@
         .logo:hover .logo-icon { transform: scale(1.3) rotate(-10deg); }
         .logo-text { color: var(--secondary); font-weight: 900; font-size: 1.3rem; letter-spacing: -0.5px; transition: color 0.3s ease; }
         .logo:hover .logo-text { color: var(--primary); }
-
         @keyframes pulse-glow { from { opacity: 0.5; transform: scale(0.9); } to { opacity: 0.8; transform: scale(1.1); } }
 
         .nav-menu { display: flex; gap: 30px; align-items: center; }
@@ -105,19 +75,18 @@
         .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(1, 157, 244, 0.6); background: var(--primary-dark); }
         .mobile-toggle { display: none; color: var(--secondary); background: none; }
 
-        /* * ==========================================
-         * COMPONENTS: HERO, CARDS, ETC
-         * ==========================================
-         */
+        /* HERO & SECTIONS */
         .hero { position: relative; height: 680px; width: 100%; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transform: scale(1.1); transition: opacity 1s ease-in-out, transform 8s linear; }
         .slide.active { opacity: 1; transform: scale(1); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: linear-gradient(180deg, rgba(11,39,79,0.3) 0%, rgba(11,39,79,0.7) 60%, rgba(11,39,79,0.95) 100%); }
         .hero-content { position: relative; z-index: 3; text-align: center; color: white; max-width: 900px; padding: 0 20px; display: flex; flex-direction: column; align-items: center; }
+        
         .dynamic-text-group { display: none; animation: fadeInUp 0.8s ease forwards; }
         .dynamic-text-group.active { display: block; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
         .hero-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
         .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5); }
         .hero-subtitle { font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto; }
@@ -178,7 +147,6 @@
     <!-- Header -->
     <header class="main-header" id="header">
         <div class="container header-inner">
-            <!-- LOGO: Clic limpia URL a raíz -->
             <a href="/" onclick="cleanHome(event)" class="logo">
                 <span class="logo-icon-wrapper">
                     <i data-lucide="zap" class="logo-icon" size="28"></i>
@@ -191,16 +159,14 @@
             </button>
 
             <nav class="nav-menu" id="navMenu">
-                <!-- 
-                  ENLACES INTERNOS OPTIMIZADOS PARA SEO VISUAL
-                -->
+                <!-- Links SEO-Friendly -->
                 <a href="#planes" class="nav-link seo-link" data-path="/planes">Planes Fibra</a>
                 <a href="/planes-moviles" target="_blank" class="nav-link">Planes Móviles</a>
                 <a href="#beneficios" class="nav-link seo-link" data-path="/beneficios">Beneficios</a>
                 
                 <!-- 
-                     *** MODIFICACIÓN REALIZADA ***
-                     El botón "PQR" ahora apunta a la ruta /pqr
+                     *** TU SOLICITUD AQUI ***
+                     Enlace a PQR con URL limpia (/pqr) y target="_blank" 
                 -->
                 <a href="/pqr" target="_blank" class="nav-link" style="color: var(--accent); font-weight: 700;">PQR</a>
                 
