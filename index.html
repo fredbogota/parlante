@@ -93,7 +93,10 @@
         .nav-menu { display: flex; gap: 30px; align-items: center; }
         .nav-link { font-weight: 500; color: var(--secondary); font-size: 0.95rem; position: relative; cursor: pointer; }
         .nav-link:hover, .nav-link.active { color: var(--primary); }
-        .nav-link-pqr { color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 5px; }
+        
+        /* Estilos específicos para PQR y Blog */
+        .nav-link-special { color: var(--accent); font-weight: 700; display: flex; align-items: center; gap: 5px; }
+        .nav-link-special:hover { opacity: 0.8; }
         
         .btn-cta { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 15px rgba(1, 157, 244, 0.4); transition: var(--trans-fast); }
         .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(1, 157, 244, 0.6); background: var(--primary-dark); }
@@ -186,9 +189,14 @@
                 <a href="#planes" onclick="switchView('home', null, 'planes')" class="nav-link">Planes</a>
                 <a href="#beneficios" onclick="switchView('home', null, 'beneficios')" class="nav-link">Beneficios</a>
                 
-                <!-- BOTÓN PQR QUE ACTIVA LA VISTA PQR -->
-                <a href="#pqr" onclick="switchView('pqr', event)" class="nav-link nav-link-pqr" id="link-pqr">
+                <!-- BOTÓN PQR -->
+                <a href="#pqr" onclick="switchView('pqr', event)" class="nav-link nav-link-special" id="link-pqr">
                     <i data-lucide="file-text" size="18"></i> PQR
+                </a>
+
+                <!-- LINK BLOG (AÑADIDO) -->
+                <a href="https://www.fibrahogar.co/blog" target="_blank" class="nav-link nav-link-special">
+                    <i data-lucide="newspaper" size="18"></i> Blog
                 </a>
                 
                 <button onclick="openModal('coverageModal')" class="btn-cta">Consultar Cobertura</button>
@@ -377,7 +385,6 @@
             
             // 2. Desactivar links
             document.getElementById('link-home').classList.remove('active');
-            document.getElementById('link-pqr').classList.remove('nav-link-blog'); // Reset estilo especial si aplica
             
             // 3. Mostrar vista seleccionada
             if (viewName === 'home') {
@@ -397,7 +404,6 @@
 
             } else if (viewName === 'pqr') {
                 document.getElementById('view-pqr').classList.remove('hidden');
-                // document.getElementById('link-pqr').classList.add('active');
                 history.pushState(null, '', '#pqr');
                 window.scrollTo(0,0);
             }
