@@ -15,16 +15,16 @@
     
     <!-- CANONICAL -->
     <link rel="canonical" href="https://www.fibrahogar.co/pqr" />
-    <meta name="theme-color" content="#0b274f">
+    <meta name="theme-color" content="#019df4">
 
-    <!-- OPEN GRAPH (Para redes sociales) -->
+    <!-- OPEN GRAPH -->
     <meta property="og:title" content="Centro de Ayuda Movistar: Facturas, Pagos y PQR">
     <meta property="og:description" content="Soluciona tus dudas sobre facturación, traslados y cancelaciones. Radica tu PQR fácil y rápido.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.fibrahogar.co/pqr">
-    <meta property="og:image" content="https://www.fibrahogar.co/images/soporte-movistar.jpg">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=1200">
 
-    <!-- DATOS ESTRUCTURADOS (Schema.org) - CLAVE PARA SEO -->
+    <!-- DATOS ESTRUCTURADOS (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,20 +50,6 @@
           "@type": "Answer",
           "text": "Ingresa a la App Mi Movistar o a la sucursal virtual web. Ve a la sección 'Facturación', selecciona el mes deseado y haz clic en 'Descargar PDF'."
         }
-      }, {
-        "@type": "Question",
-        "name": "¿Cómo solicitar traslado de internet Movistar a otra dirección?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Debes verificar primero la cobertura en tu nueva dirección. Luego, solicita el traslado llamando al *611 o a través del chat de WhatsApp oficial de Movistar con al menos 3 días de anticipación."
-        }
-      }, {
-        "@type": "Question",
-        "name": "¿Cómo cancelar un plan Movistar en Colombia sin multa?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Para evitar multas, verifica que no tengas una cláusula de permanencia vigente. Si ya cumpliste el tiempo o no tienes cláusula, radica la solicitud 10 días hábiles antes de tu fecha de corte de facturación."
-        }
       }]
     }
     </script>
@@ -78,135 +64,256 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* ESTILOS BASE */
+        /* --- ESTILOS MODERNOS & PREMIUM --- */
         :root {
             --primary: #019df4;
             --primary-dark: #007bbd;
             --secondary: #0b274f;
-            --success: #28a745;
-            --bg-body: #f4f7fa;
+            --accent: #5cb85c;
+            --bg-body: #f8f9fa;
             --white: #ffffff;
-            --radius: 12px;
+            --radius: 16px;
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
             --header-h: 80px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Roboto', sans-serif; background: var(--bg-body); color: #333; padding-top: var(--header-h); }
-        .container { width: 90%; max-width: 1000px; margin: 0 auto; }
-        a { text-decoration: none; color: inherit; }
+        body { font-family: 'Roboto', sans-serif; background: var(--bg-body); color: #333; padding-top: var(--header-h); line-height: 1.6; }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        button { font-family: inherit; cursor: pointer; }
 
-        /* HEADER SIMPLE */
+        /* HEADER GLASSMORPHISM */
         .main-header {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: var(--secondary); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            z-index: 1000; display: flex; align-items: center;
+            background: rgba(11, 39, 79, 0.95); backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            z-index: 1000; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .header-inner { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1200px; margin: 0 auto; }
-        .logo { color: white; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 8px; }
-        .btn-back { background: rgba(255,255,255,0.1); color: white; padding: 8px 16px; border-radius: 50px; font-size: 0.9rem; transition: 0.3s; display: flex; align-items: center; gap: 6px;}
-        .btn-back:hover { background: var(--primary); }
-
-        /* HERO PQR */
-        .hero-pqr {
-            background: linear-gradient(135deg, var(--secondary) 0%, #001835 100%);
-            color: white; padding: 60px 0 80px 0; text-align: center;
+        .logo { color: white; font-weight: 900; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .btn-back { 
+            background: rgba(255,255,255,0.15); color: white; padding: 10px 20px; 
+            border-radius: 50px; font-size: 0.9rem; font-weight: 500; 
+            transition: var(--transition); display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2);
         }
-        .hero-title { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero-subtitle { font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto; }
+        .btn-back:hover { background: var(--primary); transform: translateX(-3px); border-color: var(--primary); }
 
-        /* FORMULARIO Y CONTENIDO */
-        .pqr-wrapper { margin-top: -50px; padding-bottom: 60px; display: flex; gap: 30px; flex-wrap: wrap; }
+        /* HERO SLIDER PREMIUM */
+        .hero-slider-section {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 1s ease, transform 6s ease;
+            z-index: 1;
+        }
+        .hero-slide.active { opacity: 1; transform: scale(1); }
         
-        /* Columna Formulario */
-        .form-card {
-            flex: 2; min-width: 300px;
-            background: white; border-radius: var(--radius); padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(11, 39, 79, 0.85) 0%, rgba(1, 157, 244, 0.75) 100%);
+            z-index: 2;
         }
 
-        .form-group { margin-bottom: 20px; }
-        .label { display: block; font-weight: 500; margin-bottom: 8px; color: var(--secondary); }
-        .input, .textarea, .select {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
-            font-family: inherit; font-size: 1rem; transition: 0.3s;
+        .hero-content {
+            position: relative; z-index: 3;
+            max-width: 800px; padding: 20px;
+            animation: fadeUp 1s ease forwards;
         }
-        .input:focus, .textarea:focus, .select:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(1, 157, 244, 0.1); }
+        
+        .hero-title { 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            font-weight: 900; margin-bottom: 15px; 
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            letter-spacing: -1px;
+        }
+        .hero-subtitle { 
+            font-size: 1.2rem; opacity: 0.95; 
+            max-width: 700px; margin: 0 auto; 
+            font-weight: 300;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .pqr-wrapper { margin-top: -60px; padding-bottom: 60px; display: flex; gap: 30px; flex-wrap: wrap; position: relative; z-index: 10; }
+        
+        /* CARD FORMULARIO */
+        .form-card {
+            flex: 2; min-width: 320px;
+            background: white; border-radius: var(--radius); padding: 40px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .form-header { margin-bottom: 30px; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; }
+        .form-header h2 { color: var(--secondary); font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 20px; position: relative; }
+        .label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--secondary); font-size: 0.9rem; }
+        
+        .input, .textarea, .select {
+            width: 100%; padding: 14px; border: 2px solid #eef2f6; border-radius: 10px;
+            font-family: inherit; font-size: 1rem; background: #f8fbfd;
+            transition: var(--transition);
+        }
+        .input:focus, .textarea:focus, .select:focus { 
+            border-color: var(--primary); outline: none; background: white;
+            box-shadow: 0 0 0 4px rgba(1, 157, 244, 0.1); 
+        }
         .textarea { resize: vertical; min-height: 120px; }
 
         .btn-submit {
-            background: var(--success); color: white; border: none; padding: 15px 30px;
-            border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer;
-            width: 100%; transition: 0.3s; display: flex; justify-content: center; gap: 10px; align-items: center;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white; border: none; padding: 16px 30px;
+            border-radius: 50px; font-weight: 800; font-size: 1.1rem;
+            width: 100%; transition: var(--transition);
+            display: flex; justify-content: center; gap: 10px; align-items: center;
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+            text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .btn-submit:hover { background: #218838; transform: translateY(-2px); }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(40, 167, 69, 0.4); filter: brightness(1.1); }
 
-        /* Columna Info Lateral */
+        /* INFO CARD LATERAL */
         .info-card {
             flex: 1; min-width: 280px;
             background: white; border-radius: var(--radius); padding: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); height: fit-content;
+            box-shadow: var(--shadow-lg); height: fit-content;
+            position: sticky; top: 100px;
         }
         .info-item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
-        .info-icon { color: var(--primary); margin-top: 3px; }
+        .info-icon-box { 
+            background: rgba(1, 157, 244, 0.1); color: var(--primary); 
+            padding: 10px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+        }
         .info-title { font-weight: 700; color: var(--secondary); margin-bottom: 5px; display: block; }
-        .info-text { font-size: 0.9rem; color: #666; }
+        .info-text { font-size: 0.9rem; color: #666; line-height: 1.5; }
 
-        /* ESTILOS NUEVA SECCIÓN FAQ */
-        .faq-section { width: 100%; margin-top: 50px; }
-        .faq-title { font-size: 2rem; color: var(--secondary); text-align: center; margin-bottom: 30px; font-weight: 800; }
-        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .faq-item { background: white; padding: 25px; border-radius: var(--radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; border-left: 4px solid var(--primary); }
-        .faq-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-        .faq-q { font-weight: 700; color: var(--secondary); margin-bottom: 10px; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
-        .faq-a { color: #555; font-size: 0.95rem; line-height: 1.6; }
-        .faq-link { color: var(--primary); font-weight: 600; text-decoration: underline; }
+        /* FAQ SECTION - STYLING MEJORADO */
+        .faq-section { width: 100%; margin-top: 60px; }
+        .faq-title { 
+            font-size: 2.2rem; color: var(--secondary); text-align: center; 
+            margin-bottom: 40px; font-weight: 900; position: relative; 
+            display: inline-block; width: 100%;
+        }
+        .faq-title::after {
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--primary); margin: 15px auto 0; border-radius: 2px;
+        }
 
-        /* Video Container */
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius); margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .faq-item { 
+            background: white; padding: 30px; border-radius: var(--radius); 
+            box-shadow: var(--shadow-sm); transition: var(--transition); 
+            border-left: 5px solid var(--primary);
+            position: relative; overflow: hidden;
+        }
+        .faq-item::before {
+            content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px;
+            background: linear-gradient(135deg, transparent 50%, rgba(1, 157, 244, 0.05) 50%);
+            z-index: 0;
+        }
+        .faq-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        
+        .faq-q { 
+            font-weight: 700; color: var(--secondary); margin-bottom: 15px; 
+            font-size: 1.1rem; display: flex; align-items: center; gap: 12px; 
+            position: relative; z-index: 1;
+        }
+        .faq-a { color: #555; font-size: 0.95rem; line-height: 1.7; position: relative; z-index: 1; }
+
+        /* VIDEO CONTAINER - CORREGIDO */
+        .video-wrapper {
+            margin-top: 50px; background: white; padding: 20px; border-radius: var(--radius);
+            box-shadow: var(--shadow-lg); text-align: center;
+        }
+        .video-container { 
+            position: relative; padding-bottom: 56.25%; height: 0; 
+            overflow: hidden; border-radius: 12px; margin-top: 20px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+        }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
-        /* Footer Simple */
-        footer { text-align: center; padding: 30px; color: #888; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: auto; }
+        /* FOOTER */
+        footer { 
+            text-align: center; padding: 40px 0; color: #888; font-size: 0.9rem; 
+            background: #fff; margin-top: 60px; border-top: 1px solid #eee; 
+        }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-title { font-size: 2rem; }
-            .pqr-wrapper { flex-direction: column; }
+            .pqr-wrapper { flex-direction: column; margin-top: -30px; }
             .form-card { padding: 25px; }
+            .hero-slider-section { height: 350px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Glassmorphism -->
     <header class="main-header">
         <div class="header-inner">
-            <!-- 
-               Enlace relativo para volver a la Home
-            -->
             <a href="../index.html" class="logo">
-                <i data-lucide="shield-check"></i> TE ESCUCHAMOS
+                <i data-lucide="shield-check" size="32" color="#019df4"></i>
+                <span>TE ESCUCHAMOS</span>
             </a>
             <a href="../index.html" class="btn-back">
-                <i data-lucide="arrow-left" size="16"></i> Volver al Inicio
+                <i data-lucide="arrow-left" size="18"></i> <span style="display:none; display:md-block;">Volver al Inicio</span>
             </a>
         </div>
     </header>
 
-    <section class="hero-pqr">
-        <div class="container">
+    <!-- Hero Slider Section -->
+    <section class="hero-slider-section">
+        <!-- Slides de fondo -->
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200');"></div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200');"></div>
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
             <h1 class="hero-title">Centro de Soluciones PQR</h1>
-            <p class="hero-subtitle">Radica tus Peticiones, Quejas, Reclamos y Recursos. Estamos comprometidos con darte una respuesta oportuna.</p>
+            <p class="hero-subtitle">Tu tranquilidad es nuestra prioridad. Radica tus solicitudes de forma segura, rápida y desde cualquier lugar.</p>
         </div>
     </section>
 
     <div class="container pqr-wrapper">
         
-        <!-- Formulario -->
+        <!-- Formulario Premium -->
         <div class="form-card">
-            <h2 style="color: var(--secondary); margin-bottom: 25px; font-size: 1.5rem;">Radicar Solicitud</h2>
+            <div class="form-header">
+                <h2><i data-lucide="file-edit" color="var(--primary)"></i> Radicar Solicitud</h2>
+                <p style="color:#888; margin-top:5px;">Completa los campos para generar tu número de radicado.</p>
+            </div>
+            
             <form id="pqrForm" onsubmit="submitPQR(event)">
-                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <div class="form-group" style="flex: 1;">
+                <div class="form-grid">
+                    <div class="form-group">
                         <label class="label">Tipo de Identificación</label>
                         <select class="select" required>
                             <option>Cédula de Ciudadanía</option>
@@ -215,20 +322,21 @@
                             <option>Pasaporte</option>
                         </select>
                     </div>
-                    <div class="form-group" style="flex: 1;">
+                    <div class="form-group">
                         <label class="label">Número de Documento</label>
                         <input type="number" class="input" placeholder="Ej: 1020304050" required>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="label">Nombre Completo</label>
-                    <input type="text" class="input" placeholder="Tu nombre y apellidos" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="label">Correo Electrónico</label>
-                    <input type="email" class="input" placeholder="para enviarte la respuesta" required>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="label">Nombre Completo</label>
+                        <input type="text" class="input" placeholder="Tu nombre y apellidos" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="label">Correo Electrónico</label>
+                        <input type="email" class="input" placeholder="ejemplo@email.com" required>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -245,116 +353,111 @@
 
                 <div class="form-group">
                     <label class="label">Detalle de tu solicitud</label>
-                    <textarea class="textarea" placeholder="Describe brevemente tu caso para poder ayudarte..." required></textarea>
+                    <textarea class="textarea" placeholder="Por favor, describe detalladamente tu caso para poder ayudarte mejor..." required></textarea>
                 </div>
 
-                <div class="form-group" style="font-size: 0.9rem; color: #666; display: flex; gap: 10px;">
-                    <input type="checkbox" required id="terms"> 
-                    <label for="terms">Acepto la política de tratamiento de datos personales.</label>
+                <div class="form-group" style="font-size: 0.9rem; color: #666; display: flex; gap: 10px; align-items: center;">
+                    <input type="checkbox" required id="terms" style="width: 18px; height: 18px; accent-color: var(--primary);"> 
+                    <label for="terms" style="cursor: pointer;">Acepto la política de tratamiento de datos personales.</label>
                 </div>
 
                 <button type="submit" class="btn-submit">
-                    RADICAR SOLICITUD <i data-lucide="send"></i>
+                    <i data-lucide="send"></i> ENVIAR SOLICITUD
                 </button>
             </form>
         </div>
 
         <!-- Barra Lateral Informativa -->
         <aside class="info-card">
+            <h3 style="color:var(--secondary); margin-bottom:20px; font-weight:800;">¿Necesitas ayuda inmediata?</h3>
+            
             <div class="info-item">
-                <i data-lucide="phone" class="info-icon"></i>
+                <div class="info-icon-box"><i data-lucide="phone"></i></div>
                 <div>
                     <span class="info-title">Líneas de Atención</span>
-                    <p class="info-text">Desde celular Movistar: *611</p>
+                    <p class="info-text">Movistar: *611</p>
                     <p class="info-text">Bogotá: 601 380 80 80</p>
                     <p class="info-text">Nacional: 01 8000 930 930</p>
                 </div>
             </div>
 
             <div class="info-item">
-                <i data-lucide="message-circle" class="info-icon"></i>
+                <div class="info-icon-box"><i data-lucide="message-circle"></i></div>
                 <div>
                     <span class="info-title">WhatsApp Oficial</span>
-                    <p class="info-text">Escríbenos para soporte rápido.</p>
-                    <a href="https://wa.me/573165593013" target="_blank" style="color: var(--success); font-weight: 600; margin-top: 5px; display: inline-block;">Ir al Chat &rarr;</a>
+                    <p class="info-text">Soporte rápido y sin filas.</p>
+                    <a href="https://wa.me/573165593013" target="_blank" style="color: var(--success); font-weight: 700; margin-top: 5px; display: inline-flex; align-items:center; gap:5px;">
+                        Chatear ahora <i data-lucide="external-link" size="14"></i>
+                    </a>
                 </div>
             </div>
 
             <div class="info-item">
-                <i data-lucide="info" class="info-icon"></i>
+                <div class="info-icon-box"><i data-lucide="clock"></i></div>
                 <div>
                     <span class="info-title">Tiempos de Respuesta</span>
                     <p class="info-text">Peticiones: 15 días hábiles</p>
-                    <p class="info-text">Quejas y Reclamos: 15 días hábiles</p>
+                    <p class="info-text">Quejas: 15 días hábiles</p>
                 </div>
             </div>
 
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-            
-            <div style="text-align: center;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Superintendencia_de_Industria_y_Comercio.svg" alt="Vigilado SuperIndustria" style="width: 150px; opacity: 0.7;">
-                <p style="font-size: 0.7rem; color: #999; margin-top: 10px;">Vigilado Superintendencia de Industria y Comercio</p>
+            <div style="text-align: center; margin-top:30px; padding-top:20px; border-top:1px dashed #ddd;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Superintendencia_de_Industria_y_Comercio.svg" alt="Vigilado SuperIndustria" style="width: 140px; opacity: 0.6; filter: grayscale(100%);">
             </div>
             
-            <!-- Imagen SEO Promocional (Placeholder) -->
-            <div style="margin-top: 20px; border-radius: 8px; overflow: hidden;">
+            <!-- Imagen SEO Promocional -->
+            <div style="margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-sm);">
                 
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=400" alt="Pago de factura movistar en línea seguro" style="width: 100%; display: block;">
+                <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?q=80&w=400" alt="Atención al cliente Movistar" style="width: 100%; display: block;">
             </div>
         </aside>
 
-        <!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES (SEO CONTENT) -->
+        <!-- SECCIÓN FAQ MEJORADA -->
         <section class="faq-section">
-            <h2 class="faq-title">Centro de Ayuda y Preguntas Frecuentes</h2>
+            <h2 class="faq-title">Preguntas Frecuentes</h2>
             
             <div class="faq-grid">
-                <!-- Pregunta 1 -->
                 <article class="faq-item">
-                    <h3 class="faq-q"><i data-lucide="credit-card" size="20"></i> ¿Cómo pagar factura Movistar sin estar registrado?</h3>
-                    <p class="faq-a">
-                        ¡Es muy fácil! No necesitas crear una cuenta. Solo ingresa al portal de pagos de Movistar, selecciona la opción <strong>"Pago en Línea"</strong> e ingresa el número de referencia de tu factura o tu número de celular. Podrás pagar de forma segura usando <strong>PSE</strong> o tu tarjeta de crédito en minutos.
-                    </p>
+                    <h3 class="faq-q"><i data-lucide="credit-card" color="var(--primary)"></i> Pago sin Registro</h3>
+                    <p class="faq-a">Ingresa a <strong>Pagos en Línea</strong> en nuestra web, digita tu número de línea o referencia y paga seguro con PSE o tarjeta.</p>
                 </article>
 
-                <!-- Pregunta 2 -->
                 <article class="faq-item">
-                    <h3 class="faq-q"><i data-lucide="mail-warning" size="20"></i> No me llega la factura Movistar por correo</h3>
-                    <p class="faq-a">
-                        A veces los filtros de seguridad envían los recibos a la carpeta de <strong>SPAM o Correo no deseado</strong>, por favor revísala primero. Si no está allí, te recomendamos descargar la <strong>App Mi Movistar</strong> donde siempre tendrás disponible tu factura actual y el histórico para descargar en PDF cuando quieras.
-                    </p>
+                    <h3 class="faq-q"><i data-lucide="mail-warning" color="var(--primary)"></i> Factura por Correo</h3>
+                    <p class="faq-a">Si no llega, revisa SPAM. Recomendamos usar la <strong>App Mi Movistar</strong> para descargarla al instante en PDF.</p>
                 </article>
 
-                <!-- Pregunta 3 -->
                 <article class="faq-item">
-                    <h3 class="faq-q"><i data-lucide="file-text" size="20"></i> ¿Cómo descargar duplicado de factura Movistar?</h3>
-                    <p class="faq-a">
-                        La forma más ecológica y rápida es a través de la App Mi Movistar. Ingresa con tus datos, ve a la sección <strong>"Facturación"</strong> y allí verás el icono de descarga. También puedes escribir al <strong>WhatsApp oficial</strong> y el chatbot te enviará el PDF al instante.
-                    </p>
+                    <h3 class="faq-q"><i data-lucide="file-text" color="var(--primary)"></i> Duplicado de Factura</h3>
+                    <p class="faq-a">Desde la App Mi Movistar > Sección Facturación > Elige el mes > Descargar PDF. ¡Es gratis y rápido!</p>
                 </article>
 
-                <!-- Pregunta 4 -->
                 <article class="faq-item">
-                    <h3 class="faq-q"><i data-lucide="truck" size="20"></i> Solicitar traslado de internet Movistar</h3>
-                    <p class="faq-a">
-                        ¿Te mudas? ¡Nos vamos contigo! Antes de desconectar tus equipos, comunícate al <strong>*611</strong> o visita un centro de experiencia para validar la cobertura de fibra óptica en tu nueva dirección. Recuerda solicitarlo con al menos <strong>3 días hábiles</strong> de anticipación para no quedarte sin servicio.
-                    </p>
+                    <h3 class="faq-q"><i data-lucide="truck" color="var(--primary)"></i> Traslado de Internet</h3>
+                    <p class="faq-a">Llama al <strong>*611</strong> con 3 días de anticipación para verificar cobertura en tu nueva dirección.</p>
                 </article>
 
-                <!-- Pregunta 5 -->
                 <article class="faq-item">
-                    <h3 class="faq-q"><i data-lucide="ban" size="20"></i> Cancelar plan Movistar sin multa</h3>
-                    <p class="faq-a">
-                        Entendemos que las circunstancias cambian. Para evitar multas, verifica en tu contrato o en la App si tu <strong>cláusula de permanencia</strong> (generalmente de 12 meses) ya finalizó. Si es así, puedes solicitar la cancelación <strong>10 días antes</strong> de tu fecha de corte para que no se genere una nueva factura.
-                    </p>
+                    <h3 class="faq-q"><i data-lucide="ban" color="var(--primary)"></i> Cancelar sin Multa</h3>
+                    <p class="faq-a">Verifica que tu cláusula de permanencia haya finalizado. Solicítalo <strong>10 días antes</strong> de tu corte.</p>
                 </article>
             </div>
 
-            <!-- Video Explicativo SEO -->
-            <div style="margin-top: 40px;">
-                <h3 style="text-align: center; color: var(--secondary); margin-bottom: 20px;">Video Tutorial: Gestiona tus servicios fácilmente</h3>
+            <!-- Video Explicativo CORREGIDO -->
+            <div class="video-wrapper">
+                <h3 style="color: var(--secondary); margin-bottom: 10px; font-weight:800;">🎥 Video Tutorial: Gestiona tus Servicios</h3>
+                <p style="color:#666; margin-bottom:20px;">Aprende paso a paso cómo pagar y gestionar tu cuenta</p>
                 <div class="video-container">
-                    <!-- Video embebido de YouTube relevante para pagos y facturas -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xhBkmTbTAWY" title="Pago de Facturas Movistar en Línea" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- VIDEO CORREGIDO: Usando un ID válido y parámetros seguros -->
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/6c4dZ1i3nRQ?rel=0&modestbranding=1" 
+                        title="Tutorial Movistar Colombia" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
 
@@ -372,14 +475,37 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
+            initHeroSlider();
         });
+
+        // SLIDER ANIMATION SCRIPT
+        function initHeroSlider() {
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            // Cambiar imagen cada 5 segundos
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
 
         function submitPQR(e) {
             e.preventDefault();
-            // Simulación de envío
             const type = document.getElementById('requestType').value;
-            alert(`¡Solicitud Radicada con Éxito!\n\nHemos recibido tu ${type}. En breve recibirás un correo con el número de radicado (CUN) para seguimiento.`);
-            e.target.reset();
+            // Simulamos un loading
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Enviando...';
+            btn.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                alert(`¡Solicitud Radicada con Éxito!\n\nHemos recibido tu ${type}. En breve recibirás un correo con el número de radicado (CUN) para seguimiento.`);
+                e.target.reset();
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+            }, 1500);
         }
     </script>
 </body>
