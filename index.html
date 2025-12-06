@@ -45,6 +45,7 @@
         .hover-lift:hover { transform: translateY(-3px); }
         .table-responsive { display: block; width: 100%; overflow-x: auto; }
         .legal-scroll { max-height: 60vh; overflow-y: auto; }
+        /* Scrollbar styling */
         .legal-scroll::-webkit-scrollbar { width: 8px; }
         .legal-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
         .legal-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
@@ -57,27 +58,28 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
             <!-- Logo Sólido -->
-            <a href="index.html" class="flex items-center gap-1 group">
+            <a href="/" class="flex items-center gap-1 group">
                 <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
                 <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
 
-            <!-- MENÚ CORREGIDO (Funcionalidad Inmediata) -->
+            <!-- MENÚ CORREGIDO (URLs Limpias + Target Blank) -->
             <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
-                <a href="index.html" class="text-movistar">Inicio</a>
+                <a href="/" class="text-movistar">Inicio</a>
                 
-                <!-- URL apunta directo al archivo .html para que abra SI o SI -->
-                <a href="internet-hogar.html" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
+                <!-- URL Limpia: /internet-hogar/ -->
+                <a href="/internet-hogar/" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
                 
                 <!-- Keyword SEO: "Planes Móviles 5G" -->
-                <a href="planes-moviles.html" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
+                <a href="/planes-moviles/" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
                     <span class="bg-green-100 text-green-700 text-[10px] px-1.5 rounded">5G</span>
                     Planes Móviles
                 </a>
                 
-                <a href="blog.html" target="_blank" class="hover:text-movistar transition">Blog</a>
+                <a href="/blog/" target="_blank" class="hover:text-movistar transition">Blog</a>
                 
-                <a href="pqr.html" target="_blank" class="hover:text-movistar transition">PQR / Ayuda</a>
+                <!-- Enlace PQR Corregido -->
+                <a href="/pqr/" target="_blank" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
 
             <!-- Formulario Rápido -->
@@ -98,11 +100,11 @@
 
         <!-- Menú Móvil -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
-            <a href="index.html" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
-            <a href="internet-hogar.html" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
-            <a href="planes-moviles.html" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
-            <a href="blog.html" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
-            <a href="pqr.html" target="_blank" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
+            <a href="/" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
+            <a href="/internet-hogar/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
+            <a href="/planes-moviles/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
+            <a href="/blog/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
+            <a href="/pqr/" target="_blank" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
         </div>
     </nav>
 
@@ -216,9 +218,11 @@
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-gray-400 text-sm mb-4">© 2025 FibraHogar. Distribuidor Autorizado.</p>
             <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-                <button onclick=<a href="terminos-y-condiciones.html">()" class="hover:text-movistar underline cursor-pointer">Términos y Condiciones</button>
+                <!-- AQUÍ ES DONDE HICE EL CAMBIO: LINK A LA CARPETA QUE PEDISTE -->
+                <a href="terminos-y-condiciones/index.html" class="hover:text-movistar underline cursor-pointer">Términos y Condiciones</a>
+                
                 <a href="#" class="hover:text-movistar">Política de Privacidad</a>
-                <a href="pqr.html" target="_blank" class="hover:text-movistar">Radicar PQR</a>
+                <a href="/pqr/" target="_blank" class="hover:text-movistar">Radicar PQR</a>
             </div>
         </div>
     </footer>
@@ -260,29 +264,13 @@
         </div>
     </div>
 
-    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-80 z-[70] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col">
-            <div class="p-4 border-b flex justify-between items-center bg-gray-50 rounded-t-xl">
-                <h3 class="font-bold text-lg">Términos y Condiciones</h3>
-                <button onclick="closeTermsModal()" class="text-gray-400 text-2xl">&times;</button>
-            </div>
-            <div class="p-6 legal-scroll text-sm text-gray-600 leading-relaxed text-justify">
-                <p class="mb-4"><strong>1. CONDICIONES:</strong> Ofertas sujetas a cobertura y estrato.</p>
-                <p class="mb-4"><strong>2. TARIFAS:</strong> Incluyen IVA estrato 3. Sujeto a cambios 2025.</p>
-                <p class="mb-4"><strong>3. PERMANENCIA:</strong> Planes con equipos subsidiados pueden tener permanencia de 12 meses.</p>
-            </div>
-            <div class="p-4 border-t bg-gray-50 text-right">
-                <button onclick="closeTermsModal()" class="bg-movistar text-white px-6 py-2 rounded-lg font-bold">Entendido</button>
-            </div>
-        </div>
-    </div>
+    <!-- NOTA: Eliminé el div 'termsModal' porque ya no se usa, ahora tienes el enlace directo. -->
 
     <script>
         const WHATSAPP_NUMBER = "573000000000"; 
         let STATE = { barrio: '' };
         function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
-        function openTermsModal() { document.getElementById('termsModal').classList.remove('hidden'); }
-        function closeTermsModal() { document.getElementById('termsModal').classList.add('hidden'); }
+        
         function openModal() {
             document.getElementById('coverageModal').classList.remove('hidden');
         }
@@ -316,7 +304,6 @@
         }
         window.onclick = function(event) {
             if (event.target == document.getElementById('coverageModal')) closeModal();
-            if (event.target == document.getElementById('termsModal')) closeTermsModal();
         }
     </script>
 </body>
