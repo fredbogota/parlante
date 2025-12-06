@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Términos y Condiciones | Fibra Movistar - John Freddy Piza</title>
-    <meta name="robots" content="noindex, nofollow"> <!-- No indexar legal para evitar duplicidad -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
     
+    <!-- SEO & METADATA -->
+    <title>Términos y Condiciones | FibraHogar.co - Distribuidor Autorizado</title>
+    <meta name="description" content="Términos legales, política de privacidad y condiciones del servicio de FibraHogar.co. Gestionado por John Freddy Piza, distribuidor autorizado de servicios Movistar Colombia.">
+    <meta name="author" content="John Freddy Piza">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.fibrahogar.co/terminos-condiciones/" /> 
+    <meta name="theme-color" content="#019df4">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+
+    <!-- Schema Markup para Página Legal -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Términos y Condiciones FibraHogar",
+      "publisher": {
+        "@type": "Person",
+        "name": "John Freddy Piza",
+        "jobTitle": "Asesor Comercial Autorizado",
+        "email": "johnfibrahogar@gmail.com",
+        "telephone": "+573165593013"
+      }
+    }
+    </script>
+
+    <!-- ESTILOS TAILWIND & FUENTES -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
@@ -14,110 +39,173 @@
         body { font-family: 'Roboto', sans-serif; }
         .text-movistar { color: #019df4; }
         .bg-movistar { background-color: #019df4; }
+        .bg-movistar-dark { background-color: #007bb5; }
+        .border-movistar { border-color: #019df4; }
+        
+        /* Estilos específicos para texto legal */
+        .legal-content h2 { color: #00364e; margin-top: 2rem; margin-bottom: 1rem; font-weight: 700; font-size: 1.5rem; }
+        .legal-content h3 { color: #019df4; margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 500; font-size: 1.25rem; }
+        .legal-content p { margin-bottom: 1rem; color: #4b5563; line-height: 1.7; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; }
+        .legal-content li { margin-bottom: 0.5rem; }
+        .legal-content strong { color: #1f2937; }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-700 antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
 
-    <!-- NAV SIMPLE -->
-    <nav class="bg-white shadow-sm border-b border-gray-100 py-4">
-        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="font-black text-2xl text-movistar tracking-tighter">Movistar <span class="text-gray-500 font-medium">Fibra</span></a>
-            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-movistar">← Volver al Inicio</a>
+    <!-- NAVBAR SIMPLIFICADO (Mismo estilo que index.html) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-1 group hover:opacity-80 transition">
+                <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
+                <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
+                <span class="ml-2 text-[10px] bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full uppercase tracking-widest border border-gray-200">Distribuidor</span>
+            </a>
+
+            <!-- Menú Desktop -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
+                <a href="/" class="hover:text-movistar transition">← Volver al Inicio</a>
+                <a href="https://wa.me/573165593013" class="bg-green-500 hover:bg-green-600 text-white px-4 py-1.5 rounded-full transition flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Contactar Soporte
+                </a>
+            </div>
+            
+            <!-- Botón Móvil -->
+            <a href="/" class="md:hidden text-movistar font-bold text-sm">
+                ← Volver
+            </a>
         </div>
     </nav>
 
-    <!-- CONTENIDO LEGAL -->
-    <div class="max-w-4xl mx-auto px-6 py-12">
-        
-        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+    <!-- HEADER LEGAL -->
+    <header class="bg-movistar text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-black mb-4">Términos y Condiciones</h1>
+            <p class="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+                Transparencia y claridad en nuestros servicios de intermediación comercial para Movistar Colombia.
+            </p>
+            <p class="mt-6 text-sm opacity-80 uppercase tracking-widest font-bold">Actualizado: Diciembre 2025</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-grow py-12 px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 legal-content">
             
-            <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-2">Términos y Condiciones</h1>
-            <p class="text-gray-400 text-sm mb-8">Última actualización: Marzo 2025</p>
-
-            <div class="space-y-8 text-justify leading-relaxed">
-
-                <!-- SECCIÓN 1: IDENTIFICACIÓN -->
-                <section>
-                    <h2 class="text-xl font-bold text-movistar mb-3">1. Identificación del Distribuidor</h2>
-                    <p>
-                        Este sitio web es operado y administrado por <strong>JOHN FREDDY PIZA</strong> (en adelante, "EL DISTRIBUIDOR"), quien actúa en calidad de <strong>Distribuidor Autorizado</strong> e intermediario comercial para la venta de servicios de telecomunicaciones de Movistar Colombia.
-                    </p>
-                    <p class="mt-2 p-4 bg-blue-50 rounded-lg border border-blue-100 text-sm">
-                        <strong>Nota Aclaratoria:</strong> Este portal tiene como fin único la captación y gestión comercial de clientes potenciales. La prestación final del servicio, facturación y soporte técnico son responsabilidad exclusiva de <strong>Colombia Telecomunicaciones S.A. ESP (Movistar)</strong>.
-                    </p>
-                </section>
-
-                <!-- SECCIÓN 2: DATOS Y WHATSAPP -->
-                <section>
-                    <h2 class="text-xl font-bold text-movistar mb-3">2. Política de Contacto y WhatsApp</h2>
-                    <p>
-                        Al hacer clic en los botones de "Verificar Cobertura", "Pedir por WhatsApp" o al diligenciar los formularios de contacto en este sitio, el usuario autoriza expresamente a <strong>JOHN FREDDY PIZA</strong> para que lo contacte a través de la aplicación WhatsApp o vía telefónica.
-                    </p>
-                    <ul class="list-disc pl-5 mt-3 space-y-2">
-                        <li>El número oficial de contacto y gestión comercial será: <strong>+57 300 000 0000</strong>.</li>
-                        <li>Los datos proporcionados (barrio y número de contacto) se usarán estrictamente para validar la viabilidad técnica de la instalación de Fibra Óptica.</li>
-                    </ul>
-                </section>
-
-                <!-- SECCIÓN 3: PRECIOS -->
-                <section>
-                    <h2 class="text-xl font-bold text-movistar mb-3">3. Vigencia de Ofertas y Precios 2025</h2>
-                    <p>
-                        Las tarifas mostradas (ej. $89.990 por 700 Megas) corresponden a la oferta comercial vigente para el año 2025 en <strong>Estrato 3</strong>.
-                    </p>
-                    <p class="mt-2">
-                        <strong>Condiciones de la oferta:</strong>
-                    </p>
-                    <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
-                        <li>Los precios incluyen IVA para el estrato indicado. Otros estratos pueden tener variaciones en impuestos.</li>
-                        <li>La promoción "Compra Hoy y Paga el Próximo Mes" está sujeta al ciclo de facturación y aprobación de crédito de Movistar.</li>
-                        <li>La velocidad simétrica (misma velocidad de subida y bajada) depende de la factibilidad técnica en la zona del cliente.</li>
-                    </ul>
-                </section>
-
-                <!-- SECCIÓN 4: INSTALACIÓN -->
-                <section>
-                    <h2 class="text-xl font-bold text-movistar mb-3">4. Cobertura e Instalación</h2>
-                    <p>
-                        La solicitud de servicio a través de este sitio web <strong>no garantiza</strong> la instalación inmediata. Toda venta está sujeta a:
-                    </p>
-                    <ol class="list-decimal pl-5 mt-2 space-y-1">
-                        <li>Validación de cobertura exacta en la dirección del predio.</li>
-                        <li>Disponibilidad de puertos en la caja de dispersión (NAP) del sector.</li>
-                        <li>Aprobación del estudio de crédito realizado por Movistar Colombia.</li>
-                    </ol>
-                </section>
-
-                <!-- SECCIÓN 5: PQR Y SOPORTE -->
-                <section>
-                    <h2 class="text-xl font-bold text-movistar mb-3">5. Canales de Atención (PQR)</h2>
-                    <p>
-                        Para Peticiones, Quejas, Reclamos o Recursos (PQR) relacionados con fallas técnicas, facturación o cancelaciones una vez instalado el servicio, el usuario debe comunicarse directamente con los canales oficiales de Movistar Colombia, ya que <strong>JOHN FREDDY PIZA</strong> actúa únicamente como agente comercial de venta nueva.
-                    </p>
-                    <div class="mt-4 flex gap-4 flex-wrap">
-                        <a href="https://www.movistar.com.co/atencion-al-cliente" target="_blank" class="text-movistar font-bold underline">Centro de Ayuda Oficial</a>
-                        <span class="text-gray-400">|</span>
-                        <span class="font-bold">Línea Nacional: 01 8000 930 930</span>
-                    </div>
-                </section>
-
+            <!-- Intro -->
+            <div class="bg-blue-50 border-l-4 border-movistar p-6 rounded-r-lg mb-8">
+                <p class="mb-0 text-sm text-gray-700">
+                    <strong>AVISO IMPORTANTE:</strong> Este sitio web (<a href="https://www.fibrahogar.co" class="text-movistar hover:underline">www.fibrahogar.co</a>) es propiedad de y está operado por <strong>John Freddy Piza</strong>, quien actúa en calidad de <strong>Distribuidor y Asesor Comercial Autorizado</strong>. Este portal no representa directamente la infraestructura corporativa de Telefónica Movistar, sino que sirve como canal digital para facilitar la contratación de sus servicios.
+                </p>
             </div>
 
-            <!-- FIRMA DIGITAL -->
-            <div class="mt-12 pt-8 border-t border-gray-100 text-center">
-                <p class="text-sm text-gray-400 mb-2">Representante Comercial Autorizado</p>
-                <p class="font-black text-xl text-gray-900">John Freddy Piza</p>
-                <p class="text-movistar font-bold">Distribuidor Fibra Movistar</p>
+            <section>
+                <h2>1. Objeto del Sitio Web</h2>
+                <p>El propósito de este portal es facilitar a los usuarios la consulta, cotización y solicitud de servicios de telecomunicaciones (Internet Fibra Óptica, Telefonía y Televisión) ofrecidos por Movistar Colombia. <strong>John Freddy Piza</strong> actúa como intermediario comercial, gestionando la radicación de solicitudes ante el operador.</p>
+            </section>
+
+            <section>
+                <h2>2. Propiedad Intelectual y Uso de Marca</h2>
+                <p>Las marcas comerciales, logotipos, nombres de productos y servicios de "Movistar", "Telefónica" y sus derivados que aparecen en este sitio son propiedad exclusiva de sus respectivos dueños. Su uso en este portal se limita estrictamente a fines informativos y comerciales bajo la figura de distribución autorizada.</p>
+                <p>El diseño web, código fuente (HTML/CSS), textos descriptivos personalizados y la estructura de <strong>FibraHogar.co</strong> son propiedad intelectual de <strong>John Freddy Piza</strong>. Queda prohibida la reproducción total o parcial de este sitio sin autorización expresa.</p>
+            </section>
+
+            <section>
+                <h2>3. Tratamiento de Datos (Habeas Data)</h2>
+                <p>En cumplimiento con la Ley 1581 de 2012 y el Decreto 1377 de 2013, al ingresar sus datos en nuestros formularios o contactarnos vía WhatsApp, usted autoriza a <strong>John Freddy Piza</strong> y a su equipo comercial a:</p>
+                <ul>
+                    <li>Recolectar, almacenar y procesar sus datos personales (Nombre, Cédula, Dirección, Teléfono).</li>
+                    <li>Utilizar dicha información exclusivamente para verificar la cobertura de red en su domicilio.</li>
+                    <li>Contactarlo vía telefónica, WhatsApp o correo electrónico para presentarle la oferta comercial vigente.</li>
+                    <li>Transferir los datos estrictamente necesarios a los sistemas de Movistar Colombia para la formalización del contrato, si usted decide adquirir el servicio.</li>
+                </ul>
+                <p>Para ejercer sus derechos de acceso, corrección o supresión de datos, puede escribirnos directamente a:</p>
+                <div class="flex items-center gap-2 font-bold text-gray-700 bg-gray-100 p-3 rounded-lg inline-block">
+                    📧 <a href="mailto:johnfibrahogar@gmail.com" class="hover:text-movistar">johnfibrahogar@gmail.com</a>
+                </div>
+            </section>
+
+            <section>
+                <h2>4. Limitación de Responsabilidad</h2>
+                <p>El usuario comprende y acepta las siguientes delimitaciones de responsabilidad:</p>
+                <ul>
+                    <li><strong>El Distribuidor (John Freddy Piza):</strong> Es responsable de brindar información veraz, acompañar el proceso de venta, agendar la instalación y gestionar la radicación correcta de la solicitud.</li>
+                    <li><strong>El Operador (Movistar):</strong> Es el único responsable de la viabilidad técnica final, la instalación física, la prestación continua del servicio, la facturación mensual, el soporte técnico post-venta y las garantías de velocidad.</li>
+                    <li><strong>Precios y Ofertas:</strong> Las tarifas mostradas están sujetas a la estratificación del predio, la ubicación geográfica y la vigencia comercial definida por Movistar. Los precios pueden cambiar sin previo aviso por parte del operador.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Condiciones del Servicio de Internet</h2>
+                <p>Al contratar un plan a través de nuestro portal, aplican las condiciones generales de Movistar, incluyendo pero no limitado a:</p>
+                <ul>
+                    <li><strong>Permanencia:</strong> Algunos planes promocionales o con equipos subsidiados pueden incluir una cláusula de permanencia mínima de 12 meses. El retiro anticipado puede generar cobros proporcionales.</li>
+                    <li><strong>Velocidad:</strong> La velocidad de navegación (ej. 500, 700, 900 Megas) se garantiza a través de conexión por cable Ethernet al módem. La velocidad por WiFi puede variar según la distancia, interferencias y capacidad del dispositivo del usuario.</li>
+                    <li><strong>Instalación:</strong> Los tiempos de instalación dependen de la agenda técnica de Movistar en la zona, generalmente entre 24 a 72 horas hábiles tras la aprobación.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. Canales de Atención del Distribuidor</h2>
+                <p>Para consultas relacionadas con el proceso de venta, estado de su solicitud o dudas comerciales antes de la instalación, puede contactarnos en:</p>
+                <ul class="list-none pl-0 space-y-2 mt-4">
+                    <li class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600"><i class="fas fa-whatsapp"></i>📱</span>
+                        <span><strong>WhatsApp / Celular:</strong> <a href="https://wa.me/573165593013" class="text-movistar hover:underline">316 559 3013</a></span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">📧</span>
+                        <span><strong>Email:</strong> <a href="mailto:johnfibrahogar@gmail.com" class="text-movistar hover:underline">johnfibrahogar@gmail.com</a></span>
+                    </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4 border-t pt-4">
+                    *Nota: Para soporte técnico por fallas en el servicio, facturación o traslados de una línea ya instalada, debe comunicarse directamente con la línea oficial de Movistar o sus canales de atención al cliente.*
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER (Consistente con index.html) -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-sm">
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4 text-movistar">Sobre Nosotros</h4>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                    Somos un canal autorizado para llevar la mejor tecnología de Fibra Óptica a tu hogar. Gestionamos tu solicitud de principio a fin con transparencia.
+                </p>
+                <p class="text-gray-500">© 2025 FibraHogar.co</p>
             </div>
 
-            <div class="mt-8 text-center">
-                <button onclick="window.close()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-xl transition">
-                    Cerrar Documento
-                </button>
+            <div>
+                <h4 class="font-bold text-lg mb-4 text-movistar">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Términos y Condiciones</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidad</a></li>
+                    <li><a href="https://www.sic.gov.co/" target="_blank" class="text-gray-400 hover:text-white transition">Superintendencia de Industria y Comercio</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-4 text-movistar">Contacto Directo</h4>
+                <p class="text-gray-400 mb-2">Asesor: <strong>John Freddy Piza</strong></p>
+                <a href="https://wa.me/573165593013" class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-bold transition mb-3">
+                    Escribir al WhatsApp
+                </a>
+                <a href="mailto:johnfibrahogar@gmail.com" class="block text-center text-gray-400 hover:text-white border border-gray-700 rounded-lg py-3 transition">
+                    johnfibrahogar@gmail.com
+                </a>
             </div>
 
         </div>
-    </div>
+    </footer>
 
 </body>
 </html>

@@ -45,7 +45,6 @@
         .hover-lift:hover { transform: translateY(-3px); }
         .table-responsive { display: block; width: 100%; overflow-x: auto; }
         .legal-scroll { max-height: 60vh; overflow-y: auto; }
-        /* Scrollbar styling */
         .legal-scroll::-webkit-scrollbar { width: 8px; }
         .legal-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
         .legal-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
@@ -58,28 +57,27 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
             <!-- Logo Sólido -->
-            <a href="/" class="flex items-center gap-1 group">
+            <a href="index.html" class="flex items-center gap-1 group">
                 <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
                 <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
 
-            <!-- MENÚ CORREGIDO (URLs Limpias + Target Blank) -->
+            <!-- MENÚ CORREGIDO (Funcionalidad Inmediata) -->
             <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
-                <a href="/" class="text-movistar">Inicio</a>
+                <a href="index.html" class="text-movistar">Inicio</a>
                 
-                <!-- URL Limpia: /internet-hogar/ -->
-                <a href="/internet-hogar/" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
+                <!-- URL apunta directo al archivo .html para que abra SI o SI -->
+                <a href="internet-hogar.html" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
                 
                 <!-- Keyword SEO: "Planes Móviles 5G" -->
-                <a href="/planes-moviles/" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
+                <a href="planes-moviles.html" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
                     <span class="bg-green-100 text-green-700 text-[10px] px-1.5 rounded">5G</span>
                     Planes Móviles
                 </a>
                 
-                <a href="/blog/" target="_blank" class="hover:text-movistar transition">Blog</a>
+                <a href="blog.html" target="_blank" class="hover:text-movistar transition">Blog</a>
                 
-                <!-- Enlace PQR Corregido -->
-                <a href="/pqr/" target="_blank" class="hover:text-movistar transition">PQR / Ayuda</a>
+                <a href="pqr.html" target="_blank" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
 
             <!-- Formulario Rápido -->
@@ -100,11 +98,11 @@
 
         <!-- Menú Móvil -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
-            <a href="/" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
-            <a href="/internet-hogar/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
-            <a href="/planes-moviles/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
-            <a href="/blog/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
-            <a href="/pqr/" target="_blank" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
+            <a href="index.html" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
+            <a href="internet-hogar.html" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
+            <a href="planes-moviles.html" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
+            <a href="blog.html" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
+            <a href="pqr.html" target="_blank" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
         </div>
     </nav>
 
@@ -220,7 +218,7 @@
             <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
                 <button onclick="openTermsModal()" class="hover:text-movistar underline cursor-pointer">Términos y Condiciones</button>
                 <a href="#" class="hover:text-movistar">Política de Privacidad</a>
-                <a href="/pqr/" target="_blank" class="hover:text-movistar">Radicar PQR</a>
+                <a href="pqr.html" target="_blank" class="hover:text-movistar">Radicar PQR</a>
             </div>
         </div>
     </footer>
