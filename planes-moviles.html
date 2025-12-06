@@ -3,389 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planes Movistar Ilimitados y Prepago con Más Gigas | Colombia 2025-2026</title>
-    <meta name="description" content="Descubre el mejor plan de datos para redes sociales y planes Movistar ilimitados.">
-    <!-- URL CANÓNICA COINCIDENTE CON EL NOMBRE DEL ARCHIVO -->
-    <link rel="canonical" href="https://www.fibrahogar.co/planes-moviles.html" />
-    <meta name="theme-color" content="#019df4">
-    <meta name="keywords" content="planes movistar, portabilidad movistar">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
     
-    <!-- RECURSOS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- =========================================
+         SEO PARA MÓVILES Y PORTABILIDAD
+         ========================================= -->
+    <title>Planes Movistar Móvil | Datos Ilimitados y Portabilidad 2025</title>
+    <meta name="description" content="Pásate a Movistar con tu mismo número y recibe Gigas x2. Planes pospago 5G con minutos ilimitados y apps libres. ¡Activa tu chip en minutos aquí!">
+    
+    <link rel="canonical" href="https://www.fibrahogar.co/planes-moviles.html" /> 
+    <meta name="theme-color" content="#019df4">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
+    <!-- SCHEMA MARKUP: Producto "Plan Móvil" -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/", 
+      "@type": "Product", 
+      "name": "Plan Movistar Ilimitado 5G",
+      "image": "https://www.fibrahogar.co/sim-card.png",
+      "description": "Plan pospago con datos, voz y SMS ilimitados. Tecnología 5G.",
+      "brand": { "@type": "Brand", "name": "Movistar" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.fibrahogar.co/planes-moviles.html",
+        "priceCurrency": "COP",
+        "price": "39990",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- ESTILOS (Tailwind para consistencia con el Home) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --movistar-blue: #019df4;
-            --movistar-dark: #0b274f;
-            --movistar-accent: #ff9100;
-            --bg-body: #f4f7fa;
-            --bg-card: #ffffff;
-            --text-main: #2c3e50;
-            --white: #ffffff;
-            --header-h: 80px;
-            --radius-lg: 16px;
-            --container-w: 1000px;
-            --trans-fast: 0.3s ease;
-        }
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Roboto', sans-serif; }
+        .text-movistar { color: #019df4; }
+        .bg-movistar { background-color: #019df4; }
+        .bg-movistar-dark { background-color: #007bb5; }
+        /* Degradado especial para móviles (más vibrante) */
+        .hero-bg-mobile { background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%); }
         
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-top: var(--header-h);
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; transition: var(--trans-fast); }
-        ul { list-style: none; }
-        button { cursor: pointer; }
-
-        .container { width: 92%; max-width: var(--container-w); margin: 0 auto; }
-        .text-center { text-align: center; }
-
-        /* HEADER */
-        .main-header {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: var(--movistar-dark);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-        }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 100%; color: var(--white); }
-        .logo { color: var(--white); font-weight: 900; font-size: 1.5rem; }
-        
-        .btn-home {
-            background: var(--movistar-blue); color: white; padding: 8px 15px;
-            border-radius: 50px; font-weight: 500; display: flex; align-items: center; gap: 8px;
-        }
-        .btn-home:hover { background: var(--movistar-accent); }
-
-        /* HERO MOBILE */
-        .hero-mobile {
-            position: relative; height: 500px; width: 100%;
-            background: #000; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        .hero-slider-mobile { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        
-        .slide-mobile {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1.1);
-            transition: opacity 1s ease-in-out, transform 8s linear;
-        }
-        .slide-mobile.active { opacity: 1; transform: scale(1); }
-
-        .hero-overlay-mobile {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
-            background: linear-gradient(180deg, rgba(11,39,79,0.3) 0%, rgba(11,39,79,0.7) 60%, rgba(11,39,79,0.95) 100%);
-        }
-
-        .hero-content-mobile {
-            position: relative; z-index: 3; text-align: center; color: white;
-            max-width: 800px; padding: 0 20px;
-            display: flex; flex-direction: column; align-items: center;
-        }
-
-        .dynamic-text-group-mobile { display: none; animation: fadeInUp 0.8s ease forwards; }
-        .dynamic-text-group-mobile.active { display: block; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-badge-mobile {
-            display: inline-block; padding: 6px 16px; border-radius: 20px;
-            font-size: 0.85rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px;
-            background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .hero-title-mobile {
-            font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1;
-            margin-bottom: 20px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .hero-subtitle-mobile {
-            font-size: clamp(1rem, 2vw, 1.3rem); opacity: 0.9; margin-bottom: 30px; max-width: 700px; margin-inline: auto;
-        }
-        
-        .hero-cta-mobile {
-            background: var(--movistar-accent); color: var(--movistar-dark);
-            padding: 15px 30px; border-radius: 50px; font-weight: 800;
-            font-size: 1.1rem; box-shadow: 0 6px 20px rgba(255, 145, 0, 0.5);
-            transition: var(--trans-fast);
-        }
-        .hero-cta-mobile:hover { transform: translateY(-3px); background: #ff7f00; }
-        
-        /* PLANS */
-        .plans-section { padding: 40px 0 80px 0; }
-        .section-title-mobile { font-size: 2.2rem; color: var(--movistar-dark); font-weight: 900; margin-bottom: 15px; }
-        
-        .plan-cards-grid {
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px; 
-            margin-top: 50px;
-        }
-
-        .mobile-card {
-            background: var(--bg-card); border-radius: var(--radius-lg); 
-            padding: 30px 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
-            position: relative; 
-            display: flex; flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 5px solid var(--movistar-blue);
-            overflow: hidden;
-        }
-        .mobile-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(1, 157, 244, 0.2); }
-
-        .card-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .plan-name { font-size: 1.5rem; font-weight: 800; color: var(--movistar-dark); }
-        
-        .data-badge {
-            background: var(--movistar-blue); color: white; padding: 5px 12px;
-            border-radius: 20px; font-weight: 700; font-size: 0.9rem;
-        }
-        .data-badge.unlimited { background: var(--movistar-accent); }
-
-        .price-display { margin: 20px 0 10px 0; }
-        .price-number { font-size: 2.5rem; font-weight: 900; color: var(--movistar-blue); line-height: 1; }
-        .price-number small { font-size: 1rem; font-weight: 400; color: var(--text-main); }
-
-        .feature-list-mobile { margin-bottom: 25px; flex-grow: 1; }
-        .feature-list-mobile li { 
-            display: flex; gap: 10px; margin-bottom: 10px; font-size: 0.95rem;
-            align-items: center; 
-        }
-
-        .card-cta {
-            background: var(--movistar-dark); color: white; padding: 12px;
-            border-radius: 50px; font-weight: 700; text-align: center;
-            transition: background 0.3s;
-        }
-        .card-cta:hover { background: var(--movistar-blue); }
-
-        /* INFO BLOCK */
-        .info-block {
-            background: white;
-            padding: 50px 0;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
-        }
-        .info-header { 
-            font-size: 1.8rem; 
-            color: var(--movistar-dark); 
-            font-weight: 800; 
-            margin-bottom: 20px; 
-            border-left: 4px solid var(--movistar-accent);
-            padding-left: 15px;
-        }
-        .info-content p { margin-bottom: 20px; color: #555; }
-        .keyword { font-weight: 700; color: var(--movistar-blue); text-decoration: underline; cursor: help; }
-        
-        @media (max-width: 600px) {
-            .hero-mobile { height: 400px; }
-            .section-title-mobile { font-size: 1.8rem; }
-            .plan-cards-grid { gap: 20px; }
-            .mobile-card { padding: 25px 20px; }
-        }
+        .card-plan { transition: all 0.3s ease; border: 1px solid #e5e7eb; }
+        .card-plan:hover { transform: translateY(-5px); border-color: #019df4; box-shadow: 0 10px 25px -5px rgba(1, 157, 244, 0.15); }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="main-header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">MOVISTAR MÓVIL</a>
-            <a href="index.html" class="btn-home">
-                <i data-lucide="home" size="18"></i> Volver a Fibra
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVBAR CONSISTENTE -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="font-bold text-2xl text-movistar tracking-tighter hover:opacity-80 transition">
+                M<span class="text-gray-600">ovistar</span> Fibra
             </a>
+            
+            <div class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+                <a href="/" class="hover:text-movistar transition">Inicio</a>
+                <a href="/internet-hogar.html" class="hover:text-movistar transition">Solo Internet</a>
+                <a href="#" class="text-movistar font-bold">Móviles</a>
+            </div>
+
+            <a href="https://wa.me/573000000000" class="md:hidden bg-green-500 text-white p-2 rounded-full shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION: PORTABILIDAD -->
+    <header class="hero-bg-mobile pt-10 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+            
+            <div class="text-center md:text-left z-10">
+                <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block border border-purple-200">
+                    ¡PÁSATE A MOVISTAR!
+                </span>
+                <h1 class="text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-4">
+                    Gigas Ilimitadas <br>
+                    <span class="text-movistar">Tecnología 5G</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Trae tu número hoy mismo y recibe descuentos exclusivos. Navega más rápido y comparte datos sin restricciones.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#planes" class="bg-movistar hover:bg-movistar-dark text-white text-lg font-bold py-4 px-10 rounded-xl shadow-lg transition transform hover:-translate-y-1">
+                        Ver Planes
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual: Smartphone 3D Simulado -->
+            <div class="hidden md:flex justify-center relative">
+                <div class="absolute inset-0 bg-blue-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
+                <!-- Card Flotante -->
+                <div class="bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 relative z-10 w-72 transform rotate-3 hover:rotate-0 transition duration-500">
+                    <div class="bg-gray-100 h-40 rounded-xl mb-4 flex items-center justify-center">
+                        <span class="text-6xl">📱</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-1">Plan Ilimitado</h3>
+                    <p class="text-sm text-gray-500 mb-4">Datos, Voz y SMS</p>
+                    <div class="flex justify-between items-center border-t pt-4">
+                        <span class="text-2xl font-black text-movistar">$39.990</span>
+                        <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">MES</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-mobile">
-        <div class="hero-slider-mobile" id="heroSliderMobile">
-            <div class="slide-mobile active" style="background-image: url('https://images.unsplash.com/photo-1510531707963-fc2909f1969a?q=80&w=1200');"></div>
-            <div class="slide-mobile" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200');"></div>
-            <div class="slide-mobile" style="background-image: url('https://images.unsplash.com/photo-1601972599720-36938d4e1f19?q=80&w=1200');"></div>
-        </div>
-
-        <div class="hero-overlay-mobile"></div>
-
-        <div class="container hero-content-mobile">
-            <div class="dynamic-text-group-mobile active" data-index="0">
-                <span class="hero-badge-mobile" style="color: var(--movistar-blue); border-color: var(--movistar-blue);">✨ Conexión Total</span>
-                <h1 class="hero-title-mobile">
-                    HABLA, CHATEA, NAVEGA <br>SIN LÍMITES
-                </h1>
-                <p class="hero-subtitle-mobile">
-                    Elige el <span class="keyword">mejor plan de datos para redes sociales</span> y mantente siempre conectado.
-                </p>
+    <!-- SECCIÓN DE PLANES (CARDS) -->
+    <section id="planes" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Elige tu Plan Pospago</h2>
+                <p class="text-gray-500">Precios especiales por portabilidad (trayendo tu número).</p>
             </div>
 
-            <div class="dynamic-text-group-mobile" data-index="1">
-                <span class="hero-badge-mobile" style="color: var(--movistar-accent); border-color: var(--movistar-accent);">🚀 5G y Más Gigas</span>
-                <h1 class="hero-title-mobile">
-                    VELOCIDAD QUE TE SORPRENDE<br>GIGAS QUE RINDEN
-                </h1>
-                <p class="hero-subtitle-mobile">
-                    Descubre nuestros <span class="keyword">planes Movistar prepago con más gigas en Colombia</span>.
-                </p>
-            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <!-- Plan 1: Económico -->
+                <div class="card-plan bg-white rounded-2xl p-6 relative overflow-hidden">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Plan Básico</h3>
+                    <div class="text-4xl font-black text-movistar mb-4">60 GB</div>
+                    <ul class="text-sm text-gray-600 space-y-3 mb-8">
+                        <li class="flex items-center gap-2">✅ Minutos Ilimitados</li>
+                        <li class="flex items-center gap-2">✅ Facebook e Instagram libres</li>
+                        <li class="flex items-center gap-2">✅ WhatsApp Ilimitado</li>
+                    </ul>
+                    <div class="border-t pt-4 mb-4">
+                        <p class="text-xs text-gray-400">Precio Portabilidad</p>
+                        <p class="text-2xl font-bold">$34.990 <span class="text-sm font-normal text-gray-500">/mes</span></p>
+                    </div>
+                    <button onclick="selectMobilePlan('Plan 60GB', '34.990')" class="w-full bg-white border-2 border-movistar text-movistar font-bold py-3 rounded-lg hover:bg-movistar hover:text-white transition">
+                        Lo Quiero
+                    </button>
+                </div>
 
-            <div class="dynamic-text-group-mobile" data-index="2">
-                <span class="hero-badge-mobile" style="color: #6c757d; border-color: #6c757d;">✅ Portabilidad Fácil</span>
-                <h1 class="hero-title-mobile">
-                    MISMO NÚMERO, NUEVA LIBERTAD<br>EN MOVISTAR
-                </h1>
-                <p class="hero-subtitle-mobile">
-                    Te ayudamos a <span class="keyword">cambiar de operador a Movistar con el mismo número</span>.
-                </p>
+                <!-- Plan 2: Destacado -->
+                <div class="card-plan bg-white rounded-2xl p-6 relative overflow-hidden ring-2 ring-movistar shadow-lg transform md:-translate-y-4">
+                    <div class="absolute top-0 right-0 bg-movistar text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        MÁS VENDIDO
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Plan Ilimitado</h3>
+                    <div class="text-4xl font-black text-movistar mb-1">ILIMI</div>
+                    <div class="text-xl font-bold text-gray-400 mb-4 line-through">TADO</div>
+                    <ul class="text-sm text-gray-600 space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <span class="bg-green-100 text-green-700 rounded-full p-1 text-xs">🚀</span> 
+                            <b>Datos Ilimitados 5G</b>
+                        </li>
+                        <li class="flex items-center gap-2">✅ Minutos Todo Destino</li>
+                        <li class="flex items-center gap-2">✅ Roaming Internacional</li>
+                    </ul>
+                    <div class="border-t pt-4 mb-4">
+                        <p class="text-xs text-gray-400">Precio Portabilidad</p>
+                        <p class="text-3xl font-black text-gray-900">$49.990 <span class="text-sm font-normal text-gray-500">/mes</span></p>
+                    </div>
+                    <button onclick="selectMobilePlan('Plan Ilimitado', '49.990')" class="w-full bg-movistar text-white font-bold py-3 rounded-lg hover:bg-movistar-dark transition shadow-lg">
+                        Solicitar Portabilidad
+                    </button>
+                </div>
+
+                <!-- Plan 3: Premium -->
+                <div class="card-plan bg-white rounded-2xl p-6 relative overflow-hidden">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Plan Familia / Dúo</h3>
+                    <div class="text-4xl font-black text-movistar mb-4">2 Líneas</div>
+                    <ul class="text-sm text-gray-600 space-y-3 mb-8">
+                        <li class="flex items-center gap-2">✅ Comparte Gigas</li>
+                        <li class="flex items-center gap-2">✅ Amazon Prime Video</li>
+                        <li class="flex items-center gap-2">✅ Preferente en Call Center</li>
+                    </ul>
+                    <div class="border-t pt-4 mb-4">
+                        <p class="text-xs text-gray-400">Precio Total</p>
+                        <p class="text-2xl font-bold">$75.990 <span class="text-sm font-normal text-gray-500">/mes</span></p>
+                    </div>
+                    <button onclick="selectMobilePlan('Plan 2 Lineas', '75.990')" class="w-full bg-white border-2 border-gray-200 text-gray-700 font-bold py-3 rounded-lg hover:border-movistar hover:text-movistar transition">
+                        Más Información
+                    </button>
+                </div>
+
             </div>
             
-            <button onclick="scrollToPlans()" class="hero-cta-mobile">
-                Explorar Planes Ahora
-            </button>
+            <p class="text-center text-xs text-gray-400 mt-10 max-w-2xl mx-auto">
+                *Los precios de oferta aplican para clientes que portan su número (cambio de operador). Precios incluyen IVA. Sujeto a términos y condiciones vigentes 2025.
+            </p>
         </div>
     </section>
 
-    <!-- Planes Postpago -->
-    <section class="plans-section" id="planes-postpago">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title-mobile">Planes Movistar Ilimitados para Celular</h2>
-                <p style="color: #666;">
-                    Encuentra el <span class="keyword">mejor plan de datos para redes sociales</span> y todas tus necesidades.
-                </p>
-            </div>
-            
-            <div class="plan-cards-grid">
-                <!-- Plan 1 -->
-                <article class="mobile-card">
-                    <div class="card-header">
-                        <span class="plan-name">PLAN FULL 40GB</span>
-                        <span class="data-badge">40 GB</span>
-                    </div>
-                    <p style="color: var(--movistar-blue); font-weight: 700; font-size: 0.9rem;">
-                        Ideal para el uso diario y redes sociales.
-                    </p>
-                    <div class="price-display">
-                        <span class="price-number">$55.900<small>/mes</small></span>
-                    </div>
-                    <ul class="feature-list-mobile">
-                        <li><i data-lucide="check" size="18" color="#019df4"></i> Voz y SMS Ilimitados</li>
-                        <li><i data-lucide="check" size="18" color="#019df4"></i> WhatsApp sin consumir datos</li>
-                        <li><i data-lucide="check" size="18" color="#019df4"></i> Redes Sociales (10GB)</li>
-                    </ul>
-                    <button onclick="handleLead('Plan Full 40GB')" class="card-cta">Contratar Plan</button>
-                </article>
-
-                <!-- Plan 2 -->
-                <article class="mobile-card" style="border-top-color: var(--movistar-accent);">
-                    <span style="position: absolute; top: 15px; right: -20px; background: var(--movistar-accent); color: white; padding: 5px 25px; transform: rotate(45deg); font-weight: 700; font-size: 0.8rem;">¡TOP!</span>
-                    <div class="card-header">
-                        <span class="plan-name" style="color: var(--movistar-accent);">PLAN ILIMITADO</span>
-                        <span class="data-badge unlimited">ILIMITADO</span>
-                    </div>
-                    <p style="color: var(--movistar-accent); font-weight: 700; font-size: 0.9rem;">
-                        ¡La mejor opción para el <span class="keyword">precio 2025-2026</span>!
-                    </p>
-                    <div class="price-display">
-                        <span class="price-number" style="color: var(--movistar-accent);">$89.900<small>/mes</small></span>
-                    </div>
-                    <ul class="feature-list-mobile">
-                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> **Datos Ilimitados 4G/5G**</li>
-                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> Roaming en 10 países de Latam</li>
-                        <li><i data-lucide="infinity" size="18" color="var(--movistar-accent)"></i> Larga Distancia Ilimitada (LDI)</li>
-                    </ul>
-                    <button onclick="handleLead('Plan Ilimitado Premium')" class="card-cta" style="background: var(--movistar-accent); color: var(--movistar-dark);">¡Lo Quiero Ilimitado!</button>
-                </article>
-
-                <!-- Plan 3 -->
-                <article class="mobile-card">
-                    <div class="card-header">
-                        <span class="plan-name">PREPAGO PLUS</span>
-                        <span class="data-badge" style="background: #198754;">MÁS GIGAS</span>
-                    </div>
-                    <p style="color: #198754; font-weight: 700; font-size: 0.9rem;">
-                        El mejor de los <span class="keyword">planes Movistar prepago con más gigas en Colombia</span>.
-                    </p>
-                    <div class="price-display">
-                        <span class="price-number">$30.000<small>/30 días</small></span>
-                    </div>
-                    <ul class="feature-list-mobile">
-                        <li><i data-lucide="cpu" size="18" color="#198754"></i> **30 GB** de navegación (Doble recarga)</li>
-                        <li><i data-lucide="cpu" size="18" color="#198754"></i> 10 min LDI a USA, Canadá y Puerto Rico</li>
-                        <li><i data-lucide="cpu" size="18" color="#198754"></i> Minutos y SMS nacionales ilimitados</li>
-                    </ul>
-                    <button onclick="handleLead('Prepago Plus')" class="card-cta">Recargar Ahora</button>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bloque Informativo -->
-    <section class="info-block">
-        <div class="container info-content">
-            <h2 class="info-header">Guía Rápida: Activar SIM Card y Portabilidad</h2>
-            <h3>¿Cómo cambiar de operador a Movistar con el mismo número?</h3>
-            <p>La portabilidad numérica a Movistar es un proceso sencillo...</p>
-        </div>
-    </section>
-
-    <footer style="background: var(--movistar-dark); color: white; padding: 30px 0; text-align: center;">
-        <p style="font-size: 0.9rem; opacity: 0.7;">© 2025 Movistar Móvil. ¡Conéctate a la red del futuro!</p>
-    </footer>
+    <!-- FOOTER STICKY (Móvil) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-3 md:hidden z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <a href="https://wa.me/573000000000" class="flex-1 bg-movistar text-white font-bold py-3 px-4 rounded-lg shadow text-center flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Pedir por WhatsApp
+        </a>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            initMobileSlider();
-        });
+        const WHATSAPP_NUMBER = "573000000000"; 
 
-        const WHATSAPP_NUMBER = "573165593013";
-        let currentMobileSlide = 0;
-
-        function initMobileSlider() {
-            const slides = document.querySelectorAll('.slide-mobile');
-            const contents = document.querySelectorAll('.dynamic-text-group-mobile');
-            
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    contents[i].classList.remove('active');
-                });
-                slides[index].classList.add('active');
-                contents[index].classList.add('active');
-            }
-
-            setInterval(() => {
-                currentMobileSlide = (currentMobileSlide + 1) % slides.length;
-                showSlide(currentMobileSlide);
-            }, 6000);
-            
-            showSlide(currentMobileSlide);
-        }
-
-        function scrollToPlans() {
-            document.getElementById('planes-postpago').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function handleLead(planName) {
-            const msg = `Hola! Estoy interesado en el plan móvil *${planName}*. Necesito ayuda para la portabilidad / contratación.`;
+        function selectMobilePlan(planName, price) {
+            const msg = `👋 Hola! Estoy interesado en el *${planName}* de $${price}. Quiero hacer portabilidad (pasarme a Movistar).`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
