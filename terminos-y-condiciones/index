@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones | Fibra Movistar - John Freddy Piza</title>
+    <meta name="robots" content="noindex, nofollow"> <!-- No indexar legal para evitar duplicidad -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .text-movistar { color: #019df4; }
+        .bg-movistar { background-color: #019df4; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700 antialiased">
+
+    <!-- NAV SIMPLE -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 py-4">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-black text-2xl text-movistar tracking-tighter">Movistar <span class="text-gray-500 font-medium">Fibra</span></a>
+            <a href="index.html" class="text-sm font-bold text-gray-500 hover:text-movistar">← Volver al Inicio</a>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO LEGAL -->
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
+            
+            <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-2">Términos y Condiciones</h1>
+            <p class="text-gray-400 text-sm mb-8">Última actualización: Marzo 2025</p>
+
+            <div class="space-y-8 text-justify leading-relaxed">
+
+                <!-- SECCIÓN 1: IDENTIFICACIÓN -->
+                <section>
+                    <h2 class="text-xl font-bold text-movistar mb-3">1. Identificación del Distribuidor</h2>
+                    <p>
+                        Este sitio web es operado y administrado por <strong>JOHN FREDDY PIZA</strong> (en adelante, "EL DISTRIBUIDOR"), quien actúa en calidad de <strong>Distribuidor Autorizado</strong> e intermediario comercial para la venta de servicios de telecomunicaciones de Movistar Colombia.
+                    </p>
+                    <p class="mt-2 p-4 bg-blue-50 rounded-lg border border-blue-100 text-sm">
+                        <strong>Nota Aclaratoria:</strong> Este portal tiene como fin único la captación y gestión comercial de clientes potenciales. La prestación final del servicio, facturación y soporte técnico son responsabilidad exclusiva de <strong>Colombia Telecomunicaciones S.A. ESP (Movistar)</strong>.
+                    </p>
+                </section>
+
+                <!-- SECCIÓN 2: DATOS Y WHATSAPP -->
+                <section>
+                    <h2 class="text-xl font-bold text-movistar mb-3">2. Política de Contacto y WhatsApp</h2>
+                    <p>
+                        Al hacer clic en los botones de "Verificar Cobertura", "Pedir por WhatsApp" o al diligenciar los formularios de contacto en este sitio, el usuario autoriza expresamente a <strong>JOHN FREDDY PIZA</strong> para que lo contacte a través de la aplicación WhatsApp o vía telefónica.
+                    </p>
+                    <ul class="list-disc pl-5 mt-3 space-y-2">
+                        <li>El número oficial de contacto y gestión comercial será: <strong>+57 300 000 0000</strong>.</li>
+                        <li>Los datos proporcionados (barrio y número de contacto) se usarán estrictamente para validar la viabilidad técnica de la instalación de Fibra Óptica.</li>
+                    </ul>
+                </section>
+
+                <!-- SECCIÓN 3: PRECIOS -->
+                <section>
+                    <h2 class="text-xl font-bold text-movistar mb-3">3. Vigencia de Ofertas y Precios 2025</h2>
+                    <p>
+                        Las tarifas mostradas (ej. $89.990 por 700 Megas) corresponden a la oferta comercial vigente para el año 2025 en <strong>Estrato 3</strong>.
+                    </p>
+                    <p class="mt-2">
+                        <strong>Condiciones de la oferta:</strong>
+                    </p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1 text-sm">
+                        <li>Los precios incluyen IVA para el estrato indicado. Otros estratos pueden tener variaciones en impuestos.</li>
+                        <li>La promoción "Compra Hoy y Paga el Próximo Mes" está sujeta al ciclo de facturación y aprobación de crédito de Movistar.</li>
+                        <li>La velocidad simétrica (misma velocidad de subida y bajada) depende de la factibilidad técnica en la zona del cliente.</li>
+                    </ul>
+                </section>
+
+                <!-- SECCIÓN 4: INSTALACIÓN -->
+                <section>
+                    <h2 class="text-xl font-bold text-movistar mb-3">4. Cobertura e Instalación</h2>
+                    <p>
+                        La solicitud de servicio a través de este sitio web <strong>no garantiza</strong> la instalación inmediata. Toda venta está sujeta a:
+                    </p>
+                    <ol class="list-decimal pl-5 mt-2 space-y-1">
+                        <li>Validación de cobertura exacta en la dirección del predio.</li>
+                        <li>Disponibilidad de puertos en la caja de dispersión (NAP) del sector.</li>
+                        <li>Aprobación del estudio de crédito realizado por Movistar Colombia.</li>
+                    </ol>
+                </section>
+
+                <!-- SECCIÓN 5: PQR Y SOPORTE -->
+                <section>
+                    <h2 class="text-xl font-bold text-movistar mb-3">5. Canales de Atención (PQR)</h2>
+                    <p>
+                        Para Peticiones, Quejas, Reclamos o Recursos (PQR) relacionados con fallas técnicas, facturación o cancelaciones una vez instalado el servicio, el usuario debe comunicarse directamente con los canales oficiales de Movistar Colombia, ya que <strong>JOHN FREDDY PIZA</strong> actúa únicamente como agente comercial de venta nueva.
+                    </p>
+                    <div class="mt-4 flex gap-4 flex-wrap">
+                        <a href="https://www.movistar.com.co/atencion-al-cliente" target="_blank" class="text-movistar font-bold underline">Centro de Ayuda Oficial</a>
+                        <span class="text-gray-400">|</span>
+                        <span class="font-bold">Línea Nacional: 01 8000 930 930</span>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- FIRMA DIGITAL -->
+            <div class="mt-12 pt-8 border-t border-gray-100 text-center">
+                <p class="text-sm text-gray-400 mb-2">Representante Comercial Autorizado</p>
+                <p class="font-black text-xl text-gray-900">John Freddy Piza</p>
+                <p class="text-movistar font-bold">Distribuidor Fibra Movistar</p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button onclick="window.close()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-3 px-8 rounded-xl transition">
+                    Cerrar Documento
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
