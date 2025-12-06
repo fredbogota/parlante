@@ -44,42 +44,45 @@
         .hover-lift { transition: transform 0.2s; }
         .hover-lift:hover { transform: translateY(-3px); }
         .table-responsive { display: block; width: 100%; overflow-x: auto; }
-        
-        /* Estilos para el Scroll del Modal de Términos */
         .legal-scroll { max-height: 60vh; overflow-y: auto; }
+        /* Scrollbar styling */
         .legal-scroll::-webkit-scrollbar { width: 8px; }
         .legal-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
         .legal-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
-        .legal-scroll::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- NAVBAR CORREGIDO -->
+    <!-- NAVBAR OPTIMIZADO SEO -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- 1. Logo ARREGLADO (Unido y Sólido) -->
-            <a href="index.html" class="flex items-center gap-1 group">
-                <!-- Usamos texto sólido unido -->
+            <!-- Logo Sólido -->
+            <a href="/" class="flex items-center gap-1 group">
                 <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
                 <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
 
-            <!-- 2. MENÚ DE NAVEGACIÓN (Enlaces Corregidos) -->
+            <!-- MENÚ CORREGIDO (URLs Limpias + Target Blank) -->
             <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
-                <a href="index.html" class="text-movistar">Inicio</a>
-                <!-- Enlace corregido a Internet Hogar -->
-                <a href="internet-hogar.html" class="hover:text-movistar transition">Internet Hogar</a>
-                <a href="planes-moviles.html" class="hover:text-movistar transition flex items-center gap-1">
+                <a href="/" class="text-movistar">Inicio</a>
+                
+                <!-- URL Limpia: /internet-hogar/ -->
+                <a href="/internet-hogar/" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
+                
+                <!-- Keyword SEO: "Planes Móviles 5G" -->
+                <a href="/planes-moviles/" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
                     <span class="bg-green-100 text-green-700 text-[10px] px-1.5 rounded">5G</span>
-                    Móviles
+                    Planes Móviles
                 </a>
-                <a href="blog.html" class="hover:text-movistar transition">Blog</a>
-                <a href="pqr.html" class="hover:text-movistar transition">PQR / Ayuda</a>
+                
+                <a href="/blog/" target="_blank" class="hover:text-movistar transition">Blog</a>
+                
+                <!-- Enlace PQR Corregido -->
+                <a href="/pqr/" target="_blank" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
 
-            <!-- 3. Formulario Rápido -->
+            <!-- Formulario Rápido -->
             <div class="hidden md:flex items-center gap-2">
                 <form onsubmit="handleStickySubmit(event)" class="flex bg-gray-100 rounded-full p-1 pl-4 border focus-within:border-movistar transition">
                     <input type="tel" placeholder="Tu celular..." class="bg-transparent border-none outline-none text-sm w-32 placeholder-gray-500" required>
@@ -89,26 +92,25 @@
                 </form>
             </div>
             
-            <!-- 4. Botón Menú Móvil -->
+            <!-- Botón Móvil -->
             <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 focus:outline-none p-2">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <!-- Menú Móvil Desplegable -->
+        <!-- Menú Móvil -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
-            <a href="index.html" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
-            <a href="internet-hogar.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
-            <a href="planes-moviles.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles</a>
-            <a href="blog.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog de Noticias</a>
-            <a href="pqr.html" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
+            <a href="/" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
+            <a href="/internet-hogar/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
+            <a href="/planes-moviles/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
+            <a href="/blog/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
+            <a href="/pqr/" target="_blank" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <header class="hero-bg pt-12 pb-20 lg:pt-24 lg:pb-32 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-            <!-- Texto Principal -->
             <div class="text-center lg:text-left">
                 <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-movistar text-xs font-bold tracking-wide mb-6 border border-blue-100">
                     NUEVOS PRECIOS 2025 🇨🇴
@@ -119,7 +121,6 @@
                 <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
                     Navega a <strong>900 Megas Simétricas</strong>. Conexión estable para trabajar, estudiar y jugar. Incluye Disney+ hoy mismo.
                 </p>
-                
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <button onclick="openModal()" class="bg-green-500 hover:bg-green-600 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-lg hover-lift transition flex items-center justify-center gap-2">
                         <span>👉</span> Verificar Cobertura
@@ -129,8 +130,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Visual (Desktop) -->
             <div class="hidden lg:block relative">
                 <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
                 <div class="relative bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-500">
@@ -141,7 +140,6 @@
                         </div>
                         <div class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-lg text-sm">-50% DCTO</div>
                     </div>
-                    
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-movistar">✓</span>
@@ -152,7 +150,6 @@
                             <span class="text-gray-600 font-medium">Disney+ Incluido</span>
                         </div>
                     </div>
-                    
                     <div class="border-t pt-6 flex items-center justify-between">
                         <div>
                             <span class="block text-xs text-gray-400 line-through">$130.000</span>
@@ -165,14 +162,13 @@
         </div>
     </header>
 
-    <!-- SECCIÓN TABLA DE PRECIOS -->
+    <!-- SECCIÓN TABLA -->
     <section id="planes" class="py-16 bg-white relative">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Elige tu Plan de Fibra</h2>
                 <p class="text-gray-500 max-w-2xl mx-auto">Comparamos las mejores ofertas disponibles en tu zona.</p>
             </div>
-
             <div class="overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white">
                 <div class="table-responsive">
                     <table class="w-full text-left border-collapse">
@@ -187,9 +183,7 @@
                         </thead>
                         <tbody class="divide-y divide-gray-100">
                             <tr class="group hover:bg-blue-50 transition duration-150">
-                                <td class="p-5">
-                                    <span class="font-bold text-gray-900 block">Básico Hogar</span>
-                                </td>
+                                <td class="p-5"><span class="font-bold text-gray-900 block">Básico Hogar</span></td>
                                 <td class="p-5 text-movistar font-bold text-lg">500 Megas</td>
                                 <td class="p-5 text-sm text-gray-600">Disney+ Estándar</td>
                                 <td class="p-5 font-bold text-gray-900 text-xl">$79.990</td>
@@ -203,14 +197,10 @@
                                 <td class="p-5 text-movistar font-bold text-lg">700 Megas</td>
                                 <td class="p-5 text-sm text-gray-600">Disney+</td>
                                 <td class="p-5 font-bold text-gray-900 text-xl">$89.990</td>
-                                <td class="p-5 text-right">
-                                    <button onclick="selectPlan('Fibra 700 Destacado', '89.990')" class="bg-movistar text-white text-sm font-bold py-2 px-4 rounded shadow hover:bg-movistar-dark transition">Contratar</button>
-                                </td>
+                                <td class="p-5 text-right"><button onclick="selectPlan('Fibra 700 Destacado', '89.990')" class="bg-movistar text-white text-sm font-bold py-2 px-4 rounded shadow hover:bg-movistar-dark transition">Contratar</button></td>
                             </tr>
                             <tr class="group hover:bg-blue-50 transition duration-150">
-                                <td class="p-5">
-                                    <span class="font-bold text-gray-900 block">Gamer Pro</span>
-                                </td>
+                                <td class="p-5"><span class="font-bold text-gray-900 block">Gamer Pro</span></td>
                                 <td class="p-5 text-movistar font-bold text-lg">900 Megas</td>
                                 <td class="p-5 text-sm text-gray-600">Full Combo + Win Sports</td>
                                 <td class="p-5 font-bold text-gray-900 text-xl">$99.990</td>
@@ -223,171 +213,112 @@
         </div>
     </section>
 
-    <!-- FOOTER CON ENLACES LEGALES ACTIVOS -->
+    <!-- FOOTER -->
     <footer class="bg-gray-50 border-t border-gray-200 py-12 mt-12">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-gray-400 text-sm mb-4">© 2025 FibraHogar. Distribuidor Autorizado.</p>
             <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-                <!-- Botón que activa el Modal Legal -->
                 <button onclick="openTermsModal()" class="hover:text-movistar underline cursor-pointer">Términos y Condiciones</button>
                 <a href="#" class="hover:text-movistar">Política de Privacidad</a>
-                <a href="#" class="hover:text-movistar">Mapa del Sitio</a>
+                <a href="/pqr/" target="_blank" class="hover:text-movistar">Radicar PQR</a>
             </div>
         </div>
     </footer>
 
-    <!-- STICKY BOTTOM BAR (Móvil) -->
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-3 md:hidden z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-        <button onclick="openModal()" class="flex-1 bg-movistar text-white font-bold py-3 px-4 rounded-lg shadow active:bg-blue-700 transition">
-            Ver Cobertura
-        </button>
+    <!-- STICKY BOTTOM -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-3 md:hidden z-40 flex gap-3 shadow-lg">
+        <button onclick="openModal()" class="flex-1 bg-movistar text-white font-bold py-3 px-4 rounded-lg shadow active:bg-blue-700 transition">Ver Cobertura</button>
         <a href="https://wa.me/573000000000" class="flex-none bg-green-500 text-white w-12 flex items-center justify-center rounded-lg shadow active:bg-green-600 transition">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         </a>
     </div>
 
-    <!-- MODAL DE COBERTURA -->
+    <!-- MODALES -->
     <div id="coverageModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative transform transition-all">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold leading-none">&times;</button>
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 text-3xl">&times;</button>
             <div class="p-8">
-                <!-- Paso 1 -->
                 <div id="modalStep1">
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">📍</div>
-                        <h3 class="text-2xl font-bold text-gray-900">Verificar Cobertura</h3>
-                        <p class="text-gray-500 mt-2">Ingresa tu barrio para consultar disponibilidad en tiempo real.</p>
+                        <h3 class="text-2xl font-bold">Verificar Cobertura</h3>
                     </div>
-                    
                     <form onsubmit="checkCoverage(event)" class="space-y-4">
-                        <div>
-                            <input type="text" id="inputBarrio" required 
-                                class="w-full px-4 py-4 rounded-xl bg-gray-50 border-2 border-gray-100 focus:border-movistar focus:ring-0 outline-none transition font-medium text-lg" 
-                                placeholder="Ej: Laureles, Chapinero...">
-                        </div>
-                        <button type="submit" class="w-full bg-movistar hover:bg-movistar-dark text-white font-bold py-4 rounded-xl shadow-lg transition transform active:scale-95">
-                            Consultar Ahora
-                        </button>
+                        <input type="text" id="inputBarrio" required class="w-full px-4 py-4 rounded-xl bg-gray-50 border-2" placeholder="Barrio...">
+                        <button type="submit" class="w-full bg-movistar text-white font-bold py-4 rounded-xl shadow-lg">Consultar</button>
                     </form>
                 </div>
-                <!-- Pasos 2 y 3 (Ocultos) -->
                 <div id="modalStep2" class="hidden text-center py-10">
                     <div class="animate-spin rounded-full h-16 w-16 border-4 border-gray-200 border-t-movistar mx-auto mb-6"></div>
-                    <h3 class="font-bold text-xl text-gray-800">Verificando Fibra...</h3>
+                    <h3 class="font-bold text-xl">Verificando...</h3>
                 </div>
                 <div id="modalStep3" class="hidden text-center">
-                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl animate-bounce">✅</div>
-                    <h3 class="text-2xl font-black text-gray-900 mb-2">¡SÍ HAY COBERTURA!</h3>
-                    <p class="text-gray-600 mb-8 text-lg">Encontramos Fibra en <span id="displayBarrio" class="font-bold text-movistar">tu zona</span>.</p>
-                    <button onclick="finishLead()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-xl transition">Agendar Instalación</button>
+                    <div class="text-4xl mb-4">✅</div>
+                    <h3 class="text-2xl font-black mb-2">¡SÍ HAY COBERTURA!</h3>
+                    <p class="mb-8">En <span id="displayBarrio" class="font-bold text-movistar">tu zona</span>.</p>
+                    <button onclick="finishLead()" class="w-full bg-green-500 text-white font-bold py-4 rounded-xl">Agendar Instalación</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MODAL DE TÉRMINOS Y CONDICIONES (CONECTADO AL FOOTER) -->
     <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-80 z-[70] hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col">
             <div class="p-4 border-b flex justify-between items-center bg-gray-50 rounded-t-xl">
-                <h3 class="font-bold text-lg text-gray-900">Términos y Condiciones del Servicio</h3>
-                <button onclick="closeTermsModal()" class="text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
+                <h3 class="font-bold text-lg">Términos y Condiciones</h3>
+                <button onclick="closeTermsModal()" class="text-gray-400 text-2xl">&times;</button>
             </div>
             <div class="p-6 legal-scroll text-sm text-gray-600 leading-relaxed text-justify">
-                <p class="mb-4"><strong>1. CONDICIONES GENERALES:</strong> Las ofertas comerciales presentadas en este sitio web (FibraHogar.co) son promocionadas en calidad de Distribuidor Autorizado de Movistar Colombia. Los precios, velocidades y beneficios están sujetos a verificación de cobertura técnica, disponibilidad de puertos y estrato socioeconómico del predio.</p>
-                
-                <p class="mb-4"><strong>2. TARIFAS Y PRECIOS:</strong> Los precios mostrados incluyen IVA e impuestos aplicables para Estrato 3. Para estratos 1 y 2, o estratos 4, 5 y 6, las tarifas pueden variar según la regulación vigente y subsidios aplicables. El descuento del 50% en los primeros meses (si aplica en la oferta) está sujeto a permanencia mínima o condiciones específicas del plan contratado.</p>
-                
-                <p class="mb-4"><strong>3. INSTALACIÓN:</strong> La instalación del servicio está sujeta a viabilidad técnica. En la mayoría de los casos para Estrato 3 en adelante, la instalación no tiene costo, salvo condiciones especiales de la zona que requieran obra civil adicional.</p>
-                
-                <p class="mb-4"><strong>4. VELOCIDAD SIMÉTRICA:</strong> La velocidad simétrica (misma velocidad de subida y bajada) está garantizada únicamente en zonas con cobertura de Fibra Óptica directa al hogar (FTTH). En zonas de cobre o tecnologías híbridas, la velocidad de subida será menor.</p>
-
-                <p class="mb-4"><strong>5. CLÁUSULA DE PERMANENCIA:</strong> Algunos planes promocionales que incluyen subsidio en el costo de conexión o equipos (router) pueden incluir una cláusula de permanencia mínima de 12 meses. El retiro anticipado generará el cobro proporcional del valor del cargo de conexión subsidiado.</p>
-                
-                <p class="mb-4"><strong>6. TRATAMIENTO DE DATOS:</strong> Al diligenciar los formularios de contacto o WhatsApp, usted autoriza a FibraHogar.co y a Movistar a contactarlo con fines comerciales para la venta del servicio solicitado.</p>
+                <p class="mb-4"><strong>1. CONDICIONES:</strong> Ofertas sujetas a cobertura y estrato.</p>
+                <p class="mb-4"><strong>2. TARIFAS:</strong> Incluyen IVA estrato 3. Sujeto a cambios 2025.</p>
+                <p class="mb-4"><strong>3. PERMANENCIA:</strong> Planes con equipos subsidiados pueden tener permanencia de 12 meses.</p>
             </div>
-            <div class="p-4 border-t bg-gray-50 rounded-b-xl text-right">
-                <button onclick="closeTermsModal()" class="bg-movistar text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-600 transition">Entendido</button>
+            <div class="p-4 border-t bg-gray-50 text-right">
+                <button onclick="closeTermsModal()" class="bg-movistar text-white px-6 py-2 rounded-lg font-bold">Entendido</button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
     <script>
-        const WHATSAPP_NUMBER = "573000000000"; // Tu número real
+        const WHATSAPP_NUMBER = "573000000000"; 
         let STATE = { barrio: '' };
-
-        // Menú Móvil
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        }
-
-        // Lógica Modal Términos (LEGALES)
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
         function openTermsModal() { document.getElementById('termsModal').classList.remove('hidden'); }
         function closeTermsModal() { document.getElementById('termsModal').classList.add('hidden'); }
-
-        // Lógica Modal Cobertura (LEADS)
         function openModal() {
-            const modal = document.getElementById('coverageModal');
-            modal.classList.remove('hidden');
-            setTimeout(() => modal.firstElementChild.classList.remove('scale-95', 'opacity-0'), 10);
+            document.getElementById('coverageModal').classList.remove('hidden');
         }
-
         function closeModal() {
-            const modal = document.getElementById('coverageModal');
-            modal.firstElementChild.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.getElementById('modalStep1').classList.remove('hidden');
-                document.getElementById('modalStep2').classList.add('hidden');
-                document.getElementById('modalStep3').classList.add('hidden');
-            }, 200);
+            document.getElementById('coverageModal').classList.add('hidden');
+            document.getElementById('modalStep1').classList.remove('hidden');
+            document.getElementById('modalStep2').classList.add('hidden');
+            document.getElementById('modalStep3').classList.add('hidden');
         }
-
         function checkCoverage(e) {
             e.preventDefault();
-            const input = document.getElementById('inputBarrio');
-            if(!input.value) return;
-            
-            STATE.barrio = input.value;
-            
+            STATE.barrio = document.getElementById('inputBarrio').value;
             document.getElementById('modalStep1').classList.add('hidden');
             document.getElementById('modalStep2').classList.remove('hidden');
-            
             setTimeout(() => {
                 document.getElementById('modalStep2').classList.add('hidden');
                 document.getElementById('modalStep3').classList.remove('hidden');
                 document.getElementById('displayBarrio').innerText = STATE.barrio;
             }, 1500);
         }
-
         function finishLead() {
-            const msg = `👋 Hola! Verifiqué cobertura en el barrio *${STATE.barrio}* en su web y dice DISPONIBLE. Quisiera agendar la instalación de la Fibra Óptica Movistar.`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, cobertura en *${STATE.barrio}* verificada.`)}`, '_blank');
             closeModal();
         }
-
-        function selectPlan(planName, price) {
-            const msg = `👋 Hola! Me interesa el plan *${planName}* de $${price} que vi en la página web. ¿Qué documentos necesito?`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+        function selectPlan(n, p) {
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, me interesa el plan *${n}* de $${p}.`)}`, '_blank');
         }
-
         function handleStickySubmit(e) {
             e.preventDefault();
-            const input = e.target.querySelector('input');
-            const phone = input.value;
-            if(!phone) return;
-
-            const msg = `📞 Hola! Dejé mi número *${phone}* en la página web para que me llamen urgente. Estoy interesado en un plan.`;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-            input.value = ''; 
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, llámenme al *${e.target.querySelector('input').value}*.`)}`, '_blank');
         }
-
-        // Cerrar modales con click afuera
         window.onclick = function(event) {
-            const modalCov = document.getElementById('coverageModal');
-            const modalTerms = document.getElementById('termsModal');
-            if (event.target == modalCov) closeModal();
-            if (event.target == modalTerms) closeTermsModal();
+            if (event.target == document.getElementById('coverageModal')) closeModal();
+            if (event.target == document.getElementById('termsModal')) closeTermsModal();
         }
     </script>
 </body>
