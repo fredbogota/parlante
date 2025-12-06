@@ -1,555 +1,265 @@
 <!DOCTYPE html>
-<html lang="es-CO">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- --- SEO TÉCNICO AVANZADO PARA BLOG --- -->
-    <!-- Título optimizado con Palabras Clave Principales -->
-    <title>Blog Internet Movistar Colombia | Consejos Fibra Óptica, Planes y Entretenimiento</title>
-    
-    <!-- Meta Descripción con Palabras Clave Secundarias y Llamado a la Acción -->
-    <meta name="description" content="Descubre todo sobre los planes de internet fibra óptica Movistar. Consejos para mejorar tu velocidad, estrenos de Disney+, cómo ver Win Sports+ online y ofertas exclusivas en Colombia.">
-    
-    <!-- Palabras Clave -->
-    <meta name="keywords" content="internet movistar, fibra optica movistar, planes movistar, contratar movistar, velocidad internet, cobertura fibra, win sports online, disney plus colombia">
-    
-    <!-- Canonical apuntando a la URL limpia (sin .html) -->
-    <link rel="canonical" href="https://www.fibrahogar.co/blog" />
+    <!-- SEO TÉCNICO AVANZADO PARA BLOG -->
+    <title>Blog Internet Movistar Colombia | Guías de Pago y Consejos 2025</title>
+    <meta name="description" content="Noticias y tutoriales sobre Movistar Hogar. Aprende cómo pagar por PSE, diferencias entre Fibra Óptica y Cobre, y resuelve tus dudas frecuentes sobre el servicio.">
+    <link rel="canonical" href="https://www.fibrahogar.co/blog.html" />
     <meta name="theme-color" content="#019df4">
-
-    <!-- FAVICON (Usamos un SVG de la M de Movistar para asegurar visibilidad) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
-    <!-- Open Graph (Redes Sociales) -->
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="Blog Movistar: Expertos en Fibra y Entretenimiento" />
-    <meta property="og:description" content="¿Buscas el mejor plan para streaming y juegos? Lee nuestros consejos sobre fibra óptica." />
-    <!-- Reemplazar con URL real de imagen destacada -->
-    <meta property="og:image" content="https://www.fibrahogar.co/images/blog-share.jpg" />
-
-    <!-- Schema.org para Artículos de Blog (SEO Avanzado) -->
+    <!-- SCHEMA MARKUP: Blog + FAQ (Combo SEO Potente) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      "name": "Blog de Fibra Óptica Movistar Colombia",
-      "description": "Artículos sobre tecnología, entretenimiento y planes de internet hogar.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Movistar Partner",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.fibrahogar.co/images/logo.png"
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Blog FibraHogar Movistar",
+          "description": "Consejos y guías sobre servicios de telecomunicaciones Movistar en Colombia.",
+          "url": "https://www.fibrahogar.co/blog.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Distribuidor Movistar",
+            "logo": { "@type": "ImageObject", "url": "https://www.fibrahogar.co/logo-movistar.png" }
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "¿Cómo puedo pagar mi factura Movistar Hogar en línea?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puedes pagar fácilmente a través de PSE usando la App Mi Movistar o directamente en la página web de Movistar con tu número de cuenta."
+            }
+          }, {
+            "@type": "Question",
+            "name": "¿Cuál es la diferencia entre Fibra Óptica y Cobre?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La fibra óptica viaja a través de luz, permitiendo velocidades simétricas (misma subida y bajada) y mayor estabilidad. El cobre es tecnología antigua que sufre interferencias."
+            }
+          }, {
+            "@type": "Question",
+            "name": "¿Qué hago si mi internet está lento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reinicia tu módem desconectándolo por 10 segundos. Si persiste, verifica si tienes muchos dispositivos conectados o realiza un test de velocidad conectado por cable."
+            }
+          }]
         }
-      }
-    }
+    ]
     </script>
 
-    <!-- Google Fonts & Iconos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- ESTILOS TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- ESTILOS (Heredados de index.html + Nuevos para Blog) -->
+    
     <style>
-        /* * ==========================================
-         * DESIGN TOKENS & VARIABLES
-         * ==========================================
-         */
-        :root {
-            --primary: #019df4;
-            --primary-dark: #007bbd;
-            --secondary: #0b274f;     /* Dark Blue */
-            --accent: #E63700;        /* Movistar Orange/Win */
-            --success: #28a745;
-
-            --text-main: #333333;
-            --text-light: #5f6368;
-            --bg-body: #f8faff;
-            --light-blue: #e8f0fe;
-            --white: #ffffff;
-            --radius: 12px;
-            --header-h: 80px; /* Ajustado a 80px para consistencia con el Home */
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Roboto', sans-serif; color: var(--text-main); background-color: var(--bg-body); padding-top: var(--header-h); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; transition: 0.2s; }
-        
-        /* HEADER COHERENTE CON INDEX */
-        .main-header {
-            position: fixed; top: 0; left: 0; width: 100%; height: var(--header-h);
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.04); z-index: 1000; display: flex; align-items: center;
-        }
-        .container { width: 92%; max-width: 1200px; margin: 0 auto; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        
-        /* LOGO INTERACTIVO Y VIBRANTE */
-        .logo { 
-            display: flex; align-items: center; text-decoration: none; 
-            gap: 5px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            padding: 5px; 
-            border-radius: 8px;
-        }
-
-        .logo-icon-wrapper {
-            position: relative;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon-wrapper::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: 0.5;
-            filter: blur(10px);
-            transition: opacity 0.3s ease;
-        }
-        
-        .logo-icon {
-            transform: scale(1.1);
-            color: var(--white);
-            z-index: 1;
-            background: linear-gradient(135deg, var(--primary) 0%, #00d2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px rgba(1, 157, 244, 0.5));
-            transition: transform 0.3s ease;
-        }
-        
-        .logo:hover .logo-icon {
-            transform: scale(1.3) rotate(-10deg);
-        }
-
-        .logo-text {
-            color: var(--secondary);
-            font-weight: 900;
-            font-size: 1.3rem;
-            letter-spacing: -0.5px;
-            transition: color 0.3s ease;
-        }
-        
-        .logo:hover .logo-text {
-            color: var(--primary);
-        }
-        
-        .logo-icon-wrapper::before {
-             animation: pulse-glow 3s infinite alternate;
-        }
-
-        @keyframes pulse-glow {
-            from { opacity: 0.5; transform: scale(0.9); }
-            to { opacity: 0.8; transform: scale(1.1); }
-        }
-        /* FIN LOGO INTERACTIVO */
-        
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { font-weight: 500; color: var(--secondary); font-size: 0.95rem; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        .btn-header { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 10px rgba(1, 157, 244, 0.3); }
-        .btn-header:hover { background: var(--primary-dark); transform: translateY(-1px); }
-        .menu-toggle { display: none; background: none; color: var(--secondary); border: none; cursor: pointer; }
-
-        /* BLOG HERO DINÁMICO */
-        .blog-hero {
-            position: relative; color: white; padding: 100px 0; text-align: center; margin-bottom: 60px; overflow: hidden; background: #000;
-        }
-        .hero-bg-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: slideShow 15s infinite; }
-        
-        .hero-slide:nth-child(1) { 
-            background-image: url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1600'); 
-            animation-delay: 0s; 
-        }
-        .hero-slide:nth-child(2) { 
-            background-image: url('https://images.unsplash.com/photo-1624880357913-a8539238245b?q=80&w=1600'); 
-            animation-delay: 5s; 
-        }
-        .hero-slide:nth-child(3) { 
-            background-image: url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1600'); 
-            animation-delay: 10s; 
-        }
-
-        @keyframes slideShow { 0% { opacity: 0; transform: scale(1); } 5% { opacity: 1; } 33% { opacity: 1; transform: scale(1.1); } 38% { opacity: 0; } 100% { opacity: 0; } }
-
-        .hero-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(1, 157, 244, 0.85) 0%, rgba(11, 39, 79, 0.9) 100%);
-            z-index: 2;
-        }
-
-        .blog-hero .container { position: relative; z-index: 3; }
-        .blog-hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .blog-hero p { font-size: 1.3rem; opacity: 1; max-width: 700px; margin: 0 auto; text-shadow: 0 1px 4px rgba(0,0,0,0.3); }
-        .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin-bottom: 20px; display: block; font-weight: 500; }
-
-        .brand-badges { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
-        .brand-badge {
-            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 10px 25px; border-radius: 50px;
-            font-weight: 700; display: flex; align-items: center; gap: 10px;
-            border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            animation: floatBadge 3s ease-in-out infinite; font-size: 1rem;
-        }
-        
-        .brand-badge:nth-child(1) { border-color: #E50914; animation-delay: 0s; }
-        .brand-badge:nth-child(2) { border-color: #E63700; animation-delay: 1s; }
-        .brand-badge:nth-child(3) { border-color: #113CCF; animation-delay: 2s; }
-
-        @keyframes floatBadge {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* LAYOUT BLOG */
-        .blog-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 80px; }
-        
-        /* Artículos */
-        .articles-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-        
-        .article-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; display: flex; flex-direction: column; border: 1px solid #eee; }
-        .article-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
-        .article-img { height: 250px; width: 100%; background: #f0f0f0; position: relative; overflow: hidden; }
-        
-        .article-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .article-card:hover .article-img img { transform: scale(1.05); }
-
-        .article-body { padding: 30px; }
-        .article-tag { background: var(--light-blue); color: var(--primary); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: inline-block; }
-        .article-title { font-size: 1.6rem; font-weight: 800; color: var(--secondary); margin-bottom: 15px; line-height: 1.3; }
-        .article-excerpt { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
-        .read-more { color: var(--primary); font-weight: 700; display: flex; align-items: center; gap: 5px; }
-
-        /* SIDEBAR (Barra lateral para SEO Long Tail) */
-        .sidebar { position: sticky; top: 100px; height: fit-content; }
-        
-        .sidebar-widget { background: white; padding: 25px; border-radius: var(--radius); box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border: 1px solid #eee; }
-        .widget-title { font-size: 1.2rem; font-weight: 800; color: var(--secondary); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--light-blue); }
-        
-        .popular-posts li { margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 15px; }
-        .popular-posts a { font-weight: 500; color: var(--text-main); font-size: 0.95rem; display: block; }
-        .popular-posts a:hover { color: var(--primary); }
-        .post-meta { font-size: 0.8rem; color: #999; margin-top: 5px; display: block; }
-
-        .offer-card { background: var(--secondary); color: white; padding: 25px; border-radius: var(--radius); text-align: center; }
-        .offer-price { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin: 10px 0; }
-        .btn-offer { background: var(--accent); color: white; padding: 12px 20px; border-radius: 50px; font-weight: 700; display: inline-block; width: 100%; margin-top: 15px; }
-
-        /* SEO Footer Section */
-        .seo-footer { background: #fff; padding: 60px 0; margin-top: 40px; border-top: 1px solid #eee; }
-        .seo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .seo-column h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 15px; }
-        .seo-column ul li { margin-bottom: 8px; color: var(--text-light); font-size: 0.9rem; }
-        .seo-column ul li:before { content: "•"; color: var(--primary); margin-right: 8px; }
-        
-        /* Enlaces en el SEO Footer */
-        .seo-column ul li a { color: var(--text-light); transition: color 0.2s; }
-        .seo-column ul li a:hover { color: var(--primary); text-decoration: underline; }
-
-        /* Footer Main */
-        .main-footer { background-color: var(--secondary); color: white; padding: 40px 0; text-align: center; font-size: 0.9rem; margin-top: 0; }
-
-        @media (max-width: 900px) {
-            .blog-layout { grid-template-columns: 1fr; }
-            .sidebar { display: none; /* Opcional: ocultar sidebar en móvil o mover abajo */ }
-            .blog-hero h1 { font-size: 2.2rem; }
-            .nav-links { 
-                display: none; position: absolute; top: 80px; left: 0; width: 100%; 
-                background: white; flex-direction: column; padding: 20px; 
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1); 
-            }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-        }
+        body { font-family: 'Roboto', sans-serif; }
+        .text-movistar { color: #019df4; }
+        .bg-movistar { background-color: #019df4; }
+        .bg-movistar-dark { background-color: #007bb5; }
+        .hero-bg-blog { background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%); }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- Header -->
-    <header class="main-header">
-        <div class="container header-content">
-            <!-- LOGO: Ícono de Rayo de Fibra animado + Texto de marca (Interactivo) -->
-            <a href="index.html" class="logo">
-                <span class="logo-icon-wrapper">
-                    <!-- El ícono se renderiza con el gradiente de fondo, simulando el logo oficial -->
-                    <i data-lucide="zap" class="logo-icon" size="28"></i>
-                </span>
-                <span class="logo-text">MOVISTAR</span>
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-1 group">
+                <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
+                <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
 
-            <button class="menu-toggle" id="menuBtn"><i data-lucide="menu"></i></button>
-            <nav class="nav-links" id="navMenu">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="index.html#planes" class="nav-link">Planes Fibra</a>
-                <a href="#" class="nav-link" style="color: var(--primary); font-weight: 700;">Blog</a>
-            </nav>
-            <a href="index.html" class="btn-header">Cotizar Ahora</a>
+            <!-- Menú Escritorio -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
+                <a href="index.html" class="hover:text-movistar transition">Inicio</a>
+                <a href="internet-hogar.html" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
+                <a href="planes-moviles.html" target="_blank" class="hover:text-movistar transition">Planes Móviles</a>
+                <a href="blog.html" class="text-movistar">Blog</a>
+                <a href="pqr.html" target="_blank" class="hover:text-movistar transition">PQR</a>
+            </div>
+
+            <!-- Botón Móvil -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 focus:outline-none p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
+            <a href="index.html" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
+            <a href="internet-hogar.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
+            <a href="planes-moviles.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles</a>
+            <a href="blog.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
+            <a href="pqr.html" class="block py-3 font-medium text-gray-600">PQR</a>
+        </div>
+    </nav>
+
+    <!-- HEADER DEL BLOG -->
+    <header class="hero-bg-blog py-16 text-center border-b border-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="bg-blue-100 text-movistar text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
+                CENTRO DE CONOCIMIENTO
+            </span>
+            <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-4">
+                Noticias y Ayuda <span class="text-movistar">Movistar</span>
+            </h1>
+            <p class="text-gray-500 text-lg">
+                Todo lo que necesitas saber sobre tu servicio, pagos y tecnología.
+            </p>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section Dinámico -->
-        <section class="blog-hero">
-            <!-- Slider Background -->
-            <div class="hero-bg-slider">
-                <div class="hero-slide"></div> <!-- Slide 1 -->
-                <div class="hero-slide"></div> <!-- Slide 2 -->
-                <div class="hero-slide"></div> <!-- Slide 3 -->
-            </div>
-            <!-- Overlay Azul -->
-            <div class="hero-overlay"></div>
+    <!-- CONTENIDO PRINCIPAL CON SIDEBAR -->
+    <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-3 gap-12">
+        
+        <!-- COLUMNA IZQUIERDA: ARTÍCULOS Y FAQs -->
+        <div class="lg:col-span-2 space-y-12">
             
-            <div class="container">
-                <span class="breadcrumb">Inicio > Blog > Internet y Entretenimiento</span>
-                <!-- H1 Optimizado con Palabras Clave Principales -->
-                <h1>Blog de Internet Movistar y Fibra Óptica</h1>
-                <p>Tu guía definitiva sobre <strong>planes de internet fibra óptica</strong>, trucos para mejorar tu WiFi, y los mejores estrenos.</p>
+            <!-- SECCIÓN DE ARTÍCULOS DESTACADOS -->
+            <div class="space-y-10">
+                <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-green-400 opacity-90"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white font-black text-3xl">PAGOS EN LÍNEA</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3 text-xs font-bold text-gray-400">
+                            <span class="text-green-600 bg-green-50 px-2 py-1 rounded">TUTORIALES</span>
+                            <span>• 5 MIN LECTURA</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-movistar transition">Cómo pagar tu factura Movistar Hogar por PSE</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Evita filas y cortes de servicio. Aprende a registrar tu factura y pagar seguramente desde tu banco.</p>
+                        <a href="#" class="inline-flex items-center font-bold text-movistar hover:underline">Leer Artículo <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                         <div class="absolute inset-0 bg-gradient-to-r from-gray-700 to-gray-900 opacity-90"></div>
+                         <div class="absolute inset-0 flex items-center justify-center text-white font-black text-3xl">FIBRA vs COBRE</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-3 text-xs font-bold text-gray-400">
+                            <span class="text-movistar bg-blue-50 px-2 py-1 rounded">TECNOLOGÍA</span>
+                            <span>• 3 MIN LECTURA</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-movistar transition">Internet Fibra Óptica vs Cobre: ¿Cuál es mejor?</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">Descubre por qué la Fibra Óptica es superior al cable coaxial antiguo y cómo saber qué tecnología tienes.</p>
+                        <a href="#" class="inline-flex items-center font-bold text-movistar hover:underline">Leer Artículo <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- SECCIÓN DE PREGUNTAS FRECUENTES (RECUPERADA Y MEJORADA) -->
+            <section class="bg-blue-50/50 rounded-2xl p-8 border border-blue-100">
+                <h3 class="text-2xl font-black text-gray-900 mb-6 flex items-center gap-2">
+                    <svg class="w-8 h-8 text-movistar" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Preguntas Frecuentes
+                </h3>
                 
-                <!-- Badges Animados de Contenido -->
-                <div class="brand-badges">
-                    <div class="brand-badge">
-                        <i data-lucide="play-circle" color="#E50914"></i> Netflix
-                    </div>
-                    <div class="brand-badge">
-                        <i data-lucide="trophy" color="#E63700"></i> Win Sports+
-                    </div>
-                    <div class="brand-badge">
-                        <i data-lucide="sparkles" color="#00d2ff"></i> Disney+
-                    </div>
+                <div class="space-y-4">
+                    <!-- Pregunta 1 -->
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-4 text-gray-800 hover:text-movistar transition">
+                            ¿Cómo puedo pagar mi factura en línea?
+                            <span class="transform group-open:rotate-180 transition-transform text-movistar">▼</span>
+                        </summary>
+                        <div class="px-4 pb-4 text-gray-600 leading-relaxed text-sm">
+                            Puedes realizar el pago a través de <strong>PSE</strong> ingresando a la página web de Movistar o descargando la App Mi Movistar. Solo necesitas tu número de referencia de pago o el número de línea.
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 2 -->
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-4 text-gray-800 hover:text-movistar transition">
+                            ¿Qué velocidad necesito para teletrabajo?
+                            <span class="transform group-open:rotate-180 transition-transform text-movistar">▼</span>
+                        </summary>
+                        <div class="px-4 pb-4 text-gray-600 leading-relaxed text-sm">
+                            Recomendamos planes desde <strong>500 Megas</strong>. Si tu trabajo requiere subir archivos pesados o videollamadas en 4K, la Fibra Óptica simétrica es ideal porque te da la misma velocidad de subida que de bajada.
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 3 -->
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-4 text-gray-800 hover:text-movistar transition">
+                            ¿Cómo reportar una falla técnica?
+                            <span class="transform group-open:rotate-180 transition-transform text-movistar">▼</span>
+                        </summary>
+                        <div class="px-4 pb-4 text-gray-600 leading-relaxed text-sm">
+                            Puedes usar nuestra sección de <a href="pqr.html" class="text-movistar underline">PQR y Soporte</a>, escribir al WhatsApp oficial o marcar al *611 desde tu celular Movistar.
+                        </div>
+                    </details>
+
+                    <!-- Pregunta 4 -->
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer p-4 text-gray-800 hover:text-movistar transition">
+                            ¿Los planes tienen cláusula de permanencia?
+                            <span class="transform group-open:rotate-180 transition-transform text-movistar">▼</span>
+                        </summary>
+                        <div class="px-4 pb-4 text-gray-600 leading-relaxed text-sm">
+                            Depende de la oferta vigente. Generalmente, si recibes beneficios como instalación gratis o meses con descuento, puede aplicar una permanencia de 12 meses. Verifica los términos al contratar.
+                        </div>
+                    </details>
                 </div>
-            </div>
-        </section>
-
-        <div class="container blog-layout">
-            
-            <!-- Columna Principal: Artículos -->
-            <section class="articles-grid">
-                
-                <!-- Artículo Destacado 1: Streaming / Netflix -->
-                <article class="article-card">
-                    <div class="article-img">
-                        <!-- USO DE IMG PARA MEJORAR SEO EN GOOGLE IMAGES -->
-                        <!-- Placeholder técnico para streaming -->
-                        <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&auto=format&fit=crop" 
-                             alt="Mejor velocidad de internet para ver Netflix 4K sin cortes" 
-                             width="800" height="500"
-                             loading="eager">
-                    </div>
-                    <div class="article-body">
-                        <span class="article-tag">Velocidad Internet</span>
-                        <!-- Título con Keyword de Contenido -->
-                        <h2 class="article-title">¿Cuál es la mejor velocidad de internet para ver Netflix sin cortes?</h2>
-                        <p class="article-excerpt">
-                            Si eres fanático del streaming, descubre por qué la fibra simétrica es tu mejor aliado. Descubre el <strong>mejor plan de internet para streaming</strong> y olvídate del 'buffering' con la fibra simétrica.
-                        </p>
-                        <a href="#" class="read-more">Leer Artículo <i data-lucide="arrow-right" size="16"></i></a>
-                    </div>
-                </article>
-
-                <!-- Artículo 2: Fibra vs Tradicional -->
-                <article class="article-card">
-                    <div class="article-img">
-                        <!-- Placeholder técnico para fibra óptica -->
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" 
-                             alt="Diferencia entre fibra óptica Movistar y cable de cobre tradicional" 
-                             width="800" height="500"
-                             loading="lazy">
-                    </div>
-                    <div class="article-body">
-                        <span class="article-tag">Tecnología</span>
-                        <!-- Título con Keyword Secundaria -->
-                        <h2 class="article-title">Ventajas de la fibra óptica vs. internet tradicional (Cobre)</h2>
-                        <p class="article-excerpt">
-                            No todos los internet son iguales. Analizamos por qué la <strong>fibra óptica Movistar</strong> ofrece menor latencia para juegos y mayor estabilidad que las conexiones antiguas.
-                        </p>
-                        <a href="#" class="read-more">Leer Artículo <i data-lucide="arrow-right" size="16"></i></a>
-                    </div>
-                </article>
-
-                <!-- Artículo 3: Win Sports & Disney+ -->
-                <article class="article-card">
-                    <div class="article-img">
-                        <!-- Placeholder técnico para entretenimiento/fútbol (URL Actualizada) -->
-                        <img src="https://images.unsplash.com/photo-1624880357913-a8539238245b?q=80&w=800&auto=format&fit=crop" 
-                             alt="Ver Win Sports Online y Disney Plus con Movistar Colombia" 
-                             width="800" height="500"
-                             loading="lazy">
-                    </div>
-                    <div class="article-body">
-                        <span class="article-tag">Entretenimiento</span>
-                        <!-- Título con Keywords Long Tail -->
-                        <h2 class="article-title">Cómo ver partidos de fútbol online con WIN SPORTS+ y estrenos de Disney+</h2>
-                        <p class="article-excerpt">
-                            Aprende <strong>cómo tener Win Sport+ con Movistar</strong> incluido en tu factura. Además, revisamos los estrenos de Disney+ este mes para que aproveches tu <strong>combo de internet y TV</strong>.
-                        </p>
-                        <a href="#" class="read-more">Leer Artículo <i data-lucide="arrow-right" size="16"></i></a>
-                    </div>
-                </article>
-
             </section>
 
-            <!-- Sidebar: Optimización Long Tail y Conversión -->
-            <aside class="sidebar">
-                
-                <!-- Widget: Oferta Destacada (Keyword Long Tail: contratar movistar fibra optica con disney+) -->
-                <div class="offer-card">
-                    <h3>¡Oferta del Mes!</h3>
-                    <p>Fibra 900 Megas + Disney+</p>
-                    <div class="offer-price">$99.990</div>
-                    <p style="font-size: 0.8rem; opacity: 0.8;">Precio exclusivo web</p>
-                    <a href="https://wa.me/573165593013?text=Hola,%20vi%20la%20oferta%20en%20el%20blog%20de%20Fibra%20con%20Disney" target="_blank" class="btn-offer">
-                        Contratar Ahora
-                    </a>
-                </div>
-
-                <!-- Widget: Posts Populares (Keywords de Intención de Compra) -->
-                <div class="sidebar-widget">
-                    <h3 class="widget-title">Lo más buscado</h3>
-                    <ul class="popular-posts">
-                        <li>
-                            <a href="#">Movistar fibra óptica 500 megas precio y características</a>
-                            <span class="post-meta">Lectura: 3 min</span>
-                        </li>
-                        <li>
-                            <a href="#">Precio plan internet Movistar con Win Sport+ incluido</a>
-                            <span class="post-meta">Lectura: 2 min</span>
-                        </li>
-                        <li>
-                            <a href="#">¿Cómo contratar Movistar Colombia por WhatsApp?</a>
-                            <span class="post-meta">Lectura: 1 min</span>
-                        </li>
-                        <li>
-                            <a href="#">Mapa de Cobertura Fibra Movistar 2025</a>
-                            <span class="post-meta">Actualizado hoy</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </aside>
         </div>
 
-        <!-- Sección SEO Inferior: Guía rápida para capturar Long Tail Keywords -->
-        <section class="seo-footer">
-            <div class="container">
-                <div class="seo-grid">
-                    <div class="seo-column">
-                        <h3>Planes Movistar Internet</h3>
-                        <ul>
-                            <li>
-                                <a href="https://www.fibrahogar.co/" target="_self">Planes de internet fibra óptica hogar</a>
-                            </li>
-                            <li>Ofertas internet Movistar para estratos 3 y 4</li>
-                            <li>Movistar internet y TV combos</li>
-                            <li>Internet simétrico para Gamers</li>
-                        </ul>
-                    </div>
-                    <div class="seo-column">
-                        <h3>Atención al Cliente</h3>
-                        <ul>
-                            <li>
-                                <a href="https://wa.me/573165593013" target="_blank">Cómo contratar Movistar fibra</a>
-                            </li>
-                            <li>
-                                <a href="https://www.nperf.com/es/map/CO/3674962.Medellin/7239.Movistar-Movil/signal?ll=6.25184&lg=-75.56359&zoom=12" target="_blank" rel="noopener noreferrer">Cobertura fibra Movistar en mi barrio</a>
-                            </li>
-                            <li>
-                                <a href="https://www.movistar.com.co/test-de-velocidad" target="_blank" rel="noopener noreferrer">Test de velocidad internet Movistar</a>
-                            </li>
-                            <li>Soporte técnico Movistar Colombia</li>
-                        </ul>
-                    </div>
-                    <div class="seo-column">
-                        <h3>Entretenimiento Incluido</h3>
-                        <ul>
-                            <li>Contratar Movistar fibra óptica con Disney+</li>
-                            <li>Ver <a href="https://www.winsports.co/" target="_blank" rel="noopener noreferrer">Win Sports+</a> online gratis con mi plan</li>
-                            <li><a href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">Amazon Prime</a> y <a href="https://www.netflix.com/co/" target="_blank" rel="noopener noreferrer">Netflix</a> en Movistar</li>
-                            <li>Star+ combos fibra óptica</li>
-                        </ul>
-                    </div>
+        <!-- COLUMNA DERECHA: SIDEBAR DE VENTAS -->
+        <aside class="space-y-8">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100 text-center sticky top-24">
+                <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">🚀</div>
+                <h3 class="font-black text-xl text-gray-900 mb-2">¿Internet Lento?</h3>
+                <p class="text-gray-600 text-sm mb-6">Cámbiate hoy a la <strong>Fibra Óptica Movistar</strong>. Velocidad simétrica y Disney+ incluido.</p>
+                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                    <p class="text-xs text-gray-400 uppercase font-bold">Plan Recomendado</p>
+                    <p class="text-3xl font-black text-movistar">$89.990</p>
+                    <p class="text-sm font-bold text-gray-800">700 Megas</p>
                 </div>
+                <button onclick="contactSales('Fibra Blog')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition shadow-md flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Quiero este Plan
+                </button>
             </div>
-        </section>
-    </main>
+            <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                <h4 class="font-bold text-gray-900 mb-2">¿Problemas con tu servicio?</h4>
+                <p class="text-sm text-gray-500 mb-4">No necesitas llamar. Radica tu PQR en línea fácilmente.</p>
+                <a href="pqr.html" class="block w-full border-2 border-gray-300 text-gray-600 font-bold py-2 rounded-lg text-center hover:border-movistar hover:text-movistar transition">Ir a Soporte PQR</a>
+            </div>
+        </aside>
+    </div>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>Distribuidor Autorizado Movistar Colombia. © 2025. Todos los derechos reservados.</p>
+    <!-- FOOTER -->
+    <footer class="bg-gray-50 border-t border-gray-200 py-12 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm mb-4">© 2025 FibraHogar. Distribuidor Autorizado.</p>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-movistar">Términos y Condiciones</a>
+                <a href="#" class="hover:text-movistar">Política de Privacidad</a>
+                <a href="pqr.html" class="hover:text-movistar">Radicar PQR</a>
+            </div>
         </div>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
-        // Inicializar iconos
-        lucide.createIcons();
-        
-        // Mobile Menu Logic (Igual que en index.html)
-        const menuBtn = document.querySelector('#menuBtn');
-        const navMenu = document.querySelector('#navMenu');
-
-        // Estilos para el logo interactivo que requiere JS para el hover en algunos navegadores
-        const logo = document.querySelector('.logo');
-        const logoIcon = document.querySelector('.logo-icon');
-
-        if(logo) {
-            logo.addEventListener('mouseenter', () => {
-                if(logoIcon) logoIcon.style.transform = 'scale(1.3) rotate(-10deg)';
-            });
-            logo.addEventListener('mouseleave', () => {
-                if(logoIcon) logoIcon.style.transform = 'scale(1.1)';
-            });
+        const WHATSAPP_NUMBER = "573000000000"; 
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+        function contactSales(origin) {
+            const msg = `👋 Hola! Estoy leyendo el blog sobre *${origin}* y me gustaría cotizar un plan de Fibra Óptica.`;
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
-        
-        // Lógica del menú móvil
-        if(menuBtn){
-            menuBtn.addEventListener('click', () => {
-                const isMenuOpen = navMenu.classList.toggle('active');
-                // Alternar icono
-                menuBtn.innerHTML = isMenuOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
-                lucide.createIcons();
-            });
-        }
-
-        // Lógica de cerrar menú al hacer click en un enlace
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    menuBtn.innerHTML = '<i data-lucide="menu"></i>';
-                    lucide.createIcons();
-                }
-            });
-        });
-        
-        // Estilos de menú móvil para que funcione la clase .active
-        const style = document.createElement('style');
-        style.textContent = `
-            @media (max-width: 900px) {
-                #navMenu {
-                    position: fixed; top: var(--header-h); left: 0; width: 100%;
-                    background: white; flex-direction: column; padding: 30px;
-                    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-                    transform: translateY(-150%); transition: transform 0.3s;
-                }
-                #navMenu.active { transform: translateY(0); display: flex; }
-            }
-        `;
-        document.head.appendChild(style);
-
-        
     </script>
 </body>
 </html>
