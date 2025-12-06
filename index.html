@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- =========================================
-         SEO & METADATA (ESTRATEGIA PUNTO 1)
-         ========================================= -->
+    <!-- SEO & METADATA -->
     <title>Planes Internet Fibra Óptica Movistar | Precios 2025 Colombia</title>
     <meta name="description" content="¿Buscas internet rápido? Compara los mejores planes de Fibra Óptica Movistar. Desde 500 Megas + Disney+. Instalación rápida en Colombia. ¡Cotiza precios 2025 aquí!">
     <link rel="canonical" href="https://www.fibrahogar.co/" /> 
     <meta name="theme-color" content="#019df4">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>M</text></svg>">
 
-    <!-- SCHEMA MARKUP: Para que Google muestre precios en los resultados -->
+    <!-- SCHEMA MARKUP -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/", 
@@ -32,64 +30,81 @@
     }
     </script>
 
-    <!-- ESTILOS: Usamos Tailwind para garantizar la posición en Desktop (SEO Técnico) -->
+    <!-- ESTILOS TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* ESTILOS PERSONALIZADOS (Manteniendo tu identidad de marca) */
         body { font-family: 'Roboto', sans-serif; }
-        
-        /* Colores Oficiales */
         .text-movistar { color: #019df4; }
         .bg-movistar { background-color: #019df4; }
         .bg-movistar-dark { background-color: #007bb5; }
         .border-movistar { border-color: #019df4; }
-        
-        /* Fondos */
         .hero-bg { background: linear-gradient(180deg, #ffffff 0%, #f4faff 100%); }
-        
-        /* Animaciones */
         .hover-lift { transition: transform 0.2s; }
         .hover-lift:hover { transform: translateY(-3px); }
-        
-        /* Corrección para tablas en móvil */
         .table-responsive { display: block; width: 100%; overflow-x: auto; }
+        
+        /* Estilos para el Scroll del Modal de Términos */
+        .legal-scroll { max-height: 60vh; overflow-y: auto; }
+        .legal-scroll::-webkit-scrollbar { width: 8px; }
+        .legal-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+        .legal-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        .legal-scroll::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- NAVBAR: LOGO RESTAURADO AL ESTILO ORIGINAL -->
+    <!-- NAVBAR COMPLETA RESTAURADA -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo Restaurado (Más grande y llamativo) -->
-            <div class="font-bold text-2xl text-movistar tracking-tighter">
+            
+            <!-- 1. Logo -->
+            <a href="index.html" class="font-bold text-2xl text-movistar tracking-tighter flex items-center gap-2">
                 M<span class="text-gray-600">ovistar</span> Fibra
+            </a>
+
+            <!-- 2. MENÚ DE NAVEGACIÓN COMPLETO (Escritorio) -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
+                <a href="index.html" class="text-movistar">Inicio</a>
+                <a href="internet-hogar.html" class="hover:text-movistar transition">Solo Internet</a>
+                <a href="planes-moviles.html" class="hover:text-movistar transition flex items-center gap-1">
+                    <span class="bg-green-100 text-green-700 text-[10px] px-1.5 rounded">5G</span>
+                    Móviles
+                </a>
+                <a href="blog.html" class="hover:text-movistar transition">Blog</a>
+                <a href="pqr.html" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
 
-            <!-- Formulario Rápido -->
+            <!-- 3. Formulario Rápido -->
             <div class="hidden md:flex items-center gap-2">
                 <form onsubmit="handleStickySubmit(event)" class="flex bg-gray-100 rounded-full p-1 pl-4 border focus-within:border-movistar transition">
-                    <input type="tel" placeholder="Ingresa tu número" class="bg-transparent border-none outline-none text-sm w-40 placeholder-gray-500" required>
+                    <input type="tel" placeholder="Tu celular..." class="bg-transparent border-none outline-none text-sm w-32 placeholder-gray-500" required>
                     <button type="submit" class="bg-movistar hover:bg-movistar-dark text-white px-4 py-1.5 rounded-full text-sm font-bold transition">
                         📞 Te llamamos
                     </button>
                 </form>
             </div>
             
-            <!-- Botón Móvil -->
-            <a href="https://wa.me/573000000000" class="md:hidden bg-green-500 text-white p-2 rounded-full shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-            </a>
+            <!-- 4. Botón Menú Móvil -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 focus:outline-none p-2">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
+            <a href="index.html" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
+            <a href="internet-hogar.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Solo Internet</a>
+            <a href="planes-moviles.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles</a>
+            <a href="blog.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog de Noticias</a>
+            <a href="pqr.html" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION: El factor clave para SEO en Escritorio -->
+    <!-- HERO SECTION -->
     <header class="hero-bg pt-12 pb-20 lg:pt-24 lg:pb-32 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-            
             <!-- Texto Principal -->
             <div class="text-center lg:text-left">
                 <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-movistar text-xs font-bold tracking-wide mb-6 border border-blue-100">
@@ -112,35 +127,26 @@
                 </div>
             </div>
 
-            <!-- Elemento Visual (Optimizado para carga rápida) -->
+            <!-- Visual (Desktop) -->
             <div class="hidden lg:block relative">
-                <!-- Círculo decorativo -->
                 <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-                
-                <!-- Tarjeta Flotante -->
                 <div class="relative bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 transform rotate-1 hover:rotate-0 transition duration-500">
                     <div class="flex justify-between items-start mb-6">
                         <div>
                             <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Plan Recomendado</p>
                             <h3 class="text-3xl font-black text-gray-900">700 Megas</h3>
                         </div>
-                        <div class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-lg text-sm">
-                            -50% DCTO
-                        </div>
+                        <div class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-lg text-sm">-50% DCTO</div>
                     </div>
                     
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-movistar">✓</span>
-                            <span class="text-gray-600 font-medium">Velocidad Simétrica (Sube y baja igual)</span>
+                            <span class="text-gray-600 font-medium">Velocidad Simétrica</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-movistar">✓</span>
                             <span class="text-gray-600 font-medium">Disney+ Incluido</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-movistar">✓</span>
-                            <span class="text-gray-600 font-medium">Instalación GRATIS (Estrato 3)</span>
                         </div>
                     </div>
                     
@@ -149,21 +155,19 @@
                             <span class="block text-xs text-gray-400 line-through">$130.000</span>
                             <span class="text-3xl font-black text-movistar">$89.990</span>
                         </div>
-                        <button onclick="selectPlan('Promo 700 Megas Home', '89.990')" class="bg-movistar text-white font-bold py-2 px-6 rounded-lg hover:bg-movistar-dark transition">
-                            Lo quiero
-                        </button>
+                        <button onclick="selectPlan('Promo 700 Megas Home', '89.990')" class="bg-movistar text-white font-bold py-2 px-6 rounded-lg hover:bg-movistar-dark transition">Lo quiero</button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- SECCIÓN TABLA DE PRECIOS (Vital para tu Estrategia SEO del punto 2) -->
+    <!-- SECCIÓN TABLA DE PRECIOS -->
     <section id="planes" class="py-16 bg-white relative">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Elige tu Plan de Fibra</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Comparamos las mejores ofertas disponibles en tu zona. Precios transparentes, sin cláusulas ocultas.</p>
+                <p class="text-gray-500 max-w-2xl mx-auto">Comparamos las mejores ofertas disponibles en tu zona.</p>
             </div>
 
             <div class="overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white">
@@ -179,90 +183,70 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
-                            <!-- Fila 1 -->
                             <tr class="group hover:bg-blue-50 transition duration-150">
                                 <td class="p-5">
                                     <span class="font-bold text-gray-900 block">Básico Hogar</span>
-                                    <span class="text-xs text-gray-400">Ideal pareja</span>
                                 </td>
                                 <td class="p-5 text-movistar font-bold text-lg">500 Megas</td>
                                 <td class="p-5 text-sm text-gray-600">Disney+ Estándar</td>
                                 <td class="p-5 font-bold text-gray-900 text-xl">$79.990</td>
-                                <td class="p-5 text-right">
-                                    <button onclick="selectPlan('Fibra 500', '79.990')" class="text-movistar font-bold hover:underline">Contratar →</button>
-                                </td>
+                                <td class="p-5 text-right"><button onclick="selectPlan('Fibra 500', '79.990')" class="text-movistar font-bold hover:underline">Contratar →</button></td>
                             </tr>
-                            <!-- Fila 2 (Destacada - TEXTO CORREGIDO) -->
                             <tr class="bg-blue-50/40 border-l-4 border-movistar group hover:bg-blue-50 transition duration-150 relative">
                                 <td class="p-5">
                                     <span class="font-bold text-gray-900 block">Total Hogar</span>
                                     <span class="inline-block bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded">MÁS VENDIDO</span>
                                 </td>
                                 <td class="p-5 text-movistar font-bold text-lg">700 Megas</td>
-                                <!-- Aquí eliminamos "y Star+" -->
                                 <td class="p-5 text-sm text-gray-600">Disney+</td>
                                 <td class="p-5 font-bold text-gray-900 text-xl">$89.990</td>
                                 <td class="p-5 text-right">
-                                    <button onclick="selectPlan('Fibra 700 Destacado', '89.990')" class="bg-movistar text-white text-sm font-bold py-2 px-4 rounded shadow hover:bg-movistar-dark transition">
-                                        Contratar
-                                    </button>
+                                    <button onclick="selectPlan('Fibra 700 Destacado', '89.990')" class="bg-movistar text-white text-sm font-bold py-2 px-4 rounded shadow hover:bg-movistar-dark transition">Contratar</button>
                                 </td>
                             </tr>
-                            <!-- Fila 3 -->
                             <tr class="group hover:bg-blue-50 transition duration-150">
                                 <td class="p-5">
                                     <span class="font-bold text-gray-900 block">Gamer Pro</span>
-                                    <span class="text-xs text-gray-400">Máxima potencia</span>
                                 </td>
                                 <td class="p-5 text-movistar font-bold text-lg">900 Megas</td>
                                 <td class="p-5 text-sm text-gray-600">Full Combo + Win Sports</td>
                                 <td class="p-5 font-bold text-gray-900 text-xl">$99.990</td>
-                                <td class="p-5 text-right">
-                                    <button onclick="selectPlan('Fibra 900 Gamer', '99.990')" class="text-movistar font-bold hover:underline">Contratar →</button>
-                                </td>
+                                <td class="p-5 text-right"><button onclick="selectPlan('Fibra 900 Gamer', '99.990')" class="text-movistar font-bold hover:underline">Contratar →</button></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            
-            <div class="mt-8 text-center">
-                 <p class="text-sm text-gray-500 mb-4">¿Tienes dudas sobre qué plan elegir?</p>
-                 <a href="https://wa.me/573000000000" class="inline-flex items-center gap-2 text-green-600 font-bold hover:text-green-700">
-                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.005.577 1.913.695 3.198.695 3.182 0 5.768-2.587 5.768-5.766.001-3.182-2.584-5.768-5.768-5.768zm9.263 4.962c-.813-1.197-1.483-1.793-2.611-2.288-.679-.304-1.776-.669-3.235-.669-1.282 0-2.31.258-2.994.475-1.558.5-2.81 1.688-3.414 3.033-.526 1.171-.624 2.515-.173 3.864.442 1.323 1.309 2.427 2.502 3.167.72.454 1.52.756 2.375.833 2.147.194 3.99-.877 4.793-1.46.208-.152.996-.75 1.564-1.353.945-1.005 1.485-2.345 1.194-4.222z"/></svg>
-                     Chatear con un Asesor
-                 </a>
-            </div>
         </div>
     </section>
 
-    <!-- FOOTER SIMPLE -->
+    <!-- FOOTER CON ENLACES LEGALES ACTIVOS -->
     <footer class="bg-gray-50 border-t border-gray-200 py-12 mt-12">
         <div class="max-w-6xl mx-auto px-4 text-center">
             <p class="text-gray-400 text-sm mb-4">© 2025 FibraHogar. Distribuidor Autorizado.</p>
-            <div class="flex justify-center gap-6 text-sm text-gray-500">
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+                <!-- Botón que activa el Modal Legal -->
+                <button onclick="openTermsModal()" class="hover:text-movistar underline cursor-pointer">Términos y Condiciones</button>
                 <a href="#" class="hover:text-movistar">Política de Privacidad</a>
-                <a href="#" class="hover:text-movistar">Términos y Condiciones</a>
                 <a href="#" class="hover:text-movistar">Mapa del Sitio</a>
             </div>
         </div>
     </footer>
 
-    <!-- STICKY BOTTOM BAR (Mobile Only) -->
+    <!-- STICKY BOTTOM BAR (Móvil) -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t p-3 md:hidden z-40 flex gap-3 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
         <button onclick="openModal()" class="flex-1 bg-movistar text-white font-bold py-3 px-4 rounded-lg shadow active:bg-blue-700 transition">
             Ver Cobertura
         </button>
         <a href="https://wa.me/573000000000" class="flex-none bg-green-500 text-white w-12 flex items-center justify-center rounded-lg shadow active:bg-green-600 transition">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         </a>
     </div>
 
-    <!-- MODAL DE COBERTURA (Funcionalidad Preservada) -->
+    <!-- MODAL DE COBERTURA -->
     <div id="coverageModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative transform transition-all">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold leading-none">&times;</button>
-            
             <div class="p-8">
                 <!-- Paso 1 -->
                 <div id="modalStep1">
@@ -283,39 +267,65 @@
                         </button>
                     </form>
                 </div>
-
-                <!-- Paso 2 (Loading) -->
+                <!-- Pasos 2 y 3 (Ocultos) -->
                 <div id="modalStep2" class="hidden text-center py-10">
                     <div class="animate-spin rounded-full h-16 w-16 border-4 border-gray-200 border-t-movistar mx-auto mb-6"></div>
                     <h3 class="font-bold text-xl text-gray-800">Verificando Fibra...</h3>
-                    <p class="text-gray-400">Esto tomará unos segundos</p>
                 </div>
-
-                <!-- Paso 3 (Éxito) -->
                 <div id="modalStep3" class="hidden text-center">
                     <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl animate-bounce">✅</div>
                     <h3 class="text-2xl font-black text-gray-900 mb-2">¡SÍ HAY COBERTURA!</h3>
-                    <p class="text-gray-600 mb-8 text-lg">Hemos encontrado <span class="font-bold text-movistar">Fibra Óptica</span> disponible en <span id="displayBarrio" class="font-bold">tu zona</span>.</p>
-                    
-                    <button onclick="finishLead()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-xl transition flex items-center justify-center gap-2 text-lg">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.506-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.015-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                        Agendar Instalación
-                    </button>
-                    <p class="text-xs text-gray-400 mt-4">Oferta válida por 24 horas.</p>
+                    <p class="text-gray-600 mb-8 text-lg">Encontramos Fibra en <span id="displayBarrio" class="font-bold text-movistar">tu zona</span>.</p>
+                    <button onclick="finishLead()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-xl transition">Agendar Instalación</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT: Lógica de negocio (Restaurada y Mejorada) -->
+    <!-- NUEVO: MODAL DE TÉRMINOS Y CONDICIONES (Urgente) -->
+    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-80 z-[70] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col">
+            <div class="p-4 border-b flex justify-between items-center bg-gray-50 rounded-t-xl">
+                <h3 class="font-bold text-lg text-gray-900">Términos y Condiciones del Servicio</h3>
+                <button onclick="closeTermsModal()" class="text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 legal-scroll text-sm text-gray-600 leading-relaxed text-justify">
+                <p class="mb-4"><strong>1. CONDICIONES GENERALES:</strong> Las ofertas comerciales presentadas en este sitio web (FibraHogar.co) son promocionadas en calidad de Distribuidor Autorizado de Movistar Colombia. Los precios, velocidades y beneficios están sujetos a verificación de cobertura técnica, disponibilidad de puertos y estrato socioeconómico del predio.</p>
+                
+                <p class="mb-4"><strong>2. TARIFAS Y PRECIOS:</strong> Los precios mostrados incluyen IVA e impuestos aplicables para Estrato 3. Para estratos 1 y 2, o estratos 4, 5 y 6, las tarifas pueden variar según la regulación vigente y subsidios aplicables. El descuento del 50% en los primeros meses (si aplica en la oferta) está sujeto a permanencia mínima o condiciones específicas del plan contratado.</p>
+                
+                <p class="mb-4"><strong>3. INSTALACIÓN:</strong> La instalación del servicio está sujeta a viabilidad técnica. En la mayoría de los casos para Estrato 3 en adelante, la instalación no tiene costo, salvo condiciones especiales de la zona que requieran obra civil adicional.</p>
+                
+                <p class="mb-4"><strong>4. VELOCIDAD SIMÉTRICA:</strong> La velocidad simétrica (misma velocidad de subida y bajada) está garantizada únicamente en zonas con cobertura de Fibra Óptica directa al hogar (FTTH). En zonas de cobre o tecnologías híbridas, la velocidad de subida será menor.</p>
+
+                <p class="mb-4"><strong>5. CLÁUSULA DE PERMANENCIA:</strong> Algunos planes promocionales que incluyen subsidio en el costo de conexión o equipos (router) pueden incluir una cláusula de permanencia mínima de 12 meses. El retiro anticipado generará el cobro proporcional del valor del cargo de conexión subsidiado.</p>
+                
+                <p class="mb-4"><strong>6. TRATAMIENTO DE DATOS:</strong> Al diligenciar los formularios de contacto o WhatsApp, usted autoriza a FibraHogar.co y a Movistar a contactarlo con fines comerciales para la venta del servicio solicitado.</p>
+            </div>
+            <div class="p-4 border-t bg-gray-50 rounded-b-xl text-right">
+                <button onclick="closeTermsModal()" class="bg-movistar text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-600 transition">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
     <script>
         const WHATSAPP_NUMBER = "573000000000"; // Tu número real
         let STATE = { barrio: '' };
 
+        // Menú Móvil
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Lógica Modal Términos (Nuevo)
+        function openTermsModal() { document.getElementById('termsModal').classList.remove('hidden'); }
+        function closeTermsModal() { document.getElementById('termsModal').classList.add('hidden'); }
+
+        // Lógica Modal Cobertura (Existente)
         function openModal() {
             const modal = document.getElementById('coverageModal');
             modal.classList.remove('hidden');
-            // Animación de entrada simple
             setTimeout(() => modal.firstElementChild.classList.remove('scale-95', 'opacity-0'), 10);
         }
 
@@ -324,14 +334,12 @@
             modal.firstElementChild.classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
                 modal.classList.add('hidden');
-                // Reset de pasos
                 document.getElementById('modalStep1').classList.remove('hidden');
                 document.getElementById('modalStep2').classList.add('hidden');
                 document.getElementById('modalStep3').classList.add('hidden');
             }, 200);
         }
 
-        // Lógica de "Verificar Cobertura"
         function checkCoverage(e) {
             e.preventDefault();
             const input = document.getElementById('inputBarrio');
@@ -339,11 +347,9 @@
             
             STATE.barrio = input.value;
             
-            // Transición UI
             document.getElementById('modalStep1').classList.add('hidden');
             document.getElementById('modalStep2').classList.remove('hidden');
             
-            // Simulación de sistema (1.5s)
             setTimeout(() => {
                 document.getElementById('modalStep2').classList.add('hidden');
                 document.getElementById('modalStep3').classList.remove('hidden');
@@ -351,20 +357,17 @@
             }, 1500);
         }
 
-        // Finalizar Lead (Ir a WhatsApp)
         function finishLead() {
-            const msg = `👋 Hola! Acabo de verificar cobertura en el barrio *${STATE.barrio}* en su web y dice DISPONIBLE. Quisiera agendar la instalación de la Fibra Óptica Movistar.`;
+            const msg = `👋 Hola! Verifiqué cobertura en el barrio *${STATE.barrio}* en su web y dice DISPONIBLE. Quisiera agendar la instalación de la Fibra Óptica Movistar.`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
             closeModal();
         }
 
-        // Seleccionar Plan (Desde Tabla)
         function selectPlan(planName, price) {
             const msg = `👋 Hola! Me interesa el plan *${planName}* de $${price} que vi en la página web. ¿Qué documentos necesito?`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        // Lógica Restaurada: Sticky Submit (Te llamamos)
         function handleStickySubmit(e) {
             e.preventDefault();
             const input = e.target.querySelector('input');
@@ -373,13 +376,16 @@
 
             const msg = `📞 Hola! Dejé mi número *${phone}* en la página web para que me llamen urgente. Estoy interesado en un plan.`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-            input.value = ''; // Limpiar campo
+            input.value = ''; 
         }
 
-        // Cerrar modal con click afuera
-        document.getElementById('coverageModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
+        // Cerrar modales con click afuera
+        window.onclick = function(event) {
+            const modalCov = document.getElementById('coverageModal');
+            const modalTerms = document.getElementById('termsModal');
+            if (event.target == modalCov) closeModal();
+            if (event.target == modalTerms) closeTermsModal();
+        }
     </script>
 </body>
 </html>
