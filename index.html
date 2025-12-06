@@ -55,19 +55,22 @@
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- NAVBAR COMPLETA RESTAURADA -->
+    <!-- NAVBAR CORREGIDO -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- 1. Logo -->
-            <a href="index.html" class="font-bold text-2xl text-movistar tracking-tighter flex items-center gap-2">
-                M<span class="text-gray-600">ovistar</span> Fibra
+            <!-- 1. Logo ARREGLADO (Unido y Sólido) -->
+            <a href="index.html" class="flex items-center gap-1 group">
+                <!-- Usamos texto sólido unido -->
+                <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
+                <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
 
-            <!-- 2. MENÚ DE NAVEGACIÓN COMPLETO (Escritorio) -->
+            <!-- 2. MENÚ DE NAVEGACIÓN (Enlaces Corregidos) -->
             <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
                 <a href="index.html" class="text-movistar">Inicio</a>
-                <a href="internet-hogar.html" class="hover:text-movistar transition">Solo Internet</a>
+                <!-- Enlace corregido a Internet Hogar -->
+                <a href="internet-hogar.html" class="hover:text-movistar transition">Internet Hogar</a>
                 <a href="planes-moviles.html" class="hover:text-movistar transition flex items-center gap-1">
                     <span class="bg-green-100 text-green-700 text-[10px] px-1.5 rounded">5G</span>
                     Móviles
@@ -95,7 +98,7 @@
         <!-- Menú Móvil Desplegable -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
             <a href="index.html" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
-            <a href="internet-hogar.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Solo Internet</a>
+            <a href="internet-hogar.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
             <a href="planes-moviles.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles</a>
             <a href="blog.html" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog de Noticias</a>
             <a href="pqr.html" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
@@ -282,7 +285,7 @@
         </div>
     </div>
 
-    <!-- NUEVO: MODAL DE TÉRMINOS Y CONDICIONES (Urgente) -->
+    <!-- MODAL DE TÉRMINOS Y CONDICIONES (CONECTADO AL FOOTER) -->
     <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-80 z-[70] hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] flex flex-col">
             <div class="p-4 border-b flex justify-between items-center bg-gray-50 rounded-t-xl">
@@ -318,11 +321,11 @@
             document.getElementById('mobileMenu').classList.toggle('hidden');
         }
 
-        // Lógica Modal Términos (Nuevo)
+        // Lógica Modal Términos (LEGALES)
         function openTermsModal() { document.getElementById('termsModal').classList.remove('hidden'); }
         function closeTermsModal() { document.getElementById('termsModal').classList.add('hidden'); }
 
-        // Lógica Modal Cobertura (Existente)
+        // Lógica Modal Cobertura (LEADS)
         function openModal() {
             const modal = document.getElementById('coverageModal');
             modal.classList.remove('hidden');
