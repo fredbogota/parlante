@@ -49,11 +49,14 @@
         .legal-scroll::-webkit-scrollbar { width: 8px; }
         .legal-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
         .legal-scroll::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        
+        /* Lógica para mostrar el dropdown al pasar el mouse (hover) */
+        .group:hover .group-hover\:block { display: block; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- NAVBAR OPTIMIZADO SEO -->
+    <!-- NAVBAR OPTIMIZADO SEO (MENU COMPLETO) -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
@@ -63,12 +66,34 @@
                 <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
 
-            <!-- MENÚ CORREGIDO (URLs Limpias + Target Blank) -->
+            <!-- MENÚ DESKTOP CON SÚPER MENÚ -->
             <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
                 <a href="/" class="text-movistar">Inicio</a>
                 
-                <!-- URL Limpia: /internet-hogar/ -->
-                <a href="/internet-hogar/" target="_blank" class="hover:text-movistar transition">Internet Hogar</a>
+                <!-- Dropdown Internet Hogar (Súper Menú) -->
+                <div class="relative group">
+                    <button class="hover:text-movistar transition flex items-center gap-1 py-4 cursor-pointer">
+                        Internet Hogar
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Submenu -->
+                    <div class="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block z-50 overflow-hidden">
+                        <!-- Enlaces Generales -->
+                        <a href="/internet-hogar/" class="block px-4 py-3 hover:bg-gray-50 hover:text-movistar transition border-b border-gray-50 font-normal">Internet Fibra (General)</a>
+                        <a href="/planes-fibra-optica/" class="block px-4 py-3 hover:bg-gray-50 hover:text-movistar transition border-b border-gray-50 font-normal">Planes Fibra Óptica</a>
+                        <a href="/fibra-movistar/" class="block px-4 py-3 hover:bg-gray-50 hover:text-movistar transition border-b border-gray-50 font-normal">Fibra Movistar</a>
+                        
+                        <!-- Enlace Precios (Destacado Verde) -->
+                        <a href="/internet-hogar-precios/" class="block px-4 py-3 hover:bg-green-50 hover:text-green-600 transition border-b border-gray-50 font-normal flex justify-between">
+                            Precios y Tarifas <span class="text-green-600 font-bold">$</span>
+                        </a>
+                        
+                        <!-- Enlace Gamer (Destacado Oscuro/Pro) -->
+                        <a href="/internet-hogar-para-gamers/" class="block px-4 py-3 hover:bg-gray-900 hover:text-white transition font-bold flex justify-between items-center group/gamer">
+                            Modo Gamer <span class="text-[10px] bg-gray-100 text-gray-600 group-hover/gamer:bg-green-500 group-hover/gamer:text-black px-1.5 rounded transition">PRO</span>
+                        </a>
+                    </div>
+                </div>
                 
                 <!-- Keyword SEO: "Planes Móviles 5G" -->
                 <a href="/planes-moviles/" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
@@ -78,7 +103,7 @@
                 
                 <a href="/blog/" target="_blank" class="hover:text-movistar transition">Blog</a>
                 
-                <!-- Enlace PQR Corregido (SEO Friendly) -->
+                <!-- Enlace PQR SEO Friendly -->
                 <a href="/PQR/" target="_blank" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
 
@@ -98,13 +123,22 @@
             </button>
         </div>
 
-        <!-- Menú Móvil -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
+        <!-- Menú Móvil Expandido -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl overflow-y-auto max-h-[80vh]">
             <a href="/" class="block py-3 font-bold text-movistar border-b border-gray-50">Inicio</a>
-            <a href="/internet-hogar/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Internet Hogar</a>
+            
+            <!-- Sección Internet Hogar Móvil -->
+            <div class="border-b border-gray-50">
+                <p class="py-2 text-xs font-bold text-gray-400 uppercase mt-2">Internet Hogar</p>
+                <a href="/internet-hogar/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Internet Fibra (General)</a>
+                <a href="/planes-fibra-optica/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Planes Fibra Óptica</a>
+                <a href="/fibra-movistar/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Fibra Movistar</a>
+                <a href="/internet-hogar-precios/" class="block py-2 pl-4 font-bold text-green-600 border-l-2 border-green-500 bg-green-50">Precios y Tarifas</a>
+                <a href="/internet-hogar-para-gamers/" class="block py-2 pl-4 font-bold text-gray-900 border-l-2 border-gray-900 bg-gray-50">Internet Gamer</a>
+            </div>
+
             <a href="/planes-moviles/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
             <a href="/blog/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
-            <!-- Enlace PQR Corregido en Móvil -->
             <a href="/PQR/" target="_blank" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
         </div>
     </nav>
