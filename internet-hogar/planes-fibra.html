@@ -20,7 +20,6 @@
     <meta property="og:url" content="https://www.fibrahogar.co/planes-fibra-optica/">
 
     <!-- SCHEMA MARKUP (RICH SNIPPETS) -->
-    <!-- 1. Breadcrumb List -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,7 +38,6 @@
     }
     </script>
     
-    <!-- 2. Service Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -80,7 +78,6 @@
     }
     </script>
 
-    <!-- 3. FAQ Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -126,32 +123,69 @@
         details > summary::-webkit-details-marker { display: none; }
         .hover-scale { transition: transform 0.2s; }
         .hover-scale:hover { transform: scale(1.02); }
+        
+        /* Dropdown logic fix for all browsers */
+        .group:hover .group-hover\:block { display: block; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-    <!-- NAVBAR (Consistente con Inicio) -->
+    <!-- NAVBAR COMPLETO (Con Submenú) -->
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logo -->
             <a href="/" class="flex items-center gap-1 group">
                 <span class="font-black text-2xl text-movistar tracking-tighter">Movistar</span>
                 <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
             </a>
-            <!-- Menú Desktop Simple para Landing -->
+
+            <!-- MENÚ DESKTOP CON SUBMENÚ -->
             <div class="hidden md:flex items-center gap-6 text-sm font-bold text-gray-500">
                 <a href="/" class="hover:text-movistar transition">Inicio</a>
-                <a href="#precios" class="text-movistar bg-blue-50 px-3 py-1 rounded-full">Ver Planes</a>
-                <a href="/PQR/" class="hover:text-movistar transition">Ayuda</a>
+                
+                <!-- Dropdown Internet Hogar -->
+                <div class="relative group">
+                    <button class="text-movistar flex items-center gap-1 py-4 cursor-pointer">
+                        Internet Hogar
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Submenu -->
+                    <div class="absolute top-full left-0 w-56 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block z-50 overflow-hidden">
+                        <a href="/internet-hogar/" class="block px-4 py-3 hover:bg-gray-50 hover:text-movistar transition border-b border-gray-50 font-normal">Internet Fibra (General)</a>
+                        <!-- Enlace Activo -->
+                        <a href="/planes-fibra-optica/" class="block px-4 py-3 bg-blue-50 text-movistar font-bold transition">Planes Fibra Óptica</a>
+                    </div>
+                </div>
+                
+                <a href="/planes-moviles/" target="_blank" class="hover:text-movistar transition flex items-center gap-1">
+                    <span class="bg-green-100 text-green-700 text-[10px] px-1.5 rounded">5G</span>
+                    Planes Móviles
+                </a>
+                
+                <a href="/blog/" target="_blank" class="hover:text-movistar transition">Blog</a>
+                <a href="/PQR/" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
+
             <!-- Botón Móvil -->
             <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 focus:outline-none p-2">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
+
         <!-- Menú Móvil -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
-            <a href="/" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Volver al Inicio</a>
-            <a href="#precios" class="block py-3 font-bold text-movistar">Ver Precios</a>
+            <a href="/" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Inicio</a>
+            
+            <div class="border-b border-gray-50">
+                <p class="py-2 text-xs font-bold text-gray-400 uppercase">Internet Hogar</p>
+                <a href="/internet-hogar/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Internet Fibra (General)</a>
+                <a href="/planes-fibra-optica/" class="block py-2 pl-4 font-bold text-movistar border-l-2 border-movistar bg-blue-50/30">Planes Fibra Óptica</a>
+            </div>
+
+            <a href="/planes-moviles/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Planes Móviles 5G</a>
+            <a href="/blog/" target="_blank" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Blog</a>
+            <a href="/PQR/" class="block py-3 font-medium text-gray-600">Radicar PQR</a>
         </div>
     </nav>
 
