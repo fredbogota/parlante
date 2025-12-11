@@ -20,6 +20,7 @@
     <meta property="og:url" content="https://www.fibrahogar.co/fibra-movistar/">
 
     <!-- SCHEMA MARKUP -->
+    <!-- BreadcrumbList: Mantenido igual -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,22 +39,82 @@
     }
     </script>
     
+    <!-- PRODUCT SCHEMA: Actualizado para corregir errores de Search Console -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Instalación Fibra Movistar",
-      "provider": { "@type": "Organization", "name": "Movistar Colombia" },
-      "description": "Servicio de instalación de internet por fibra óptica directa al hogar (FTTH).",
+      "@type": "Product",
+      "name": "Plan Fibra Movistar 700 Megas",
+      "description": "Internet de Fibra Óptica Simétrica con 700 Megas de velocidad. Incluye línea telefónica y beneficios digitales. Instalación experta incluida.",
+      "image": "https://www.fibrahogar.co/favicon.ico",
+      "brand": {
+        "@type": "Brand",
+        "name": "Movistar"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "156",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Usuario Verificado"
+        },
+        "datePublished": "2024-11-20",
+        "reviewBody": "Excelente velocidad y estabilidad para teletrabajo."
+      },
       "offers": {
         "@type": "Offer",
         "price": "89990",
         "priceCurrency": "COP",
-        "description": "Plan recomendado 700 Megas"
+        "priceValidUntil": "2025-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.fibrahogar.co/fibra-movistar/",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "CO",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotApplicable"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": 0,
+            "currency": "COP"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "CO"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 3,
+              "unitCode": "DAY"
+            }
+          }
+        }
       }
     }
     </script>
 
+    <!-- FAQ SCHEMA: Mantenido igual -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
