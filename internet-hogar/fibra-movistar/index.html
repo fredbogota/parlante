@@ -81,16 +81,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Roboto', sans-serif; }
+        body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
         .text-movistar { color: #019df4; }
         .bg-movistar { background-color: #019df4; }
         .bg-movistar-dark { background-color: #007bb5; }
         .border-movistar { border-color: #019df4; }
         .bg-tech-pattern { background-color: #f0f9ff; background-image: radial-gradient(#dbeafe 1px, transparent 1px); background-size: 20px 20px; }
-        .hover-scale { transition: transform 0.2s; }
-        .hover-scale:hover { transform: scale(1.02); }
-        /* Dropdown logic */
+        
+        /* Utilidades de animación e interactividad */
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
         .group:hover .group-hover\:block { display: block; }
+        
+        /* Slider Styles */
+        .slider-container { overflow: hidden; position: relative; }
+        .slider-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; box-sizing: border-box; }
+        
+        /* Imagenes interactivas */
+        .interactive-card { overflow: hidden; position: relative; border-radius: 1rem; }
+        .interactive-card img { transition: transform 0.5s ease; width: 100%; height: 100%; object-fit: cover; }
+        .interactive-card:hover img { transform: scale(1.1); }
+        .interactive-card .overlay { 
+            position: absolute; inset: 0; 
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%); 
+            transition: opacity 0.3s;
+        }
+        .interactive-card .content {
+            position: absolute; bottom: -20px; left: 0; right: 0; padding: 1.5rem;
+            transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0;
+        }
+        .interactive-card:hover .content { transform: translateY(-20px); opacity: 1; }
     </style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
@@ -118,7 +139,6 @@
                     <div class="absolute top-full left-0 w-60 bg-white border border-gray-100 shadow-xl rounded-lg hidden group-hover:block z-50 overflow-hidden">
                         <a href="/internet-hogar/" class="block px-4 py-3 hover:bg-gray-50 hover:text-movistar transition border-b border-gray-50 font-normal">Internet Fibra (General)</a>
                         <a href="/planes-fibra-optica/" class="block px-4 py-3 hover:bg-gray-50 hover:text-movistar transition border-b border-gray-50 font-normal">Planes Fibra Óptica</a>
-                        <!-- Enlace Activo -->
                         <a href="/fibra-movistar/" class="block px-4 py-3 bg-blue-50 text-movistar font-bold transition">Fibra Movistar (Tecnología)</a>
                     </div>
                 </div>
@@ -152,149 +172,258 @@
         </div>
     </nav>
 
-    <!-- HEADER E-E-A-T (Expertise & Trust) -->
-    <header class="bg-tech-pattern pt-16 pb-20 lg:pt-24 lg:pb-32 relative">
-        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center lg:text-left z-10">
-                <div class="inline-flex items-center gap-2 bg-white border border-blue-100 rounded-full px-4 py-1 mb-6 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span class="text-xs font-bold text-movistar uppercase tracking-wide">Red #1 en Estabilidad</span>
-                </div>
-                <h1 class="text-4xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
-                    <span class="text-movistar">Fibra Movistar:</span><br> El Internet que tu hogar necesita
-                </h1>
-                <p class="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    La <strong>Fibra Movistar</strong> no es solo internet, es tecnología de punta. Conexión 100% fibra óptica directa hasta tu módem, garantizando la velocidad más rápida y la menor latencia de Colombia para gaming, streaming 4K y teletrabajo.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <button onclick="openModal()" class="bg-movistar hover:bg-movistar-dark text-white text-lg font-bold py-4 px-8 rounded-xl shadow-lg hover-scale transition">
-                        Verificar Disponibilidad
-                    </button>
-                    <a href="#beneficios" class="bg-white text-gray-700 border border-gray-200 text-lg font-bold py-4 px-8 rounded-xl shadow-sm hover:bg-gray-50 transition">
-                        Ver Beneficios
-                    </a>
-                </div>
-            </div>
-            <!-- Imagen conceptual (CSS puro) -->
-            <div class="relative hidden lg:block">
-                <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-full filter blur-3xl"></div>
-                <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 relative">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-2xl">🚀</div>
-                        <div>
-                            <h3 class="font-bold text-gray-900 text-xl">SpeedTest Award</h3>
-                            <p class="text-sm text-gray-500">Internet más rápido de Colombia</p>
+    <!-- SLIDER / BANNER PRINCIPAL -->
+    <header class="relative bg-gray-900 slider-container h-[600px] lg:h-[550px]" id="mainSlider">
+        <div class="slider-track h-full" id="sliderTrack">
+            
+            <!-- Slide 1: Fibra Clásica -->
+            <div class="slide h-full relative flex items-center overflow-hidden bg-gray-900">
+                <!-- Imagen real: Familia usando internet -->
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1920&auto=format&fit=crop" alt="Familia conectada con Fibra Movistar" class="absolute inset-0 w-full h-full object-cover z-0 opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent z-0"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
+                    <div class="text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-blue-400/30 rounded-full px-4 py-1 mb-6 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                            <span class="text-xs font-bold text-blue-200 uppercase tracking-wide">Red #1 en Estabilidad</span>
+                        </div>
+                        <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                            <span class="text-movistar">Fibra Movistar:</span><br> El Internet que tu hogar necesita
+                        </h1>
+                        <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Conexión 100% fibra óptica directa hasta tu módem. Garantizando la velocidad más rápida y la menor latencia de Colombia.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button onclick="openModal()" class="bg-movistar hover:bg-movistar-dark text-white text-lg font-bold py-4 px-8 rounded-xl shadow-lg hover-scale transition">
+                                Verificar Disponibilidad
+                            </button>
                         </div>
                     </div>
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-end">
-                            <span class="font-medium text-gray-600">Descarga</span>
-                            <span class="font-black text-3xl text-movistar">900 Mbps</span>
+                    <!-- Decoración visual CSS -->
+                    <div class="relative hidden lg:block">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-transparent rounded-full filter blur-3xl"></div>
+                        <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/20 relative transform rotate-2 hover:rotate-0 transition duration-500">
+                            <div class="flex items-center gap-4 mb-8">
+                                <div class="w-12 h-12 bg-blue-500/30 rounded-full flex items-center justify-center text-2xl">🚀</div>
+                                <div>
+                                    <h3 class="font-bold text-white text-xl">SpeedTest Award</h3>
+                                    <p class="text-sm text-blue-200">Internet más rápido de Colombia</p>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex justify-between items-end">
+                                    <span class="font-medium text-gray-300">Descarga / Carga</span>
+                                    <span class="font-black text-3xl text-movistar">900 Mbps</span>
+                                </div>
+                                <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-movistar w-[95%] rounded-full"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-movistar w-[95%] rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Promoción Mundial Win Sports -->
+            <div class="slide h-full relative flex items-center overflow-hidden bg-gray-900 text-white">
+                <!-- Imagen real: Jugador de fútbol en acción (Vibra Selección Colombia) con object-top para encuadrar bien -->
+                <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=1920&auto=format&fit=crop" alt="Jugador de fútbol profesional en acción" class="absolute inset-0 w-full h-full object-cover object-top z-0 opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-gray-900/90 to-transparent z-0"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
+                    <div class="text-center lg:text-left pt-10">
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
+                            <div class="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 rounded-full px-4 py-1 shadow-sm">
+                                <span class="text-xs font-black uppercase tracking-wide">🏆 Especial Mundial</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 bg-blue-600 text-white border border-blue-400 rounded-full px-4 py-1 shadow-sm">
+                                <span class="text-xs font-black uppercase tracking-wide">⚽ Win Sports+ Incluido</span>
+                            </div>
                         </div>
-                        <div class="flex justify-between items-end">
-                            <span class="font-medium text-gray-600">Carga (Subida)</span>
-                            <span class="font-black text-3xl text-movistar">900 Mbps</span>
+                        <h1 class="text-4xl lg:text-6xl font-black leading-tight mb-4 text-white">
+                            Vive <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">El Mundial</span> a otro nivel
+                        </h1>
+                        <h2 class="text-2xl font-bold text-blue-300 mb-6">Trío Total + 900 Megas Simétricas</h2>
+                        <p class="text-lg text-gray-200 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Asegura tu silla en primera fila. Pásate hoy y disfruta de todos los partidos en exclusiva, sin interrupciones, sin lag y en máxima definición 4K.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <button onclick="selectPlan('Trío Total 900 Megas + Win', '145.990')" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 text-lg font-black py-4 px-8 rounded-xl shadow-lg hover-scale transition flex items-center justify-center gap-2">
+                                ¡Quiero el combo Mundial! <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
                         </div>
-                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-                            <div class="h-full bg-movistar w-[95%] rounded-full"></div>
+                    </div>
+                    <div class="hidden lg:flex justify-center items-center">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-2xl transform -rotate-3 hover:rotate-0 transition duration-500">
+                             <div class="text-center p-8 bg-blue-900/60 rounded-2xl border border-blue-400/40">
+                                 <div class="text-5xl mb-4">⚽</div>
+                                 <h3 class="text-3xl font-black text-white mb-2">Win Sports+</h3>
+                                 <p class="text-yellow-400 font-bold mb-4">+ Internet 900 Megas</p>
+                                 <p class="text-gray-200 text-sm">La combinación perfecta para los verdaderos hinchas del fútbol.</p>
+                             </div>
                         </div>
-                        <p class="text-center text-xs text-gray-400 pt-2 font-medium">Simetría garantizada con Fibra Movistar</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controles del Slider -->
+        <button onclick="moveSlider(-1)" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 backdrop-blur-sm transition z-20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button onclick="moveSlider(1)" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 backdrop-blur-sm transition z-20">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+        <!-- Indicadores -->
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20" id="sliderDots">
+            <div class="w-3 h-3 rounded-full bg-white cursor-pointer transition-all" onclick="goToSlide(0)"></div>
+            <div class="w-3 h-3 rounded-full bg-white/40 cursor-pointer transition-all" onclick="goToSlide(1)"></div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN: POR QUÉ NECESITAS MOVISTAR PARA EL MUNDIAL -->
+    <section class="py-20 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-movistar font-bold tracking-wider uppercase text-sm">Experiencia Superior</span>
+                <h2 class="text-4xl font-black text-gray-900 mt-2 mb-4">¿Por qué necesitas Fibra Movistar ahora?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">El evento deportivo más importante del año está aquí. No dejes que una mala conexión arruine tu pasión.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Tarjeta Interactiva 1 -->
+                <div class="interactive-card h-80 shadow-xl cursor-pointer bg-gray-900 flex items-center justify-center text-center">
+                    <!-- Imagen real: Transmisión 4K -->
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=800&auto=format&fit=crop" alt="Transmisión Fluida 4K" class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
+                    <div class="overlay z-10"></div>
+                    <div class="absolute top-4 left-4 z-20 bg-movistar text-white text-xs font-bold px-3 py-1 rounded-full">Sin Cortes</div>
+                    <div class="content z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Transmisión 4K Fluida</h3>
+                        <p class="text-sm text-gray-200">La Fibra óptica real garantiza que el partido no se detenga justo antes del gol. Cero pixelado.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Interactiva 2 (CORREGIDA CON JUGADOR SIMILAR A SELECCIÓN COLOMBIA) -->
+                <div class="interactive-card h-80 shadow-xl cursor-pointer bg-gray-900 flex items-center justify-center text-center">
+                    <!-- Enlace web con jugador de fútbol en uniforme amarillo en acción -->
+                    <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=800&auto=format&fit=crop" alt="Jugador de fútbol profesional en acción" class="absolute inset-0 w-full h-full object-cover object-center z-0 opacity-90">
+                    <div class="overlay z-10"></div>
+                    <div class="absolute top-4 left-4 z-20 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">Win Sports+</div>
+                    <div class="content z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Todo el Fútbol</h3>
+                        <p class="text-sm text-gray-200">Suma Win Sports a tu plan y no te pierdas ningún análisis, previa ni partido exclusivo del mundial.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Interactiva 3 -->
+                <div class="interactive-card h-80 shadow-xl cursor-pointer bg-gray-900 flex items-center justify-center text-center">
+                    <!-- Imagen real: Gamer competitivo -->
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" alt="Ping Bajo Gamer" class="absolute inset-0 w-full h-full object-cover z-0 opacity-80">
+                    <div class="overlay z-10"></div>
+                    <div class="absolute top-4 left-4 z-20 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Ping Bajo</div>
+                    <div class="content z-20 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Juega como un Pro</h3>
+                        <p class="text-sm text-gray-200">¿Juegas online en el entretiempo? Nuestra latencia ultra baja te da la ventaja competitiva en el gaming.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- SECCIÓN DE VALOR (Beneficios Fibra Movistar) -->
     <section id="beneficios" class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Por qué cambiarte a Fibra Movistar?</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Deja atrás el internet lento y las caídas constantes. Pásate a la red del futuro.</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Ventajas técnicas de nuestra red</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition">
                     <div class="text-4xl mb-4">🎮</div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Ping Ultra Bajo</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        La <strong>Fibra Movistar</strong> reduce la latencia al mínimo. Juega online sin lag y ten videollamadas fluidas sin interrupciones ni pixelados.
+                        La <strong>Fibra Movistar</strong> reduce la latencia al mínimo. Juega online sin lag y ten videollamadas fluidas.
                     </p>
                 </div>
-                <!-- Card 2 -->
                 <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition">
                     <div class="text-4xl mb-4">⚡</div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Simetría Real</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        Somos de los pocos que ofrecen la misma velocidad de subida y bajada. Sube videos a YouTube o envía archivos pesados en segundos.
+                        Ofrecemos la misma velocidad de subida y bajada. Sube videos o envía archivos pesados en segundos.
                     </p>
                 </div>
-                <!-- Card 3 -->
                 <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition">
                     <div class="text-4xl mb-4">☔</div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Estabilidad Climática</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
-                        A diferencia del internet satelital o por cobre, nuestra fibra óptica no se ve afectada por la lluvia o el mal clima. Conexión estable 24/7.
+                        Nuestra fibra óptica no se ve afectada por la lluvia o el mal clima. Conexión estable 24/7.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TABLA COMERCIAL (PLANES DESTACADOS) -->
+    <!-- TABLA COMERCIAL (PLANES DESTACADOS SEGÚN PDF 2026) -->
     <section class="py-16 bg-blue-50">
         <div class="max-w-5xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Elige tu potencia Movistar</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Planes Movistar Total y Fibra</h2>
+            <p class="text-center text-gray-600 mb-10">Aprovecha nuestras ofertas especiales de 900 Megas simétricas.</p>
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
                     
-                    <!-- Plan 1 -->
+                    <!-- Plan 1 (Naked Fibra) -->
                     <div class="p-8 text-center hover:bg-gray-50 transition relative">
-                        <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wider mb-2">Entrada</h3>
-                        <div class="text-4xl font-black text-gray-900 mb-1">500 <span class="text-lg font-medium text-gray-500">Megas</span></div>
-                        <div class="text-2xl font-bold text-movistar mb-6">$79.990</div>
+                        <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wider mb-2">Solo Fibra</h3>
+                        <div class="text-4xl font-black text-gray-900 mb-1">900 <span class="text-lg font-medium text-gray-500">Megas</span></div>
+                        <div class="text-3xl font-bold text-movistar mb-1">$75.992<span class="text-sm font-normal text-gray-500">/mes</span></div>
+                        <div class="text-xs text-green-600 font-bold mb-6 bg-green-50 inline-block px-3 py-1.5 rounded">20% Dcto por 6 meses</div>
+                        
                         <ul class="text-sm text-gray-600 space-y-3 mb-8 text-left pl-4">
                             <li>✓ Fibra directa al hogar</li>
-                            <li>✓ Disney+ Estándar</li>
-                            <li>✓ Instalación Experta</li>
+                            <li>✓ Compra hoy, paga el otro mes</li>
+                            <li>✓ Instalación sin costo (Est 3-6)</li>
                         </ul>
-                        <button onclick="selectPlan('Fibra Movistar 500', '79.990')" class="w-full border-2 border-movistar text-movistar font-bold py-2 rounded-lg hover:bg-movistar hover:text-white transition">Lo quiero</button>
+                        <button onclick="selectPlan('Fibra 900 Megas Naked', '75.992')" class="w-full border-2 border-movistar text-movistar font-bold py-2 rounded-lg hover:bg-movistar hover:text-white transition">Lo quiero</button>
                     </div>
 
-                    <!-- Plan 2 (Destacado) -->
+                    <!-- Plan 2 (Destacado - Movistar Total Empaquetada) -->
                     <div class="p-8 text-center bg-blue-50/30 relative">
-                        <div class="absolute top-0 left-0 w-full bg-movistar text-white text-xs font-bold py-1">RECOMENDADO</div>
-                        <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wider mb-2 mt-4">Familiar</h3>
-                        <div class="text-5xl font-black text-gray-900 mb-1">700 <span class="text-lg font-medium text-gray-500">Megas</span></div>
-                        <div class="text-3xl font-bold text-movistar mb-6">$89.990</div>
+                        <div class="absolute top-0 left-0 w-full bg-movistar text-white text-xs font-bold py-1">MOVISTAR TOTAL (RECOMENDADO)</div>
+                        <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wider mb-2 mt-4">Fibra + Pospago</h3>
+                        <div class="text-5xl font-black text-gray-900 mb-1">900 <span class="text-lg font-medium text-gray-500">Megas</span></div>
+                        <div class="text-3xl font-bold text-movistar mb-1">$106.990<span class="text-sm font-normal text-gray-500">/mes</span></div>
+                        <div class="text-xs text-movistar font-bold mb-6 bg-blue-100 border border-blue-200 inline-block px-3 py-1.5 rounded shadow-sm">¡50% de Dcto en el mes 2!</div>
+                        
                         <ul class="text-sm text-gray-600 space-y-3 mb-8 text-left pl-4">
-                            <li class="font-bold text-gray-900">✓ Velocidad Simétrica</li>
-                            <li>✓ Disney+ Premium</li>
-                            <li>✓ App Smart WiFi</li>
+                            <li class="font-bold text-gray-900">✓ Pospago Ilimitado Incluido</li>
+                            <li>✓ Única factura simplificada</li>
+                            <li>✓ Compra hoy, paga el otro mes</li>
+                            <li>✓ Beneficios Movistar Preferencial</li>
                         </ul>
-                        <button onclick="selectPlan('Fibra Movistar 700', '89.990')" class="w-full bg-movistar text-white font-bold py-3 rounded-lg shadow-lg hover:bg-movistar-dark transition">Seleccionar</button>
+                        <button onclick="selectPlan('Movistar Total 900 Megas', '106.990')" class="w-full bg-movistar text-white font-bold py-3 rounded-lg shadow-lg hover:bg-movistar-dark transition">Seleccionar</button>
                     </div>
 
-                    <!-- Plan 3 -->
+                    <!-- Plan 3 (Trío Total + Win) -->
                     <div class="p-8 text-center hover:bg-gray-50 transition">
-                        <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wider mb-2">Pro / Gamer</h3>
+                        <h3 class="font-bold text-gray-500 uppercase text-sm tracking-wider mb-2">Trío Total + Win</h3>
                         <div class="text-4xl font-black text-gray-900 mb-1">900 <span class="text-lg font-medium text-gray-500">Megas</span></div>
-                        <div class="text-2xl font-bold text-movistar mb-6">$99.990</div>
+                        <div class="text-3xl font-bold text-movistar mb-1">$145.990<span class="text-sm font-normal text-gray-500">/mes</span></div>
+                        <div class="text-xs text-yellow-600 font-bold mb-6 bg-yellow-50 border border-yellow-200 inline-block px-3 py-1.5 rounded">¡Con Win Sports+ para el Mundial!</div>
+                        
                         <ul class="text-sm text-gray-600 space-y-3 mb-8 text-left pl-4">
-                            <li>✓ Prioridad de red</li>
-                            <li>✓ Win Sports Online</li>
-                            <li>✓ Soporte Preferencial</li>
+                            <li>✓ 71 Canales HD + Pospago</li>
+                            <li class="font-bold text-gray-900">✓ Win Fútbol Incluido</li>
+                            <li>✓ 50% de Dcto en el mes 2</li>
+                            <li>✓ Compra hoy, paga el otro mes</li>
                         </ul>
-                        <button onclick="selectPlan('Fibra Movistar 900', '99.990')" class="w-full border-2 border-movistar text-movistar font-bold py-2 rounded-lg hover:bg-movistar hover:text-white transition">Lo quiero</button>
+                        <button onclick="selectPlan('Trío Total 900 Megas + Win', '145.990')" class="w-full border-2 border-movistar text-movistar font-bold py-2 rounded-lg hover:bg-movistar hover:text-white transition">Lo quiero</button>
                     </div>
 
                 </div>
             </div>
-            <p class="text-center text-xs text-gray-400 mt-6">Aplican términos y condiciones. Tarifas válidas para estratos 3, 4, 5 y 6.</p>
+            <p class="text-center text-xs text-gray-400 mt-6">Precios basados en campaña "Back to School / Febrero 2026". Aplican términos y condiciones. Tarifas válidas sujeto a estrato y cobertura.</p>
         </div>
     </section>
 
@@ -335,14 +464,14 @@
                 <a href="/planes-fibra-optica/" class="hover:text-white transition">Planes Fibra</a>
                 <a href="/PQR/" class="hover:text-white transition">Ayuda PQR</a>
             </div>
-            <p class="text-xs text-gray-600">© 2025 FibraHogar.co - Todos los derechos reservados.</p>
+            <p class="text-xs text-gray-600">© 2026 FibraHogar.co - Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- MODAL DE COBERTURA (Standardized) -->
+    <!-- MODAL DE COBERTURA -->
     <div id="coverageModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 text-3xl hover:text-red-500">&times;</button>
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 text-3xl hover:text-red-500" aria-label="Cerrar">&times;</button>
             <div class="p-8">
                 <div id="modalStep1">
                     <div class="text-center mb-6">
@@ -351,7 +480,7 @@
                         <p class="text-gray-500 text-sm mt-2">Valida tu dirección para instalación inmediata.</p>
                     </div>
                     <form onsubmit="checkCoverage(event)" class="space-y-4">
-                        <input type="text" id="inputBarrio" required class="w-full px-4 py-4 rounded-xl bg-gray-50 border-2 focus:border-movistar outline-none transition" placeholder="Tu Barrio...">
+                        <input type="text" id="inputBarrio" required class="w-full px-4 py-4 rounded-xl bg-gray-50 border-2 focus:border-movistar outline-none transition" placeholder="Tu Barrio o Dirección...">
                         <button type="submit" class="w-full bg-movistar hover:bg-movistar-dark text-white font-bold py-4 rounded-xl shadow-lg transition">Consultar</button>
                     </form>
                 </div>
@@ -362,7 +491,7 @@
                 <div id="modalStep3" class="hidden text-center">
                     <div class="text-5xl mb-4">✅</div>
                     <h3 class="text-2xl font-black mb-2 text-gray-900">¡SÍ HAY FIBRA!</h3>
-                    <p class="mb-8 text-gray-600">Cobertura confirmada en <span id="displayBarrio" class="font-bold text-movistar">tu zona</span>.</p>
+                    <p class="mb-8 text-gray-600">Posible cobertura confirmada en <span id="displayBarrio" class="font-bold text-movistar">tu zona</span>.</p>
                     <button onclick="finishLead()" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-xl shadow-lg transition">
                         Agendar por WhatsApp
                     </button>
@@ -371,12 +500,55 @@
         </div>
     </div>
 
+    <!-- SCRIPTS LÓGICOS -->
     <script>
-        const WHATSAPP_NUMBER = "573000000000"; 
+        const WHATSAPP_NUMBER = "573000000000"; // Reemplazar por número real
         let STATE = { barrio: '' };
         
+        // --- Navegación ---
         function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
         
+        // --- Slider Lógica Simple ---
+        let currentSlide = 0;
+        const totalSlides = 2; // Tenemos 2 slides ahora
+        const track = document.getElementById('sliderTrack');
+        const dots = document.getElementById('sliderDots').children;
+        let slideInterval;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            // Actualizar dots
+            for(let i=0; i<dots.length; i++) {
+                if(i === currentSlide) {
+                    dots[i].classList.replace('bg-white/40', 'bg-white');
+                } else {
+                    dots[i].classList.replace('bg-white', 'bg-white/40');
+                }
+            }
+        }
+
+        function moveSlider(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+            resetInterval();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => moveSlider(1), 6000); // Cambia cada 6 segundos
+        }
+        
+        // Iniciar slider automático
+        resetInterval();
+
+
+        // --- Lógica Modal y Embudos ---
         function openModal() {
             document.getElementById('coverageModal').classList.remove('hidden');
         }
@@ -401,11 +573,11 @@
             }, 1500);
         }
         function finishLead() {
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, quiero instalar *Fibra Movistar* en *${STATE.barrio}*.`)}`, '_blank');
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, quiero instalar *Fibra Movistar* en *${STATE.barrio}* para ver el mundial.`)}`, '_blank');
             closeModal();
         }
         function selectPlan(n, p) {
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, me interesa el plan *${n}* de $${p}.`)}`, '_blank');
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, me interesa el plan *${n}* de $${p}. Quiero que me confirmen si mi zona tiene cobertura.`)}`, '_blank');
         }
         window.onclick = function(event) {
             if (event.target == document.getElementById('coverageModal')) closeModal();
