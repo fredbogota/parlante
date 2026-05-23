@@ -73,52 +73,57 @@
 <body class="bg-white text-gray-800 antialiased">
 
     <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-        
-        <a href="/index.html" class="flex items-center gap-2 group">
-    <img src="assets/logo-movistar.png" alt="Logo Movistar" class="h-12 w-auto">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+           <a href="/index.html" class="flex items-center gap-2 group">
+    <img src="/assets/logo-movistar.png" alt="Logo Movistar" class="h-12 w-auto">
     <span class="font-medium text-2xl text-gray-500 tracking-tight">Fibra</span>
 </a>
 
-        <div class="hidden md:flex items-center gap-8 text-sm font-bold text-gray-500">
-            <a href="/index.html" class="hover:text-movistar transition">Inicio</a>
-            
-            <div class="relative group">
-                <button class="text-movistar flex items-center gap-1 py-4 cursor-pointer focus:outline-none">
-                    Internet Hogar
-                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
+            <div class="hidden md:flex items-center gap-8 text-sm font-bold text-gray-500">
+                <a href="/" class="hover:text-movistar transition">Inicio</a>
                 
-                <div class="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-2xl rounded-xl hidden group-hover:block z-50 overflow-hidden transform origin-top transition-all">
-                    <a href="/internet-hogar/index.html" class="block px-5 py-4 hover:bg-blue-50 font-normal text-gray-700 border-b border-gray-50">Internet Fibra (General)</a>
-                    <a href="/internet-hogar/fibra-movistar/index.html" class="block px-5 py-3 hover:bg-blue-50 font-normal text-gray-700">Fibra Movistar</a>
-                    <a href="/internet-hogar/internet-hogar-para-gamers/index.html" class="block px-5 py-3 hover:bg-blue-50 font-normal text-gray-700">Para Gamers</a>
-                    <a href="/internet-hogar/internet-hogar-precios/index.html" class="block px-5 py-3 hover:bg-blue-50 font-normal text-gray-700">Precios</a>
-                    <a href="/planes-fibra-optica/index.html" class="block px-5 py-4 hover:bg-blue-50 font-normal text-gray-700 border-t border-gray-50">Planes Fibra Óptica</a>
+                <div class="relative group">
+                    <button class="text-movistar flex items-center gap-1 py-4 cursor-pointer focus:outline-none hover:text-movistar transition">
+                        Internet Hogar
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    
+                    <div class="absolute top-full left-0 w-64 bg-white border border-gray-100 shadow-2xl rounded-xl hidden group-hover:block z-50 overflow-hidden transform origin-top transition-all">
+                        <a href="/internet-hogar/" class="block px-5 py-4 hover:bg-blue-50 font-normal text-gray-700 border-b border-gray-50">Internet Fibra (General)</a>
+                        <a href="/internet-hogar/fibra-movistar/" class="block px-5 py-3 hover:bg-blue-50 font-normal text-gray-700">Fibra Movistar</a>
+                        <a href="/internet-hogar/internet-hogar-para-gamers/" class="block px-5 py-3 hover:bg-blue-50 font-normal text-gray-700">Para Gamers</a>
+                        <a href="/internet-hogar/internet-hogar-precios/" class="block px-5 py-3 hover:bg-blue-50 font-normal text-gray-700">Precios</a>
+                        <a href="/planes-fibra-optica/" class="block px-5 py-4 hover:bg-blue-50 font-normal text-gray-700 border-t border-gray-50">Planes Fibra Óptica</a>
+                    </div>
                 </div>
+                
+                <a href="/planes-moviles/" class="text-movistar transition flex items-center gap-1">
+                    <span class="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5 rounded-full font-black">5G</span> Planes Móviles
+                </a>
+                <a href="/PQR/" class="hover:text-movistar transition">PQR / Ayuda</a>
             </div>
-            
-            <a href="/planes-moviles/index.html" class="hover:text-movistar transition flex items-center gap-1">
-                <span class="bg-green-100 text-green-700 text-[10px] px-1.5 py-0.5 rounded-full font-black">5G</span> Planes Móviles
-            </a>
-            <a href="/PQR/index.html" class="hover:text-movistar transition">PQR / Ayuda</a>
+
+            <div class="flex items-center gap-4">
+                <button onclick="openModal()" class="hidden md:block bg-movistar text-white px-5 py-2.5 rounded-full text-xs font-bold hover:bg-movistar-dark transition shadow-md">Consultar Cobertura</button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 p-2 focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
         </div>
 
-        <div class="flex items-center gap-4">
-            <button onclick="openModal()" class="hidden md:block bg-movistar text-white px-5 py-2.5 rounded-full text-xs font-bold hover:bg-movistar-dark transition shadow-md">Consultar Cobertura</button>
-            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600 p-2">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 absolute w-full shadow-xl">
+            <a href="/" class="block py-3 font-medium text-gray-600 border-b border-gray-50">Inicio</a>
+            <div class="border-b border-gray-50">
+                <p class="py-2 text-xs font-bold text-gray-400 uppercase">Internet Hogar</p>
+                <a href="/internet-hogar/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Internet Fibra (General)</a>
+                <a href="/internet-hogar/fibra-movistar/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Fibra Movistar</a>
+                <a href="/internet-hogar/internet-hogar-para-gamers/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Para Gamers</a>
+                <a href="/internet-hogar/internet-hogar-precios/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Precios</a>
+                <a href="/planes-fibra-optica/" class="block py-2 pl-4 font-medium text-gray-600 border-l-2 border-transparent hover:border-movistar">Planes Fibra Óptica</a>
             </div>
-        </div>
-        <!-- Menú Móvil -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-2xl z-40">
-            <div class="p-4 space-y-1">
-                <a href="/" class="block py-4 px-4 text-gray-700 font-bold border-b border-gray-50">Inicio</a>
-                <a href="/internet-hogar/" class="block py-4 px-4 text-gray-700 font-bold border-b border-gray-50">Internet Hogar</a>
-                <a href="/planes-moviles/" class="block py-4 px-4 text-gray-700 font-bold border-b border-gray-50">Planes Móviles 5G</a>
-                <a href="/PQR/" class="block py-4 px-4 text-gray-700 font-bold">Ayuda / PQR</a>
-            </div>
+            <a href="/planes-moviles/" class="block py-3 font-bold text-movistar border-b border-gray-50 bg-blue-50/30 pl-4 border-l-2 border-movistar">Planes Móviles 5G</a>
+            <a href="/PQR/" class="block py-3 font-medium text-gray-600">Radicar PQR / Ayuda</a>
         </div>
     </nav>
 
