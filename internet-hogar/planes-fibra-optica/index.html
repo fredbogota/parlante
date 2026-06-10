@@ -578,12 +578,12 @@
                 document.getElementById('modalStep3').classList.remove('hidden');
                 document.getElementById('displayBarrio').innerText = STATE.barrio;
             }, 1800);
-        }
+        } 
         function finishLead() {
             const msg = `Hola, verifiqué cobertura de *Fibra Óptica* en *${STATE.barrio}* y quiero agendar instalación inmediata.`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
             closeModal();
-        }
+        } 
         function selectPlan(planName, price) {
             const msg = `Hola, estoy viendo la web y me interesa el *${planName}* por $${price}. ¿Me ayudan a contratar?`;
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
