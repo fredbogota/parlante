@@ -227,11 +227,11 @@
         }
 
         /* =========================================
-           NUEVO ESTILO: PUBLICIDAD CLARO GAMER/DARK
+           NUEVO ESTILO: PUBLICIDAD MOVISTAR CROSS-SELL
            ========================================= */
-        .ad-claro-premium {
-            background-color: #050505;
-            background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600');
+        .ad-movistar-premium {
+            background-color: var(--secondary);
+            background-image: linear-gradient(rgba(11, 39, 79, 0.85), rgba(1, 157, 244, 0.90)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600');
             background-size: cover;
             background-position: center;
             color: #ffffff;
@@ -240,39 +240,38 @@
             margin-top: 0;
             margin-bottom: 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(218, 41, 28, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(1, 157, 244, 0.2);
             position: relative;
             overflow: hidden;
-            border: 1px solid #222;
+            border: 1px solid var(--primary);
         }
         /* Línea de neón superior */
-        .ad-claro-premium::before {
+        .ad-movistar-premium::before {
             content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px; background: #da291c;
-            box-shadow: 0 0 15px #da291c, 0 0 30px #da291c;
+            width: 100%; height: 4px; background: var(--accent);
+            box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
         }
         
-        .ad-claro-header {
+        .ad-movistar-header {
             display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px;
         }
         
-        /* Solución Infalible: Logo de Claro con puro código y texto (Cero Imágenes) */
         .ad-logo-circle {
             background: white; 
             padding: 8px 18px; 
             border-radius: 40px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px rgba(218,41,28,0.7);
+            box-shadow: 0 0 15px rgba(1, 157, 244, 0.5);
         }
-        .ad-logo-circle span.claro-text {
-            color: #da291c;
+        .ad-logo-circle span.movistar-text {
+            color: var(--primary);
             font-weight: 900;
             font-size: 1.6rem;
             letter-spacing: -1px;
             font-style: normal;
         }
         
-        .ad-claro-header span.fibra-text { font-size: 1.8rem; font-weight: 300; letter-spacing: -1px; }
+        .ad-movistar-header span.fibra-text { font-size: 1.8rem; font-weight: 300; letter-spacing: -1px; }
 
         .ad-subtitle {
             color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 15px; font-style: italic;
@@ -280,33 +279,33 @@
 
         /* Caja de Megas con Neón */
         .ad-megas-box {
-            border: 2px solid #da291c;
+            border: 2px solid var(--accent);
             border-radius: 12px;
             padding: 15px 10px;
             margin: 15px 0;
-            background: linear-gradient(180deg, rgba(218,41,28,0.15) 0%, rgba(0,0,0,0) 100%);
-            box-shadow: 0 0 25px rgba(218, 41, 28, 0.4), inset 0 0 15px rgba(218, 41, 28, 0.2);
+            background: linear-gradient(180deg, rgba(92,184,92,0.15) 0%, rgba(0,0,0,0) 100%);
+            box-shadow: 0 0 25px rgba(92, 184, 92, 0.3), inset 0 0 15px rgba(92, 184, 92, 0.2);
             position: relative;
         }
         .ad-megas-box .number {
             font-size: 4rem; font-weight: 900; line-height: 0.9; text-shadow: 0 0 20px rgba(255,255,255,0.3); font-style: italic; letter-spacing: -2px;
         }
         .ad-megas-box .unit {
-            font-size: 1.8rem; font-weight: 900; color: #da291c; font-style: italic; text-shadow: 0 0 10px rgba(218,41,28,0.5);
+            font-size: 1.8rem; font-weight: 900; color: var(--accent); font-style: italic; text-shadow: 0 0 10px rgba(92,184,92,0.5);
         }
         .ad-badge-top {
             position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-            background: #da291c; color: white; font-size: 0.7rem; font-weight: 900; padding: 3px 15px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
+            background: var(--accent); color: white; font-size: 0.7rem; font-weight: 900; padding: 3px 15px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
         }
 
         .ad-features-text { font-size: 1rem; font-weight: 500; margin-bottom: 15px; color: #ddd; line-height: 1.3; }
-        .ad-features-text span { color: #da291c; font-weight: 900; text-transform: uppercase; font-style: italic; }
+        .ad-features-text span { color: var(--accent); font-weight: 900; text-transform: uppercase; font-style: italic; }
 
         .ad-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; color: white; display: flex; align-items: center; justify-content: center; gap: 5px;}
         .ad-price small { font-size: 0.9rem; font-weight: 600; color: #aaa; text-transform: uppercase; }
 
         /* Botón WhatsApp de alto contraste */
-        .btn-claro-wa-premium {
+        .btn-movistar-wa-premium {
             background: #25D366; color: #000; text-decoration: none; padding: 16px 20px;
             border-radius: 50px; font-weight: 900; font-size: 1.1rem;
             display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -314,7 +313,7 @@
             text-transform: uppercase; letter-spacing: -0.5px;
             animation: pulse-green 2s infinite; border: 2px solid #20bd5a;
         }
-        .btn-claro-wa-premium:hover {
+        .btn-movistar-wa-premium:hover {
             transform: translateY(-3px) scale(1.02); background: #2df675; box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
         }
 
@@ -329,8 +328,8 @@
         .ad-grid-item {
             background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: all 0.3s;
         }
-        .ad-grid-item:hover { background: rgba(255, 255, 255, 0.1); border-color: #da291c; }
-        .ad-grid-item i { color: #da291c; filter: drop-shadow(0 0 5px rgba(218,41,28,0.5)); }
+        .ad-grid-item:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); }
+        .ad-grid-item i { color: var(--primary); filter: drop-shadow(0 0 5px rgba(1,157,244,0.5)); }
         .ad-grid-item span { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: #ccc; text-align: center; line-height: 1.2; }
 
         /* FAQ SECTION - STYLING MEJORADO */
@@ -487,34 +486,34 @@
 
         <aside class="info-card">
 
-            <div class="ad-claro-premium">
+            <div class="ad-movistar-premium">
                 
-                <div class="ad-claro-header">
+                <div class="ad-movistar-header">
                     <div class="ad-logo-circle">
-                        <span class="claro-text">Claro-</span>
+                        <span class="movistar-text">Movistar</span>
                     </div>
                     <span class="fibra-text">fibra</span>
                 </div>
                 
-                <div class="ad-subtitle">Internet Fibra Óptica Real</div>
+                <div class="ad-subtitle">¿Tu internet está lento? ¡Actualízate!</div>
                 
                 <div class="ad-megas-box">
                     <div class="ad-badge-top">La Más Rápida</div>
-                    <div class="number">900</div>
+                    <div class="number">500</div>
                     <div class="unit">MEGAS</div>
                 </div>
                 
                 <div class="ad-features-text">
-                    Streaming, gaming y fútbol<br>
-                    <span>sin interrupciones</span>
+                    Cambia tu plan hoy y obtén<br>
+                    <span>Instalación Gratis + 50% Dcto</span>
                 </div>
                 
                 <div class="ad-price">
                     <small>Desde</small> $79.900 <small>/mes</small>
                 </div>
                 
-                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20cansado%20de%20mi%20operador%20y%20quiero%20pasarme%20a%20Claro%20con%20el%20plan%20de%2079.900%20y%20el%2050%25%20de%20descuento." target="_blank" class="btn-claro-wa-premium">
-                    <i data-lucide="message-circle" fill="black" color="black"></i> Pásate a Claro
+                <a href="https://wa.me/573165593013?text=Hola,%20tengo%20problemas%20con%20mi%20internet%20y%20quiero%20mejorar%20mi%20plan%20a%20Fibra%20Optica%20Movistar%20con%20el%20descuento." target="_blank" class="btn-movistar-wa-premium">
+                    <i data-lucide="zap" fill="black" color="black"></i> Mejorar mi plan
                 </a>
 
                 <div class="ad-grid">
@@ -647,66 +646,7 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            initHeroSlider();
-        });
-
-        // SLIDER ANIMATION SCRIPT
-        function initHeroSlider() {
-            const slides = document.querySelectorAll('.hero-slide');
-            let currentSlide = 0;
-            
-            // Cambiar imagen cada 5 segundos
-            setInterval(() => {
-                slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
-            }, 5000);
-        }
-
-        // FUNCIÓN MODIFICADA PARA ENVIAR A WHATSAPP
-        function submitPQR(e) {
-            e.preventDefault();
-            
-            // Efecto de cargando en el botón
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i data-lucide="loader-2"></i> Redirigiendo a WhatsApp...';
-            btn.style.opacity = '0.7';
-            lucide.createIcons(); // Recargar iconos para mostrar el loader
-            
-            // 1. Recopilar todos los datos del formulario usando los IDs nuevos
-            const tipoId = document.getElementById('tipoId').value;
-            const numId = document.getElementById('numId').value;
-            const nombre = document.getElementById('nombre').value;
-            const correo = document.getElementById('correo').value;
-            const requestType = document.getElementById('requestType').value;
-            const detalle = document.getElementById('detalle').value;
-
-            // 2. Construir el mensaje pre-armado para WhatsApp usando asteriscos para negritas
-            const mensajeEstructurado = `Hola equipo, quiero radicar una nueva solicitud:\n\n` +
-                                        `*Tipo de Solicitud:* ${requestType}\n` +
-                                        `*Nombre:* ${nombre}\n` +
-                                        `*Documento:* ${tipoId} ${numId}\n` +
-                                        `*Correo:* ${correo}\n\n` +
-                                        `*Detalle del caso:*\n${detalle}`;
-
-            // 3. Crear el link de WhatsApp (tu número + el texto codificado)
-            const numeroWhatsApp = "573165593013";
-            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeEstructurado)}`;
-
-            // 4. Redirigir después de una pequeña pausa (simulando envío)
-            setTimeout(() => {
-                window.open(linkWhatsApp, '_blank'); // Abre WhatsApp en una pestaña nueva
-                
-                // Limpiar el formulario y restaurar el botón
-                e.target.reset();
-                btn.innerHTML = originalText;
-                btn.style.opacity = '1';
-                lucide.createIcons(); // Restaurar el icono de enviar original
-            }, 800);
-        }
+        lucide.createIcons();
     </script>
 </body>
 </html>
