@@ -25,12 +25,46 @@
       "description": "Internet de Fibra Óptica Simétrica con 500 Megas de velocidad. Instalación gratis y 50% de descuento.",
       "image": "https://www.fibrahogar.co/favicon.ico",
       "brand": { "@type": "Brand", "name": "Movistar" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "154"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Usuario FibraHogar"
+        }
+      },
       "offers": {
         "@type": "Offer",
         "price": "84900",
         "priceCurrency": "COP",
         "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2026-12-31"
+        "priceValidUntil": "2026-12-31",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "CO",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "COP"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "CO"
+          }
+        }
       },
       "additionalProperty": [{
         "@type": "PropertyValue",
@@ -375,52 +409,6 @@
             currentSlide = (currentSlide + d + totalSlides) % totalSlides;
             moveSlider(currentSlide);
         }
-
-        // Auto-play del slider
-        let slideInterval = setInterval(() => moveSliderManual(1), 8000);
-
-        // Reiniciar timer cuando el usuario interactúa
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(() => moveSliderManual(1), 8000);
-        }
-
-        function openModal() { 
-            document.getElementById('coverageModal').classList.remove('hidden'); 
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeModal() { 
-            document.getElementById('coverageModal').classList.add('hidden'); 
-            document.body.style.overflow = 'auto';
-            // Reset modal
-            document.getElementById('modalStep1').classList.remove('hidden');
-            document.getElementById('modalStep3').classList.add('hidden');
-        }
-
-        function checkCoverage(e) {
-            e.preventDefault();
-            const barrio = document.getElementById('inputBarrio').value;
-            document.getElementById('displayBarrio').innerText = barrio;
-            document.getElementById('modalStep1').classList.add('hidden');
-            document.getElementById('modalStep3').classList.remove('hidden');
-        }
-
-        function finishLead() {
-            const barrio = document.getElementById('displayBarrio').innerText;
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, verifiqué cobertura en *${barrio}* y quiero contratar Fibra Movistar.`)}`, '_blank');
-        }
-
-        function selectPlan(n, p) {
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, me interesa el plan *${n}* de $${p}. ¿Me podrían dar más información?`)}`, '_blank');
-        }
-
-        // Cerrar menú móvil al hacer click en enlaces
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
     </script>
 </body>
 </html>
