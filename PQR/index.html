@@ -75,9 +75,10 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "FibraHogar.co",
       "url": "https://www.fibrahogar.co",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?q=80&w=1200",
       "description": "Distribuidor Autorizado Movistar y Claro Colombia. Internet Fibra Óptica para el hogar.",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -85,6 +86,13 @@
         "contactType": "customer service",
         "areaServed": "CO",
         "availableLanguage": "Spanish"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "1248",
+        "bestRating": "5",
+        "worstRating": "1"
       }
     }
     </script>
@@ -178,6 +186,31 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.3); letter-spacing: -1px;
         }
         .hero-subtitle { font-size: 1.2rem; opacity: 0.95; max-width: 700px; margin: 0 auto; font-weight: 300; }
+        
+        /* ESTILOS DE LAS ESTRELLAS VISUALES */
+        .trust-stars-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 20px;
+            animation: fadeUp 1.2s ease forwards;
+        }
+        .trust-stars-container i {
+            color: #FFD700; /* Color dorado */
+            fill: #FFD700;  /* Hace la estrella sólida */
+            width: 24px;
+            height: 24px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+        }
+        .trust-score-text {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-left: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -332,7 +365,7 @@
             100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
         }
 
-        /* ============ CLARO POPUP (NUEVO DISEÑO COMPACTO Y MEJORADO) ============ */
+        /* CLARO POPUP */
         .popup-overlay {
             position: fixed; inset: 0; z-index: 99999;
             background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
@@ -342,10 +375,9 @@
 
         .popup-modal.compact {
             background: #000; border-radius: 16px; max-width: 384px; width: 100%;
-            /* Ajuste fundamental: el modal NO hace scroll, pero oculta lo que desborde */
             max-height: 85vh; 
             overflow: hidden; 
-            display: flex; flex-direction: column; /* Permite dividir áreas fijas y áreas de scroll */
+            display: flex; flex-direction: column;
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
             border: 1px solid rgba(220, 38, 38, 0.3);
             animation: popupIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -356,13 +388,8 @@
             to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        /* Contenedor que SÍ hace scroll, manteniendo la X quieta arriba */
-        .popup-scroll-area {
-            overflow-y: auto;
-            flex: 1;
-        }
+        .popup-scroll-area { overflow-y: auto; flex: 1; }
 
-        /* El botón queda fijo arriba a la derecha SIEMPRE visible */
         .popup-close-btn {
             position: absolute; top: 12px; right: 12px; z-index: 999999;
             background: rgba(220, 38, 38, 0.9); border: none; border-radius: 50%;
@@ -457,11 +484,16 @@
         }
         .toast.show { opacity: 1; transform: translateY(0); }
 
+        /* AJUSTES RESPONSIVOS */
         @media (max-width: 768px) {
             .hero-title { font-size: 2rem; }
             .pqr-wrapper { flex-direction: column; margin-top: -30px; }
             .form-card { padding: 25px; }
             .hero-slider-section { height: 350px; }
+            
+            /* Ajuste de estrellas para móviles */
+            .trust-stars-container i { width: 20px; height: 20px; }
+            .trust-score-text { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -485,9 +517,19 @@
         <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200');"></div>
         <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200');"></div>
         <div class="hero-overlay"></div>
+        
         <div class="hero-content">
             <h1 class="hero-title">Centro de Soluciones PQR</h1>
             <p class="hero-subtitle">Tu tranquilidad es nuestra prioridad. Radica tus solicitudes de forma segura, rápida y desde cualquier lugar.</p>
+            
+            <div class="trust-stars-container">
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <i data-lucide="star"></i>
+                <span class="trust-score-text">5.0/5 (1.248 calificaciones)</span>
+            </div>
         </div>
     </section>
 
@@ -797,18 +839,17 @@
         })();
 
         // ==================== LOGICA DEL POPUP CON BOTÓN "ATRÁS" INTERCEPTADO ====================
-        let hasBeenShown = false; // Variable para saber si ya se mostró en esta sesión
-        let isPopupOpen = false;  // Variable para saber si está abierto en este momento
+        let hasBeenShown = false; 
+        let isPopupOpen = false;  
 
         function showClaroPopup() {
-            if (hasBeenShown) return; // Evita que se abra más de una vez en la misma sesión
+            if (hasBeenShown) return;
             hasBeenShown = true;
             isPopupOpen = true;
             
             document.getElementById('claroPopup').classList.add('active');
             document.body.style.overflow = 'hidden';
 
-            // Agregamos un estado al historial del navegador para interceptar el botón "Atrás"
             window.history.pushState({ popupAbierto: true }, null, window.location.pathname + '#oferta');
         }
 
@@ -819,24 +860,19 @@
             document.getElementById('claroPopup').classList.remove('active');
             document.body.style.overflow = '';
 
-            // Si se cierra manualmente (con la X o el botón "No gracias"), 
-            // removemos el estado falso del historial que creamos
             if (window.location.hash === '#oferta') {
                 window.history.back();
             }
         }
 
-        // Aquí interceptamos el botón físico de "Atrás" en los celulares
         window.addEventListener('popstate', function(event) {
             if (isPopupOpen) {
-                // Si el popup estaba abierto, lo cerramos SIN salir de la página
                 isPopupOpen = false;
                 document.getElementById('claroPopup').classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
 
-        // Cerrar si tocan la zona oscura (fondo)
         document.getElementById('claroPopup').addEventListener('click', function(e) {
             if (e.target === this) closeClaroPopup();
         });
@@ -845,7 +881,6 @@
         const correoInput = document.getElementById('correo');
         let emailTriggered = false;
 
-        // Dispara el popup cuando llenan el correo
         correoInput.addEventListener('blur', function() {
             if (emailTriggered) return;
             const val = this.value.trim();
@@ -855,7 +890,6 @@
             }
         });
 
-        // Dispara el popup si dan "Enter" en el input del correo
         correoInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' && !emailTriggered) {
                 const val = this.value.trim();
@@ -887,7 +921,6 @@
                 return;
             }
 
-            // Desactivar botón y mostrar carga
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="spinner" style="display:inline-block;"></span> ENVIANDO...';
 
