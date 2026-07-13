@@ -29,6 +29,7 @@
     <meta name="geo.placename" content="Colombia">
     <meta name="language" content="es">
 
+    <!-- JSON-LD RESTAURADO: CRÍTICO PARA EL SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -105,7 +106,7 @@
 
     <style>
         :root {
-            --claro-red: #ED1C24;
+            --claro-red: #DA291C;
             --claro-gold: #FFD700;
             --primary: #019df4;
             --primary-dark: #007bbd;
@@ -200,9 +201,10 @@
             box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.03);
         }
         
+        /* ALERTA SEO MODIFICADA PARA CLARO */
         .seo-alert-box {
-            background: linear-gradient(to right, #f8fbfd, #e6f4fc);
-            border-left: 4px solid var(--primary);
+            background: linear-gradient(to right, #fff5f5, #ffebe8);
+            border-left: 4px solid var(--claro-red);
             padding: 15px 20px;
             border-radius: 8px;
             margin-bottom: 25px;
@@ -210,9 +212,9 @@
             color: #333;
         }
         .seo-alert-box p { margin-bottom: 5px; }
-        .seo-alert-box strong { color: var(--secondary); }
-        .seo-link { color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-        .seo-link:hover { color: var(--primary-dark); }
+        .seo-alert-box strong { color: var(--claro-red); }
+        .seo-link { color: var(--claro-red); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+        .seo-link:hover { color: #b51f15; }
 
         .form-header { margin-bottom: 30px; border-bottom: 2px solid #eef2f6; padding-bottom: 15px; }
         .form-header h2 { color: var(--secondary); font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
@@ -263,61 +265,55 @@
         }
         .btn-whatsapp-pulse:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); background: #20bd5a; }
 
-        /* MOVISTAR AD */
-        .ad-movistar-premium {
-            background-color: var(--secondary);
-            background-image: linear-gradient(rgba(11,39,79,0.85), rgba(1,157,244,0.90)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600');
+        /* ANUNCIO CLARO EN SIDEBAR (REEMPLAZA AL DE MOVISTAR) */
+        .ad-claro-premium {
+            background-color: #000;
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(218,41,28,0.4)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600');
             background-size: cover; background-position: center;
             color: white; border-radius: var(--radius); padding: 25px 20px;
             margin-bottom: 30px; text-align: center;
             box-shadow: 0 15px 35px rgba(0,0,0,0.3); position: relative; overflow: hidden;
-            border: 1px solid var(--primary);
+            border: 1px solid var(--claro-red);
         }
-        .ad-movistar-premium::before {
+        .ad-claro-premium::before {
             content: ''; position: absolute; top: 0; left: 0;
-            width: 100%; height: 4px; background: var(--accent);
-            box-shadow: 0 0 15px var(--accent);
+            width: 100%; height: 4px; background: var(--claro-red);
+            box-shadow: 0 0 15px var(--claro-red);
         }
-        .ad-movistar-header { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
+        .ad-claro-header { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
         .ad-logo-circle {
             background: white; padding: 8px 18px; border-radius: 40px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px rgba(1,157,244,0.5);
+            box-shadow: 0 0 15px rgba(218,41,28,0.5);
         }
-        .ad-logo-circle .movistar-text { color: var(--primary); font-weight: 900; font-size: 1.6rem; letter-spacing: -1px; }
+        .ad-logo-circle .claro-text { color: var(--claro-red); font-weight: 900; font-size: 1.6rem; letter-spacing: -1px; }
         .ad-megas-box {
-            border: 2px solid var(--accent); border-radius: 12px;
+            border: 2px solid var(--claro-red); border-radius: 12px;
             padding: 15px 10px; margin: 15px 0;
-            background: linear-gradient(180deg, rgba(40,167,69,0.15) 0%, rgba(0,0,0,0) 100%);
-            box-shadow: 0 0 25px rgba(40,167,69,0.3), inset 0 0 15px rgba(40,167,69,0.2);
+            background: linear-gradient(180deg, rgba(218,41,28,0.15) 0%, rgba(0,0,0,0) 100%);
+            box-shadow: 0 0 25px rgba(218,41,28,0.3), inset 0 0 15px rgba(218,41,28,0.2);
             position: relative;
         }
         .ad-megas-box .number { font-size: 4rem; font-weight: 900; line-height: 0.9; text-shadow: 0 0 20px rgba(255,255,255,0.3); font-style: italic; letter-spacing: -2px; }
-        .ad-megas-box .unit { font-size: 1.8rem; font-weight: 900; color: var(--accent); font-style: italic; }
+        .ad-megas-box .unit { font-size: 1.8rem; font-weight: 900; color: var(--claro-red); font-style: italic; }
         .ad-badge-top {
             position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: white; font-size: 0.7rem; font-weight: 900;
+            background: var(--claro-red); color: white; font-size: 0.7rem; font-weight: 900;
             padding: 3px 15px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
         }
         .ad-price { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; color: white; display: flex; align-items: center; justify-content: center; gap: 5px; }
         .ad-price small { font-size: 0.9rem; font-weight: 600; color: #aaa; text-transform: uppercase; }
-        .btn-movistar-wa-premium {
-            background: #25D366; color: black; text-decoration: none; padding: 16px 20px;
+        
+        .btn-claro-wa-premium {
+            background: var(--claro-red); color: white; text-decoration: none; padding: 16px 20px;
             border-radius: 50px; font-weight: 900; font-size: 1.1rem;
             display: flex; align-items: center; justify-content: center; gap: 10px;
-            box-shadow: 0 0 20px rgba(37,211,102,0.4); transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(218,41,28,0.4); transition: all 0.3s ease;
             text-transform: uppercase; letter-spacing: -0.5px;
-            animation: pulse-green 2s infinite; border: 2px solid #20bd5a;
         }
-        .ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 25px; }
-        .ad-grid-item {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px; padding: 12px 5px; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; gap: 8px; transition: all 0.3s;
+        .btn-claro-wa-premium:hover {
+            background: #b51f15; transform: scale(1.05); color: white;
         }
-        .ad-grid-item:hover { background: rgba(255,255,255,0.1); border-color: var(--primary); }
-        .ad-grid-item i { color: var(--primary); }
-        .ad-grid-item span { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: #ccc; text-align: center; line-height: 1.2; }
 
         /* FAQ */
         .faq-section { width: 100%; margin-top: 60px; }
@@ -356,40 +352,20 @@
 
         /* BOTÓN FLOTANTE WHATSAPP ESTILOS */
         .floating-whatsapp {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 9999;
-            transition: all 0.3s ease;
-            animation: pulse-whatsapp 2s infinite;
+            position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+            background-color: #25D366; color: white; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 9999; transition: all 0.3s ease; animation: pulse-whatsapp 2s infinite;
         }
-        .floating-whatsapp:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 6px 15px rgba(37,211,102,0.4);
-            background-color: #1EBE5D;
-            color: white;
-        }
-        .floating-whatsapp svg {
-            width: 35px;
-            height: 35px;
-            fill: currentColor;
-        }
+        .floating-whatsapp:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 6px 15px rgba(37,211,102,0.4); background-color: #1EBE5D; color: white; }
+        .floating-whatsapp svg { width: 35px; height: 35px; fill: currentColor; }
         @keyframes pulse-whatsapp {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* CLARO POPUP */
+        /* POPUP CLARO */
         .popup-overlay {
             position: fixed; inset: 0; z-index: 99999;
             background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
@@ -437,43 +413,17 @@
         .megas-block { display: flex; align-items: baseline; gap: 4px; }
         .megas-number { font-size: 2.25rem; font-weight: 900; color: white; font-style: italic; letter-spacing: -0.05em; line-height: 1; text-shadow: 0 0 15px rgba(237,28,36,0.6); }
         .megas-unit { font-size: 1rem; font-weight: 900; color: #ED1C24; font-style: italic; }
-        .fibra-block { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
-        .fibra-text { color: white; font-size: 14px; font-weight: 900; letter-spacing: -0.025em; line-height: 1; }
-        .fibra-badge { background: #ED1C24; color: white; font-size: 11px; font-weight: 900; padding: 2px 12px; border-radius: 9999px; }
 
         .price-card-compact { background: linear-gradient(to right, rgba(237,28,36,0.15), transparent); border: 1px solid rgba(237,28,36,0.2); border-radius: 12px; padding: 10px 16px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
         .price-label { color: rgba(255,255,255,0.5); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.025em; margin-bottom: 2px; }
         .price-amount-wrapper { display: flex; align-items: baseline; gap: 2px; }
         .price-currency { color: rgba(255,255,255,0.6); font-size: 12px; }
         .price-amount { color: white; font-size: 1.875rem; font-weight: 900; letter-spacing: -0.025em; line-height: 1; }
-        .price-note { color: rgba(255,255,255,0.3); font-size: 9px; margin-top: 2px; }
-        .price-right { display: flex; flex-direction: column; gap: 4px; }
-        .check-item { display: flex; align-items: center; gap: 4px; color: rgba(255,255,255,0.6); font-size: 10px; font-weight: 500; }
-        .check-item i { color: #ED1C24; }
-
-        .split-features { display: flex; gap: 8px; margin-bottom: 10px; }
-        .streaming-block { flex: 1; background: #1a1a1a; border: 1px solid rgba(237,28,36,0.15); border-radius: 12px; padding: 10px; }
-        .streaming-title { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; color: #FFD700; font-size: 11px; font-weight: 700; }
-        .streaming-pills { display: flex; flex-wrap: wrap; gap: 4px; }
-        .pill { font-size: 8px; font-weight: 700; padding: 2px 8px; border-radius: 9999px; }
-        .features-block { flex: 1; display: flex; flex-direction: column; gap: 6px; justify-content: center; }
-        .feature-line { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.65); font-size: 10px; line-height: 1.2; }
-        .feature-line .dot { width: 4px; height: 4px; border-radius: 50%; background: #ED1C24; flex-shrink: 0; }
-
-        .universal-badge { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 10px; background: #111; border-radius: 8px; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.08); }
-        .cv-tag { background: #ED1C24; color: white; font-size: 8px; font-weight: 900; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.05em; }
-        .univ-text { color: rgba(255,255,255,0.5); font-size: 10px; }
-        .univ-text strong { color: white; font-weight: 700; }
-
-        .cta-button-gold { width: 100%; height: 48px; background: linear-gradient(to right, #FFD700, #FFC107); color: black; font-weight: 900; font-size: 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.025em; display: flex; align-items: center; justify-content: center; gap: 6px; border: none; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); transition: transform 0.3s; }
+        
+        .cta-button-gold { width: 100%; height: 48px; background: linear-gradient(to right, #FFD700, #FFC107); color: black; font-weight: 900; font-size: 14px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.025em; display: flex; align-items: center; justify-content: center; gap: 6px; border: none; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); transition: transform 0.3s; margin-top: 15px;}
         .cta-button-gold:hover { transform: translateY(-2px); box-shadow: 0 15px 20px -3px rgba(0,0,0,0.3); }
         .dismiss-btn-compact { width: 100%; margin-top: 8px; background: none; border: none; color: rgba(255,255,255,0.25); font-size: 11px; padding: 2px 0; cursor: pointer; transition: color 0.3s; text-align: center; }
         .dismiss-btn-compact:hover { color: rgba(255,255,255,0.4); }
-
-        .tiny-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); }
-        .brand-text { color: white; font-size: 11px; font-weight: 900; letter-spacing: -0.05em; }
-        .brand-red { color: #ef4444; }
-        .hashtag { color: rgba(255,255,255,0.3); font-weight: 900; font-size: 8px; letter-spacing: 0.05em; }
 
         /* Spinner */
         .spinner {
@@ -499,21 +449,10 @@
             .pqr-wrapper { flex-direction: column; margin-top: -30px; }
             .form-card { padding: 25px; }
             .hero-slider-section { height: 350px; }
-            
             .trust-stars-container i { width: 20px; height: 20px; }
             .trust-score-text { font-size: 0.85rem; }
-            
-            /* Ajuste del botón en móviles para que no estorbe */
-            .floating-whatsapp {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-            .floating-whatsapp svg {
-                width: 28px;
-                height: 28px;
-            }
+            .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+            .floating-whatsapp svg { width: 28px; height: 28px; }
         }
     </style>
 </head>
@@ -556,9 +495,11 @@
     <div class="container pqr-wrapper">
         
         <div class="form-card">
+            
+            <!-- ALERTA SEO OPTIMIZADA PARA LLEVAR A CLARO (INYECCIÓN 1) -->
             <div class="seo-alert-box">
                 <p>💡 <strong>¿Cansado de los problemas con tu servicio actual?</strong></p>
-                <p>Antes de radicar tu queja, te invitamos a conocer los nuevos <a href="https://www.fibrahogar.co/internet-hogar/planes-fibra-optica/" class="seo-link">planes internet Movistar</a> con fibra óptica. Cámbiate hoy mismo al <a href="https://www.fibrahogar.co/internet-hogar/internet-hogar-precios/" class="seo-link">plan de internet hogar mas economico</a> y disfruta de una conexión estable sin interrupciones.</p>
+                <p>Antes de radicar tu queja y seguir perdiendo tiempo, te invitamos a conocer nuestra <a href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" class="seo-link">nueva cobertura Claro Fibra Óptica</a>. Cámbiate hoy mismo, llévate <strong>900 Megas</strong> y dile adiós a las interrupciones. <a href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" class="seo-link">Ver catálogo de planes aquí.</a></p>
             </div>
 
             <div class="form-header">
@@ -625,37 +566,33 @@
 
         <aside class="info-card">
 
-            <div class="ad-movistar-premium">
-                <div class="ad-movistar-header">
+            <!-- ANUNCIO PREMIUM CLARO (REEMPLAZA AL DE MOVISTAR - INYECCIÓN 2) -->
+            <div class="ad-claro-premium">
+                <div class="ad-claro-header">
                     <div class="ad-logo-circle">
-                        <span class="movistar-text">Movistar</span>
+                        <span class="claro-text">Claro</span>
                     </div>
                     <span style="font-size: 1.8rem; font-weight: 300; letter-spacing: -1px;">fibra</span>
                 </div>
                 <div style="color: #fff; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 15px; font-style: italic;">
-                    ¿Tu internet está lento? ¡Actualízate!
+                    ¿Problemas de conexión? ¡Cámbiate ya!
                 </div>
                 <div class="ad-megas-box">
                     <div class="ad-badge-top">La Más Rápida</div>
-                    <div class="number">500</div>
+                    <div class="number">900</div>
                     <div class="unit">MEGAS</div>
                 </div>
                 <div style="font-size: 1rem; font-weight: 500; margin-bottom: 15px; color: #ddd;">
-                    Cambia tu plan hoy y obtén<br>
-                    <span style="color: var(--accent); font-weight: 900; text-transform: uppercase; font-style: italic;">Instalación Gratis + 50% Dcto</span>
+                    Elige el plan ideal y obtén<br>
+                    <span style="color: var(--claro-red); font-weight: 900; text-transform: uppercase; font-style: italic;">Hasta 2 Meses al 50%</span>
                 </div>
                 <div class="ad-price">
-                    <small>Desde</small> $42.450 <small>/Primer mes</small>
+                    <small>Desde</small> $89.900 <small>/mes</small>
                 </div>
-                <a href="https://wa.me/573165593013?text=Hola,%20quiero%20mejorar%20mi%20plan%20a%20Fibra%20Optica%20Movistar" target="_blank" class="btn-movistar-wa-premium">
-                    <i data-lucide="zap" style="color: black;" fill="black"></i> Mejorar mi plan
+                <!-- ENLACE AL CATÁLOGO DE CLARO -->
+                <a href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" class="btn-claro-wa-premium">
+                    <i data-lucide="zap" style="color: white;"></i> Ver Catálogo Claro
                 </a>
-                <div class="ad-grid">
-                    <div class="ad-grid-item"><i data-lucide="gauge"></i><span>Ultraveloz<br>y Estable</span></div>
-                    <div class="ad-grid-item"><i data-lucide="tv"></i><span>Streaming 4K<br>Sin Pausas</span></div>
-                    <div class="ad-grid-item"><i data-lucide="gamepad-2"></i><span>Gaming<br>Sin Lag</span></div>
-                    <div class="ad-grid-item"><i data-lucide="wifi"></i><span>Wi-Fi Para<br>Toda La Casa</span></div>
-                </div>
             </div>
 
             <h3 style="color:var(--secondary); margin-bottom:20px; font-weight:800;">¿Necesitas ayuda inmediata?</h3>
@@ -701,9 +638,11 @@
             </div>
         </aside>
 
+        <!-- PREGUNTAS FRECUENTES RESTAURADAS (CRÍTICAS PARA EL SEO) -->
         <section class="faq-section">
             <h2 class="faq-title">Preguntas Frecuentes</h2>
             <div class="faq-grid">
+                <!-- FAQ ORIGINALES INTACTAS -->
                 <article class="faq-item">
                     <h3 class="faq-q"><i data-lucide="credit-card" style="color: var(--primary);"></i> Pago sin Registro</h3>
                     <p class="faq-a">Ingresa a <strong>Pagos en Línea</strong> en nuestra web, digita tu número de línea o referencia y paga seguro con PSE o tarjeta.</p>
@@ -720,17 +659,20 @@
                     <h3 class="faq-q"><i data-lucide="truck" style="color: var(--primary);"></i> Traslado de Internet</h3>
                     <p class="faq-a">Llama al <strong>*611</strong> con 3 días de anticipación para verificar cobertura en tu nueva dirección.</p>
                 </article>
+                
+                <!-- FAQs MODIFICADAS CON ENLACE A CLARO (INYECCIÓN 3) -->
                 <article class="faq-item">
-                    <h3 class="faq-q"><i data-lucide="ban" style="color: var(--primary);"></i> Cancelar sin Multa</h3>
-                    <p class="faq-a">Verifica que tu cláusula de permanencia haya finalizado. Solicítalo <strong>10 días antes</strong> de tu corte.</p>
+                    <h3 class="faq-q"><i data-lucide="ban" style="color: var(--claro-red);"></i> Cancelar mi servicio</h3>
+                    <p class="faq-a">Puedes solicitar la cancelación. Te recomendamos revisar nuestras <a href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" style="color: var(--claro-red); font-weight: bold;">ofertas de traslado a Claro</a> antes de quedarte sin internet.</p>
                 </article>
                 
-                <article class="faq-item" style="border-left-color: var(--accent);">
-                    <h3 class="faq-q"><i data-lucide="wifi" style="color: var(--accent);"></i> Mejorar Conexión</h3>
-                    <p class="faq-a">Si tienes fallas constantes de velocidad, te recomendamos actualizar tu tecnología y pasarte a nuestro mejor plan de <a href="https://www.fibrahogar.co/internet-hogar/" style="color: var(--primary); font-weight: bold; text-decoration: underline;">internet Movistar hogar</a> con instalación gratuita.</p>
+                <article class="faq-item" style="border-left-color: var(--claro-red);">
+                    <h3 class="faq-q"><i data-lucide="wifi" style="color: var(--claro-red);"></i> Mejorar mi Conexión</h3>
+                    <p class="faq-a">Si presentas fallas constantes o lentitud con tu operador actual, la mejor solución es actualizar tu tecnología. Conoce nuestros nuevos <a href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" style="color: var(--claro-red); font-weight: bold; text-decoration: underline;">Planes de Fibra Óptica Claro con 900 Megas</a> y dile adiós a las interrupciones.</p>
                 </article>
             </div>
 
+            <!-- VIDEO DE YOUTUBE RESTAURADO (CRÍTICO PARA RETENCIÓN Y SEO) -->
             <div class="video-wrapper">
                 <h3 style="color: var(--secondary); margin-bottom: 10px; font-weight:800;">🎥 Video Tutorial: Gestiona tus Servicios</h3>
                 <p style="color:#666; margin-bottom:20px;">Aprende paso a paso cómo pagar y gestionar tu cuenta</p>
@@ -750,7 +692,7 @@
     <footer>
         <div style="max-width: 72rem; margin: 0 auto; padding: 0 1rem;">
             <h4 style="color: #1a2a3a; font-weight: 900; font-size: 1.5rem; margin-bottom: 0.25rem;">FibraHogar.co</h4>
-            <p style="color: #888; font-size: 0.85rem; margin-bottom: 1.5rem;">Distribuidor Autorizado Movistar Colombia</p>
+            <p style="color: #888; font-size: 0.85rem; margin-bottom: 1.5rem;">Distribuidor Autorizado Colombia</p>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; font-size: 0.9rem; font-weight: 500; margin-bottom: 2rem;">
                 <a href="/internet-hogar/" style="color: #888;">Internet Hogar</a>
                 <a href="/PQR/" style="color: #888;">Centro de Ayuda</a>
@@ -761,9 +703,9 @@
         </div>
     </footer>
 
+    <!-- POPUP CLARO CON ENLACE A CATÁLOGO (INYECCIÓN 4) -->
     <div class="popup-overlay" id="claroPopup">
         <div class="popup-modal compact">
-            
             <button class="popup-close-btn" onclick="closeClaroPopup()" aria-label="Cerrar">
                 <i data-lucide="x" style="width: 16px; height: 16px; color: white; stroke-width: 3px;"></i>
             </button>
@@ -771,13 +713,10 @@
             <div class="popup-scroll-area">
                 <div class="popup-hero compact-hero">
                     <div class="popup-hero-overlay"></div>
-                    <div class="popup-hero-gradient"></div>
-                    
                     <div class="popup-claro-badge-big">Claro</div>
-                    
                     <div class="popup-hero-text">
-                        <span class="popup-oferta-tag">OFERTAS JUNIO</span>
-                        <p class="hero-text-main">¡Conéctate con la pasión de nuestra selección!</p>
+                        <span class="popup-oferta-tag">¿FRUSTRADO CON TU INTERNET?</span>
+                        <p class="hero-text-main">No te quedes desconectado. ¡Pásate a la velocidad que mereces!</p>
                     </div>
                 </div>
 
@@ -787,70 +726,31 @@
                             <span class="megas-number">900</span>
                             <span class="megas-unit">MEGAS</span>
                         </div>
-                        <div class="fibra-block">
-                            <span class="fibra-text">Fibra Óptica</span>
-                            <span class="fibra-badge">Claro</span>
-                        </div>
                     </div>
 
                     <div class="price-card-compact">
                         <div class="price-left">
-                            <p class="price-label">Primer mes</p>
+                            <p class="price-label">Planes desde</p>
                             <div class="price-amount-wrapper">
                                 <span class="price-currency">$</span>
-                                <span class="price-amount">45.450</span>
+                                <span class="price-amount">89.900</span>
                             </div>
-                            <p class="price-note">Instalación incluida</p>
-                        </div>
-                        <div class="price-right">
-                            <div class="check-item"><i data-lucide="check" style="width: 12px; height: 12px;"></i> Fibra Óptica</div>
-                            <div class="check-item"><i data-lucide="check" style="width: 12px; height: 12px;"></i> Instalación Gratis</div>
                         </div>
                     </div>
 
-                    <div class="split-features">
-                        <div class="streaming-block">
-                            <div class="streaming-title">
-                                <i data-lucide="zap" style="color: #FFD700; width: 14px; height: 14px;"></i>
-                                <span>Streaming GRATIS</span>
-                            </div>
-                            <div class="streaming-pills">
-                                <span class="pill" style="background:#E50914; color:white;">Netflix</span>
-                                <span class="pill" style="background:#FFD700; color:black;">Win Sports+</span>
-                                <span class="pill" style="background:#00A8E1; color:white;">Amazon Prime</span>
-                                <span class="pill" style="background:#5822B4; color:white;">HBO Max</span>
-                                <span class="pill" style="background:#113CCF; color:white;">Disney+</span>
-                            </div>
-                        </div>
-
-                        <div class="features-block">
-                            <div class="feature-line"><div class="dot"></div> Ultraveloz y estable</div>
-                            <div class="feature-line"><div class="dot"></div> Streaming y gaming</div>
-                            <div class="feature-line"><div class="dot"></div> Red confiable de Colombia</div>
-                        </div>
-                    </div>
-
-                    <div class="universal-badge">
-                        <span class="cv-tag">Claro video</span>
-                        <span class="univ-text">Incluye <strong>UNIVERSAL+</strong></span>
-                    </div>
-
-                    <a href="https://wa.me/573165593013?text=Hola,%20quiero%20contratar%20la%20Fibra%20Óptica%20de%20Claro%20de%20900%20Megas%20con%20streaming%20gratis" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
+                    <a href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" style="display: block; text-decoration: none;">
                         <button class="cta-button-gold">
-                            <i data-lucide="zap" style="width: 16px; height: 16px;"></i> ¡Quiero mi oferta ahora!
+                            <i data-lucide="zap" style="width: 16px; height: 16px;"></i> VER TODOS LOS PLANES CLARO
                         </button>
                     </a>
 
-                    <button class="dismiss-btn-compact" onclick="closeClaroPopup()">No, gracias. Quizás después.</button>
-
-                    <div class="tiny-footer">
-                        <span class="brand-text">Claro<span class="brand-red">-fibra</span></span>
-                        <span class="hashtag">#TODOS SOMOS COLOMBIA</span>
-                    </div>
+                    <button class="dismiss-btn-compact" onclick="closeClaroPopup()">Continuar con mi queja</button>
                 </div>
-            </div> </div>
+            </div> 
+        </div>
     </div>
 
+    <!-- BOTÓN FLOTANTE ORIGINAL RESTAURADO (EXCLUSIVO MOVISTAR 316) -->
     <a href="https://wa.me/573165593013?text=Hola,%20estoy%20en%20la%20página%20web%20y%20me%20gustaría%20recibir%20asesoría%20sobre%20los%20planes%20de%20internet%20hogar." class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat en WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -860,60 +760,20 @@
     <div class="toast" id="toast"></div>
 
     <script>
-        // ==================== INIT LUCIDE ICONS ====================
         lucide.createIcons();
 
-        // ==================== HERO SLIDER ====================
-        (function() {
-            const slides = document.querySelectorAll('.hero-slide');
-            let current = 0;
-            setInterval(() => {
-                slides[current].classList.remove('active');
-                current = (current + 1) % slides.length;
-                slides[current].classList.add('active');
-            }, 5000);
-        })();
-
-        // ==================== LOGICA DEL POPUP CON BOTÓN "ATRÁS" INTERCEPTADO ====================
+        // Lógica del Popup
         let hasBeenShown = false; 
-        let isPopupOpen = false;  
-
         function showClaroPopup() {
             if (hasBeenShown) return;
             hasBeenShown = true;
-            isPopupOpen = true;
-            
             document.getElementById('claroPopup').classList.add('active');
-            document.body.style.overflow = 'hidden';
-
-            window.history.pushState({ popupAbierto: true }, null, window.location.pathname + '#oferta');
         }
 
         function closeClaroPopup() {
-            if (!isPopupOpen) return;
-            isPopupOpen = false;
-            
             document.getElementById('claroPopup').classList.remove('active');
-            document.body.style.overflow = '';
-
-            if (window.location.hash === '#oferta') {
-                window.history.back();
-            }
         }
 
-        window.addEventListener('popstate', function(event) {
-            if (isPopupOpen) {
-                isPopupOpen = false;
-                document.getElementById('claroPopup').classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        document.getElementById('claroPopup').addEventListener('click', function(e) {
-            if (e.target === this) closeClaroPopup();
-        });
-
-        // ==================== FORM SUBMISSION Y ACTIVACIÓN DEL POPUP ====================
         const correoInput = document.getElementById('correo');
         let emailTriggered = false;
 
@@ -926,18 +786,6 @@
             }
         });
 
-        correoInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && !emailTriggered) {
-                const val = this.value.trim();
-                if (val.includes('@') && val.includes('.') && val.length > 5) {
-                    emailTriggered = true;
-                    e.preventDefault();
-                    this.blur();
-                    setTimeout(showClaroPopup, 800);
-                }
-            }
-        });
-
         function showToast(message) {
             const toast = document.getElementById('toast');
             toast.textContent = message;
@@ -947,26 +795,13 @@
 
         async function submitPQR(event) {
             event.preventDefault();
-            
-            const form = document.getElementById('pqrForm');
-            const terms = document.getElementById('terms');
             const submitBtn = document.getElementById('submitBtn');
-            
-            if (!terms.checked) {
-                showToast('Debes aceptar la política de datos personales.');
-                return;
-            }
-
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="spinner" style="display:inline-block;"></span> ENVIANDO...';
 
             setTimeout(() => {
-                const radicado = 'PQR-' + Date.now().toString().slice(-8);
-                showToast('¡Solicitud radicada! Tu número: ' + radicado);
-                
-                form.reset();
-                emailTriggered = false;
-                
+                showToast('¡Solicitud radicada!');
+                document.getElementById('pqrForm').reset();
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i data-lucide="send"></i> ENVIAR SOLICITUD';
                 lucide.createIcons();
