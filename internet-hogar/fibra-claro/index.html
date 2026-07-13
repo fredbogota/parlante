@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO OPTIMIZADO PARA TODA COLOMBIA -->
+    <title>Planes Claro Hogar Colombia | Internet Fibra Óptica a Nivel Nacional</title>
+    <meta name="description" content="Contrata Claro Internet Hogar con cobertura en toda Colombia. Planes de fibra óptica de hasta 900 Megas. Solo Internet, Doble o Triple Play. ¡Instalación rápida y beneficios!">
+    <meta name="keywords" content="claro hogar colombia, internet claro, fibra optica claro, planes claro hogar, claro solo internet, internet nacional colombia">
+    
+    <!-- EL ICONO DE LA PESTAÑA (Favicon) -->
+    <link rel="icon" href="Claro-Logo-500x283.png" type="image/png">
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --claro-red: #DA291C;
+            --claro-dark: #222222;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+        
+        /* Navbar y Botones */
+        .navbar-claro { background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .btn-claro { background-color: var(--claro-red); color: white; font-weight: bold; border-radius: 25px; padding: 10px 25px; border: none; transition: 0.3s; }
+        .btn-claro:hover { background-color: #b51f15; color: white; transform: scale(1.05); }
+        
+        /* Slider Hero */
+        .carousel-item { height: 60vh; min-height: 400px; background: no-repeat center center scroll; background-size: cover; position: relative; }
+        .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
+        .carousel-caption { bottom: 30%; z-index: 10; text-align: center; }
+        .carousel-caption h1 { font-size: 3.5rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        
+        /* Tarjetas de Precios */
+        .pricing-card { border: none; border-radius: 15px; transition: transform 0.3s, box-shadow 0.3s; margin-bottom: 30px; overflow: hidden; background: white; }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .card-header-red { background-color: var(--claro-red); color: white; padding: 20px; font-weight: bold; text-transform: uppercase; font-size: 1.2rem; }
+        .price-badge { font-size: 2.5rem; font-weight: 900; color: var(--claro-dark); margin: 15px 0; }
+        .promo-badge { background-color: #ffcc00; color: #000; font-weight: bold; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+        .features-list { list-style: none; padding: 0; text-align: left; margin: 20px 0; }
+        .features-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        .features-list li i { color: var(--claro-red); margin-right: 10px; width: 20px; text-align: center; }
+        
+        /* Botón WhatsApp Flotante */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); width: 60px; height: 60px; line-height: 60px; z-index: 1000; transition: 0.3s; }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-claro sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <!-- TU LOGO DE CLARO AQUÍ -->
+                <img src="Claro-Logo-500x283.png" alt="Logo Claro" height="40">
+                <span class="ms-3 fw-bold text-dark border-start ps-3 border-2">FibraHogar Autorizado</span>
+            </a>
+            <div class="ms-auto d-none d-sm-block">
+                <!-- TELÉFONO ACTUALIZADO -->
+                <a href="tel:+573222101716" class="btn btn-outline-dark rounded-pill fw-bold"><i class="fas fa-phone-alt me-2"></i>322 210 1716</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SLIDER HERO -->
+    <div id="heroSliderClaro" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroSliderClaro" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroSliderClaro" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100">
+                    <div class="carousel-caption">
+                        <span class="badge bg-danger mb-3 px-3 py-2 fs-5">Cobertura en todo el país</span>
+                        <h1 class="text-white">Velocidad que Vuela: 900 Megas</h1>
+                        <p class="fs-4 text-light mb-4">Conéctate con Claro Fibra Óptica en Colombia. ¡Lleva 1 Mes GRATIS o 2 Meses al 50%!</p>
+                        <a href="#planes" class="btn btn-claro btn-lg">Ver Planes y Ofertas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100">
+                    <div class="carousel-caption">
+                        <h1 class="text-white">El Mejor Entretenimiento en Casa</h1>
+                        <p class="fs-4 text-light mb-4">Planes Triple Play, Dobles o Solo Internet. Incluye tus apps favoritas.</p>
+                        <a href="#planes" class="btn btn-claro btn-lg">Quiero este paquete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroSliderClaro" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroSliderClaro" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- SECCIÓN DE PLANES -->
+    <section id="planes" class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Planes Disponibles a Nivel Nacional</h2>
+            <p class="text-muted mb-5">Verifica tu cobertura por WhatsApp. Todos los planes FTTH incluyen <strong>900 Megas</strong>.</p>
+            
+            <div class="row justify-content-center">
+                
+                <!-- PLAN SENCILLO (SOLO INTERNET) -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card text-center h-100 shadow-sm border border-danger border-1">
+                        <div class="card-header-red">Sencillo (Solo Internet)</div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="promo-badge">Instalación GRATIS</div>
+                            <div class="price-badge">$109.900<span class="fs-5 text-muted">/mes</span></div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-wifi"></i> <strong>900 Megas</strong> en FTTH (500M en HFC)</li>
+                                <li><i class="fas fa-gift"></i> Promo PCAM: 1 mes Gratis o 2 al 50%</li>
+                                <li><i class="fas fa-shield-alt"></i> McAfee Premium 3 equipos</li>
+                            </ul>
+                            <div class="mt-auto p-3 bg-light rounded">
+                                <p class="small fw-bold text-muted mb-2">Incluye estas 3 Apps:</p>
+                                <div class="text-danger fw-bold fs-6 mb-3">Win+ Play | Prime Video | Max</div>
+                                <!-- WHATSAPP ACTUALIZADO -->
+                                <a href="https://wa.me/573222101716?text=Hola,%20me%20interesa%20el%20Plan%20Solo%20Internet%20Claro%20de%20109.900" class="btn btn-claro w-100" target="_blank">Lo Quiero</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAN DOBLE -->
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                    <div class="card pricing-card text-center h-100 border border-dark border-2 shadow">
+                        <div class="card-header-red bg-dark">Nuevo Plan Doble <span class="badge bg-danger ms-2">Destacado</span></div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="promo-badge">Instalación $25.000</div>
+                            <div class="price-badge">$104.900<span class="fs-5 text-muted">/mes</span></div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-wifi"></i> <strong>900 Megas</strong> en FTTH</li>
+                                <li><i class="fas fa-tv"></i> <strong>TV Intermedia</strong> (93 canales)</li>
+                                <li><i class="fas fa-gift"></i> Promo PCAM: 1 mes Gratis o 2 al 50%</li>
+                                <li><i class="fas fa-video"></i> Incluye Claro Video</li>
+                            </ul>
+                            <div class="mt-auto p-3 bg-light rounded">
+                                <p class="small fw-bold text-muted mb-2">Elige 1 App Premium:</p>
+                                <div class="text-dark fw-bold fs-6 mb-3">Netflix, Max, Disney+, Prime o Win+</div>
+                                <!-- WHATSAPP ACTUALIZADO -->
+                                <a href="https://wa.me/573222101716?text=Hola,%20me%20interesa%20el%20Plan%20Doble%20Claro%20de%20104.900" class="btn btn-claro w-100" target="_blank">Lo Quiero</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLAN TRIPLE PLAY -->
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                    <div class="card pricing-card text-center h-100 shadow-sm border border-danger border-1">
+                        <div class="card-header-red">Triple Play Superior</div>
+                        <div class="card-body d-flex flex-column">
+                            <div class="promo-badge">El más completo</div>
+                            <div class="price-badge">$131.900<span class="fs-5 text-muted">/mes</span></div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-wifi"></i> <strong>900 Megas</strong> en FTTH</li>
+                                <li><i class="fas fa-tv"></i> <strong>TV Superior</strong> (149 canales)</li>
+                                <li><i class="fas fa-phone"></i> Telefonía Ilimitada</li>
+                                <li><i class="fas fa-gift"></i> Promo PCAM: 1 mes Gratis o 2 al 50%</li>
+                            </ul>
+                            <div class="mt-auto p-3 bg-light rounded">
+                                <p class="small fw-bold text-muted mb-2">Elige 2 Apps Premium:</p>
+                                <div class="text-danger fw-bold small mb-3">Ej: Netflix + Max, o Win+ + Prime</div>
+                                <!-- WHATSAPP ACTUALIZADO -->
+                                <a href="https://wa.me/573222101716?text=Hola,%20me%20interesa%20el%20Triple%20Play%20Claro%20de%20131.900" class="btn btn-claro w-100" target="_blank">Lo Quiero</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER DE CONFIANZA -->
+    <section class="bg-dark text-white py-4 mt-4">
+        <div class="container text-center">
+            <h4 class="mb-0"><i class="fas fa-check-circle text-success me-2"></i> Solicita tu servicio a nivel nacional hoy mismo con <span class="text-danger">@nectados</span></h4>
+        </div>
+    </section>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP (ACTUALIZADO) -->
+    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20validar%20cobertura%20de%20Claro%20Hogar%20en%20mi%20ciudad" class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="Escríbenos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
