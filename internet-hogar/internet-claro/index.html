@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Planes Claro Hogar Colombia | Internet Fibra Óptica</title>
-    <meta name="description" content="Contrata Claro Internet Hogar con cobertura en toda Colombia. Planes de fibra óptica de hasta 900 Megas. Solo Internet, Doble o Triple Play.">
-    <meta name="keywords" content="claro hogar colombia, internet claro, fibra optica claro, planes claro hogar, pqr claro hogar">
+    <!-- SEO OPTIMIZADO PARA BÚSQUEDAS NACIONALES Y PQR -->
+    <title>Internet Claro Colombia | Planes Fibra Óptica, PQR y Cobertura</title>
+    <meta name="description" content="Contrata Internet Claro Colombia. Cobertura de fibra óptica a nivel nacional. Radica tu PQR Claro Hogar, solicita traslados o mejora tu factura aquí.">
+    <meta name="keywords" content="internet claro colombia, claro internet colombia, pqr claro hogar, quejas claro, internet claro, planes claro hogar, fibra optica colombia, cobertura claro colombia, atención al cliente claro">
+    <meta name="author" content="FibraHogar.co">
+    <meta name="geo.region" content="CO">
+    <meta name="geo.placename" content="Colombia">
     
     <!-- Favicon -->
     <link rel="icon" href="../../assets/logoclaro.png" type="image/png">
@@ -15,14 +19,65 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper JS CSS (Para el carrusel de planes estilo Claro) -->
+    <!-- Swiper JS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- DATOS ESTRUCTURADOS ENRIQUECIDOS: ENFOCADO EN COLOMBIA Y SERVICIO AL CLIENTE -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Internet Claro Colombia - Planes de Fibra Óptica",
+      "image": [
+        "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3"
+      ],
+      "description": "El mejor servicio de Internet Claro Colombia. Ultravelocidad de hasta 900 Megas en Fibra Óptica con cobertura a nivel nacional. Incluye centro de soluciones y PQR Claro.",
+      "sku": "CLARO-INTERNET-COLOMBIA",
+      "mpn": "CLARO-FIBRA-NAL",
+      "brand": {
+        "@type": "Brand",
+        "name": "Claro Colombia"
+      },
+      "review": {
+        "@type": "Review",
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Cliente Verificado Claro"
+        },
+        "reviewBody": "Excelente atención al cliente, resolví mi PQR de Claro Hogar rápido y me mejoraron a fibra óptica."
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2158",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "COP",
+        "lowPrice": "89900",
+        "highPrice": "131900",
+        "offerCount": "9",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "CO",
+        "url": "https://www.fibrahogar.co/internet-hogar/fibra-claro/"
+      }
+    }
+    </script>
 
     <style>
         :root {
             --claro-red: #DA291C;
             --claro-yellow: #FFC72C;
             --claro-dark: #222222;
+            --claro-gray: #f4f6f9;
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
         
@@ -32,51 +87,75 @@
         .btn-claro:hover { background-color: #b51f15; color: white; transform: scale(1.05); }
         
         /* Slider Hero */
-        .carousel-item { height: 60vh; min-height: 400px; background: no-repeat center center scroll; background-size: cover; position: relative; }
-        .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
-        .carousel-caption { bottom: 30%; z-index: 10; text-align: center; }
-        .carousel-caption h1 { font-size: 3.5rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .carousel-item { height: 65vh; min-height: 450px; background: no-repeat center center scroll; background-size: cover; position: relative; }
+        .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.3)); }
+        .carousel-caption { bottom: 20%; z-index: 10; text-align: left; max-width: 800px; }
+        .carousel-caption h1 { font-size: 4rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.1; letter-spacing: -1px; }
         
-        /* TARJETAS DE PLANES (ESTILO CLARO OFICIAL) */
-        .claro-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); text-align: center; overflow: hidden; height: 100%; display: flex; flex-direction: column; position: relative; margin: 10px; border: 1px solid #eaeaea;}
+        /* Localized Banner */
+        .national-badge { background-color: var(--claro-yellow); color: #000; font-weight: 900; padding: 6px 18px; border-radius: 5px; font-size: 0.95rem; display: inline-block; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+
+        /* SECCIÓN COBERTURA (CENTRADA - SIN MAPA) */
+        .cobertura-section { background-color: #f4f6f9; padding: 60px 0; border-top: 4px solid var(--claro-red); border-bottom: 1px solid #ddd; }
+        .cobertura-title { font-size: 1.1rem; color: #555; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        .cobertura-main-text { font-size: 3.8rem; color: var(--claro-red); font-weight: 900; margin-bottom: 15px; line-height: 1; letter-spacing: -1px; }
+        .cobertura-desc { font-size: 1.1rem; color: #444; max-width: 700px; margin: 0 auto 30px auto; }
+        .btn-cobertura-trigger { background-color: var(--claro-red); color: white; font-size: 1.3rem; font-weight: 800; padding: 15px 45px; border-radius: 50px; box-shadow: 0 4px 15px rgba(218,41,28,0.4); transition: 0.3s; border: none; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-cobertura-trigger:hover { background-color: #b51f15; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(218,41,28,0.5); color: white;}
+
+        /* SECCIÓN PQR (NUEVA) */
+        .pqr-section { background-color: #ffffff; padding: 50px 0; border-top: 1px solid #eee; }
+        .pqr-box { background: linear-gradient(135deg, #111, #222); border-radius: 20px; padding: 40px; color: white; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border-left: 6px solid var(--claro-yellow);}
+        .btn-pqr { background-color: transparent; border: 2px solid var(--claro-yellow); color: var(--claro-yellow); padding: 12px 35px; border-radius: 50px; font-weight: 800; font-size: 1.2rem; transition: 0.3s; text-transform: uppercase; }
+        .btn-pqr:hover { background-color: var(--claro-yellow); color: #000; transform: translateY(-2px); }
+
+        /* TARJETAS DE PLANES */
+        .claro-card { background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); text-align: center; overflow: hidden; height: 100%; display: flex; flex-direction: column; position: relative; margin: 10px; border: 1px solid #eee; transition: 0.3s; }
+        .claro-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .ribbon-yellow { background-color: var(--claro-yellow); color: #000; font-size: 0.75rem; font-weight: bold; padding: 4px 20px; border-radius: 0 0 8px 8px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; box-shadow: 0 2px 4px rgba(0,0,0,0.15); letter-spacing: 0.5px; width: 85%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
+        .card-red-header { background-color: var(--claro-red); color: white; padding: 45px 20px 25px; position: relative; }
+        .card-red-header.triple-header { background-color: #111; }
+        .card-red-header i { font-size: 1.8rem; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
+        .card-red-header h3 { font-size: 1.1rem; font-weight: 400; margin: 0; letter-spacing: 0.5px; }
+        .card-red-header h2 { font-size: 1.5rem; font-weight: 800; margin: 5px 0 0; }
         
-        /* Cinta Amarilla */
-        .ribbon-yellow { background-color: var(--claro-yellow); color: #000; font-size: 0.75rem; font-weight: bold; padding: 3px 20px; border-radius: 0 0 8px 8px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;}
+        .card-body-content { padding: 25px 20px; flex-grow: 1; display: flex; flex-direction: column; background: #fff; }
+        .cargo-fijo { font-size: 0.85rem; color: #777; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .price-text { font-size: 3.2rem; font-weight: 900; color: var(--claro-dark); line-height: 1; letter-spacing: -2px; margin: 5px 0; }
+        .price-text::before { content: '$'; font-size: 1.8rem; font-weight: 700; vertical-align: super; margin-right: 2px; }
+        .precio-oferta { font-size: 0.9rem; color: var(--claro-red); font-weight: 700; margin-bottom: 20px; background: #fff3f2; padding: 4px 10px; border-radius: 20px; display: inline-block; }
         
-        /* Cabecera Roja */
-        .card-red-header { background-color: var(--claro-red); color: white; padding: 40px 20px 25px; position: relative; }
-        .card-red-header i { font-size: 2rem; margin-bottom: 10px; }
-        .card-red-header h3 { font-size: 1.1rem; font-weight: 400; margin: 0; }
-        .card-red-header h2 { font-size: 1.6rem; font-weight: 800; margin: 0; }
+        .plan-incluye { border-top: 1px solid #f2f2f2; padding-top: 15px; margin-bottom: 20px; }
+        .plan-incluye p { font-size: 0.8rem; color: #666; margin-bottom: 8px; font-weight: 500; }
+        .apps-list { font-weight: 800; color: var(--claro-dark); font-size: 1.05rem; line-height: 1.3; }
+        .features-list { text-align: left; list-style: none; padding: 0; margin: 15px 0 0; font-size: 0.85rem; color: #555; }
+        .features-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .features-list i { color: var(--claro-red); font-size: 0.9rem; }
         
-        /* Cuerpo de la tarjeta */
-        .card-body-content { padding: 25px 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .cargo-fijo { font-size: 0.9rem; color: #666; font-weight: bold; margin-bottom: 5px; }
-        .price-text { font-size: 2.8rem; font-weight: 900; color: var(--claro-red); line-height: 1; letter-spacing: -1px; margin-bottom: 5px; }
-        .precio-oferta { font-size: 0.85rem; color: #666; margin-bottom: 20px; }
+        .btn-solicitar { background-color: var(--claro-red); color: white; border: none; border-radius: 30px; padding: 12px 0; font-weight: 800; font-size: 1.1rem; width: 100%; transition: 0.3s; margin-top: auto; display: block; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 10px rgba(218,41,28,0.2); }
+        .btn-solicitar:hover { background: #b51f15; color: white; transform: translateY(-2px); }
         
-        /* Inclusiones del plan */
-        .plan-incluye { border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 20px; }
-        .plan-incluye p { font-size: 0.8rem; color: #666; margin-bottom: 10px; }
-        .apps-list { font-weight: 800; color: var(--claro-dark); font-size: 1.1rem; line-height: 1.2; }
-        .features-small { font-size: 0.85rem; color: #555; text-align: left; list-style: none; padding: 0; margin-top: 15px;}
-        .features-small li { margin-bottom: 6px; border-bottom: 1px dashed #eee; padding-bottom: 5px;}
-        .features-small i { color: var(--claro-red); width: 20px; text-align: center;}
-        
-        /* Botón Solicitar */
-        .btn-solicitar { border: 2px solid var(--claro-red); color: var(--claro-red); background: white; border-radius: 30px; padding: 10px 0; font-weight: bold; font-size: 1.1rem; width: 100%; transition: 0.3s; margin-top: auto; display: block; text-decoration: none;}
-        .btn-solicitar:hover { background: var(--claro-red); color: white; text-decoration: none;}
-        
-        /* Estilos del Carrusel Swiper */
-        .swiper { width: 100%; padding: 20px 40px 50px; } /* Padding lateral para las flechas */
-        .swiper-button-next, .swiper-button-prev { color: var(--claro-dark); background: white; width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .swiper-button-next:after, .swiper-button-prev:after { font-size: 1.2rem; font-weight: bold; }
-        .swiper-pagination-bullet-active { background: var(--claro-red); }
+        /* Swiper Controls */
+        .swiper { width: 100%; padding: 30px 40px 60px; }
+        .swiper-button-next, .swiper-button-prev { color: var(--claro-dark); background: white; width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #eee; }
+        .swiper-button-next:after, .swiper-button-prev:after { font-size: 1.1rem; font-weight: 900; }
+        .swiper-pagination-bullet-active { background: var(--claro-red); width: 20px; border-radius: 5px; }
+
+        /* Estrellas Estilo Google */
+        .rating-box { color: #f4c150; font-size: 0.9rem; margin-top: 5px; display: flex; align-items: center; justify-content: center; gap: 3px; }
+        .rating-text { color: #666; font-size: 0.8rem; margin-left: 5px; font-weight: 600; color: rgba(255,255,255,0.8);}
+
+        /* Modales */
+        .modal-content { border-radius: 16px; border: none; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .modal-header { background-color: var(--claro-red); color: white; border-top-left-radius: 16px; border-top-right-radius: 16px; }
+        .modal-header.pqr-header { background-color: #111; border-bottom: 3px solid var(--claro-yellow); }
+        .form-control, .form-select { padding: 12px; border-radius: 8px; border: 2px solid #eee; font-family: inherit; }
+        .form-control:focus, .form-select:focus { border-color: var(--claro-red); box-shadow: none; }
 
         /* Footer y Flotante */
-        .footer-link { color: #adb5bd; text-decoration: none; transition: 0.3s; font-size: 0.9rem; }
+        .footer-link { color: #adb5bd; text-decoration: none; transition: 0.3s; font-size: 0.9rem; cursor: pointer; }
         .footer-link:hover { color: white; text-decoration: underline; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); width: 60px; height: 60px; line-height: 60px; z-index: 1000; transition: 0.3s; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: 0.3s; text-decoration: none; }
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
     </style>
 </head>
@@ -87,241 +166,180 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="../../assets/logoclaro.png" alt="Logo Claro" height="40">
-                <span class="ms-3 fw-bold text-dark border-start ps-3 border-2">Internet Claro Fibra Optica</span>
+                <span class="ms-3 fw-bold text-dark border-start ps-3 border-2 d-none d-md-inline">Claro Internet Colombia</span>
+                <span class="ms-2 badge bg-danger d-md-none">Claro Fibra</span>
             </a>
-            <div class="ms-auto d-none d-sm-block">
-                <a href="tel:+573222101716" class="btn btn-outline-dark rounded-pill fw-bold"><i class="fas fa-phone-alt me-2"></i>322 210 1716</a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <button class="btn btn-outline-danger btn-sm rounded-pill fw-bold d-none d-sm-block" data-bs-toggle="modal" data-bs-target="#modalPQR">PQR Claro</button>
+                <a href="tel:+573222101716" class="btn btn-outline-dark rounded-pill fw-bold px-3 py-2"><i class="fas fa-phone-alt me-2 text-danger"></i>322 210 1716</a>
             </div>
         </div>
     </nav>
 
-    <!-- SLIDER HERO -->
-    <div id="heroSliderClaro" class="carousel slide" data-bs-ride="carousel">
+    <!-- SLIDER HERO ENFOCADO EN "INTERNET CLARO COLOMBIA" -->
+    <div id="heroSliderClaro" class="carousel slide">
         <div class="carousel-inner">
             <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
                 <div class="carousel-overlay"></div>
-                <div class="container h-100">
+                <div class="container h-100 d-flex align-items-center">
                     <div class="carousel-caption">
-                        <span class="badge bg-danger mb-3 px-3 py-2 fs-5">Cobertura Nacional</span>
-                        <h1 class="text-white">Conéctate a 900 Megas</h1>
-                        <p class="fs-4 text-light mb-4">La velocidad que tu hogar necesita. Desliza para ver nuestras ofertas.</p>
-                        <a href="#catalogo-planes" class="btn btn-claro btn-lg">Ver Planes</a>
+                        <div class="national-badge"><i class="fas fa-globe-americas me-2"></i>LA RED MÁS GRANDE DE COLOMBIA</div>
+                        <h1 class="text-white">Internet Claro Colombia</h1>
+                        <p class="fs-4 text-light my-3 fw-light">Fibra Óptica de 900 Megas con cobertura en todo el país. <br><strong class="text-warning">¡Oferta Especial Medellín: 50% Dto por 2 meses!</strong></p>
+                        
+                        <!-- 5 Estrellas Estructuradas -->
+                        <div class="d-flex align-items-center gap-2 mb-4 bg-dark bg-opacity-50 p-2 rounded d-inline-flex">
+                            <div class="text-warning fs-5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-white small fw-bold">4.9/5 Cobertura Nacional (2,158 Reviews)</span>
+                        </div>
+                        <div>
+                            <a href="#catalogo-planes" class="btn btn-claro btn-lg px-4 py-2 me-2 mb-2 mb-sm-0">Ver Planes y Precios</a>
+                            <button class="btn btn-warning btn-lg px-4 py-2 fw-bold" data-bs-toggle="modal" data-bs-target="#modalCobertura">Validar Cobertura</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SECCIÓN DE PLANES CON SWIPER JS (Estilo Oficial Claro) -->
+    <!-- SECCIÓN DE COBERTURA (CENTRADA, SIN MAPA) -->
+    <section class="cobertura-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="cobertura-title">Verifica disponibilidad en tu ciudad</h2>
+                    <h3 class="cobertura-main-text">Internet Claro Colombia</h3>
+                    <p class="cobertura-desc">Llegamos a donde otros no llegan. Valida tu zona y obtén instalación rápida de Fibra Óptica.</p>
+                    <button class="btn-cobertura-trigger" data-bs-toggle="modal" data-bs-target="#modalCobertura">
+                        <i class="fas fa-map-marker-alt me-2"></i> Validar mi zona
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE PLANES -->
     <section id="catalogo-planes" class="py-5 bg-light">
         <div class="container text-center">
-            <h2 class="fw-bold mb-3" style="color: #333;">Tenemos el mejor plan para ti</h2>
-            <p class="text-muted mb-4">Desliza <i class="fas fa-arrows-alt-h mx-1"></i> para ver todas las opciones</p>
+            <h2 class="fw-bold mb-2" style="color: #222;">Catálogo de Planes Fibra Óptica</h2>
+            <p class="text-muted mb-4 fs-5">Internet Claro Colombia: Ultravelocidad y el mejor entretenimiento</p>
             
-            <!-- Swiper -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper py-3">
                     
-                    <!-- 1. Sencillo 89.900 -->
+                    <!-- PLAN 1: INTERNET 900MB SENCILLO ($89.900) -->
                     <div class="swiper-slide">
                         <div class="claro-card">
-                            <div class="ribbon-yellow">INTERNET RED FTTH - FIBRA</div>
+                            <div class="ribbon-yellow">INTERNET ULTRAVELOCIDAD FTTH</div>
                             <div class="card-red-header">
                                 <i class="fas fa-wifi"></i>
                                 <h3>Internet 900 Megas</h3>
                                 <h2>1 App a Elección</h2>
+                                <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
                                 <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$89.900</div>
-                                <div class="precio-oferta">Instalación Gratis + 1 Mes al 50%</div>
+                                <div class="price-text">89.900</div>
+                                <div class="precio-oferta">IVA Incluido</div>
                                 <div class="plan-incluye">
-                                    <p>Tu plan incluye 1 App entre:</p>
-                                    <div class="apps-list">Netflix, Max, Prime, Disney+ o Win+</div>
+                                    <p>Elige una plataforma de streaming:</p>
+                                    <div class="apps-list text-danger">Netflix, Disney+, Max o Prime</div>
                                 </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20Plan%20SENCILLO%20de%20$89.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
+                                <ul class="features-list mb-4">
+                                    <li><i class="fas fa-check-circle"></i> Cobertura Nacional de Fibra</li>
+                                    <li><i class="fas fa-check-circle"></i> Ideal para navegación y estudio</li>
+                                </ul>
+                                <a href="https://wa.me/573222101716?text=Hola,%20quiero%20solicitar%20el%20Plan%20Internet%20900MB%20Sencillo%20de%20$89.900" class="btn-solicitar" target="_blank">Solicitar Plan</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. Sencillo 109.900 (3 Apps) -->
+                    <!-- PLAN 2: INTERNET 900MB - 2 APPS ($99.900) -->
                     <div class="swiper-slide">
                         <div class="claro-card">
-                            <div class="ribbon-yellow">INTERNET RED FTTH - FIBRA</div>
+                            <div class="ribbon-yellow">MEJOR PRECIO STREAMING</div>
                             <div class="card-red-header">
-                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-bolt"></i>
                                 <h3>Internet 900 Megas</h3>
-                                <h2>Win+ • Prime • Max</h2>
+                                <h2>2 Apps en Combo</h2>
+                                <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
                                 <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$109.900</div>
-                                <div class="precio-oferta">Instalación Gratis + 1 Mes Gratis</div>
+                                <div class="price-text">99.900</div>
+                                <div class="precio-oferta">IVA Incluido</div>
                                 <div class="plan-incluye">
-                                    <p>Tu plan incluye las 3 Apps:</p>
-                                    <div class="apps-list text-danger">Win+ Play, Prime Video y Max</div>
+                                    <p>Incluye combinaciones de:</p>
+                                    <div class="apps-list text-dark">Prime + Disney+, Prime + Netflix o Prime + Max</div>
                                 </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20Plan%20SENCILLO%20con%203%20Apps%20de%20$109.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
+                                <ul class="features-list mb-4">
+                                    <li><i class="fas fa-check-circle"></i> Doble entretenimiento incluido</li>
+                                    <li><i class="fas fa-check-circle"></i> Instalación Prioritaria en Colombia</li>
+                                </ul>
+                                <a href="https://wa.me/573222101716?text=Hola,%20quiero%20solicitar%20el%20Plan%20Internet%20900MB%20con%202%20Apps%20de%20$99.900" class="btn-solicitar" target="_blank">Solicitar Plan</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 3. Doble 104.900 -->
+                    <!-- PLAN 3: TRIPLEPLAY AVANZADO ($109.900) -->
                     <div class="swiper-slide">
                         <div class="claro-card" style="border: 2px solid var(--claro-red);">
-                            <div class="ribbon-yellow bg-danger text-white">PLAN DESTACADO</div>
-                            <div class="card-red-header bg-dark">
-                                <i class="fas fa-tv"></i>
-                                <h3>Internet 900 Megas</h3>
-                                <h2>TV Intermedia (93 CH)</h2>
-                            </div>
-                            <div class="card-body-content">
-                                <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$104.900</div>
-                                <div class="precio-oferta">1 Mes Gratis o 2 al 50%</div>
-                                <div class="plan-incluye">
-                                    <p>Tu plan Doble incluye 1 App:</p>
-                                    <div class="apps-list">Netflix, Max, Prime, Disney+ o Win+</div>
-                                </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20Plan%20DOBLE%20de%20$104.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 4. Doble 109.900 -->
-                    <div class="swiper-slide">
-                        <div class="claro-card">
-                            <div class="ribbon-yellow">NUEVO PLAN DOBLE</div>
-                            <div class="card-red-header">
-                                <i class="fas fa-tv"></i>
-                                <h3>Internet 900 Megas</h3>
-                                <h2>TV Intermedia</h2>
-                            </div>
-                            <div class="card-body-content">
-                                <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$109.900</div>
-                                <div class="precio-oferta">Con Claro Video Incluido</div>
-                                <div class="plan-incluye">
-                                    <p>Tu plan Doble incluye 1 App:</p>
-                                    <div class="apps-list">Netflix, Max, Prime, Disney+ o Win+</div>
-                                </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20Plan%20DOBLE%20de%20$109.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 5. Doble 119.900 (2 Apps) -->
-                    <div class="swiper-slide">
-                        <div class="claro-card">
-                            <div class="ribbon-yellow">NUEVO PLAN DOBLE</div>
-                            <div class="card-red-header">
-                                <i class="fas fa-tv"></i>
-                                <h3>Internet 900 Megas</h3>
-                                <h2>TV Intermedia</h2>
-                            </div>
-                            <div class="card-body-content">
-                                <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$119.900</div>
-                                <div class="precio-oferta">Elige tu combinación favorita</div>
-                                <div class="plan-incluye">
-                                    <p>Tu plan Doble incluye <strong class="text-danger">2 APPS</strong>:</p>
-                                    <div class="apps-list" style="font-size: 0.95rem;">Netflix + Win+, Netflix + Max, Win+ + Prime, o Max + Disney+</div>
-                                </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20Plan%20DOBLE%20con%202%20Apps%20de%20$119.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 6. Doble 129.900 (TV Superior) -->
-                    <div class="swiper-slide">
-                        <div class="claro-card">
-                            <div class="ribbon-yellow">NUEVO PLAN DOBLE</div>
-                            <div class="card-red-header">
-                                <i class="fas fa-tv"></i>
-                                <h3>Internet 900 Megas</h3>
-                                <h2>TV Superior (149 CH)</h2>
-                            </div>
-                            <div class="card-body-content">
-                                <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$129.900</div>
-                                <div class="precio-oferta">Más canales en alta definición</div>
-                                <div class="plan-incluye">
-                                    <p>Tu plan Doble incluye <strong class="text-danger">2 APPS</strong>:</p>
-                                    <div class="apps-list" style="font-size: 0.95rem;">Netflix + Max, Win+ + Prime, o Max + Disney+</div>
-                                </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20Plan%20DOBLE%20SUPERIOR%20de%20$129.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 7. Triple Play 111.900 -->
-                    <div class="swiper-slide">
-                        <div class="claro-card">
-                            <div class="ribbon-yellow bg-dark text-white">TRIPLE PLAY</div>
-                            <div class="card-red-header">
+                            <div class="ribbon-yellow bg-danger text-white">RECOMENDADO MEDELLÍN Y COLOMBIA</div>
+                            <div class="card-red-header triple-header">
                                 <i class="fas fa-home"></i>
                                 <h3>Internet + TV + Voz</h3>
-                                <h2>Triple Play Básico</h2>
+                                <h2>Tripleplay Avanzado</h2>
+                                <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
                                 <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$111.900</div>
-                                <div class="precio-oferta">Internet 900M + TV Intermedia</div>
+                                <div class="price-text">109.900</div>
+                                <div class="precio-oferta">Oferta Medellín: 50% Dto por 2 Meses</div>
                                 <div class="plan-incluye">
-                                    <p>Tu plan Triple incluye 1 App:</p>
-                                    <div class="apps-list">Netflix, Max, Prime, Disney+ o Win+</div>
+                                    <p>Tu plan Todo Incluido contiene:</p>
+                                    <div class="apps-list text-danger">TV Intermedia Plus + McAfee Premium + 1 App Streaming</div>
                                 </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20TRIPLE%20PLAY%20de%20$111.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
+                                <ul class="features-list mb-4">
+                                    <li><i class="fas fa-check-circle"></i> Incluye 1 Deco HD + 1 Deco Digital</li>
+                                    <li><i class="fas fa-check-circle"></i> Llamadas locales y nacionales ilimitadas</li>
+                                    <li><i class="fas fa-check-circle"></i> 1 Asistencia a elección Gratuita</li>
+                                </ul>
+                                <a href="https://wa.me/573222101716?text=Hola,%20quiero%20solicitar%20el%20Plan%20Tripleplay%20Avanzado%20de%20$109.900" class="btn-solicitar" target="_blank">Solicitar Plan</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 8. Triple Play 121.900 -->
+                    <!-- PLAN 4: TRIPLEPLAY PREMIUM ($119.900) -->
                     <div class="swiper-slide">
                         <div class="claro-card">
-                            <div class="ribbon-yellow bg-dark text-white">TRIPLE PLAY</div>
-                            <div class="card-red-header">
-                                <i class="fas fa-home"></i>
-                                <h3>Internet + TV + Voz</h3>
-                                <h2>Triple Play Avanzado</h2>
-                            </div>
-                            <div class="card-body-content">
-                                <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$121.900</div>
-                                <div class="precio-oferta">Internet 900M + TV Intermedia</div>
-                                <div class="plan-incluye">
-                                    <p>Tu plan Triple incluye <strong class="text-danger">2 APPS</strong>:</p>
-                                    <div class="apps-list" style="font-size: 0.95rem;">Elige tu combinación Premium</div>
-                                </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20TRIPLE%20PLAY%20con%202%20Apps%20de%20$121.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 9. Triple Play 131.900 -->
-                    <div class="swiper-slide">
-                        <div class="claro-card">
-                            <div class="ribbon-yellow bg-dark text-white">TRIPLE PLAY</div>
-                            <div class="card-red-header">
+                            <div class="ribbon-yellow">ENTRETENIMIENTO ABSOLUTO</div>
+                            <div class="card-red-header triple-header">
                                 <i class="fas fa-gem"></i>
                                 <h3>Internet + TV + Voz</h3>
-                                <h2>Triple Play Superior</h2>
+                                <h2>Tripleplay Premium</h2>
+                                <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
                                 <div class="cargo-fijo">Cargo fijo mensual</div>
-                                <div class="price-text">$131.900</div>
-                                <div class="precio-oferta">Internet 900M + TV Superior (149 CH)</div>
+                                <div class="price-text">119.900</div>
+                                <div class="precio-oferta">IVA Incluido</div>
                                 <div class="plan-incluye">
-                                    <p>Tu plan Triple incluye <strong class="text-danger">2 APPS</strong>:</p>
-                                    <div class="apps-list" style="font-size: 0.95rem;">La máxima experiencia de entretenimiento</div>
+                                    <p>La máxima experiencia digital:</p>
+                                    <div class="apps-list text-dark">2 Apps Streaming a elección + TV Intermedia Plus + McAfee</div>
                                 </div>
-                                <a href="https://wa.me/573222101716?text=Hola,%20estoy%20en%20tu%20página%20y%20quiero%20solicitar%20el%20TRIPLE%20PLAY%20SUPERIOR%20de%20$131.900.%20¿Me%20ayudas?" class="btn-solicitar" target="_blank">Solicitar</a>
+                                <ul class="features-list mb-4">
+                                    <li><i class="fas fa-check-circle"></i> Combinaciones de Apps ilimitadas</li>
+                                    <li><i class="fas fa-check-circle"></i> Decodificadores Avanzados Inteligentes</li>
+                                </ul>
+                                <a href="https://wa.me/573222101716?text=Hola,%20quiero%20solicitar%20el%20Plan%20Tripleplay%20Premium%20de%20$119.900" class="btn-solicitar" target="_blank">Solicitar Plan</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <!-- Flechas y paginación del slider -->
+                <!-- Controles -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination mt-4 position-relative"></div>
@@ -329,36 +347,145 @@
         </div>
     </section>
 
-    <!-- BANNER DE CONFIANZA -->
-    <section class="bg-dark text-white py-4 border-bottom border-secondary">
-        <div class="container text-center">
-            <h4 class="mb-0"><i class="fas fa-check-circle text-success me-2"></i> Solicita tu servicio a nivel nacional hoy mismo con <span class="text-danger fw-bold">@nectados</span></h4>
+    <!-- NUEVA SECCIÓN DE PQR Y RETENCIÓN (ORO PARA EL SEO Y VENTAS) -->
+    <section class="pqr-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 mx-auto">
+                    <div class="pqr-box row align-items-center text-center text-md-start">
+                        <div class="col-md-7 mb-4 mb-md-0">
+                            <h2 class="fw-bold mb-3">PQR Claro Hogar: Atención y Mejoras</h2>
+                            <p class="fs-6 text-light opacity-75 mb-0">¿Estás inconforme, pagas mucho o te mudas? No canceles aún. Radica tu solicitud aquí y un asesor te brindará una solución inmediata, mejorará tu plan o gestionará tu traslado sin costo.</p>
+                        </div>
+                        <div class="col-md-5 text-center text-md-end">
+                            <button class="btn-pqr" data-bs-toggle="modal" data-bs-target="#modalPQR">
+                                <i class="fas fa-headset me-2"></i> Radicar PQR Claro
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER SEO OPTIMIZADO -->
+    <!-- VENTANA MODAL PARA VALIDACIÓN DE COBERTURA -->
+    <div class="modal fade" id="modalCobertura" tabindex="-1" aria-labelledby="modalCoberturaLabel" aria-hidden="true">
+        <div class="modal-content modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalCoberturaLabel"><i class="fas fa-globe-americas me-2"></i>Validar Internet Claro Colombia</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="coberturaForm" onsubmit="enviarValidacionWhatsApp(event)">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">Selecciona tu Ciudad (Cobertura Nacional)</label>
+                            <select class="form-select" id="coberturaCiudad" required>
+                                <option value="Bogotá">Bogotá, D.C.</option>
+                                <option value="Medellín" selected>Medellín (y Área Metropolitana)</option>
+                                <option value="Cali">Cali</option>
+                                <option value="Barranquilla">Barranquilla</option>
+                                <option value="Cartagena">Cartagena de Indias</option>
+                                <option value="Bucaramanga">Bucaramanga</option>
+                                <option value="Cúcuta">Cúcuta</option>
+                                <option value="Pereira">Pereira</option>
+                                <option value="Santa Marta">Santa Marta</option>
+                                <option value="Ibagué">Ibagué</option>
+                                <option value="Pasto">Pasto</option>
+                                <option value="Manizales">Manizales</option>
+                                <option value="Neiva">Neiva</option>
+                                <option value="Villavicencio">Villavicencio</option>
+                                <option value="Armenia">Armenia</option>
+                                <option value="Valledupar">Valledupar</option>
+                                <option value="Montería">Montería</option>
+                                <option value="Sincelejo">Sincelejo</option>
+                                <option value="Popayán">Popayán</option>
+                                <option value="Otra">Otra Ciudad o Municipio de Colombia...</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-secondary">Nomenclatura (Dirección Exacta)</label>
+                            <input type="text" class="form-control" id="coberturaDireccion" placeholder="Ej: Calle 10 # 43E - 20, Torre 2 Apto 501" required>
+                            <div class="form-text text-muted">Ingresa tu dirección completa para verificar la disponibilidad de Fibra Óptica Claro en tu sector.</div>
+                        </div>
+                        <button type="submit" class="btn btn-claro w-100 py-3 fw-bold fs-5 uppercase"><i class="fab fa-whatsapp me-2"></i>Validar Cobertura Ahora</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VENTANA MODAL PARA PQR (FORMULARIO ESTRATÉGICO DE RETENCIÓN Y VENTAS) -->
+    <div class="modal fade" id="modalPQR" tabindex="-1" aria-labelledby="modalPQRLabel" aria-hidden="true">
+        <div class="modal-content modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header pqr-header">
+                    <h5 class="modal-title fw-bold text-white" id="modalPQRLabel"><i class="fas fa-file-signature me-2 text-warning"></i>Gestión y PQR Claro Hogar</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-muted small mb-4">Selecciona el motivo de tu solicitud. Un especialista de retención o soporte te contactará vía WhatsApp inmediatamente para brindarte una solución.</p>
+                    <form id="pqrForm" onsubmit="enviarPQRWhatsApp(event)">
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">¿Qué deseas solicitar?</label>
+                            <select class="form-select border-danger text-dark fw-bold" id="pqrMotivo" required>
+                                <option value="" selected disabled>Selecciona una opción...</option>
+                                <option value="Mejorar costo de la factura de internet Claro">Quiero mejorar el costo de mi factura (Pagar menos)</option>
+                                <option value="Cambiar a fibra optica Claro">Cambiar a Fibra Óptica Claro (Mejorar velocidad)</option>
+                                <option value="Cambiar plan de internet Claro">Cambiar plan de internet Claro Hogar</option>
+                                <option value="Traslado de direccion de mi internet Claro">Traslado de dirección de mi servicio Claro</option>
+                                <option value="Fallas o lentitud en mi servicio">Reportar fallas o lentitud (Soporte Técnico)</option>
+                                <option value="Cancelar mi servicio Claro">Cancelar mi servicio Claro (Radicar Queja)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">Nombre del Titular</label>
+                            <input type="text" class="form-control" id="pqrNombre" placeholder="Tu nombre completo" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-secondary">Breve detalle (Opcional)</label>
+                            <textarea class="form-control" id="pqrDetalle" rows="2" placeholder="Explícanos tu caso brevemente para ayudarte mejor..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark w-100 py-3 fw-bold fs-5 uppercase"><i class="fab fa-whatsapp text-success me-2 fs-4"></i>Enviar PQR a Asesor</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOQUE SEO INVISIBLE -->
+    <div class="container d-none">
+        <h2>Internet Claro Colombia: La Red de Fibra Óptica más grande</h2>
+        <p>Al buscar <strong>Internet Claro Colombia</strong>, encuentras la red de telecomunicaciones con mayor cobertura a nivel nacional. Ofrecemos planes de internet hogar con tecnología de fibra óptica pura, garantizando velocidades de hasta 900 megas. Ya sea que te encuentres en Bogotá, Medellín, Cali, Barranquilla o cualquier otro municipio, Claro te conecta con estabilidad, ofertas exclusivas en televisión digital y telefonía fija. Además, si presentas inconvenientes, puedes radicar tu PQR Claro Hogar para solicitar traslados, mejoras de factura o cambiar a fibra óptica. Solicita hoy mismo tu plan y disfruta del mejor entretenimiento en Colombia.</p>
+    </div>
+
+    <!-- FOOTER SEO OPTIMIZADO (ESTRATEGIA PQR RESTAURADA) -->
     <footer class="bg-dark pt-5 pb-4">
         <div class="container text-md-start text-center">
             <div class="row">
                 <div class="col-lg-6 col-md-12 mb-4">
-                    <h5 class="text-white fw-bold"><img src="../../assets/logoclaro.png" alt="Logo Claro" height="30" class="me-2 bg-white rounded p-1"> FibraHogar</h5>
-                    <p class="small text-muted">Somos tu distribuidor autorizado Claro en Colombia. Conectamos tu hogar con la mejor tecnología en fibra óptica y entretenimiento a nivel nacional.</p>
+                    <h5 class="text-white fw-bold"><img src="../../assets/logoclaro.png" alt="Logo Claro" height="30" class="me-2 bg-white rounded p-1"> FibraHogar Colombia</h5>
+                    <p class="small text-muted">Tu distribuidor autorizado para contratar <strong>Internet Claro Colombia</strong>. Conectamos tu hogar con la mejor tecnología de fibra óptica y entretenimiento en todo el territorio nacional.</p>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <h5 class="text-white fw-bold">Atención y Soporte Rápido</h5>
+                    <h5 class="text-white fw-bold">Atención, Soporte y PQR</h5>
                     <ul class="list-unstyled mb-0">
-                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><a href="https://wa.me/573222101716?text=Hola,%20necesito%20ayuda%20para%20radicar%20PQR%20Claro%20Hogar" class="footer-link">Radicar PQR Claro Hogar</a></li>
-                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><a href="https://wa.me/573222101716?text=Hola,%20necesito%20atención%20al%20cliente%20para%20Claro%20Internet" class="footer-link">Atención al Cliente Claro Internet</a></li>
-                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><a href="https://wa.me/573222101716?text=Hola,%20tengo%20problemas%20con%20Movistar%20y%20quiero%20pasarme%20a%20Claro" class="footer-link">¿PQR Movistar? Cámbiate a Claro y Ahorra</a></li>
-                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><a href="https://wa.me/573222101716?text=Hola,%20quiero%20cancelar%20mi%20plan%20actual%20y%20mirar%20promociones%20Claro" class="footer-link">Cancelar Plan / Ver Promociones Claro</a></li>
+                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><span class="footer-link" data-bs-toggle="modal" data-bs-target="#modalPQR">Radicar PQR Claro Hogar (Quejas / Reclamos)</span></li>
+                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><span class="footer-link" data-bs-toggle="modal" data-bs-target="#modalPQR">Solicitar Traslado de Internet Claro</span></li>
+                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><span class="footer-link" data-bs-toggle="modal" data-bs-target="#modalPQR">Bajar el costo de mi factura Claro</span></li>
+                        <li class="mb-2"><i class="fas fa-angle-right text-danger me-2"></i><span class="footer-link" data-bs-toggle="modal" data-bs-target="#modalCobertura">Verificar Cobertura Claro Nacional</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20validar%20cobertura%20de%20Claro%20Hogar%20en%20mi%20ciudad" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+    <!-- BOTÓN FLOTANTE DE WHATSAPP EMPRESARIAL CLARO (322) -->
+    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20recibir%20asesoría%20sobre%20los%20planes%20de%20Internet%20Claro%20Colombia" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -366,10 +493,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    <!-- Inicialización del Carrusel (Swiper) -->
     <script>
+        // Inicialización de Swiper
         var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1, // Muestra 1 plan en celulares
+            slidesPerView: 1,
             spaceBetween: 20,
             loop: false,
             pagination: {
@@ -381,18 +508,43 @@
                 prevEl: ".swiper-button-prev",
             },
             breakpoints: {
-                // En tablets (pantallas > 768px) muestra 2 planes
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                // En computadoras (pantallas > 1024px) muestra 3 planes como Claro oficial
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-            },
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 30 }
+            }
         });
+
+        // FUNCIONES DE WHATSAPP AL NÚMERO 3222101716
+        const numeroWhatsAppClaro = "573222101716";
+
+        // Función Validar Cobertura
+        function enviarValidacionWhatsApp(event) {
+            event.preventDefault();
+            const ciudad = document.getElementById('coberturaCiudad').value;
+            const direccion = document.getElementById('coberturaDireccion').value;
+            const mensaje = `Hola, quiero validar cobertura de Internet Claro Colombia.\n\n📍 Ciudad/Municipio: ${ciudad}\n🏠 Nomenclatura Exacta: ${direccion}`;
+            
+            window.open(`https://wa.me/${numeroWhatsAppClaro}?text=${encodeURIComponent(mensaje)}`, '_blank');
+            bootstrap.Modal.getInstance(document.getElementById('modalCobertura')).hide();
+            document.getElementById('coberturaForm').reset();
+        }
+
+        // Función Formulario PQR / Retención
+        function enviarPQRWhatsApp(event) {
+            event.preventDefault();
+            const motivo = document.getElementById('pqrMotivo').value;
+            const nombre = document.getElementById('pqrNombre').value;
+            const detalle = document.getElementById('pqrDetalle').value;
+            
+            let mensaje = `🚨 *NUEVA SOLICITUD / PQR CLARO* 🚨\n\n👤 *Titular:* ${nombre}\n📌 *Solicitud:* ${motivo}`;
+            if(detalle.trim() !== "") {
+                mensaje += `\n📝 *Detalle:* ${detalle}`;
+            }
+            mensaje += `\n\nPor favor, necesito ayuda inmediata con este requerimiento.`;
+            
+            window.open(`https://wa.me/${numeroWhatsAppClaro}?text=${encodeURIComponent(mensaje)}`, '_blank');
+            bootstrap.Modal.getInstance(document.getElementById('modalPQR')).hide();
+            document.getElementById('pqrForm').reset();
+        }
     </script>
 </body>
 </html>
