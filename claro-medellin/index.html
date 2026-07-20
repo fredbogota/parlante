@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Internet Claro Medellín | Planes Fibra Óptica 900 Megas</title>
+    <meta name="description" content="Contrata Internet Claro en Medellín y Valle de Aburrá. Vuela con 900 Megas de Fibra Óptica y obtén hasta 2 meses al 50% de descuento. ¡Instalación prioritaria!">
+    <meta name="keywords" content="internet claro medellin, claro medellin, fibra optica medellin, planes de internet medellin, claro envigado, claro itagui, claro sabaneta, internet hogar claro">
+    <meta name="author" content="FibraHogar.co - Distribuidor Autorizado">
+    <meta name="geo.region" content="CO-ANT">
+    <meta name="geo.placename" content="Medellín">
+    
+    <link rel="icon" href="../assets/logoclaro.png" type="image/png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            --claro-red: #DA291C;
+            --claro-yellow: #FFC72C;
+            --claro-dark: #111111;
+            --claro-darker: #000000;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+        
+        .navbar-claro { background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .btn-claro { background-color: var(--claro-red); color: white; font-weight: bold; border-radius: 25px; padding: 10px 25px; border: none; transition: 0.3s; }
+        .btn-claro:hover { background-color: #b51f15; color: white; transform: scale(1.05); }
+        
+        /* HERO SLIDER */
+        .carousel-item { height: 80vh; min-height: 550px; background: no-repeat center center scroll; background-size: cover; position: relative; }
+        .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(218,41,28,0.3) 100%); }
+        .carousel-caption { bottom: 20%; z-index: 10; text-align: left; max-width: 800px; padding-left: 20px;}
+        .carousel-caption h1 { font-size: 4.8rem; font-weight: 900; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+        .carousel-caption .highlight-text { color: var(--claro-yellow); }
+        .national-badge { background-color: var(--claro-red); color: #fff; font-weight: 900; padding: 8px 20px; border-radius: 30px; font-size: 0.95rem; display: inline-block; margin-bottom: 25px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(218,41,28,0.4); letter-spacing: 1px; }
+        
+        .megas-hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 10px 25px; border-radius: 50px; backdrop-filter: blur(5px); margin-bottom: 25px; }
+        .megas-hero-badge .num { font-size: 2.5rem; font-weight: 900; color: white; line-height: 1; font-style: italic;}
+        .megas-hero-badge .text { font-size: 1rem; font-weight: 700; color: var(--claro-yellow); text-transform: uppercase; line-height: 1.2;}
+
+        /* Imágenes de Conexión */
+        .lifestyle-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: -60px; position: relative; z-index: 10; padding: 0 20px; }
+        .lifestyle-img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: 0.3s; border: 4px solid white; }
+        .lifestyle-img:hover { transform: translateY(-10px); border-color: var(--claro-red); }
+        @media (max-width: 768px) { .lifestyle-gallery { grid-template-columns: 1fr; margin-top: 20px; gap: 20px; } .carousel-caption h1 { font-size: 3.5rem; } }
+
+        .medellin-seo-bar { background: var(--claro-dark); color: white; padding: 15px 0; font-size: 0.95rem; font-weight: 600; text-align: center; margin-top: 40px; }
+        .medellin-seo-bar span { margin: 0 10px; color: var(--claro-yellow); }
+        
+        /* Tarjetas de Planes */
+        .claro-card { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; overflow: hidden; height: 100%; display: flex; flex-direction: column; position: relative; margin: 15px 10px; border: 2px solid transparent; transition: 0.3s; }
+        .claro-card.destacado { border-color: var(--claro-red); transform: scale(1.02); }
+        .claro-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(218,41,28,0.15); }
+        .ribbon-medellin { background-color: var(--claro-red); color: white; font-size: 0.85rem; font-weight: 900; padding: 6px 0; position: absolute; top: 0; left: 0; width: 100%; z-index: 2; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .card-red-header { background-color: #f8f9fa; color: var(--claro-dark); padding: 45px 20px 20px; border-bottom: 1px solid #eee; }
+        .card-red-header h3 { font-size: 1.2rem; font-weight: 800; margin: 0; color: var(--claro-red); text-transform: uppercase;}
+        
+        .megas-box { display: flex; justify-content: center; align-items: baseline; gap: 5px; margin-top: 10px; }
+        .megas-num { font-size: 3rem; font-weight: 900; color: var(--claro-dark); line-height: 1; letter-spacing: -2px; }
+        .megas-text { font-size: 1.2rem; font-weight: 800; color: var(--claro-dark); }
+        
+        .card-body-content { padding: 25px 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .price-text { font-size: 3.2rem; font-weight: 900; color: var(--claro-red); line-height: 1; letter-spacing: -2px; margin: 5px 0; }
+        .price-text::before { content: '$'; font-size: 1.8rem; font-weight: 700; vertical-align: super; margin-right: 2px; }
+        .instalacion-badge { font-size: 0.85rem; color: #fff; font-weight: 800; margin-bottom: 15px; background: var(--claro-dark); padding: 5px 15px; border-radius: 20px; display: inline-block; }
+        .instalacion-badge.gratis { background: #28a745; }
+        
+        .apps-container { background: #f9f9f9; border-radius: 10px; padding: 15px 10px; margin-bottom: 20px; border: 1px dashed #ccc; }
+        .apps-title { font-size: 0.85rem; font-weight: 800; color: var(--claro-dark); margin-bottom: 10px; text-transform: uppercase; }
+        .logos-grid { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .app-logo { height: 32px; border-radius: 6px; object-fit: contain; background: black; padding: 2px;} 
+        
+        .features-list { text-align: left; list-style: none; padding: 0; margin: 0 0 25px; font-size: 0.85rem; color: #444; font-weight: 600; }
+        .features-list li { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px; }
+        .features-list i { color: var(--claro-red); font-size: 1.1rem; margin-top: 2px; }
+        
+        .btn-solicitar { background-color: var(--claro-red); color: white; border: none; border-radius: 30px; padding: 15px 0; font-weight: 900; font-size: 1.2rem; width: 100%; transition: 0.3s; margin-top: auto; display: block; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(218,41,28,0.3); }
+        .btn-solicitar:hover { background: #b51f15; color: white; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(218,41,28,0.4); }
+        
+        /* Swiper Controls Planes */
+        .planes-wrapper-container { position: relative; padding: 0 40px; }
+        .swiper { width: 100%; padding: 20px 0 60px; }
+        .swiper-pagination-bullet-active { background: var(--claro-red); width: 25px; border-radius: 5px; }
+        
+        /* Flechas de navegación Laterales (NUEVO) */
+        .swiper-button-next, .swiper-button-prev { color: var(--claro-dark); background: white; width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #eee; margin-top: -30px; }
+        .swiper-button-next:after, .swiper-button-prev:after { font-size: 1.2rem; font-weight: 900; }
+        .swiper-button-next:hover, .swiper-button-prev:hover { background: var(--claro-red); color: white; }
+
+        /* SLIDER DE ENTRETENIMIENTO PREMIUM (MOVIDO ABAJO) */
+        .premium-apps-section { background: linear-gradient(135deg, var(--claro-darker) 0%, #1a0503 100%); padding: 60px 0; border-top: 4px solid var(--claro-red); }
+        .app-benefit-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 30px 20px; text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
+        .app-benefit-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+        .app-benefit-img { height: 60px; object-fit: contain; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .app-benefit-text { color: #ccc; font-size: 0.95rem; line-height: 1.4; font-weight: 400; margin: 0; }
+        .swiper-pagination-dark .swiper-pagination-bullet { background: rgba(255,255,255,0.5); }
+        .swiper-pagination-dark .swiper-pagination-bullet-active { background: var(--claro-yellow); }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: 0.3s; text-decoration: none; animation: pulse 2s infinite; }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-claro sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="../assets/logoclaro.png" alt="Logo Claro Hogar" height="40">
+                <span class="ms-3 fw-bold text-dark border-start ps-3 border-2">Claro Medellín</span>
+            </a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <a href="#planes-medellin" class="btn btn-claro rounded-pill fw-bold px-4">Ver Ofertas</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SLIDER FUNCIONAL Y ATRACTIVO -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="carousel-caption">
+                        <div class="national-badge"><i class="fas fa-map-marker-alt me-2"></i>OFERTA EXCLUSIVA VALLE DE ABURRÁ</div>
+                        <h1>Internet Claro<br><span class="highlight-text">Medellín</span></h1>
+                        <div class="megas-hero-badge">
+                            <i class="fas fa-rocket text-white fs-3"></i>
+                            <span class="num">900</span><span class="text">Megas<br>Fibra Óptica</span>
+                        </div>
+                        <p class="fs-4 text-light mb-4 fw-light">Vuela en internet y disfruta de las mejores series.<br><strong class="bg-danger px-3 py-1 rounded text-white mt-2 d-inline-block">¡HASTA 2 MESES AL 50% DTO!</strong></p>
+                        <a href="#planes-medellin" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark rounded-pill shadow-lg mt-2">Cotizar mi plan</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="carousel-overlay"></div>
+                <div class="container h-100 d-flex align-items-center">
+                    <div class="carousel-caption">
+                        <div class="national-badge" style="background: var(--claro-yellow); color: #000;"><i class="fas fa-wifi me-2"></i>LA RED MÁS ESTABLE</div>
+                        <h1>Desata el Poder de la<br><span class="highlight-text">Fibra Óptica</span></h1>
+                        <div class="megas-hero-badge">
+                            <i class="fas fa-gamepad text-white fs-3"></i>
+                            <span class="num">900</span><span class="text">Megas de<br>Velocidad</span>
+                        </div>
+                        <p class="fs-4 text-light mb-4 fw-light">Sube archivos, juega online y haz videollamadas sin interrupciones.<br><strong class="bg-danger px-3 py-1 rounded text-white mt-2 d-inline-block">¡INSTALACIÓN GRATIS EN PLANES SELECCIONADOS!</strong></p>
+                        <a href="#planes-medellin" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark rounded-pill shadow-lg mt-2">Ver Ofertas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" style="z-index: 20;"><span class="carousel-control-prev-icon"></span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" style="z-index: 20;"><span class="carousel-control-next-icon"></span></button>
+    </div>
+
+    <!-- GALERÍA DE CONEXIÓN -->
+    <div class="container">
+        <div class="lifestyle-gallery">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teletrabajo con internet fluido en Medellín" class="lifestyle-img">
+            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Familia viendo películas en streaming con Claro Hogar" class="lifestyle-img">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Setup Gamer de alta velocidad conectado a Fibra Óptica" class="lifestyle-img">
+        </div>
+    </div>
+
+    <div class="medellin-seo-bar">
+        <div class="container">
+            <i class="fas fa-bolt text-warning me-2"></i> Instalación prioritaria en: 
+            <span>Medellín</span> • <span>Envigado</span> • <span>Itagüí</span> • <span>Bello</span> • <span>Sabaneta</span> • <span>La Estrella</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE PRECIOS Y OFERTAS (AHORA ARRIBA DE LAS APPS Y CON FLECHAS DE NAVEGACIÓN) -->
+    <section id="planes-medellin" class="py-5 bg-light">
+        <div class="container text-center pt-2">
+            <h2 class="fw-black mb-2" style="font-size: 2.5rem; color: #111; font-weight: 900;">Catálogo de Ofertas Medellín</h2>
+            <p class="text-muted mb-4 fs-5">Desliza para ver todos nuestros planes y elige tu favorito</p>
+            
+            <div class="planes-wrapper-container">
+                <!-- Flechas Laterales -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper planesSwiper">
+                    <div class="swiper-wrapper py-3">
+                        
+                        <!-- OFERTA 1: SENCILLO 79.900 (FIJA PRIMERA) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">PLAN SENCILLO</div>
+                                <div class="card-red-header">
+                                    <h3>Solo Internet</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">79.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $52.000</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title">Incluye estas Apps:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Claro-Video.JPG" alt="Claro Video" class="app-logo">
+                                            <img src="../assets/Universal.JPG" alt="Universal+" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tags"></i> 1 Mes al 50% de descuento</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Sencillo%20de%20900%20Megas%20por%20$79.900." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 2: SENCILLO 89.900 (FIJA SEGUNDA - ESTRELLA) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card destacado">
+                                <div class="ribbon-medellin">OFERTA ESTRELLA</div>
+                                <div class="card-red-header">
+                                    <h3>Solo Internet</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">89.900</div>
+                                    <div class="instalacion-badge gratis"><i class="fas fa-gift me-1"></i> Instalación GRATIS</div>
+                                    <div class="apps-container" style="border-color: var(--claro-red);">
+                                        <div class="apps-title" style="color: var(--claro-red);">Elige 1 App de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tags"></i> 1 Mes al 50% de descuento</li>
+                                        <li><i class="fas fa-plus-circle"></i> Incluye Claro Video y Universal+</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Sencillo%20de%20$89.900%20(1%20App%20a%20elección)." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 3: NUEVO PLAN DOBLE 104.900 (FIJA TERCERA) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">DOBLE PLAY (INTERNET + TV)</div>
+                                <div class="card-red-header">
+                                    <h3>Nuevo Plan Doble</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">104.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win+ Futbol" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV Intermedia</b> (93 Canales FTTH)</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                        <li><i class="fas fa-plus-circle"></i> Incluye Deco HD + Claro Video + Universal+</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Doble%20de%20$104.900%20con%20TV%20Intermedia." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 4: SENCILLO 99.900 (2 APPS) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">DOBLE ENTRETENIMIENTO</div>
+                                <div class="card-red-header">
+                                    <h3>Solo Internet</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">99.900</div>
+                                    <div class="instalacion-badge gratis"><i class="fas fa-gift me-1"></i> Instalación GRATIS</div>
+                                    <div class="apps-container" style="border-color: var(--claro-red);">
+                                        <div class="apps-title" style="color: var(--claro-red);">Elige 2 Apps de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tags"></i> 1 Mes al 50% de descuento</li>
+                                        <li><i class="fas fa-plus-circle"></i> Incluye Claro Video y Universal+</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Sencillo%20de%20$99.900%20(2%20Apps%20a%20elección)." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 5: SENCILLO 109.900 (3 APPS) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">MÁXIMO ENTRETENIMIENTO</div>
+                                <div class="card-red-header">
+                                    <h3>Solo Internet</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">109.900</div>
+                                    <div class="instalacion-badge gratis"><i class="fas fa-gift me-1"></i> Instalación GRATIS</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title text-danger">Incluye estas 3 Apps:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tags"></i> 1 Mes al 50% de descuento</li>
+                                        <li><i class="fas fa-plus-circle"></i> Incluye Claro Video y Universal+</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Sencillo%20de%20$109.900%20(Incluye%20Win,%20Prime%20y%20Max)." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 6: DOBLE 109.900 (MCAFEE + ASISTENCIA) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">DOBLE PLAY (INTERNET + TV)</div>
+                                <div class="card-red-header">
+                                    <h3>Nuevo Plan Doble</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">109.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV Intermedia</b> (93 Canales FTTH)</li>
+                                        <li><i class="fas fa-shield-alt"></i> Incluye McAfee + 1 Asistencia Premium</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Doble%20de%20$109.900%20con%20McAfee." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 7: DOBLE 119.900 (2 APPS + MCAFEE) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">DOBLE PLAY (INTERNET + TV)</div>
+                                <div class="card-red-header">
+                                    <h3>Nuevo Plan Doble</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">119.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container" style="border-color: var(--claro-red);">
+                                        <div class="apps-title" style="color: var(--claro-red);">Elige 2 Apps de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV Intermedia</b> (93 Canales FTTH)</li>
+                                        <li><i class="fas fa-shield-alt"></i> Incluye McAfee + 1 Asistencia Premium</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Doble%20de%20$119.900%20(2%20Apps)." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 8: DOBLE 129.900 (TV SUPERIOR) -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">DOBLE PLAY PREMIUM</div>
+                                <div class="card-red-header">
+                                    <h3>Nuevo Plan Doble</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">129.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title">Elige 2 Apps de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV SUPERIOR</b> (149 Canales FTTH)</li>
+                                        <li><i class="fas fa-shield-alt"></i> Incluye McAfee + 1 Asistencia Premium</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Plan%20Doble%20Premium%20de%20$129.900%20con%20TV%20Superior." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 9: TRIPLE PLAY 106.900 -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">TODO EN UNO</div>
+                                <div class="card-red-header">
+                                    <h3>Triple Play</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">106.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV Intermedia</b> (93 Canales FTTH)</li>
+                                        <li><i class="fas fa-phone"></i> <b>Telefonía Fija</b> (Llamadas Ilimitadas)</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Triple%20Play%20de%20$106.900." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 10: TRIPLE PLAY 111.900 -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">TODO EN UNO + MCAFEE</div>
+                                <div class="card-red-header">
+                                    <h3>Triple Play Avanzado</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">111.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container">
+                                        <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV Intermedia</b> + Telefonía Fija</li>
+                                        <li><i class="fas fa-shield-alt"></i> Incluye McAfee + 1 Asistencia Premium</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Triple%20Play%20Avanzado%20de%20$111.900." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OFERTA 11: TRIPLE PLAY 121.900 -->
+                        <div class="swiper-slide">
+                            <div class="claro-card">
+                                <div class="ribbon-medellin" style="background: var(--claro-dark);">TRIPLE PLAY PREMIUM</div>
+                                <div class="card-red-header">
+                                    <h3>Triple Play Premium</h3>
+                                    <div class="megas-box"><span class="megas-num">900</span><span class="megas-text">MEGAS FTTH</span></div>
+                                </div>
+                                <div class="card-body-content">
+                                    <div class="price-text">121.900</div>
+                                    <div class="instalacion-badge"><i class="fas fa-tools me-1"></i> Instalación $25.000</div>
+                                    <div class="apps-container" style="border-color: var(--claro-red);">
+                                        <div class="apps-title" style="color: var(--claro-red);">Elige 2 Apps de Streaming:</div>
+                                        <div class="logos-grid">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                        </div>
+                                    </div>
+                                    <ul class="features-list">
+                                        <li><i class="fas fa-tv"></i> <b>TV Intermedia</b> + Telefonía Fija</li>
+                                        <li><i class="fas fa-shield-alt"></i> Incluye McAfee + 1 Asistencia Premium</li>
+                                        <li><i class="fas fa-tags"></i> 1 Mes Gratis ó 2 Meses al 50%</li>
+                                    </ul>
+                                    <a href="https://wa.me/573222101716?text=Hola,%20quiero%20el%20Triple%20Play%20Premium%20de%20$121.900." class="btn-solicitar" target="_blank">Lo Quiero</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination mt-4 position-relative"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDER DE ENTRETENIMIENTO PREMIUM (AHORA EN LA PARTE INFERIOR) -->
+    <section class="premium-apps-section">
+        <div class="container text-center">
+            <h2 class="text-white fw-bold mb-1" style="font-size: 2.2rem;">El Mejor Entretenimiento Incluido</h2>
+            <p class="text-white-50 mb-5">Elige tu plan y disfruta del contenido de las mejores plataformas</p>
+            
+            <div class="swiper appsSwiper">
+                <div class="swiper-wrapper py-2">
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/Netflix.JPG" alt="Disfruta de Netflix con Claro Hogar" class="app-benefit-img">
+                            <p class="app-benefit-text">Miles de series, películas y contenido exclusivo.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/Win+.JPG" alt="Mira Win+ Fútbol con tu plan de Claro" class="app-benefit-img">
+                            <p class="app-benefit-text">Vive el fútbol colombiano en vivo y en HD.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/Prime-Video.JPG" alt="Prime Video incluido en planes Claro" class="app-benefit-img">
+                            <p class="app-benefit-text">Series premiadas, películas y estrenos exclusivos.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/HBO.JPG" alt="Max disponible en internet Claro" class="app-benefit-img">
+                            <p class="app-benefit-text">Las mejores series y estrenos en un solo lugar.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/Disney.JPG" alt="Disney+ con Fibra Óptica Claro" class="app-benefit-img">
+                            <p class="app-benefit-text">Disney, Marvel, Star Wars, Pixar y NatGeo.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/Universal.JPG" alt="Universal+ en TV Claro" class="app-benefit-img">
+                            <p class="app-benefit-text">Series exclusivas de los mejores estudios.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/Claro-Video.JPG" alt="Claro Video Gratis" class="app-benefit-img">
+                            <p class="app-benefit-text">Miles de películas para disfrutar cuando quieras.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="app-benefit-card">
+                            <img src="../assets/McAfee.JPG" alt="Protección McAfee con Claro" class="app-benefit-img">
+                            <p class="app-benefit-text">Protege tus dispositivos contra virus y amenazas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-dark mt-4 position-relative"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE SEO -->
+    <div class="container d-none">
+        <h2>Internet de Claro en Medellín con 900 Megas de Fibra Óptica</h2>
+        <p>Encuentra los mejores planes Sencillos, Dobles y Triple Play de <strong>Claro Hogar en Medellín</strong>. Conéctate a la red más grande de Colombia con velocidades desde 500 hasta 900 Megas. Elige plataformas de streaming como Netflix, Disney+, Max, Prime Video o Win+ Play incluidas directamente en tu factura mensual. Cobertura en Envigado, Itagüí, Sabaneta, Bello y toda el Área Metropolitana.</p>
+    </div>
+
+    <footer class="bg-dark pt-5 pb-4">
+        <div class="container text-center">
+            <h5 class="text-white fw-bold mb-3">FibraHogar - Ventas Claro Medellín</h5>
+            <p class="small text-muted mb-4">Conectando los hogares antioqueños con la mejor tecnología y entretenimiento.</p>
+            <p class="font-size: 0.75rem; color: #bbb;">© 2026 FibraHogar.co - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/573222101716?text=Hola,%20vivo%20en%20Medellín%20y%20quiero%20conocer%20los%20planes%20de%20Claro%20con%20900%20Megas" class="whatsapp-float" target="_blank" title="Validar cobertura en Medellín">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Inicializar el Slider de Planes (Precios) CON FLECHAS Y MÁS TARJETAS
+        var planesSwiper = new Swiper(".planesSwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: { el: ".planesSwiper .swiper-pagination", clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+                1200: { slidesPerView: 4, spaceBetween: 30 } // Muestra 4 tarjetas en pantallas grandes
+            }
+        });
+
+        // Inicializar el Slider de Beneficios (Apps)
+        var appsSwiper = new Swiper(".appsSwiper", {
+            slidesPerView: 2,
+            spaceBetween: 15,
+            autoplay: { delay: 2500, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination-dark", clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 3, spaceBetween: 20 },
+                1024: { slidesPerView: 5, spaceBetween: 25 }
+            }
+        });
+    </script>
+</body>
+</html>
