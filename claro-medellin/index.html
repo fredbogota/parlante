@@ -10,12 +10,46 @@
     <meta name="author" content="FibraHogar.co - Distribuidor Autorizado">
     <meta name="geo.region" content="CO-ANT">
     <meta name="geo.placename" content="Medellín">
+
+    <!-- 1. SEO: Etiqueta Canonical -->
+    <link rel="canonical" href="https://www.fibrahogar.co/claro-medellin/" />
+
+    <!-- 2. SEO: Open Graph (Miniaturas para WhatsApp y Redes) -->
+    <meta property="og:title" content="Internet Claro Medellín | Planes Fibra Óptica">
+    <meta property="og:description" content="Contrata Internet Claro en Medellín. 900 Megas de Fibra Óptica con hasta 2 meses al 50% de descuento.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://www.fibrahogar.co/claro-medellin/">
+    <meta property="og:type" content="product">
     
     <link rel="icon" href="../assets/logoclaro.png" type="image/png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- 3. SEO: Datos Estructurados JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Planes Claro Hogar Medellín - 900 Megas",
+      "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5",
+      "description": "Internet de fibra óptica Claro en Medellín con velocidades de hasta 900 Megas, TV y plataformas de streaming.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Claro Colombia"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "COP",
+        "lowPrice": "79900",
+        "highPrice": "129900",
+        "offerCount": "11",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "Medellín, Antioquia"
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -34,7 +68,7 @@
         .carousel-item { height: 80vh; min-height: 550px; background: no-repeat center center scroll; background-size: cover; position: relative; }
         .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(218,41,28,0.3) 100%); }
         .carousel-caption { bottom: 20%; z-index: 10; text-align: left; max-width: 800px; padding-left: 20px;}
-        .carousel-caption h1 { font-size: 4.8rem; font-weight: 900; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; }
+        .carousel-caption h1, .carousel-caption .h1-style { font-size: 4.8rem; font-weight: 900; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); line-height: 1; letter-spacing: -2px; margin-bottom: 10px; color: white; }
         .carousel-caption .highlight-text { color: var(--claro-yellow); }
         .national-badge { background-color: var(--claro-red); color: #fff; font-weight: 900; padding: 8px 20px; border-radius: 30px; font-size: 0.95rem; display: inline-block; margin-bottom: 25px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(218,41,28,0.4); letter-spacing: 1px; }
         
@@ -46,7 +80,7 @@
         .lifestyle-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: -60px; position: relative; z-index: 10; padding: 0 20px; }
         .lifestyle-img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: 0.3s; border: 4px solid white; }
         .lifestyle-img:hover { transform: translateY(-10px); border-color: var(--claro-red); }
-        @media (max-width: 768px) { .lifestyle-gallery { grid-template-columns: 1fr; margin-top: 20px; gap: 20px; } .carousel-caption h1 { font-size: 3.5rem; } }
+        @media (max-width: 768px) { .lifestyle-gallery { grid-template-columns: 1fr; margin-top: 20px; gap: 20px; } .carousel-caption h1, .carousel-caption .h1-style { font-size: 3.5rem; } }
 
         .medellin-seo-bar { background: var(--claro-dark); color: white; padding: 15px 0; font-size: 0.95rem; font-weight: 600; text-align: center; margin-top: 40px; }
         .medellin-seo-bar span { margin: 0 10px; color: var(--claro-yellow); }
@@ -87,12 +121,12 @@
         .swiper { width: 100%; padding: 20px 0 60px; }
         .swiper-pagination-bullet-active { background: var(--claro-red); width: 25px; border-radius: 5px; }
         
-        /* Flechas de navegación Laterales (NUEVO) */
+        /* Flechas de navegación Laterales */
         .swiper-button-next, .swiper-button-prev { color: var(--claro-dark); background: white; width: 45px; height: 45px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid #eee; margin-top: -30px; }
         .swiper-button-next:after, .swiper-button-prev:after { font-size: 1.2rem; font-weight: 900; }
         .swiper-button-next:hover, .swiper-button-prev:hover { background: var(--claro-red); color: white; }
 
-        /* SLIDER DE ENTRETENIMIENTO PREMIUM (MOVIDO ABAJO) */
+        /* SLIDER DE ENTRETENIMIENTO PREMIUM */
         .premium-apps-section { background: linear-gradient(135deg, var(--claro-darker) 0%, #1a0503 100%); padding: 60px 0; border-top: 4px solid var(--claro-red); }
         .app-benefit-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; padding: 30px 20px; text-align: center; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: 0.3s; }
         .app-benefit-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
@@ -100,6 +134,11 @@
         .app-benefit-text { color: #ccc; font-size: 0.95rem; line-height: 1.4; font-weight: 400; margin: 0; }
         .swiper-pagination-dark .swiper-pagination-bullet { background: rgba(255,255,255,0.5); }
         .swiper-pagination-dark .swiper-pagination-bullet-active { background: var(--claro-yellow); }
+
+        /* ESTILOS PARA EL BLOQUE SEO VISIBLE */
+        .seo-footer-content { background-color: #ffffff; padding: 40px 0; border-top: 1px solid #eaeaea; }
+        .seo-footer-content h2 { font-size: 1.6rem; font-weight: 800; color: var(--claro-dark); margin-bottom: 15px; }
+        .seo-footer-content p { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0; }
 
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: 0.3s; text-decoration: none; animation: pulse 2s infinite; }
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
@@ -144,7 +183,8 @@
                 <div class="container h-100 d-flex align-items-center">
                     <div class="carousel-caption">
                         <div class="national-badge" style="background: var(--claro-yellow); color: #000;"><i class="fas fa-wifi me-2"></i>LA RED MÁS ESTABLE</div>
-                        <h1>Desata el Poder de la<br><span class="highlight-text">Fibra Óptica</span></h1>
+                        <!-- 4. SEO: Se cambia este h1 por div class="h1-style" para evitar penalización de doble h1 -->
+                        <div class="h1-style">Desata el Poder de la<br><span class="highlight-text">Fibra Óptica</span></div>
                         <div class="megas-hero-badge">
                             <i class="fas fa-gamepad text-white fs-3"></i>
                             <span class="num">900</span><span class="text">Megas de<br>Velocidad</span>
@@ -162,9 +202,10 @@
     <!-- GALERÍA DE CONEXIÓN -->
     <div class="container">
         <div class="lifestyle-gallery">
-            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teletrabajo con internet fluido en Medellín" class="lifestyle-img">
-            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Familia viendo películas en streaming con Claro Hogar" class="lifestyle-img">
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Setup Gamer de alta velocidad conectado a Fibra Óptica" class="lifestyle-img">
+            <!-- 5. SEO: loading="lazy" agregado a imágenes -->
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Teletrabajo con internet fluido en Medellín" class="lifestyle-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Familia viendo películas en streaming con Claro Hogar" class="lifestyle-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Setup Gamer de alta velocidad conectado a Fibra Óptica" class="lifestyle-img" loading="lazy">
         </div>
     </div>
 
@@ -175,7 +216,7 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DE PRECIOS Y OFERTAS (AHORA ARRIBA DE LAS APPS Y CON FLECHAS DE NAVEGACIÓN) -->
+    <!-- SECCIÓN DE PRECIOS Y OFERTAS -->
     <section id="planes-medellin" class="py-5 bg-light">
         <div class="container text-center pt-2">
             <h2 class="fw-black mb-2" style="font-size: 2.5rem; color: #111; font-weight: 900;">Catálogo de Ofertas Medellín</h2>
@@ -203,9 +244,9 @@
                                     <div class="apps-container">
                                         <div class="apps-title">Incluye estas Apps:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Claro-Video.JPG" alt="Claro Video" class="app-logo">
-                                            <img src="../assets/Universal.JPG" alt="Universal+" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
+                                            <img src="../assets/Claro-Video.JPG" alt="Claro Video" class="app-logo" loading="lazy">
+                                            <img src="../assets/Universal.JPG" alt="Universal+" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -230,11 +271,11 @@
                                     <div class="apps-container" style="border-color: var(--claro-red);">
                                         <div class="apps-title" style="color: var(--claro-red);">Elige 1 App de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -260,11 +301,11 @@
                                     <div class="apps-container">
                                         <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win+ Futbol" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win+ Futbol" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -291,11 +332,11 @@
                                     <div class="apps-container" style="border-color: var(--claro-red);">
                                         <div class="apps-title" style="color: var(--claro-red);">Elige 2 Apps de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney+" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -321,9 +362,9 @@
                                     <div class="apps-container">
                                         <div class="apps-title text-danger">Incluye estas 3 Apps:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime Video" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -349,11 +390,11 @@
                                     <div class="apps-container">
                                         <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win+" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -380,11 +421,11 @@
                                     <div class="apps-container" style="border-color: var(--claro-red);">
                                         <div class="apps-title" style="color: var(--claro-red);">Elige 2 Apps de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -411,11 +452,11 @@
                                     <div class="apps-container">
                                         <div class="apps-title">Elige 2 Apps de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -442,11 +483,11 @@
                                     <div class="apps-container">
                                         <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -473,11 +514,11 @@
                                     <div class="apps-container">
                                         <div class="apps-title text-danger">Elige 1 App de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -504,11 +545,11 @@
                                     <div class="apps-container" style="border-color: var(--claro-red);">
                                         <div class="apps-title" style="color: var(--claro-red);">Elige 2 Apps de Streaming:</div>
                                         <div class="logos-grid">
-                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo">
-                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo">
-                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo">
-                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo">
-                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo">
+                                            <img src="../assets/Netflix.JPG" alt="Netflix" class="app-logo" loading="lazy">
+                                            <img src="../assets/Prime-Video.JPG" alt="Prime" class="app-logo" loading="lazy">
+                                            <img src="../assets/HBO.JPG" alt="Max" class="app-logo" loading="lazy">
+                                            <img src="../assets/Disney.JPG" alt="Disney" class="app-logo" loading="lazy">
+                                            <img src="../assets/Win+.JPG" alt="Win" class="app-logo" loading="lazy">
                                         </div>
                                     </div>
                                     <ul class="features-list">
@@ -528,7 +569,7 @@
         </div>
     </section>
 
-    <!-- SLIDER DE ENTRETENIMIENTO PREMIUM (AHORA EN LA PARTE INFERIOR) -->
+    <!-- SLIDER DE ENTRETENIMIENTO PREMIUM -->
     <section class="premium-apps-section">
         <div class="container text-center">
             <h2 class="text-white fw-bold mb-1" style="font-size: 2.2rem;">El Mejor Entretenimiento Incluido</h2>
@@ -538,49 +579,49 @@
                 <div class="swiper-wrapper py-2">
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/Netflix.JPG" alt="Disfruta de Netflix con Claro Hogar" class="app-benefit-img">
+                            <img src="../assets/Netflix.JPG" alt="Disfruta de Netflix con Claro Hogar" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Miles de series, películas y contenido exclusivo.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/Win+.JPG" alt="Mira Win+ Fútbol con tu plan de Claro" class="app-benefit-img">
+                            <img src="../assets/Win+.JPG" alt="Mira Win+ Fútbol con tu plan de Claro" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Vive el fútbol colombiano en vivo y en HD.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/Prime-Video.JPG" alt="Prime Video incluido en planes Claro" class="app-benefit-img">
+                            <img src="../assets/Prime-Video.JPG" alt="Prime Video incluido en planes Claro" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Series premiadas, películas y estrenos exclusivos.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/HBO.JPG" alt="Max disponible en internet Claro" class="app-benefit-img">
+                            <img src="../assets/HBO.JPG" alt="Max disponible en internet Claro" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Las mejores series y estrenos en un solo lugar.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/Disney.JPG" alt="Disney+ con Fibra Óptica Claro" class="app-benefit-img">
+                            <img src="../assets/Disney.JPG" alt="Disney+ con Fibra Óptica Claro" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Disney, Marvel, Star Wars, Pixar y NatGeo.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/Universal.JPG" alt="Universal+ en TV Claro" class="app-benefit-img">
+                            <img src="../assets/Universal.JPG" alt="Universal+ en TV Claro" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Series exclusivas de los mejores estudios.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/Claro-Video.JPG" alt="Claro Video Gratis" class="app-benefit-img">
+                            <img src="../assets/Claro-Video.JPG" alt="Claro Video Gratis" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Miles de películas para disfrutar cuando quieras.</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="app-benefit-card">
-                            <img src="../assets/McAfee.JPG" alt="Protección McAfee con Claro" class="app-benefit-img">
+                            <img src="../assets/McAfee.JPG" alt="Protección McAfee con Claro" class="app-benefit-img" loading="lazy">
                             <p class="app-benefit-text">Protege tus dispositivos contra virus y amenazas.</p>
                         </div>
                     </div>
@@ -590,17 +631,19 @@
         </div>
     </section>
 
-    <!-- BLOQUE SEO -->
-    <div class="container d-none">
-        <h2>Internet de Claro en Medellín con 900 Megas de Fibra Óptica</h2>
-        <p>Encuentra los mejores planes Sencillos, Dobles y Triple Play de <strong>Claro Hogar en Medellín</strong>. Conéctate a la red más grande de Colombia con velocidades desde 500 hasta 900 Megas. Elige plataformas de streaming como Netflix, Disney+, Max, Prime Video o Win+ Play incluidas directamente en tu factura mensual. Cobertura en Envigado, Itagüí, Sabaneta, Bello y toda el Área Metropolitana.</p>
-    </div>
+    <!-- 6. SEO: Bloque de texto visible y amigable para los robots de Google -->
+    <section class="seo-footer-content">
+        <div class="container">
+            <h2>Internet de Claro en Medellín con 900 Megas de Fibra Óptica</h2>
+            <p>Encuentra los mejores planes Sencillos, Dobles y Triple Play de <strong>Claro Hogar en Medellín</strong>. Conéctate a la red más grande de Colombia con velocidades desde 500 hasta 900 Megas. Elige plataformas de streaming como Netflix, Disney+, Max, Prime Video o Win+ Play incluidas directamente en tu factura mensual. Cobertura asegurada en Envigado, Itagüí, Sabaneta, Bello y toda el Área Metropolitana del Valle de Aburrá.</p>
+        </div>
+    </section>
 
     <footer class="bg-dark pt-5 pb-4">
         <div class="container text-center">
             <h5 class="text-white fw-bold mb-3">FibraHogar - Ventas Claro Medellín</h5>
             <p class="small text-muted mb-4">Conectando los hogares antioqueños con la mejor tecnología y entretenimiento.</p>
-            <p class="font-size: 0.75rem; color: #bbb;">© 2026 FibraHogar.co - Todos los derechos reservados</p>
+            <p style="font-size: 0.75rem; color: #bbb;">© 2026 FibraHogar.co - Todos los derechos reservados</p>
         </div>
     </footer>
 
@@ -624,7 +667,7 @@
             breakpoints: {
                 768: { slidesPerView: 2, spaceBetween: 30 },
                 1024: { slidesPerView: 3, spaceBetween: 30 },
-                1200: { slidesPerView: 4, spaceBetween: 30 } // Muestra 4 tarjetas en pantallas grandes
+                1200: { slidesPerView: 4, spaceBetween: 30 }
             }
         });
 
