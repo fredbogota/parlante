@@ -12,6 +12,16 @@
     <meta name="geo.region" content="CO">
     <meta name="geo.placename" content="Colombia">
     
+    <!-- 1. SEO: Etiqueta Canonical para evitar contenido duplicado -->
+    <link rel="canonical" href="https://www.fibrahogar.co/internet-hogar/fibra-claro/" />
+
+    <!-- 2. SEO: Open Graph para WhatsApp y Redes Sociales -->
+    <meta property="og:title" content="Planes Claro Hogar Colombia | Internet Fibra Óptica">
+    <meta property="og:description" content="Conéctate a la Fibra Óptica Claro con velocidades de hasta 900 Megas. Valida tu cobertura y contrata hoy.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://www.fibrahogar.co/internet-hogar/fibra-claro/">
+    <meta property="og:type" content="product">
+    
     <!-- Favicon -->
     <link rel="icon" href="../../assets/logoclaro.png" type="image/png">
     
@@ -22,7 +32,7 @@
     <!-- Swiper JS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- DATOS ESTRUCTURADOS ENRIQUECIDOS: ENFOCADOS EN PRODUCTO/VENTAS -->
+    <!-- 3. DATOS ESTRUCTURADOS ENRIQUECIDOS -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
@@ -90,15 +100,18 @@
         .carousel-item { height: 65vh; min-height: 450px; background: no-repeat center center scroll; background-size: cover; position: relative; }
         .carousel-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.3)); }
         .carousel-caption { bottom: 20%; z-index: 10; text-align: left; max-width: 800px; }
-        .carousel-caption h1 { font-size: 4rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.1; letter-spacing: -1px; }
+        
+        /* Ajuste de H1 vs H2 visual para SEO */
+        .carousel-caption h1 { font-size: 4rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); line-height: 1.1; letter-spacing: -1px; margin-bottom: 0;}
         
         /* Localized Banner */
         .national-badge { background-color: var(--claro-yellow); color: #000; font-weight: 900; padding: 6px 18px; border-radius: 5px; font-size: 0.95rem; display: inline-block; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
         /* SECCIÓN COBERTURA */
         .cobertura-section { background-color: #f4f6f9; padding: 60px 0; border-top: 4px solid var(--claro-red); border-bottom: 1px solid #ddd; }
-        .cobertura-title { font-size: 1.1rem; color: #555; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        .cobertura-main-text { font-size: 3.8rem; color: var(--claro-red); font-weight: 900; margin-bottom: 15px; line-height: 1; letter-spacing: -1px; }
+        /* Cambio de h2 a h3 y h3 a h2 visualmente para mantener la jerarquía de un solo H1 */
+        .cobertura-title-style { font-size: 1.1rem; color: #555; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; display: block; }
+        .cobertura-main-text-style { font-size: 3.8rem; color: var(--claro-red); font-weight: 900; margin-bottom: 15px; line-height: 1; letter-spacing: -1px; }
         .cobertura-desc { font-size: 1.1rem; color: #444; max-width: 700px; margin: 0 auto 30px auto; }
         .btn-cobertura-trigger { background-color: var(--claro-red); color: white; font-size: 1.3rem; font-weight: 800; padding: 15px 45px; border-radius: 50px; box-shadow: 0 4px 15px rgba(218,41,28,0.4); transition: 0.3s; border: none; text-transform: uppercase; letter-spacing: 1px; }
         .btn-cobertura-trigger:hover { background-color: #b51f15; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(218,41,28,0.5); color: white;}
@@ -111,7 +124,8 @@
         .card-red-header.triple-header { background-color: #111; }
         .card-red-header i { font-size: 1.8rem; margin-bottom: 8px; color: rgba(255,255,255,0.9); }
         .card-red-header h3 { font-size: 1.1rem; font-weight: 400; margin: 0; letter-spacing: 0.5px; }
-        .card-red-header h2 { font-size: 1.5rem; font-weight: 800; margin: 5px 0 0; }
+        /* Se cambia a div con estilo de h2 para evitar romper la jerarquía SEO */
+        .card-h2-style { font-size: 1.5rem; font-weight: 800; margin: 5px 0 0; }
         
         .card-body-content { padding: 25px 20px; flex-grow: 1; display: flex; flex-direction: column; background: #fff; }
         .cargo-fijo { font-size: 0.85rem; color: #777; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -150,6 +164,11 @@
         .footer-link:hover { color: white; text-decoration: underline; }
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; z-index: 1000; transition: 0.3s; text-decoration: none; }
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
+
+        /* SEO: Estilo para el bloque de texto visible al final */
+        .seo-footer-content { background-color: #ffffff; padding: 40px 0; border-top: 1px solid #eaeaea; }
+        .seo-footer-content h2 { font-size: 1.5rem; font-weight: 800; color: var(--claro-dark); margin-bottom: 15px; }
+        .seo-footer-content p { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 0; }
     </style>
 </head>
 <body>
@@ -177,6 +196,7 @@
                 <div class="container h-100 d-flex align-items-center">
                     <div class="carousel-caption">
                         <div class="national-badge"><i class="fas fa-rocket me-2"></i>LA RED MÁS GRANDE DE COLOMBIA</div>
+                        <!-- Único H1 del documento -->
                         <h1 class="text-white">Internet Claro Fibra Óptica</h1>
                         <p class="fs-4 text-light my-3 fw-light">Planes Claro Hogar de 900 Megas con cobertura en todo el país. <br><strong class="text-warning">¡Oferta Especial Medellín: 50% Dto por 2 meses!</strong></p>
                         
@@ -202,8 +222,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="cobertura-title">Verifica disponibilidad en tu ciudad</h2>
-                    <h3 class="cobertura-main-text">Cobertura Claro Hogar</h3>
+                    <!-- SEO: Corrección de etiquetas de jerarquía -->
+                    <span class="cobertura-title-style">Verifica disponibilidad en tu ciudad</span>
+                    <h2 class="cobertura-main-text-style">Cobertura Claro Hogar</h2>
                     <p class="cobertura-desc">Llegamos a donde otros no llegan. Valida tu zona hoy y programa la instalación rápida de tu servicio de Fibra Óptica.</p>
                     <button class="btn-cobertura-trigger" data-bs-toggle="modal" data-bs-target="#modalCobertura">
                         <i class="fas fa-map-marker-alt me-2"></i> Validar mi zona
@@ -229,7 +250,8 @@
                             <div class="card-red-header">
                                 <i class="fas fa-wifi"></i>
                                 <h3>Internet 900 Megas</h3>
-                                <h2>1 App a Elección</h2>
+                                <!-- SEO: Se quitó el H2 para no romper la jerarquía -->
+                                <div class="card-h2-style">1 App a Elección</div>
                                 <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
@@ -256,7 +278,7 @@
                             <div class="card-red-header">
                                 <i class="fas fa-bolt"></i>
                                 <h3>Internet 900 Megas</h3>
-                                <h2>2 Apps en Combo</h2>
+                                <div class="card-h2-style">2 Apps en Combo</div>
                                 <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
@@ -283,7 +305,7 @@
                             <div class="card-red-header triple-header">
                                 <i class="fas fa-home"></i>
                                 <h3>Internet + TV + Voz</h3>
-                                <h2>Tripleplay Avanzado</h2>
+                                <div class="card-h2-style">Tripleplay Avanzado</div>
                                 <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
@@ -311,7 +333,7 @@
                             <div class="card-red-header triple-header">
                                 <i class="fas fa-gem"></i>
                                 <h3>Internet + TV + Voz</h3>
-                                <h2>Tripleplay Premium</h2>
+                                <div class="card-h2-style">Tripleplay Premium</div>
                                 <div class="rating-box"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                             </div>
                             <div class="card-body-content">
@@ -387,13 +409,15 @@
         </div>
     </div>
 
-    <!-- BLOQUE SEO INVISIBLE - ENFOCADO EN VENTAS Y PLANES -->
-    <div class="container d-none">
-        <h2>Planes Claro Hogar: La red de Fibra Óptica más grande</h2>
-        <p>Al buscar <strong>Planes Claro Hogar</strong> o Internet Claro en Colombia, encuentras la red de telecomunicaciones con mayor cobertura a nivel nacional. Ofrecemos planes de internet hogar con tecnología de fibra óptica pura, garantizando velocidades de hasta 900 megas. Ya sea que te encuentres en Bogotá, Medellín, Cali, Barranquilla o cualquier otro municipio, Claro te conecta con estabilidad y ofertas exclusivas en combos Doble Play y Triple Play con televisión digital y telefonía fija. Solicita hoy mismo tu plan y disfruta del mejor entretenimiento en Colombia con plataformas de streaming incluidas.</p>
-    </div>
+    <!-- 4. SEO: Texto descriptivo visible para que Google lea sin penalizar (Antes estaba oculto) -->
+    <section class="seo-footer-content">
+        <div class="container">
+            <h2>Planes Claro Hogar: La red de Fibra Óptica más grande</h2>
+            <p>Al buscar <strong>Planes Claro Hogar</strong> o Internet Claro en Colombia, encuentras la red de telecomunicaciones con mayor cobertura a nivel nacional. Ofrecemos planes de internet hogar con tecnología de fibra óptica pura, garantizando velocidades de hasta 900 megas. Ya sea que te encuentres en Bogotá, Medellín, Cali, Barranquilla o cualquier otro municipio, Claro te conecta con estabilidad y ofertas exclusivas en combos Doble Play y Triple Play con televisión digital y telefonía fija. Solicita hoy mismo tu plan y disfruta del mejor entretenimiento en Colombia con plataformas de streaming incluidas.</p>
+        </div>
+    </section>
 
-    <!-- FOOTER SEO OPTIMIZADO - LIMPIO DE PQR -->
+    <!-- FOOTER SEO OPTIMIZADO -->
     <footer class="bg-dark pt-5 pb-4">
         <div class="container text-md-start text-center">
             <div class="row">
@@ -413,7 +437,7 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP EMPRESARIAL CLARO (322) -->
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <a href="https://wa.me/573222101716?text=Hola,%20quiero%20recibir%20asesoría%20sobre%20los%20planes%20de%20Internet%20Fibra%20Claro%20Hogar" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
