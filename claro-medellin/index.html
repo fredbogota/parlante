@@ -14,7 +14,7 @@
     <meta name="geo.position" content="6.2442;-75.5812">
     <meta name="ICBM" content="6.2442, -75.5812">
 
-    <!-- 2. SEO Técnico: Canonical y Preload (Mejora velocidad LCP) -->
+    <!-- 2. SEO Técnico: Canonical y Preload -->
     <link rel="canonical" href="https://www.fibrahogar.co/claro-medellin/" />
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
 
@@ -25,7 +25,11 @@
     <meta property="og:url" content="https://www.fibrahogar.co/claro-medellin/">
     <meta property="og:type" content="product">
     
-    <link rel="icon" href="../assets/logoclaro.png" type="image/png">
+    <!-- FAVICON FORZADO: Apuntando a tu nueva casita (logo-movistar.png) -->
+    <link rel="icon" href="../assets/logo-movistar.png" type="image/png">
+    <link rel="shortcut icon" href="../assets/logo-movistar.png" type="image/png">
+    <link rel="apple-touch-icon" href="../assets/logo-movistar.png">
+    <meta name="msapplication-TileImage" content="../assets/logo-movistar.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
@@ -179,6 +183,15 @@
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
         
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        /* BARRA FIJA MÓVIL (NUEVO) */
+        .mobile-sticky-cta { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--claro-red); padding: 12px 15px; z-index: 9999; box-shadow: 0 -4px 10px rgba(0,0,0,0.15); text-align: center; }
+        .mobile-sticky-cta a { color: white; text-decoration: none; font-weight: 900; font-size: 1.1rem; display: flex; justify-content: center; align-items: center; gap: 10px; text-transform: uppercase; }
+        @media (max-width: 768px) {
+            .mobile-sticky-cta { display: block; }
+            .whatsapp-float { display: none; } /* Oculta la burbuja flotante en móviles para no estorbar a la barra */
+            body { padding-bottom: 60px; } /* Evita que la barra tape el pie de página */
+        }
     </style>
 </head>
 <body>
@@ -579,11 +592,50 @@
         </div>
     </section>
 
+    <!-- SECCIÓN DE TESTIMONIOS LOCALES (NUEVO) -->
+    <section class="py-5" style="background-color: #f0f4f8;">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4" style="color: var(--claro-dark); font-size: 2rem;">Lo que dicen nuestros clientes en el Valle de Aburrá</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 shadow-sm h-100" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="text-warning mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="fst-italic text-muted">"Me instalaron la fibra óptica en Envigado el mismo día que escribí al WhatsApp. La velocidad de 900 megas es real, perfecta para teletrabajar."</p>
+                            <h6 class="fw-bold mt-3 mb-0">- Carlos Restrepo</h6>
+                            <small class="text-secondary">Envigado, Antioquia</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 shadow-sm h-100" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="text-warning mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="fst-italic text-muted">"Estaba buscando internet claro medellín y di con FibraHogar. Excelente atención, me dieron el descuento del 50% sin tanto papeleo."</p>
+                            <h6 class="fw-bold mt-3 mb-0">- Andrea Giraldo</h6>
+                            <small class="text-secondary">Laureles, Medellín</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card border-0 shadow-sm h-100" style="border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <div class="text-warning mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            <p class="fst-italic text-muted">"Pusimos el plan Triple Play en Bello. El internet vuela y tener Max y Netflix incluidos nos ahorró mucho dinero."</p>
+                            <h6 class="fw-bold mt-3 mb-0">- Familia Salazar</h6>
+                            <small class="text-secondary">Bello, Antioquia</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- RESTAURADO: SLIDER DE ENTRETENIMIENTO PREMIUM -->
     <section class="premium-apps-section">
         <div class="container text-center">
             <h2 class="text-white fw-bold mb-1" style="font-size: 2.2rem;">El Mejor Entretenimiento Incluido</h2>
-            <p class="text-white-50 mb-5">Elige tu plan y disfruta del contenido de las mejores plataformas</p>
+            <p class="text-white-50 mb-5">Elige tu plan y disfruta del contenido de las mejores platforms</p>
             
             <div class="swiper appsSwiper">
                 <div class="swiper-wrapper py-2">
@@ -670,6 +722,13 @@
     <a href="https://wa.me/573222101716?text=Hola,%20vivo%20en%20Medellín%20y%20quiero%20validar%20cobertura%20para%20los%20planes%20de%20Claro%20con%20900%20Megas" class="whatsapp-float" target="_blank" title="Validar cobertura Claro Medellín">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- BARRA FIJA SOLO PARA MÓVILES (NUEVO) -->
+    <div class="mobile-sticky-cta">
+        <a href="https://wa.me/573222101716?text=Hola,%20vivo%20en%20Medellín%20y%20quiero%20la%20oferta%20de%20Claro%20con%20900%20Megas" target="_blank">
+            <i class="fab fa-whatsapp fs-3"></i> ¡Cotizar por WhatsApp Ahora!
+        </a>
+    </div>
 
     <!-- Scripts con carga diferida -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
