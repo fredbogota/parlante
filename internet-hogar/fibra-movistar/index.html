@@ -115,38 +115,526 @@
     </script>
 
     <!-- ========================================== -->
-    <!-- ESTILOS, FUENTES Y LIBRERÍAS CSS -->
+    <!-- FUENTES, ICONOS Y CSS COMPILADO LOCALMENTE -->
     <!-- ========================================== -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Reset Base (Preflight) */
+        *, ::before, ::after {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb;
+        }
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            font-family: 'Nunito', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            line-height: inherit;
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
+            background-color: #f4f7f6;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-size: inherit;
+            font-weight: inherit;
+            margin: 0;
+        }
+        p, figure, blockquote, ul, ol, dl, dd {
+            margin: 0;
+        }
+        ul, ol {
+            list-style: none;
+            padding: 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+        }
+        button, [type='button'], [type='reset'], [type='submit'] {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+            cursor: pointer;
+        }
+        img, svg, video, canvas {
+            display: block;
+            vertical-align: middle;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse;
+        }
+        summary {
+            display: list-item;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
         :root {
             --movistar-blue: #019df4;
             --movistar-dark: #0b2739;
             --movistar-green: #5bc500;
+            --tw-bg-opacity: 1;
         }
-        body { 
-            font-family: 'Nunito', sans-serif; 
-            overflow-x: hidden; 
-            background-color: #f4f7f6; 
-            padding-bottom: env(safe-area-inset-bottom); 
-            scroll-behavior: smooth;
-        }
+
         h1, h2, h3, h4, h5, .font-heading { font-family: 'Montserrat', sans-serif; }
-        
-        /* Colores corporativos Movistar */
+
+        /* Container */
+        .container { width: 100%; margin-right: auto; margin-left: auto; }
+        @media (min-width: 640px) { .container { max-width: 640px; } }
+        @media (min-width: 768px) { .container { max-width: 768px; } }
+        @media (min-width: 1024px) { .container { max-width: 1024px; } }
+        @media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+        /* Display & Layout */
+        .block { display: block; }
+        .inline-block { display: inline-block; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .hidden { display: none; }
+
+        /* Posicionamiento */
+        .fixed { position: fixed; }
+        .absolute { position: absolute; }
+        .relative { position: relative; }
+        .sticky { position: sticky; }
+        .inset-0 { inset: 0px; }
+        .top-0 { top: 0px; }
+        .top-4 { top: 1rem; }
+        .top-1\/2 { top: 50%; }
+        .top-full { top: 100%; }
+        .bottom-0 { bottom: 0px; }
+        .bottom-8 { bottom: 2rem; }
+        .bottom-16 { bottom: 4rem; }
+        .left-0 { left: 0px; }
+        .left-4 { left: 1rem; }
+        .right-0 { right: 0px; }
+        .right-4 { right: 1rem; }
+        .right-8 { right: 2rem; }
+        .right-full { right: 100%; }
+
+        /* Z-Index */
+        .z-0 { z-index: 0; }
+        .z-20 { z-index: 20; }
+        .z-30 { z-index: 30; }
+        .z-40 { z-index: 40; }
+        .z-50 { z-index: 50; }
+        .z-\[100\] { z-index: 100; }
+        .z-\[120\] { z-index: 120; }
+
+        /* Dimensiones */
+        .w-3 { width: 0.75rem; }
+        .w-6 { width: 1.5rem; }
+        .w-12 { width: 3rem; }
+        .w-14 { width: 3.5rem; }
+        .w-16 { width: 4rem; }
+        .w-64 { width: 16rem; }
+        .w-\[85vw\] { width: 85vw; }
+        .w-auto { width: auto; }
+        .w-full { width: 100%; }
+        .max-w-md { max-width: 28rem; }
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-6xl { max-width: 72rem; }
+        .max-w-7xl { max-width: 80rem; }
+
+        .h-3 { height: 0.75rem; }
+        .h-10 { height: 2.5rem; }
+        .h-12 { height: 3rem; }
+        .h-14 { height: 3.5rem; }
+        .h-16 { height: 4rem; }
+        .h-\[40px\] { height: 40px; }
+        .h-\[650px\] { height: 650px; }
+        .h-full { height: 100%; }
+
+        /* Flexbox & Grid */
+        .flex-col { flex-direction: column; }
+        .flex-wrap { flex-wrap: wrap; }
+        .flex-grow { flex-grow: 1; }
+        .shrink-0 { flex-shrink: 0; }
+        .items-start { align-items: flex-start; }
+        .items-center { align-items: center; }
+        .items-stretch { align-items: stretch; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+        /* Espaciados */
+        .gap-1 { gap: 0.25rem; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-2\.5 { gap: 0.625rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+
+        .space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem; }
+        .space-y-3\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.875rem; }
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mt-0\.5 { margin-top: 0.125rem; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-16 { margin-top: 4rem; }
+        .mt-auto { margin-top: auto; }
+        .mr-1 { margin-right: 0.25rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .mr-4 { margin-right: 1rem; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-5 { margin-bottom: 1.25rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-7 { margin-bottom: 1.75rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-10 { margin-bottom: 2.5rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .ml-1 { margin-left: 0.25rem; }
+
+        .p-2 { padding: 0.5rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .px-2\.5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-3\.5 { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+        .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+        .py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .pl-4 { padding-left: 1rem; }
+        .pl-6 { padding-left: 1.5rem; }
+        .pb-8 { padding-bottom: 2rem; }
+
+        /* Scroll & Overflow */
+        .overflow-hidden { overflow: hidden; }
+        .overflow-x-auto { overflow-x: auto; }
+        .snap-x { scroll-snap-type: x mandatory; }
+        .snap-mandatory { scroll-snap-type: x mandatory; }
+        .snap-center { scroll-snap-align: center; }
+
+        /* Bordes & Divisores */
+        .border { border-width: 1px; }
+        .border-2 { border-width: 2px; }
+        .border-4 { border-width: 4px; }
+        .border-t { border-top-width: 1px; }
+        .border-t-4 { border-top-width: 4px; }
+        .border-b { border-bottom-width: 1px; }
+        .border-b-2 { border-bottom-width: 2px; }
+        .border-l-4 { border-left-width: 4px; }
+        .border-y-4 { border-top-width: 4px; border-bottom-width: 4px; }
+        .border-collapse { border-collapse: collapse; }
+
+        .border-transparent { border-color: transparent; }
+        .border-white { border-color: #ffffff; }
+        .border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
+        .border-white\/20 { border-color: rgba(255, 255, 255, 0.2); }
+        .border-white\/30 { border-color: rgba(255, 255, 255, 0.3); }
+        .border-gray-50 { border-color: #f9fafb; }
+        .border-gray-100 { border-color: #f3f4f6; }
+        .border-gray-200 { border-color: #e5e7eb; }
+        .border-blue-100 { border-color: #dbeafe; }
+        .border-blue-200 { border-color: #bfdbfe; }
+        .border-blue-800 { border-color: #1e40af; }
+        .border-green-200 { border-color: #bbf7d0; }
+        .border-yellow-300 { border-color: #fde047; }
+        .border-yellow-400 { border-color: #facc15; }
+        .border-purple-500 { border-color: #a855f7; }
+        .border-movistar { border-color: var(--movistar-blue); }
+        .border-movistar-green { border-color: var(--movistar-green); }
+        .border-movistar-green\/40 { border-color: rgba(91, 197, 0, 0.4); }
+
+        .divide-x > :not([hidden]) ~ :not([hidden]) { border-left-width: 1px; }
+        .divide-y > :not([hidden]) ~ :not([hidden]) { border-top-width: 1px; }
+        .divide-gray-100 > :not([hidden]) ~ :not([hidden]) { border-color: #f3f4f6; }
+
+        .rounded { border-radius: 0.25rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-3xl { border-radius: 1.5rem; }
+        .rounded-full { border-radius: 9999px; }
+
+        /* Colores y Fondos */
         .text-movistar { color: var(--movistar-blue); }
         .bg-movistar { background-color: var(--movistar-blue); }
         .bg-movistar-dark { background-color: var(--movistar-dark); }
         .text-movistar-green { color: var(--movistar-green); }
         .bg-movistar-green { background-color: var(--movistar-green); }
+        .bg-movistar-green\/20 { background-color: rgba(91, 197, 0, 0.2); }
+
+        .bg-\[\#f4f7f6\] { background-color: #f4f7f6; }
+        .bg-white { background-color: rgba(255, 255, 255, var(--tw-bg-opacity)); }
+        .bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
+        .bg-white\/50 { background-color: rgba(255, 255, 255, 0.5); }
+        .bg-black\/30 { background-color: rgba(0, 0, 0, 0.3); }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .bg-gray-800 { background-color: #1f2937; }
+        .bg-gray-900 { background-color: #111827; }
+        .bg-blue-50 { background-color: #eff6ff; }
+        .bg-blue-50\/60 { background-color: rgba(239, 246, 255, 0.6); }
+        .bg-blue-50\/70 { background-color: rgba(239, 246, 255, 0.7); }
+        .bg-blue-100 { background-color: #dbeafe; }
+        .bg-blue-500 { background-color: #3b82f6; }
+        .bg-blue-600 { background-color: #2563eb; }
+        .bg-blue-900 { background-color: #1e3a8a; }
+        .bg-green-50 { background-color: #f0fdf4; }
+        .bg-yellow-100 { background-color: #fef9c3; }
+        .bg-yellow-400 { background-color: #facc15; }
+        .bg-purple-50 { background-color: #faf5ff; }
+        .bg-opacity-90 { --tw-bg-opacity: 0.9; background-color: rgba(11, 39, 57, 0.9); }
+
+        /* Gradientes */
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, var(--tw-gradient-stops));
+        }
+        .from-\[\#0b2739\] {
+            --tw-gradient-from: #0b2739;
+            --tw-gradient-to: rgba(11, 39, 57, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .via-\[\#0b2739\]\/90 {
+            --tw-gradient-to: rgba(11, 39, 57, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), rgba(11, 39, 57, 0.9), var(--tw-gradient-to);
+        }
+        .via-blue-900 {
+            --tw-gradient-to: rgba(30, 58, 138, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), #1e3a8a, var(--tw-gradient-to);
+        }
+        .to-\[\#0b2739\] {
+            --tw-gradient-to: #0b2739;
+        }
+        .to-transparent {
+            --tw-gradient-to: transparent;
+        }
+        .from-blue-400 {
+            --tw-gradient-from: #60a5fa;
+            --tw-gradient-to: rgba(96, 165, 250, 0);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+        .to-green-400 {
+            --tw-gradient-to: #4ade80;
+        }
+        .to-purple-400 {
+            --tw-gradient-to: #c084fc;
+        }
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Tipografía */
+        .text-left { text-align: left; }
+        .text-center { text-align: center; }
+        .font-normal { font-weight: 400; }
+        .font-medium { font-weight: 500; }
+        .font-bold { font-weight: 700; }
+        .font-black { font-weight: 900; }
+        .uppercase { text-transform: uppercase; }
+        .italic { font-style: italic; }
+        .underline { text-decoration-line: underline; }
+        .list-none { list-style-type: none; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        .text-\[9px\] { font-size: 9px; line-height: 1.2; }
+        .text-\[10px\] { font-size: 10px; line-height: 1.2; }
+        .text-\[11px\] { font-size: 11px; line-height: 1.3; }
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-base { font-size: 1rem; line-height: 1.5rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .text-6xl { font-size: 3.75rem; line-height: 1; }
+        .fs-3 { font-size: 1.75rem; line-height: 1; }
+
+        .leading-none { line-height: 1; }
+        .leading-tight { line-height: 1.25; }
+        .leading-relaxed { line-height: 1.625; }
+
+        .tracking-tight { letter-spacing: -0.025em; }
+        .tracking-wide { letter-spacing: 0.025em; }
+        .tracking-wider { letter-spacing: 0.05em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+
+        .text-transparent { color: transparent; }
+        .text-white { color: #ffffff; }
+        .text-\[\#f4f7f6\] { color: #f4f7f6; }
+        .text-gray-200 { color: #e5e7eb; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-gray-500 { color: #6b7280; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-800 { color: #1f2937; }
+        .text-gray-900 { color: #111827; }
+        .text-blue-100 { color: #dbeafe; }
+        .text-blue-200 { color: #bfdbfe; }
+        .text-blue-300 { color: #93c5fd; }
+        .text-blue-800 { color: #1e40af; }
+        .text-blue-900 { color: #1e3a8a; }
+        .text-green-700 { color: #15803d; }
+        .text-green-800 { color: #166534; }
+        .text-yellow-400 { color: #facc15; }
+        .text-purple-600 { color: #9333ea; }
+
+        /* Sombras, Filtros y Transformaciones */
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .shadow { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .shadow-inner { box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05); }
+        .shadow-\[0_10px_20px_rgba\(91\,197\,0\,0\.3\)\] { box-shadow: 0 10px 20px rgba(91, 197, 0, 0.3); }
+        .shadow-\[0_10px_20px_rgba\(91\,197\,0\,0\.4\)\] { box-shadow: 0 10px 20px rgba(91, 197, 0, 0.4); }
+        .shadow-\[0_10px_20px_rgba\(37\,99\,235\,0\.3\)\] { box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
+
+        .drop-shadow-sm { filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05)); }
+        .drop-shadow-lg { filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1)); }
+
+        .opacity-0 { opacity: 0; }
+        .opacity-40 { opacity: 0.4; }
+        .mix-blend-overlay { mix-blend-mode: overlay; }
+        .object-cover { object-fit: cover; }
+
+        .backdrop-blur-sm { -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+        .backdrop-blur-md { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+
+        .transform { transform: translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)); }
+        .-translate-y-1\/2 { --tw-translate-y: -50%; transform: translateY(-50%); }
+        .origin-top { transform-origin: top; }
+
+        .transition { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+
+        @keyframes pulse { 50% { opacity: .5; } }
+        .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+        .cursor-pointer { cursor: pointer; }
+        .pointer-events-none { pointer-events: none; }
+        .outline-none { outline: 2px solid transparent; outline-offset: 2px; }
+
+        /* Estados Interactivos (Hover, Focus, Group) */
+        .hover\:text-movistar:hover { color: var(--movistar-blue); }
+        .hover\:text-white:hover { color: #ffffff; }
+        .hover\:text-red-500:hover { color: #ef4444; }
+        .hover\:underline:hover { text-decoration-line: underline; }
+
+        .hover\:bg-blue-50:hover { background-color: #eff6ff; }
+        .hover\:bg-blue-50\/40:hover { background-color: rgba(239, 246, 255, 0.4); }
+        .hover\:bg-green-50\/40:hover { background-color: rgba(240, 253, 244, 0.4); }
+        .hover\:bg-blue-500:hover { background-color: #3b82f6; }
+        .hover\:bg-blue-800:hover { background-color: #1e40af; }
+        .hover\:bg-gray-200:hover { background-color: #e5e7eb; }
+        .hover\:bg-movistar:hover { background-color: var(--movistar-blue); }
+        .hover\:bg-movistar-dark:hover { background-color: var(--movistar-dark); }
+        .hover\:bg-\[\#4ea800\]:hover { background-color: #4ea800; }
+        .hover\:bg-yellow-300:hover { background-color: #fde047; }
+        .hover\:bg-white\/25:hover { background-color: rgba(255, 255, 255, 0.25); }
+        .hover\:bg-black\/60:hover { background-color: rgba(0, 0, 0, 0.6); }
+
+        .hover\:-translate-y-1:hover { transform: translateY(-0.25rem); }
+        .hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
+        .hover\:scale-105:hover { transform: scale(1.05); }
+
+        .focus\:bg-white:focus { background-color: #ffffff; }
+        .focus\:border-movistar:focus { border-color: var(--movistar-blue); }
+        .focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+
+        .group:hover .group-hover\:block { display: block; }
+        .group:hover .group-hover\:opacity-100 { opacity: 1; }
+        details[open].group .group-open\:rotate-180 { transform: rotate(180deg); }
+
+        /* Breakpoints Responsivos */
+        @media (min-width: 640px) {
+            .sm\:flex-row { flex-direction: row; }
+            .sm\:gap-4 { gap: 1rem; }
+            .sm\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        }
+
+        @media (min-width: 768px) {
+            .md\:block { display: block; }
+            .md\:flex { display: flex; }
+            .md\:grid { display: grid; }
+            .md\:hidden { display: none; }
+            .md\:flex-row { flex-direction: row; }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md\:h-12 { height: 3rem; }
+            .md\:h-\[80px\] { height: 80px; }
+            .md\:w-auto { width: auto; }
+            .md\:mb-16 { margin-bottom: 4rem; }
+            .md\:pb-0 { padding-bottom: 0px; }
+            .md\:text-left { text-align: left; }
+            .md\:text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+            .md\:text-base { font-size: 1rem; line-height: 1.5rem; }
+            .md\:text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+            .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+            .md\:text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+            .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+            .md\:-translate-y-4 { transform: translateY(-1rem); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:w-3\/4 { width: 75%; }
+            .lg\:h-\[600px\] { height: 600px; }
+            .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .lg\:text-6xl { font-size: 3.75rem; line-height: 1; }
+            .lg\:-translate-y-3 { transform: translateY(-0.75rem); }
+        }
 
         /* Hover Avanzado */
         .hover-lift { transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease; }
         .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(1, 157, 244, 0.2); }
-        .group:hover .group-hover\:block { display: block; }
 
         /* CSS PARA EL SLIDER HERO */
         .slide { transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; }
@@ -550,320 +1038,3 @@
                         <thead>
                             <tr class="bg-gray-100 text-gray-700 text-xs uppercase font-black tracking-wider border-b border-gray-200">
                                 <th class="py-4 px-5">Plan</th>
-                                <th class="py-4 px-5">Internet</th>
-                                <th class="py-4 px-5">TV / Móvil / Apps</th>
-                                <th class="py-4 px-5">Instalación y Pago</th>
-                                <th class="py-4 px-5">Tarifa Mensual</th>
-                                <th class="py-4 px-5 text-center">Contratar</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-100 text-sm font-medium text-gray-700">
-                            <tr class="hover:bg-green-50/40 transition">
-                                <td class="py-4 px-5 font-bold text-gray-900">Internet 900 Megas <span class="ml-1 bg-movistar-green text-white text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Oferta</span></td>
-                                <td class="py-4 px-5"><span class="bg-blue-100 text-movistar font-black px-2.5 py-1 rounded-full text-xs">900 Megas</span></td>
-                                <td class="py-4 px-5">Solo Internet + Portabilidad móvil incluida</td>
-                                <td class="py-4 px-5 font-bold text-gray-800">Inst. $27.500 (pago único)</td>
-                                <td class="py-4 px-5 font-black text-lg text-gray-900">$62.826/mes</td>
-                                <td class="py-4 px-5 text-center"><button onclick="selectPlan('Internet 900 Megas ($62.826/mes + Inst. $27.500)', '62.826')" class="bg-movistar-green hover:bg-[#4ea800] text-white font-black text-xs px-4 py-2 rounded-full transition">Pedir</button></td>
-                            </tr>
-                            <tr class="hover:bg-blue-50/40 transition">
-                                <td class="py-4 px-5 font-bold text-blue-900">Plan Full Tigo Dúo</td>
-                                <td class="py-4 px-5"><span class="bg-blue-100 text-blue-900 font-black px-2.5 py-1 rounded-full text-xs">500 Megas</span></td>
-                                <td class="py-4 px-5">Pospago Ilimitado (15 GB compartir + Minutos Int.) + <strong>Paramount+</strong> + Portabilidad</td>
-                                <td class="py-4 px-5 font-bold text-green-700">Inst. ¡Gratis! • Pagas 20 días después</td>
-                                <td class="py-4 px-5 font-black text-lg text-blue-900">$89.990/mes</td>
-                                <td class="py-4 px-5 text-center"><button onclick="selectPlan('Plan Full Tigo Dúo 500 MB + Pospago + Paramount+ (Inst. Gratis)', '89.990')" class="bg-blue-900 hover:bg-blue-800 text-white font-bold text-xs px-4 py-2 rounded-full transition">Pedir</button></td>
-                            </tr>
-                            <tr class="bg-blue-50/70 hover:bg-blue-50 transition">
-                                <td class="py-4 px-5 font-bold text-gray-900">Movistar Total <span class="ml-1 bg-yellow-400 text-gray-900 text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Top</span></td>
-                                <td class="py-4 px-5"><span class="bg-movistar text-white font-black px-2.5 py-1 rounded-full text-xs">900 Megas</span></td>
-                                <td class="py-4 px-5"><strong>1 Deco TV</strong> + <strong>Paramount+</strong> + Portabilidad móvil incluida</td>
-                                <td class="py-4 px-5 text-gray-600">Sujeto a validación de cobertura</td>
-                                <td class="py-4 px-5 font-black text-lg text-movistar">$119.900/mes</td>
-                                <td class="py-4 px-5 text-center"><button onclick="selectPlan('Movistar Total 900 Megas + 1 Deco + Paramount+', '119.900')" class="bg-movistar hover:bg-movistar-dark text-white font-black text-xs px-4 py-2 rounded-full transition">Pedir</button></td>
-                            </tr>
-                            <tr class="hover:bg-blue-50/40 transition">
-                                <td class="py-4 px-5 font-bold text-gray-900">Trío Entretenimiento</td>
-                                <td class="py-4 px-5"><span class="bg-blue-100 text-movistar font-black px-2.5 py-1 rounded-full text-xs">500 Megas</span></td>
-                                <td class="py-4 px-5">71 Canales TV HD + <strong>Paramount+</strong> + Portabilidad móvil incluida</td>
-                                <td class="py-4 px-5 text-gray-600">Sujeto a validación de cobertura</td>
-                                <td class="py-4 px-5 font-black text-lg text-gray-900">$129.900/mes</td>
-                                <td class="py-4 px-5 text-center"><button onclick="selectPlan('Trío 500 Megas + 71 Canales TV + Paramount+', '129.900')" class="bg-movistar hover:bg-movistar-dark text-white font-bold text-xs px-4 py-2 rounded-full transition">Pedir</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <p class="text-center text-xs md:text-sm text-gray-400 mt-8 px-4">
-                Instalación: $27.500 (pago único) en Internet 900 Megas de $62.826; ¡Gratis! en Plan Full Tigo Dúo de $89.990 (primera factura a 20 días de instalado). Portabilidad móvil aplica para líneas provenientes de otros operadores. Sujeto a factibilidad técnica.
-            </p>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- BANNER PORTABILIDAD & CAMBIO DE OPERADOR -->
-    <!-- ========================================== -->
-    <section class="py-10 bg-gradient-to-r from-[#0b2739] via-blue-900 to-[#0b2739] text-white border-y-4 border-movistar">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div>
-                <span class="bg-yellow-400 text-gray-900 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2">📲 Portabilidad Móvil + Hogar</span>
-                <h2 class="font-heading text-2xl md:text-3xl font-black mb-1">¿Vienes de otro operador? Conserva tu número y ahorra</h2>
-                <p class="text-blue-100 text-sm md:text-base">Al contratar cualquiera de nuestros planes Hogar, incluimos la <strong>portabilidad de tu servicio celular</strong> sin costo y con respaldo de la red Movistar-Tigo.</p>
-            </div>
-            <a href="https://wa.me/573165593013?text=Hola,%20vengo%20de%20otro%20operador%20y%20quiero%20contratar%20un%20plan%20Hogar%20con%20portabilidad%20m%C3%B3vil%20incluida" target="_blank" rel="noopener noreferrer" class="shrink-0 bg-movistar-green hover:bg-[#4ea800] text-white font-heading font-black py-4 px-8 rounded-full shadow-xl transition transform hover:scale-105 flex items-center gap-2">
-                <i class="fab fa-whatsapp text-xl"></i> Cámbiate con tu Número
-            </a>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- TESTIMONIOS VERIFICADOS (PRUEBA SOCIAL) -->
-    <!-- ========================================== -->
-    <section class="py-16 bg-[#f4f7f6] border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="font-heading text-3xl font-black text-gray-900 text-center mb-10">Opiniones de Clientes Movistar &amp; Tigo Hogar</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
-                    <div class="text-yellow-400 text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 text-sm italic mb-4">"Contraté las 900 Megas por $62.826 y la instalación solo costó $27.500. Además pasé mi línea celular con portabilidad sin perder mi número."</p>
-                    <p class="font-bold text-gray-900 text-sm">— Carlos M. <span class="text-gray-400 font-normal">| Bogotá</span></p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
-                    <div class="text-yellow-400 text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 text-sm italic mb-4">"Tomé el Plan Full Tigo Dúo de $89.990 con 500 Megas, pospago con 15 GB para compartir y Paramount+. La instalación fue gratis y pagué a los 20 días."</p>
-                    <p class="font-bold text-gray-900 text-sm">— Laura G. <span class="text-gray-400 font-normal">| Medellín</span></p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
-                    <div class="text-yellow-400 text-sm mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="text-gray-600 text-sm italic mb-4">"Con Movistar Total de $119.900 tenemos 900 Megas, el deco para el televisor de la sala y Paramount+ incluido. Todo quedó listo súper rápido."</p>
-                    <p class="font-bold text-gray-900 text-sm">— Familia Restrepo <span class="text-gray-400 font-normal">| Cali</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- FAQ SECTION OPTIMIZADA SEO -->
-    <!-- ========================================== -->
-    <section class="py-20 bg-white border-t border-gray-100">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="font-heading text-3xl font-black text-gray-900 mb-10 text-center">Preguntas Frecuentes sobre Movistar &amp; Tigo Hogar</h2>
-            <div class="space-y-4">
-                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer border border-gray-100 transition-all" open>
-                    <summary class="flex justify-between items-center font-bold text-gray-800 list-none text-lg">
-                        ¿Cuáles son los precios de los planes Movistar y Tigo Hogar en 2026?
-                        <span class="text-movistar group-open:rotate-180 transition"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        Tenemos cuatro opciones principales: <strong>Internet 900 Megas</strong> por <strong>$62.826/mes</strong> (instalación pago único de $27.500), <strong>Plan Full Tigo Dúo</strong> (500 Megas + Pospago Ilimitado + Paramount+ + instalación gratis) por <strong>$89.990/mes</strong>, <strong>Movistar Total</strong> (900 Megas + 1 Deco TV + Paramount+) por <strong>$119.900/mes</strong> y <strong>Trío Entretenimiento</strong> (500 Megas + 71 canales TV HD + Paramount+) por <strong>$129.900/mes</strong>.
-                    </p>
-                </details>
-                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer border border-gray-100 transition-all">
-                    <summary class="flex justify-between items-center font-bold text-gray-800 list-none text-lg">
-                        ¿Qué incluye exactamente el Plan Full Tigo Dúo de $89.990?
-                        <span class="text-movistar group-open:rotate-180 transition"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        El <strong>Plan Full Tigo Dúo</strong> incluye <strong>Internet de 500 Megas</strong> sin límites, línea móvil <strong>Pospago Ilimitado</strong> con <strong>15 Gigas para compartir</strong> con otros dispositivos y minutos ilimitados a Colombia, Canadá, Puerto Rico y Estados Unidos, además de <strong>Paramount+ gratis</strong>, <strong>instalación gratis</strong> y pagas tu primera factura <strong>20 días después de la instalación</strong>.
-                    </p>
-                </details>
-                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer border border-gray-100 transition-all">
-                    <summary class="flex justify-between items-center font-bold text-gray-800 list-none text-lg">
-                        ¿Los planes incluyen portabilidad celular si vengo de otro operador?
-                        <span class="text-movistar group-open:rotate-180 transition"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        Sí, <strong>todas nuestras ofertas incluyen la portabilidad de tu servicio celular</strong> si vienes de otro operador. Conservas tu número de siempre y disfrutas del respaldo de la red móvil unificada Movistar-Tigo en todo el país.
-                    </p>
-                </details>
-                <details class="group bg-gray-50 rounded-2xl p-6 cursor-pointer border border-gray-100 transition-all">
-                    <summary class="flex justify-between items-center font-bold text-gray-800 list-none text-lg">
-                        ¿Cómo radicar una PQR en Movistar Colombia?
-                        <span class="text-movistar group-open:rotate-180 transition"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-600 mt-4 leading-relaxed">
-                        Para presentar una Petición, Queja o Reclamo, dirígete a nuestra sección <a href="/PQR/" class="text-movistar font-bold underline">Radicar PQR</a> en el menú superior o solicita ayuda rápida por nuestro canal de WhatsApp.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- FOOTER SEMÁNTICO -->
-    <!-- ========================================== -->
-    <footer class="bg-movistar-dark text-gray-400 py-12 border-t-4 border-movistar-green">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h4 class="font-heading text-white font-black text-2xl mb-4">FibraHogar.co</h4>
-            <p class="mb-8 text-sm max-w-md mx-auto">Te conectamos con los mejores planes de internet Movistar y Tigo de 500 y 900 Megas en Colombia con portabilidad móvil incluida. Distribuidor autorizado independiente.</p>
-            <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium mb-8" aria-label="Enlaces del pie de página">
-                <a href="/internet-hogar/" class="hover:text-white transition">Internet Hogar</a>
-                <a href="/internet-hogar/internet-hogar-precios/" class="hover:text-white transition">Precios 2026</a>
-                <a href="/planes-moviles/" class="hover:text-white transition">Planes Móviles 5G</a>
-                <a href="/PQR/" class="hover:text-white bg-white/10 px-4 py-2 rounded-lg transition border border-white/20"><i class="fas fa-headset mr-2"></i>Centro de PQR</a>
-                <a href="/terminos-y-condiciones/" class="hover:underline text-movistar">Términos y Condiciones</a>
-            </nav>
-            <p class="text-xs text-gray-500">© 2026 FibraHogar.co - Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- ========================================== -->
-    <!-- BOTONES FLOTANTES DE CONTACTO -->
-    <!-- ========================================== -->
-    <!-- WhatsApp (PC) -->
-    <a href="https://wa.me/573165593013?text=Hola,%20quiero%20cotizar%20un%20Plan%20Movistar/Tigo%20Hogar%20con%20portabilidad%20m%C3%B3vil%20incluida" target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-8 right-8 bg-movistar-green text-white p-4 rounded-full shadow-[0_10px_20px_rgba(91,197,0,0.4)] hover:bg-[#4ea800] hover:-translate-y-2 transition-all z-[100] flex items-center justify-center group cursor-pointer border-4 border-white" aria-label="Abrir chat de WhatsApp">
-        <i class="fab fa-whatsapp text-4xl"></i>
-        <span class="absolute right-full mr-4 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg">
-            ¡Cotiza por WhatsApp!
-        </span>
-    </a>
-
-    <!-- Sticky Barra (Solo Celulares) -->
-    <div class="mobile-sticky-cta">
-        <a href="https://wa.me/573165593013?text=Hola,%20quiero%20cotizar%20un%20Plan%20Movistar/Tigo%20Hogar%20con%20portabilidad%20incluida" target="_blank" aria-label="Cotizar ahora por WhatsApp">
-            <i class="fab fa-whatsapp fs-3"></i> ¡Cotizar por WhatsApp Ahora!
-        </a>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- MODAL DE COBERTURA (Popup Interactivo) -->
-    <!-- ========================================== -->
-    <div id="coverageModal" class="fixed inset-0 bg-movistar-dark bg-opacity-90 z-[120] hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity" aria-modal="true" role="dialog">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden relative">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 text-3xl hover:text-red-500 transition-colors" aria-label="Cerrar modal">&times;</button>
-            <div class="p-8">
-                <!-- Paso 1 -->
-                <div id="modalStep1">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-blue-50 text-movistar rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">📍</div>
-                        <h3 class="font-heading text-2xl font-black text-gray-900">Cobertura Fibra Movistar &amp; Tigo</h3>
-                        <p class="text-gray-500 text-sm mt-2">Valida tu dirección para los planes de 500 o 900 Megas con portabilidad incluida.</p>
-                    </div>
-                    <form onsubmit="checkCoverage(event)" class="space-y-4">
-                        <input type="text" id="inputBarrio" required class="w-full px-5 py-4 rounded-xl bg-gray-50 border-2 border-transparent focus:border-movistar focus:bg-white outline-none transition-all font-medium text-gray-700" placeholder="Escribe tu Barrio o Nomenclatura...">
-                        <button type="submit" class="w-full bg-movistar hover:bg-movistar-dark text-white font-black py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1">Consultar Disponibilidad</button>
-                    </form>
-                </div>
-                <!-- Paso 2 (Animación de carga) -->
-                <div id="modalStep2" class="hidden text-center py-12">
-                    <i class="fas fa-circle-notch fa-spin text-5xl text-movistar mb-4"></i>
-                    <h3 class="font-bold text-xl text-gray-700">Verificando red en tu zona...</h3>
-                </div>
-                <!-- Paso 3 (Éxito) -->
-                <div id="modalStep3" class="hidden text-center py-6">
-                    <div class="text-6xl text-movistar-green mb-4"><i class="fas fa-check-circle"></i></div>
-                    <h3 class="font-heading text-2xl font-black mb-2 text-gray-900 uppercase">¡Fibra Disponible!</h3>
-                    <p class="mb-8 text-gray-600">Tenemos factibilidad técnica para llegar a <span id="displayBarrio" class="font-bold text-movistar px-2 bg-blue-50 rounded">tu zona</span> con portabilidad móvil incluida.</p>
-                    <button onclick="finishLead()" class="w-full bg-movistar-green hover:bg-[#4ea800] text-white font-black py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-xl"></i> Agendar Instalación
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- SCRIPTS LÓGICOS (Slider, Modal, WhatsApp) -->
-    <!-- ========================================== -->
-    <script>
-        const WHATSAPP_NUMBER = "573165593013"; 
-        
-        // --- LOGICA DEL SLIDER HERO ---
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.slider-dot');
-        const totalSlides = slides.length;
-        let slideInterval;
-
-        function updateSlider() {
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.remove('slide-hidden');
-                    slide.classList.add('slide-active');
-                    dots[index].classList.add('active');
-                } else {
-                    slide.classList.remove('slide-active');
-                    slide.classList.add('slide-hidden');
-                    dots[index].classList.remove('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlider();
-            resetInterval();
-        }
-
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-
-        // Eventos del Slider
-        document.getElementById('nextSlide').addEventListener('click', () => { nextSlide(); resetInterval(); });
-        document.getElementById('prevSlide').addEventListener('click', () => { prevSlide(); resetInterval(); });
-        
-        // Iniciar Slider automático
-        slideInterval = setInterval(nextSlide, 5000);
-
-        // --- LOGICA DE MENÚ Y MODALES ---
-        let STATE = { barrio: '' };
-        
-        function toggleMobileMenu() { 
-            document.getElementById('mobileMenu').classList.toggle('hidden'); 
-        }
-        
-        function openModal() { 
-            document.getElementById('coverageModal').classList.remove('hidden'); 
-        }
-        
-        function closeModal() {
-            document.getElementById('coverageModal').classList.add('hidden');
-            setTimeout(() => {
-                document.getElementById('modalStep1').classList.remove('hidden');
-                document.getElementById('modalStep2').classList.add('hidden');
-                document.getElementById('modalStep3').classList.add('hidden');
-                document.getElementById('inputBarrio').value = '';
-            }, 300);
-        }
-        
-        function checkCoverage(e) {
-            e.preventDefault();
-            STATE.barrio = document.getElementById('inputBarrio').value;
-            document.getElementById('modalStep1').classList.add('hidden');
-            document.getElementById('modalStep2').classList.remove('hidden');
-            setTimeout(() => {
-                document.getElementById('modalStep2').classList.add('hidden');
-                document.getElementById('modalStep3').classList.remove('hidden');
-                document.getElementById('displayBarrio').innerText = STATE.barrio;
-            }, 1800);
-        }
-        
-        function finishLead() {
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, validé mi dirección en el barrio *${STATE.barrio}* y quiero agendar mi plan Hogar Movistar/Tigo con portabilidad móvil incluida.`)}`, '_blank');
-            closeModal();
-        }
-        
-        function selectPlan(n, p) {
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hola, me interesa contratar el plan *${n}* de $${p} con portabilidad móvil incluida. Quiero validar cobertura en mi dirección.`)}`, '_blank');
-        }
-        
-        // Cerrar modal al hacer clic afuera
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('coverageModal')) closeModal();
-        }
-    </script>
-</body>
-</html>
